@@ -6,17 +6,17 @@ if (!defined('ABSPATH')) exit; // Exit if accessed directly
 
 use Elementor\core\Schemes;
 
-class Corelaw_intro_Widget extends Widget_Base
+class restho_intro_Widget extends Widget_Base
 {
 
     public function get_name()
     {
-        return 'corelaw_intro';
+        return 'restho_intro';
     }
 
     public function get_title()
     {
-        return esc_html__('EG Intro', 'corelaw-core');
+        return esc_html__('EG Intro', 'restho-core');
     }
 
     public function get_icon()
@@ -26,31 +26,31 @@ class Corelaw_intro_Widget extends Widget_Base
 
     public function get_categories()
     {
-        return ['corelaw_widgets'];
+        return ['restho_widgets'];
     }
 
     protected function register_controls()
     {
         //Content Section
         $this->start_controls_section(
-            'corelaw_section_title_content',
+            'restho_section_title_content',
             [
-                'label' => esc_html__('General', 'corelaw-core')
+                'label' => esc_html__('General', 'restho-core')
             ]
         );
 
        
 
         $this->add_control(
-			'corelaw_intro_style',
+			'restho_intro_style',
 			[
-				'label' => esc_html__( 'Intro Design', 'corelaw-core' ),
+				'label' => esc_html__( 'Intro Design', 'restho-core' ),
 				'type' => \Elementor\Controls_Manager::SELECT,
 				'default' => 'style_one',
 				'options' => [
-					'style_one'  => esc_html__( 'Style 1', 'corelaw-core' ),
-					'style_two' => esc_html__( 'Style 2', 'corelaw-core' ),
-					'style_three' => esc_html__( 'Style 3', 'corelaw-core' ),
+					'style_one'  => esc_html__( 'Style 1', 'restho-core' ),
+					'style_two' => esc_html__( 'Style 2', 'restho-core' ),
+					'style_three' => esc_html__( 'Style 3', 'restho-core' ),
 					
 					
 				],
@@ -62,11 +62,11 @@ class Corelaw_intro_Widget extends Widget_Base
         //style 1 controls
 
         $this->start_controls_section(
-            'corelaw_intro_style_one_all_controls',
+            'restho_intro_style_one_all_controls',
             [
-                'label' => esc_html__('Items List', 'corelaw-core'),
+                'label' => esc_html__('Items List', 'restho-core'),
                 'condition' => [
-                    'corelaw_intro_style' => 'style_one',
+                    'restho_intro_style' => 'style_one',
                 ],
                 
             ]
@@ -76,9 +76,9 @@ class Corelaw_intro_Widget extends Widget_Base
         
 
         $repeater->add_control(
-			'corelaw_section_main_title',
+			'restho_section_main_title',
 			[
-				'label' => esc_html__( 'Number', 'corelaw-core' ),
+				'label' => esc_html__( 'Number', 'restho-core' ),
 				'type' => \Elementor\Controls_Manager::NUMBER,
 				'default' => 300,
 			]
@@ -88,11 +88,11 @@ class Corelaw_intro_Widget extends Widget_Base
        
 
         $repeater->add_control(
-            'corelaw_section_intro_sub_title',
+            'restho_section_intro_sub_title',
             [
-                'label' => esc_html__('Sub Title', 'corelaw-core'),
+                'label' => esc_html__('Sub Title', 'restho-core'),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__('Expert Attorneys', 'corelaw-core'),
+                'default' => esc_html__('Expert Attorneys', 'restho-core'),
                 'label_block' => true,
                 
             ]
@@ -102,9 +102,9 @@ class Corelaw_intro_Widget extends Widget_Base
 
      
         $repeater->add_control(
-            'corelaw_section_intro_img',
+            'restho_section_intro_img',
             [
-                'label' => esc_html__( 'Image', 'corelaw-core' ),
+                'label' => esc_html__( 'Image', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::ICONS,
                 'default' => [
                     'value' => 'fas fa-star',
@@ -116,17 +116,17 @@ class Corelaw_intro_Widget extends Widget_Base
         $this->add_control(
 			'list',
 			[
-				'label' => esc_html__( 'Client List', 'corelaw-core' ),
+				'label' => esc_html__( 'Client List', 'restho-core' ),
 				'type' => \Elementor\Controls_Manager::REPEATER,
 				'fields' => $repeater->get_controls(),
 				'default' => [
 					[
-						'corelaw_section_main_title' => esc_html__( 'Title #1', 'corelaw-core' ),
-						'list_content' => esc_html__( 'Item content. Click the edit button to change this text.', 'corelaw-core' ),
+						'restho_section_main_title' => esc_html__( 'Title #1', 'restho-core' ),
+						'list_content' => esc_html__( 'Item content. Click the edit button to change this text.', 'restho-core' ),
 					],
 					
 				],
-				'title_field' => '{{{ corelaw_section_main_title }}}',
+				'title_field' => '{{{ restho_section_main_title }}}',
 			]
 		);
         
@@ -137,11 +137,11 @@ class Corelaw_intro_Widget extends Widget_Base
          //style 2 controls
 
          $this->start_controls_section(
-            'corelaw_intro_style_two_all_controls',
+            'restho_intro_style_two_all_controls',
             [
-                'label' => esc_html__('Items List', 'corelaw-core'),
+                'label' => esc_html__('Items List', 'restho-core'),
                 'condition' => [
-                    'corelaw_intro_style' => 'style_two',
+                    'restho_intro_style' => 'style_two',
                 ],
                 
             ]
@@ -150,11 +150,11 @@ class Corelaw_intro_Widget extends Widget_Base
         $repeater2 = new \Elementor\Repeater();
         
         $repeater2->add_control(
-            'corelaw_section_main_title_two',
+            'restho_section_main_title_two',
             [
-                'label' => esc_html__('Title', 'corelaw-core'),
+                'label' => esc_html__('Title', 'restho-core'),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__('Top Experienced.', 'corelaw-core'),
+                'default' => esc_html__('Top Experienced.', 'restho-core'),
                 'label_block' => true,
             ]
         );
@@ -163,12 +163,12 @@ class Corelaw_intro_Widget extends Widget_Base
        
 
         $repeater2->add_control(
-            'corelaw_section_intro_sub_title2',
+            'restho_section_intro_sub_title2',
             [
-                'label' => esc_html__('Sub Title', 'corelaw-core'),
+                'label' => esc_html__('Sub Title', 'restho-core'),
                 'type' => Controls_Manager::TEXTAREA,
                 'default' => esc_html__('In consequat tincidunt turpis sit amet imperdiet. 
-                Praesent nonat mauris laoreet, iaculis libero quis.', 'corelaw-core'),
+                Praesent nonat mauris laoreet, iaculis libero quis.', 'restho-core'),
                 'label_block' => true,
                 
             ]
@@ -176,9 +176,9 @@ class Corelaw_intro_Widget extends Widget_Base
        
 
         $repeater2->add_control(
-			'corelaw_section_intro_icon2',
+			'restho_section_intro_icon2',
 			[
-				'label' => esc_html__( 'Icon', 'corelaw-core' ),
+				'label' => esc_html__( 'Icon', 'restho-core' ),
 				'type' => \Elementor\Controls_Manager::ICONS,
 				'default' => [
 					'value' => 'fas fa-circle',
@@ -191,17 +191,17 @@ class Corelaw_intro_Widget extends Widget_Base
         $this->add_control(
 			'list2',
 			[
-				'label' => esc_html__( 'Client List', 'corelaw-core' ),
+				'label' => esc_html__( 'Client List', 'restho-core' ),
 				'type' => \Elementor\Controls_Manager::REPEATER,
 				'fields' => $repeater2->get_controls(),
 				'default' => [
 					[
-						'corelaw_section_main_title_two' => esc_html__( 'Title #1', 'corelaw-core' ),
-						'list_content' => esc_html__( 'Item content. Click the edit button to change this text.', 'corelaw-core' ),
+						'restho_section_main_title_two' => esc_html__( 'Title #1', 'restho-core' ),
+						'list_content' => esc_html__( 'Item content. Click the edit button to change this text.', 'restho-core' ),
 					],
 					
 				],
-				'title_field' => '{{{ corelaw_section_main_title_two }}}',
+				'title_field' => '{{{ restho_section_main_title_two }}}',
 			]
 		);
         
@@ -213,20 +213,20 @@ class Corelaw_intro_Widget extends Widget_Base
 
         //style 3 card 1
         $this->start_controls_section(
-            'corelaw_intro_style_three_card_one',
+            'restho_intro_style_three_card_one',
             [
-                'label' => esc_html__('Card One', 'corelaw-core'),
+                'label' => esc_html__('Card One', 'restho-core'),
                 'condition' => [
-                    'corelaw_intro_style' => 'style_three',
+                    'restho_intro_style' => 'style_three',
                 ],
                 
             ]
         ); 
 
         $this->add_control(
-			'corelaw_intro_style_three_card_one_title',
+			'restho_intro_style_three_card_one_title',
 			[
-				'label' => esc_html__( 'Number', 'corelaw-core' ),
+				'label' => esc_html__( 'Number', 'restho-core' ),
 				'type' => \Elementor\Controls_Manager::NUMBER,
 				'default' => 300,
 			]
@@ -237,11 +237,11 @@ class Corelaw_intro_Widget extends Widget_Base
        
 
         $this->add_control(
-            'corelaw_intro_style_three_card_one_sub_title',
+            'restho_intro_style_three_card_one_sub_title',
             [
-                'label' => esc_html__('Sub Title', 'corelaw-core'),
+                'label' => esc_html__('Sub Title', 'restho-core'),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__('Expert Attorneys', 'corelaw-core'),
+                'default' => esc_html__('Expert Attorneys', 'restho-core'),
                 'label_block' => true,
                 
             ]
@@ -250,9 +250,9 @@ class Corelaw_intro_Widget extends Widget_Base
 
 
         $this->add_control(
-            'corelaw_intro_style_three_card_one_image',
+            'restho_intro_style_three_card_one_image',
             [
-                'label' => esc_html__( 'Image', 'corelaw-core' ),
+                'label' => esc_html__( 'Image', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::ICONS,
                 'default' => [
                     'value' => 'fas fa-star',
@@ -266,11 +266,11 @@ class Corelaw_intro_Widget extends Widget_Base
 
         //style 3 card 2
         $this->start_controls_section(
-            'corelaw_intro_style_three_card_two',
+            'restho_intro_style_three_card_two',
             [
-                'label' => esc_html__('Card Two', 'corelaw-core'),
+                'label' => esc_html__('Card Two', 'restho-core'),
                 'condition' => [
-                    'corelaw_intro_style' => 'style_three',
+                    'restho_intro_style' => 'style_three',
                 ],
             ]
         ); 
@@ -278,9 +278,9 @@ class Corelaw_intro_Widget extends Widget_Base
        
 
         $this->add_control(
-			'corelaw_intro_style_three_card_two_title',
+			'restho_intro_style_three_card_two_title',
 			[
-				'label' => esc_html__( 'Number', 'corelaw-core' ),
+				'label' => esc_html__( 'Number', 'restho-core' ),
 				'type' => \Elementor\Controls_Manager::NUMBER,
 				'default' => 300,
 			]
@@ -290,11 +290,11 @@ class Corelaw_intro_Widget extends Widget_Base
        
 
         $this->add_control(
-            'corelaw_intro_style_three_card_two_sub_title',
+            'restho_intro_style_three_card_two_sub_title',
             [
-                'label' => esc_html__('Sub Title', 'corelaw-core'),
+                'label' => esc_html__('Sub Title', 'restho-core'),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__('Expert Attorneys', 'corelaw-core'),
+                'default' => esc_html__('Expert Attorneys', 'restho-core'),
                 'label_block' => true,
                 
             ]
@@ -305,9 +305,9 @@ class Corelaw_intro_Widget extends Widget_Base
 
       
         $this->add_control(
-            'corelaw_intro_style_three_card_two_image',
+            'restho_intro_style_three_card_two_image',
             [
-                'label' => esc_html__( 'Image', 'corelaw-core' ),
+                'label' => esc_html__( 'Image', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::ICONS,
                 'default' => [
                     'value' => 'fas fa-star',
@@ -322,11 +322,11 @@ class Corelaw_intro_Widget extends Widget_Base
 
         //style 3 card 3
         $this->start_controls_section(
-            'corelaw_intro_style_three_card_three',
+            'restho_intro_style_three_card_three',
             [
-                'label' => esc_html__('Card Three', 'corelaw-core'),
+                'label' => esc_html__('Card Three', 'restho-core'),
                 'condition' => [
-                    'corelaw_intro_style' => 'style_three',
+                    'restho_intro_style' => 'style_three',
                 ],
                 
             ]
@@ -336,9 +336,9 @@ class Corelaw_intro_Widget extends Widget_Base
 
         
         $this->add_control(
-			'corelaw_intro_style_three_card_three_title',
+			'restho_intro_style_three_card_three_title',
 			[
-				'label' => esc_html__( 'Number', 'corelaw-core' ),
+				'label' => esc_html__( 'Number', 'restho-core' ),
 				'type' => \Elementor\Controls_Manager::NUMBER,
 				'default' => 120,
 			]
@@ -347,11 +347,11 @@ class Corelaw_intro_Widget extends Widget_Base
        
 
         $this->add_control(
-            'corelaw_intro_style_three_card_three_sub_title',
+            'restho_intro_style_three_card_three_sub_title',
             [
-                'label' => esc_html__('Sub Title', 'corelaw-core'),
+                'label' => esc_html__('Sub Title', 'restho-core'),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__('Expert Attorneys', 'corelaw-core'),
+                'default' => esc_html__('Expert Attorneys', 'restho-core'),
                 'label_block' => true,
                 
             ]
@@ -361,9 +361,9 @@ class Corelaw_intro_Widget extends Widget_Base
 
 
         $this->add_control(
-            'corelaw_intro_style_three_card_three_image',
+            'restho_intro_style_three_card_three_image',
             [
-                'label' => esc_html__( 'Image', 'corelaw-core' ),
+                'label' => esc_html__( 'Image', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::ICONS,
                 'default' => [
                     'value' => 'fas fa-star',
@@ -378,11 +378,11 @@ class Corelaw_intro_Widget extends Widget_Base
 
         //style 3 card 4
         $this->start_controls_section(
-            'corelaw_intro_style_three_card_four',
+            'restho_intro_style_three_card_four',
             [
-                'label' => esc_html__('Card Four', 'corelaw-core'),
+                'label' => esc_html__('Card Four', 'restho-core'),
                 'condition' => [
-                    'corelaw_intro_style' => 'style_three',
+                    'restho_intro_style' => 'style_three',
                 ],
             ]
         ); 
@@ -392,9 +392,9 @@ class Corelaw_intro_Widget extends Widget_Base
        
 
         $this->add_control(
-			'corelaw_intro_style_three_card_four_title',
+			'restho_intro_style_three_card_four_title',
 			[
-				'label' => esc_html__( 'Number', 'corelaw-core' ),
+				'label' => esc_html__( 'Number', 'restho-core' ),
 				'type' => \Elementor\Controls_Manager::NUMBER,
 				'default' => 400,
 			]
@@ -404,11 +404,11 @@ class Corelaw_intro_Widget extends Widget_Base
        
 
         $this->add_control(
-            'corelaw_intro_style_three_card_four_sub_title',
+            'restho_intro_style_three_card_four_sub_title',
             [
-                'label' => esc_html__('Sub Title', 'corelaw-core'),
+                'label' => esc_html__('Sub Title', 'restho-core'),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__('Expert Attorneys', 'corelaw-core'),
+                'default' => esc_html__('Expert Attorneys', 'restho-core'),
                 'label_block' => true,
                 
             ]
@@ -418,9 +418,9 @@ class Corelaw_intro_Widget extends Widget_Base
 
      
         $this->add_control(
-            'corelaw_intro_style_three_card_four_image',
+            'restho_intro_style_three_card_four_image',
             [
-                'label' => esc_html__( 'Image', 'corelaw-core' ),
+                'label' => esc_html__( 'Image', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::ICONS,
                 'default' => [
                     'value' => 'fas fa-star',
@@ -441,7 +441,7 @@ class Corelaw_intro_Widget extends Widget_Base
         $this->start_controls_section(
              'corrlaw_intro_section_svg_icon',
              [
-                'label' => esc_html__('Icon & SVG', 'corelaw-core'),
+                'label' => esc_html__('Icon & SVG', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
              ]
         );
@@ -449,7 +449,7 @@ class Corelaw_intro_Widget extends Widget_Base
         $this->add_control(
             'corrlaw_intro_section_svg_color',
             [
-                'label' => esc_html__( 'SVG Color', 'corelaw-core' ),
+                'label' => esc_html__( 'SVG Color', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .intro-wrap .img-fluid svg path' => 'fill: {{VALUE}}',
@@ -460,7 +460,7 @@ class Corelaw_intro_Widget extends Widget_Base
         $this->add_control(
             'corrlaw_intro_section_svg_size',
             [
-                'label' => esc_html__( 'SVG Size', 'corelaw-core' ),
+                'label' => esc_html__( 'SVG Size', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => [ 'px' ],
                 'range' => [
@@ -484,7 +484,7 @@ class Corelaw_intro_Widget extends Widget_Base
         $this->add_control(
             'corrlaw_intro_section_icon_colorr',
             [
-                'label' => esc_html__( 'Icon Color', 'corelaw-core' ),
+                'label' => esc_html__( 'Icon Color', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .img-fluid i' => 'color: {{VALUE}}',
@@ -495,7 +495,7 @@ class Corelaw_intro_Widget extends Widget_Base
         $this->add_control(
             'corrlaw_intro_section_icon_size',
             [
-                'label' => esc_html__( 'Icon Size', 'corelaw-core' ),
+                'label' => esc_html__( 'Icon Size', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => [ 'px' ],
                 'range' => [
@@ -520,17 +520,17 @@ class Corelaw_intro_Widget extends Widget_Base
         $this->end_controls_section();
 
         $this->start_controls_section(
-            'corelaw_background_style_section',
+            'restho_background_style_section',
             [
-                'label' => esc_html__('Intro Card Background', 'corelaw-core'),
+                'label' => esc_html__('Intro Card Background', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         ); 
 
         $this->add_control(
-            'corelaw_section_background_style_color',
+            'restho_section_background_style_color',
             [
-                'label'     => esc_html__('Color', 'corelaw-core'),
+                'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .intro-single' => 'background: {{VALUE}};',
@@ -541,9 +541,9 @@ class Corelaw_intro_Widget extends Widget_Base
             ]
         );
         $this->add_control(
-            'corelaw_section_background_hover_style_color',
+            'restho_section_background_hover_style_color',
             [
-                'label'     => esc_html__('Hover Color', 'corelaw-core'),
+                'label'     => esc_html__('Hover Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                    
@@ -553,7 +553,7 @@ class Corelaw_intro_Widget extends Widget_Base
                     
                 ],
                 'condition' => [
-                    'corelaw_intro_style' => ['style_one','style_three'],
+                    'restho_intro_style' => ['style_one','style_three'],
                 ],
 
             ]
@@ -565,9 +565,9 @@ class Corelaw_intro_Widget extends Widget_Base
         $this->end_controls_section();
 
         $this->start_controls_section(
-            'corelaw_section_title_style_section',
+            'restho_section_title_style_section',
             [
-                'label' => esc_html__('Title', 'corelaw-core'),
+                'label' => esc_html__('Title', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -577,8 +577,8 @@ class Corelaw_intro_Widget extends Widget_Base
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'label'    => esc_html__('Typography', 'corelaw-core'),
-                'name'     => 'corelaw_intro_section_title_typography',
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_intro_section_title_typography',
                 'selectors' => [
                     '{{WRAPPER}} .intro-single .intro-wrap h3',
                     '{{WRAPPER}} .intro-singe2 .text h4',
@@ -589,9 +589,9 @@ class Corelaw_intro_Widget extends Widget_Base
         );
 
         $this->add_control(
-            'corelaw_section_title_color',
+            'restho_section_title_color',
             [
-                'label'     => esc_html__('Color', 'corelaw-core'),
+                'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .intro-singe2 .text h4' => 'color: {{VALUE}};',
@@ -599,28 +599,28 @@ class Corelaw_intro_Widget extends Widget_Base
                     
                 ],
                 'condition' => [
-                    'corelaw_intro_style' => ['style_two','style_three'],
+                    'restho_intro_style' => ['style_two','style_three'],
                 ],
             ]
         );
         $this->add_control(
-            'corelaw_section_title_hover_color',
+            'restho_section_title_hover_color',
             [
-                'label'     => esc_html__('Title Hover Color', 'corelaw-core'),
+                'label'     => esc_html__('Title Hover Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .intro-single:hover .intro-wrap h3' => 'color: {{VALUE}};',
                     
                 ],
                 'condition' => [
-                    'corelaw_intro_style' => 'style_one',
+                    'restho_intro_style' => 'style_one',
                 ],
             ]
         );
         $this->add_control(
-			'fcorelaw_section_title_margin',
+			'frestho_section_title_margin',
 			[
-				'label' => esc_html__( 'Margin', 'corelaw-core' ),
+				'label' => esc_html__( 'Margin', 'restho-core' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
@@ -635,17 +635,17 @@ class Corelaw_intro_Widget extends Widget_Base
 
         //Sub title Style
         $this->start_controls_section(
-            'corelaw_section_number_style_section',
+            'restho_section_number_style_section',
             [
-                'label' => esc_html__('Sub Title', 'corelaw-core'),
+                'label' => esc_html__('Sub Title', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'label'    => esc_html__('Typography', 'corelaw-core'),
-                'name'     => 'corelaw_section_number_typography',
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_section_number_typography',
                 'selectors' => [
                  '{{WRAPPER}} .intro-single .intro-wrap h5',
                  '{{WRAPPER}} .intro-singe2 .text p',
@@ -656,9 +656,9 @@ class Corelaw_intro_Widget extends Widget_Base
         );
 
         $this->add_control(
-            'corelaw_section_number_color',
+            'restho_section_number_color',
             [
-                'label'     => esc_html__('Color', 'corelaw-core'),
+                'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .intro-single .intro-wrap h5' => 'color: {{VALUE}};',
@@ -669,9 +669,9 @@ class Corelaw_intro_Widget extends Widget_Base
         );
 
         $this->add_control(
-			'corelaw_section_number_margin',
+			'restho_section_number_margin',
 			[
-				'label' => esc_html__( 'Margin', 'corelaw-core' ),
+				'label' => esc_html__( 'Margin', 'restho-core' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
@@ -686,20 +686,20 @@ class Corelaw_intro_Widget extends Widget_Base
 
         //Icon Style
         $this->start_controls_section(
-            'corelaw_intro_section_icon_style_section',
+            'restho_intro_section_icon_style_section',
             [
-                'label' => esc_html__('Icon', 'corelaw-core'),
+                'label' => esc_html__('Icon', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'condition' => [
-                    'corelaw_intro_style' => 'style_two',
+                    'restho_intro_style' => 'style_two',
                 ],
             ]
         );
 
         $this->add_control(
-            'corelaw_intro_section_icon_color_style',
+            'restho_intro_section_icon_color_style',
             [
-                'label'     => esc_html__('Color', 'corelaw-core'),
+                'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .icon svg path' => 'fill: {{VALUE}};',
@@ -708,9 +708,9 @@ class Corelaw_intro_Widget extends Widget_Base
         );
 
         $this->add_control(
-            'corelaw_intro_section_icon_size_style',
+            'restho_intro_section_icon_size_style',
             [
-                'label' => esc_html__( 'Icon Size', 'corelaw-core' ),
+                'label' => esc_html__( 'Icon Size', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => [ 'px','rem' ],
                 'range' => [
@@ -764,7 +764,7 @@ class Corelaw_intro_Widget extends Widget_Base
                 jQuery("select").niceSelect();
             </script>
         <?php endif; ?>
-    <?php if ( $settings['corelaw_intro_style'] == 'style_one' ) : ?>  
+    <?php if ( $settings['restho_intro_style'] == 'style_one' ) : ?>  
         <div class="intro-section">
             <div class="container-lg container-fluid">
                 <div class="row justify-content-center gx-0">
@@ -773,16 +773,16 @@ class Corelaw_intro_Widget extends Widget_Base
                             <div class="intro-single">
                                 <span class="s-number"> <?php echo "0".$key+1 ;?> </span>
                                 <div class="intro-wrap d-flex flex-column">
-                                    <?php if( !empty( $item['corelaw_section_intro_img']['url'] ) ) : ?>
+                                    <?php if( !empty( $item['restho_section_intro_img']['url'] ) ) : ?>
                                         <div class="img-fluid">
-                                            <?php \Elementor\Icons_Manager::render_icon( $item['corelaw_section_intro_img'], [ 'aria-hidden' => 'true' ] ); ?>
+                                            <?php \Elementor\Icons_Manager::render_icon( $item['restho_section_intro_img'], [ 'aria-hidden' => 'true' ] ); ?>
                                         </div>
                                     <?php endif ?>
-                                    <?php if( !empty( $item['corelaw_section_main_title'] ) ) : ?>
-                                        <h3 class="odometer" data-odometer-final="150"><?php echo esc_html($item['corelaw_section_main_title']) ?></h3>                          
+                                    <?php if( !empty( $item['restho_section_main_title'] ) ) : ?>
+                                        <h3 class="odometer" data-odometer-final="150"><?php echo esc_html($item['restho_section_main_title']) ?></h3>                          
                                     <?php endif ?>
-                                    <?php if( !empty( $item['corelaw_section_intro_sub_title'] ) ) : ?>
-                                        <h5><?php echo esc_html($item['corelaw_section_intro_sub_title']) ?></h5>                          
+                                    <?php if( !empty( $item['restho_section_intro_sub_title'] ) ) : ?>
+                                        <h5><?php echo esc_html($item['restho_section_intro_sub_title']) ?></h5>                          
                                     <?php endif ?>
                                 </div>
                             </div>
@@ -793,7 +793,7 @@ class Corelaw_intro_Widget extends Widget_Base
         </div>
     <?php endif ?>
 
-    <?php if ( $settings['corelaw_intro_style'] == 'style_two' ) : ?>
+    <?php if ( $settings['restho_intro_style'] == 'style_two' ) : ?>
 
         <div class="intro-section2">
             <div class="container-fluid px-0">
@@ -802,17 +802,17 @@ class Corelaw_intro_Widget extends Widget_Base
                         <div class="col-lg-4 col-md-10 col-sm-10">
                             <div class="intro-singe2 <?php if($num == 2){echo 'sibling2';} ?>">
                                 <span class="s-number"> <?php echo '0'.$num;?> </span>
-                                    <?php if( !empty( $item['corelaw_section_intro_icon2'] ) ) : ?>
+                                    <?php if( !empty( $item['restho_section_intro_icon2'] ) ) : ?>
                                         <div class="icon">
-                                            <?php \Elementor\Icons_Manager::render_icon( $item['corelaw_section_intro_icon2'], [ 'aria-hidden' => 'true' ] ); ?>                          
+                                            <?php \Elementor\Icons_Manager::render_icon( $item['restho_section_intro_icon2'], [ 'aria-hidden' => 'true' ] ); ?>                          
                                         </div>
                                     <?php endif ?>
                                 <div class="text">
-                                    <?php if( !empty( $item['corelaw_section_main_title_two'] ) ) : ?>
-                                        <h4><?php echo esc_html($item['corelaw_section_main_title_two']) ?></h4>                          
+                                    <?php if( !empty( $item['restho_section_main_title_two'] ) ) : ?>
+                                        <h4><?php echo esc_html($item['restho_section_main_title_two']) ?></h4>                          
                                     <?php endif ?>
-                                    <?php if( !empty( $item['corelaw_section_intro_sub_title2'] ) ) : ?>
-                                        <p><?php echo esc_html($item['corelaw_section_intro_sub_title2']) ?></p>                          
+                                    <?php if( !empty( $item['restho_section_intro_sub_title2'] ) ) : ?>
+                                        <p><?php echo esc_html($item['restho_section_intro_sub_title2']) ?></p>                          
                                     <?php endif ?>
                                 </div>
                             </div>
@@ -825,22 +825,22 @@ class Corelaw_intro_Widget extends Widget_Base
 
     <?php endif ?>
 
-    <?php if ( $settings['corelaw_intro_style'] == 'style_three' ) : ?>
+    <?php if ( $settings['restho_intro_style'] == 'style_three' ) : ?>
         <div class="counter-section2">
                 <div class="row justify-content-center gx-lg-0 g-4">
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="intro-single sibling2 border-top-left-bottom wow animate fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.2s">
                             <div class="intro-wrap d-flex flex-column">
-                                <?php if( !empty( $settings['corelaw_intro_style_three_card_one_image'] ['url']) ) : ?>
+                                <?php if( !empty( $settings['restho_intro_style_three_card_one_image'] ['url']) ) : ?>
                                     <div class="img-fluid">
-                                        <?php \Elementor\Icons_Manager::render_icon( $settings['corelaw_intro_style_three_card_one_image'], [ 'aria-hidden' => 'true' ] ); ?>
+                                        <?php \Elementor\Icons_Manager::render_icon( $settings['restho_intro_style_three_card_one_image'], [ 'aria-hidden' => 'true' ] ); ?>
                                     </div>
                                 <?php endif ?>
-                                <?php if( !empty( $settings['corelaw_intro_style_three_card_one_title'] ) ) : ?>
-                                    <h3 class="odometer" data-odometer-final="<?php echo esc_html($settings['corelaw_intro_style_three_card_one_title']) ?>">&nbsp;</h3>                          
+                                <?php if( !empty( $settings['restho_intro_style_three_card_one_title'] ) ) : ?>
+                                    <h3 class="odometer" data-odometer-final="<?php echo esc_html($settings['restho_intro_style_three_card_one_title']) ?>">&nbsp;</h3>                          
                                 <?php endif ?>
-                                <?php if( !empty( $settings['corelaw_intro_style_three_card_one_sub_title'] ) ) : ?>
-                                    <h5><?php echo esc_html($settings['corelaw_intro_style_three_card_one_sub_title']) ?></h5>                          
+                                <?php if( !empty( $settings['restho_intro_style_three_card_one_sub_title'] ) ) : ?>
+                                    <h5><?php echo esc_html($settings['restho_intro_style_three_card_one_sub_title']) ?></h5>                          
                                 <?php endif ?>
                             </div>
                         </div>
@@ -848,16 +848,16 @@ class Corelaw_intro_Widget extends Widget_Base
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="intro-single sibling2  wow animate fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.4s">
                             <div class="intro-wrap d-flex flex-column">
-                                    <?php if( !empty( $settings['corelaw_intro_style_three_card_two_image']['url'] ) ) : ?>
+                                    <?php if( !empty( $settings['restho_intro_style_three_card_two_image']['url'] ) ) : ?>
                                         <div class="img-fluid">
-                                            <?php \Elementor\Icons_Manager::render_icon( $settings['corelaw_intro_style_three_card_two_image'], [ 'aria-hidden' => 'true' ] ); ?>
+                                            <?php \Elementor\Icons_Manager::render_icon( $settings['restho_intro_style_three_card_two_image'], [ 'aria-hidden' => 'true' ] ); ?>
                                         </div>                          
                                     <?php endif ?>
-                                    <?php if( !empty( $settings['corelaw_intro_style_three_card_two_title'] ) ) : ?>
-                                        <h3 class="odometer" data-odometer-final="<?php echo esc_html($settings['corelaw_intro_style_three_card_two_title']) ?>">&nbsp;</h3>                          
+                                    <?php if( !empty( $settings['restho_intro_style_three_card_two_title'] ) ) : ?>
+                                        <h3 class="odometer" data-odometer-final="<?php echo esc_html($settings['restho_intro_style_three_card_two_title']) ?>">&nbsp;</h3>                          
                                     <?php endif ?>
-                                    <?php if( !empty( $settings['corelaw_intro_style_three_card_two_sub_title'] ) ) : ?>
-                                        <h5><?php echo esc_html($settings['corelaw_intro_style_three_card_two_sub_title']) ?></h5>                          
+                                    <?php if( !empty( $settings['restho_intro_style_three_card_two_sub_title'] ) ) : ?>
+                                        <h5><?php echo esc_html($settings['restho_intro_style_three_card_two_sub_title']) ?></h5>                          
                                     <?php endif ?>
                             </div>
                         </div>
@@ -865,16 +865,16 @@ class Corelaw_intro_Widget extends Widget_Base
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="intro-single sibling2 wow animate fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.6s">
                             <div class="intro-wrap d-flex flex-column">
-                                <?php if( !empty( $settings['corelaw_intro_style_three_card_three_image']['url'] ) ) : ?>
+                                <?php if( !empty( $settings['restho_intro_style_three_card_three_image']['url'] ) ) : ?>
                                     <div class="img-fluid">
-                                        <?php \Elementor\Icons_Manager::render_icon( $settings['corelaw_intro_style_three_card_three_image'], [ 'aria-hidden' => 'true' ] ); ?>
+                                        <?php \Elementor\Icons_Manager::render_icon( $settings['restho_intro_style_three_card_three_image'], [ 'aria-hidden' => 'true' ] ); ?>
                                     </div>                         
                                 <?php endif ?>
-                                <?php if( !empty( $settings['corelaw_intro_style_three_card_three_title'] ) ) : ?>
-                                    <h3 class="odometer" data-odometer-final="<?php echo esc_html($settings['corelaw_intro_style_three_card_three_title']) ?>">&nbsp;</h3>                          
+                                <?php if( !empty( $settings['restho_intro_style_three_card_three_title'] ) ) : ?>
+                                    <h3 class="odometer" data-odometer-final="<?php echo esc_html($settings['restho_intro_style_three_card_three_title']) ?>">&nbsp;</h3>                          
                                 <?php endif ?>
-                                <?php if( !empty( $settings['corelaw_intro_style_three_card_three_sub_title'] ) ) : ?>
-                                    <h5><?php echo esc_html($settings['corelaw_intro_style_three_card_three_sub_title']) ?></h5>                          
+                                <?php if( !empty( $settings['restho_intro_style_three_card_three_sub_title'] ) ) : ?>
+                                    <h5><?php echo esc_html($settings['restho_intro_style_three_card_three_sub_title']) ?></h5>                          
                                 <?php endif ?>
                             </div>
                         </div>
@@ -882,16 +882,16 @@ class Corelaw_intro_Widget extends Widget_Base
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="border-unset intro-single border-top-right-bottom sibling2 wow animate fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.8s">
                             <div class="intro-wrap d-flex flex-column">
-                                <?php if( !empty( $settings['corelaw_intro_style_three_card_four_image']['url'] ) ) : ?>
+                                <?php if( !empty( $settings['restho_intro_style_three_card_four_image']['url'] ) ) : ?>
                                      <div class="img-fluid">
-                                        <?php \Elementor\Icons_Manager::render_icon( $settings['corelaw_intro_style_three_card_four_image'], [ 'aria-hidden' => 'true' ] ); ?>
+                                        <?php \Elementor\Icons_Manager::render_icon( $settings['restho_intro_style_three_card_four_image'], [ 'aria-hidden' => 'true' ] ); ?>
                                     </div>                              
                                 <?php endif ?>
-                                <?php if( !empty( $settings['corelaw_intro_style_three_card_four_title'] ) ) : ?>
-                                    <h3 class="odometer" data-odometer-final="<?php echo esc_html($settings['corelaw_intro_style_three_card_four_title']) ?>">&nbsp;</h3>                          
+                                <?php if( !empty( $settings['restho_intro_style_three_card_four_title'] ) ) : ?>
+                                    <h3 class="odometer" data-odometer-final="<?php echo esc_html($settings['restho_intro_style_three_card_four_title']) ?>">&nbsp;</h3>                          
                                 <?php endif ?>
-                                <?php if( !empty( $settings['corelaw_intro_style_three_card_four_sub_title'] ) ) : ?>
-                                    <h5><?php echo esc_html($settings['corelaw_intro_style_three_card_four_sub_title']) ?></h5>                          
+                                <?php if( !empty( $settings['restho_intro_style_three_card_four_sub_title'] ) ) : ?>
+                                    <h5><?php echo esc_html($settings['restho_intro_style_three_card_four_sub_title']) ?></h5>                          
                                 <?php endif ?>
                             </div>
                         </div>
@@ -905,4 +905,4 @@ class Corelaw_intro_Widget extends Widget_Base
     }
 }
 
-Plugin::instance()->widgets_manager->register(new Corelaw_intro_Widget());
+Plugin::instance()->widgets_manager->register(new restho_intro_Widget());

@@ -1,14 +1,14 @@
 <?php if ( ! defined( 'ABSPATH' ) ) { die; } // Cannot access directly.
 /**
  *
- * Field: spinner
+ * Field: restho
  *
  * @since 1.0.0
  * @version 1.0.0
  *
  */
-if( ! class_exists( 'CSF_Field_spinner' ) ) {
-  class CSF_Field_spinner extends CSF_Fields {
+if( ! class_exists( 'CSF_Field_restho' ) ) {
+  class CSF_Field_restho extends CSF_Fields {
 
     public function __construct( $field, $value = '', $unique = '', $where = '', $parent = '' ) {
       parent::__construct( $field, $value, $unique, $where, $parent );
@@ -35,8 +35,8 @@ if( ! class_exists( 'CSF_Field_spinner' ) ) {
 
     public function enqueue() {
 
-      if( ! wp_script_is( 'jquery-ui-spinner' ) ) {
-        wp_enqueue_script( 'jquery-ui-spinner' );
+      if( ! wp_script_is( 'jquery-ui-restho' ) ) {
+        wp_enqueue_script( 'jquery-ui-restho' );
       }
 
     }

@@ -6,17 +6,17 @@ if (!defined('ABSPATH')) exit; // Exit if accessed directly
 
 use Elementor\core\Schemes;
 
-class Corelaw_Contact_Widget extends Widget_Base
+class restho_Contact_Widget extends Widget_Base
 {
 
     public function get_name()
     {
-        return 'corelaw_contact';
+        return 'restho_contact';
     }
 
     public function get_title()
     {
-        return esc_html__('EG Contact', 'corelaw-core');
+        return esc_html__('EG Contact', 'restho-core');
     }
 
     public function get_icon()
@@ -26,84 +26,84 @@ class Corelaw_Contact_Widget extends Widget_Base
 
     public function get_categories()
     {
-        return ['corelaw_widgets'];
+        return ['restho_widgets'];
     }
 
     protected function register_controls()
     {
         //Content Section
         $this->start_controls_section(
-            'corelaw_contact_content',
+            'restho_contact_content',
             [
-                'label' => esc_html__('General', 'corelaw-core')
+                'label' => esc_html__('General', 'restho-core')
             ]
         );
         $this->add_control(
-			'corelaw_contact_content_style_selection',
+			'restho_contact_content_style_selection',
 			[
-				'label'   => esc_html__('Contact Style', 'corelaw-core'),
+				'label'   => esc_html__('Contact Style', 'restho-core'),
 				'type'    => Controls_Manager::SELECT,
 				'options' => [
-					'style_1' => esc_html__('Style One', 'corelaw-core'),
-					'style_2' => esc_html__('Style Two', 'corelaw-core'),
-					'style_3' => esc_html__('Style Three', 'corelaw-core'),
-					'style_4' => esc_html__('Style Four', 'corelaw-core'),
+					'style_1' => esc_html__('Style One', 'restho-core'),
+					'style_2' => esc_html__('Style Two', 'restho-core'),
+					'style_3' => esc_html__('Style Three', 'restho-core'),
+					'style_4' => esc_html__('Style Four', 'restho-core'),
 				],
 				'default' => 'style_2',
 			]
 		);
         //Heading Title
         $this->add_control(
-            'corelaw_contact_content_heading_title',
+            'restho_contact_content_heading_title',
             [
-                'label' => esc_html__('Heading Title', 'corelaw-core'),
+                'label' => esc_html__('Heading Title', 'restho-core'),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__('This is Heading Title', 'corelaw-core'),
+                'default' => esc_html__('This is Heading Title', 'restho-core'),
                 'label_block' => true,
                 'condition' => [
-                    'corelaw_contact_content_style_selection' => 'style_3',
+                    'restho_contact_content_style_selection' => 'style_3',
                 ],
             ]
         );
         //Description
         $this->add_control(
-            'corelaw_contact_content_description',
+            'restho_contact_content_description',
             [
-                'label' => esc_html__('Description', 'corelaw-core'),
+                'label' => esc_html__('Description', 'restho-core'),
                 'type' => Controls_Manager::TEXTAREA,
-                'default' => esc_html__('This is Description ', 'corelaw-core'),
+                'default' => esc_html__('This is Description ', 'restho-core'),
                 'label_block' => true,
                 'condition' => [
-                    'corelaw_contact_content_style_selection' => 'style_3',
+                    'restho_contact_content_style_selection' => 'style_3',
                 ],
             ]
         );
         // Repeater start
         $repeater = new \Elementor\Repeater();
         $repeater->add_control(
-            'corelaw_contact_content_item_title',
+            'restho_contact_content_item_title',
             [
-                'label' => esc_html__( 'Title', 'corelaw-core' ),
+                'label' => esc_html__( 'Title', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::TEXT,
-                'default' => esc_html__( 'Address List', 'corelaw-core' ),
-                'placeholder' => esc_html__( 'Type your item title here', 'corelaw-core' ),
+                'default' => esc_html__( 'Address List', 'restho-core' ),
+                'placeholder' => esc_html__( 'Type your item title here', 'restho-core' ),
                 'label_block' => true,
             ]
         );
         $repeater->add_control(
-            'corelaw_contact_content_item_description',
+            'restho_contact_content_item_description',
             [
-                'label' => esc_html__( 'Description', 'corelaw-core' ),
+                'label' => esc_html__( 'Description', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::TEXTAREA,
-                'default' => esc_html__( '168/170, Ave 01,Old York Drive Rich Mirpur, Dhaka, Bangladesh', 'corelaw-core' ),
-                'placeholder' => esc_html__( 'Type your item description here', 'corelaw-core' ),
+                'default' => esc_html__( '168/170, Ave 01,Old York Drive Rich Mirpur, Dhaka, Bangladesh', 'restho-core' ),
+                'placeholder' => esc_html__( 'Type your item description here', 'restho-core' ),
                 'label_block' => true,
             ]
         );
         $repeater->add_control(
 			'address_icon',
 			[
-				'label' => esc_html__( 'Icon', 'corelaw-core' ),
+				'label' => esc_html__( 'Icon', 'restho-core' ),
 				'type' => \Elementor\Controls_Manager::ICONS,
 				'default' => [
 					'value' => 'fas fa-circle',
@@ -124,33 +124,33 @@ class Corelaw_Contact_Widget extends Widget_Base
 			]
 		);
         $this->add_control(
-			'corelaw_contact_repeater_list',
+			'restho_contact_repeater_list',
 			[
-				'label' => esc_html__( 'Address List', 'corelaw-core' ),
+				'label' => esc_html__( 'Address List', 'restho-core' ),
 				'type' => \Elementor\Controls_Manager::REPEATER,
 				'fields' => $repeater->get_controls(),
 				'default' => [
 					[
-						'corelaw_contact_address_name' => esc_html__( 'Address List', 'corelaw-core' ),
+						'restho_contact_address_name' => esc_html__( 'Address List', 'restho-core' ),
 					],
 
 				],
-				'title_field' => '{{{ corelaw_contact_content_item_title }}}',
+				'title_field' => '{{{ restho_contact_content_item_title }}}',
 			]
 		);
         // Repeater end
         
         //Image
         $this->add_control(
-            'corelaw_contact_content_image',
+            'restho_contact_content_image',
             [
-                'label' => esc_html__( 'Image', 'corelaw-core' ),
+                'label' => esc_html__( 'Image', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::MEDIA,
                 'default' => [
                     'url' => \Elementor\Utils::get_placeholder_image_src(),
                 ],
                 'condition' => [
-                    'corelaw_contact_content_style_selection' => 'style_1',
+                    'restho_contact_content_style_selection' => 'style_1',
                 ],
             ]
         );
@@ -159,11 +159,11 @@ class Corelaw_Contact_Widget extends Widget_Base
 			\Elementor\Group_Control_Background::get_type(),
 			[
 				'name' => 'background',
-				'label' => esc_html__( 'Background', 'corelaw-core' ),
+				'label' => esc_html__( 'Background', 'restho-core' ),
 				'types' => [ 'classic', 'gradient', 'video' ],
 				'selector' => '{{WRAPPER}} .contact-image-area',
                 'condition' => [
-                    'corelaw_contact_content_style_selection' => 'style_1',
+                    'restho_contact_content_style_selection' => 'style_1',
                 ],
 			]
 		);
@@ -172,28 +172,28 @@ class Corelaw_Contact_Widget extends Widget_Base
 
         //Heading Title Style
         $this->start_controls_section(
-            'corelaw_contact_style_heading_title_section',
+            'restho_contact_style_heading_title_section',
             [
-                'label' => esc_html__('Heading Title', 'corelaw-core'),
+                'label' => esc_html__('Heading Title', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'condition' => [
-                    'corelaw_contact_content_style_selection' => 'style_3',
+                    'restho_contact_content_style_selection' => 'style_3',
                 ],
             ]
         );
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'label'    => esc_html__('Typography', 'corelaw-core'),
-                'name'     => 'corelaw_contact_style_heading_title_typography',
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_contact_style_heading_title_typography',
                 'selector' => '{{WRAPPER}} .contact-text h2',
 
             ]
         );
         $this->add_control(
-            'corelaw_contact_style_heading_title_color',
+            'restho_contact_style_heading_title_color',
             [
-                'label'     => esc_html__('Color', 'corelaw-core'),
+                'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .contact-text h2' => 'color: {{VALUE}};',
@@ -201,9 +201,9 @@ class Corelaw_Contact_Widget extends Widget_Base
             ]
         );
         $this->add_control(
-            'corelaw_contact_style_heading_title_margin',
+            'restho_contact_style_heading_title_margin',
             [
-                'label' => esc_html__( 'Margin', 'corelaw-core' ),
+                'label' => esc_html__( 'Margin', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -215,28 +215,28 @@ class Corelaw_Contact_Widget extends Widget_Base
 
         //Heading Description Style
         $this->start_controls_section(
-            'corelaw_contact_style_description_section',
+            'restho_contact_style_description_section',
             [
-                'label' => esc_html__('Heading Description', 'corelaw-core'),
+                'label' => esc_html__('Heading Description', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'condition' => [
-                    'corelaw_contact_content_style_selection' => 'style_3',
+                    'restho_contact_content_style_selection' => 'style_3',
                 ],
             ]
         );
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'label'    => esc_html__('Typography', 'corelaw-core'),
-                'name'     => 'corelaw_contact_style_description_typography',
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_contact_style_description_typography',
                 'selector' => '{{WRAPPER}} .contact-text p',
 
             ]
         );
         $this->add_control(
-            'corelaw_contact_style_description_color',
+            'restho_contact_style_description_color',
             [
-                'label'     => esc_html__('Color', 'corelaw-core'),
+                'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .contact-text p' => 'color: {{VALUE}};',
@@ -244,9 +244,9 @@ class Corelaw_Contact_Widget extends Widget_Base
             ]
         );
         $this->add_control(
-            'corelaw_contact_style_description_margin',
+            'restho_contact_style_description_margin',
             [
-                'label' => esc_html__( 'Margin', 'corelaw-core' ),
+                'label' => esc_html__( 'Margin', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -258,16 +258,16 @@ class Corelaw_Contact_Widget extends Widget_Base
 
          //Address Area Style
          $this->start_controls_section(
-            'corelaw_contact_style_address_area_section',
+            'restho_contact_style_address_area_section',
             [
-                'label' => esc_html__('Address Area', 'corelaw-core'),
+                'label' => esc_html__('Address Area', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
         $this->add_responsive_control(
-            'corelaw_contact_style_address_area_margin',
+            'restho_contact_style_address_area_margin',
             [
-                'label' => esc_html__( 'Margin', 'corelaw-core' ),
+                'label' => esc_html__( 'Margin', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -277,9 +277,9 @@ class Corelaw_Contact_Widget extends Widget_Base
             ]
         );
         $this->add_responsive_control(
-            'corelaw_contact_style_address_area_padding',
+            'restho_contact_style_address_area_padding',
             [
-                'label' => esc_html__( 'Padding', 'corelaw-core' ),
+                'label' => esc_html__( 'Padding', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -293,17 +293,17 @@ class Corelaw_Contact_Widget extends Widget_Base
 
         //Icon Style
         $this->start_controls_section(
-            'corelaw_contact_style_address_list_section',
+            'restho_contact_style_address_list_section',
             [
-                'label' => esc_html__('Icon', 'corelaw-core'),
+                'label' => esc_html__('Icon', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
        
         $this->add_control(
-            'corelaw_contact_style_address_list_icon_color',
+            'restho_contact_style_address_list_icon_color',
             [
-                'label'     => esc_html__('Color', 'corelaw-core'),
+                'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .icon svg path' => 'fill: {{VALUE}};',
@@ -311,9 +311,9 @@ class Corelaw_Contact_Widget extends Widget_Base
             ]
         );
         $this->add_control(
-            'corelaw_contact_style_address_list_icon_background',
+            'restho_contact_style_address_list_icon_background',
             [
-                'label'     => esc_html__('Background', 'corelaw-core'),
+                'label'     => esc_html__('Background', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .address-list.sibling3 .icon' => 'background: {{VALUE}};',
@@ -323,9 +323,9 @@ class Corelaw_Contact_Widget extends Widget_Base
         );
 
         $this->add_control(
-            'corelaw_contact_style_address_list_icon_hover_background',
+            'restho_contact_style_address_list_icon_hover_background',
             [
-                'label'     => esc_html__('Hover Background', 'corelaw-core'),
+                'label'     => esc_html__('Hover Background', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .address-list.sibling3 li:hover .icon' => 'background: {{VALUE}};',
@@ -335,9 +335,9 @@ class Corelaw_Contact_Widget extends Widget_Base
         );
 
         $this->add_control(
-            'corelaw_contact_style_address_list_icon_size',
+            'restho_contact_style_address_list_icon_size',
             [
-                'label' => esc_html__( 'Icon Size', 'corelaw-core' ),
+                'label' => esc_html__( 'Icon Size', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => [ 'px','rem' ],
                 'range' => [
@@ -365,7 +365,7 @@ class Corelaw_Contact_Widget extends Widget_Base
 			\Elementor\Group_Control_Border::get_type(),
 			[
 				'name' => 'border',
-				'label' => esc_html__( 'Border', 'corelaw-core' ),
+				'label' => esc_html__( 'Border', 'restho-core' ),
 				'selector' => '{{WRAPPER}} .address-list.sibling2 .icon',
                 
 			]
@@ -374,26 +374,26 @@ class Corelaw_Contact_Widget extends Widget_Base
 
         //Icon Title
         $this->start_controls_section(
-            'corelaw_contact_style_address_icon_title_section',
+            'restho_contact_style_address_icon_title_section',
             [
-                'label' => esc_html__('Icon Title', 'corelaw-core'),
+                'label' => esc_html__('Icon Title', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'label'    => esc_html__('Typography', 'corelaw-core'),
-                'name'     => 'corelaw_contact_style_icon_title_typography',
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_contact_style_icon_title_typography',
                 'selector' => '{{WRAPPER}} .address-list.sibling3 .text h4',
 
             ]
         );
 
         $this->add_control(
-            'corelaw_contact_style_icon_title_color',
+            'restho_contact_style_icon_title_color',
             [
-                'label'     => esc_html__('Color', 'corelaw-core'),
+                'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .address-list.sibling3 .text h4' => 'color: {{VALUE}};',
@@ -401,9 +401,9 @@ class Corelaw_Contact_Widget extends Widget_Base
             ]
         );
         $this->add_control(
-            'corelaw_contact_style_icon_title_margin',
+            'restho_contact_style_icon_title_margin',
             [
-                'label' => esc_html__( 'Margin', 'corelaw-core' ),
+                'label' => esc_html__( 'Margin', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -415,25 +415,25 @@ class Corelaw_Contact_Widget extends Widget_Base
 
         //Icon Description Style
         $this->start_controls_section(
-            'corelaw_contact_style_address_icon_description_section',
+            'restho_contact_style_address_icon_description_section',
             [
-                'label' => esc_html__('Icon Description', 'corelaw-core'),
+                'label' => esc_html__('Icon Description', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'label'    => esc_html__('Typography', 'corelaw-core'),
-                'name'     => 'corelaw_contact_style_icon_description_typography',
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_contact_style_icon_description_typography',
                 'selector' => '{{WRAPPER}} .address-list li .text p',
 
             ]
         );
         $this->add_control(
-            'corelaw_contact_style_icon_description_color',
+            'restho_contact_style_icon_description_color',
             [
-                'label'     => esc_html__('Color', 'corelaw-core'),
+                'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .address-list li .text p' => 'color: {{VALUE}};',
@@ -441,9 +441,9 @@ class Corelaw_Contact_Widget extends Widget_Base
             ]
         );
         $this->add_control(
-            'corelaw_contact_style_icon_description_margin',
+            'restho_contact_style_icon_description_margin',
             [
-                'label' => esc_html__( 'Margin', 'corelaw-core' ),
+                'label' => esc_html__( 'Margin', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -461,26 +461,26 @@ class Corelaw_Contact_Widget extends Widget_Base
     {
 
         $settings = $this->get_settings_for_display();
-        $items = $settings['corelaw_contact_repeater_list'];
+        $items = $settings['restho_contact_repeater_list'];
         ?>
                         
 
             <div class="address-area">
-                <?php if($settings['corelaw_contact_content_style_selection']=='style_3' ) :?>
+                <?php if($settings['restho_contact_content_style_selection']=='style_3' ) :?>
                     
                         <div class="contact-text text-lg-start text-center">  
-                             <?php if( !empty( $settings['corelaw_contact_content_heading_title'] ) ) : ?>
-                                <h2><?php echo $settings['corelaw_contact_content_heading_title'] ?></h2>
+                             <?php if( !empty( $settings['restho_contact_content_heading_title'] ) ) : ?>
+                                <h2><?php echo $settings['restho_contact_content_heading_title'] ?></h2>
                             <?php endif ?> 
-                            <?php if( !empty( $settings['corelaw_contact_content_description'] ) ) : ?> 
-                                <p><?php echo $settings['corelaw_contact_content_description'] ?></p>
+                            <?php if( !empty( $settings['restho_contact_content_description'] ) ) : ?> 
+                                <p><?php echo $settings['restho_contact_content_description'] ?></p>
                              <?php endif ?>
                         </div>
                    
                 <?php endif ?>
-                <ul class="address-list <?php  if($settings['corelaw_contact_content_style_selection']=='style_2') echo 'sibling2';
-                else if ($settings['corelaw_contact_content_style_selection']=='style_3') echo 'sibling4';
-                else if ($settings['corelaw_contact_content_style_selection']=='style_4') echo 'sibling3';
+                <ul class="address-list <?php  if($settings['restho_contact_content_style_selection']=='style_2') echo 'sibling2';
+                else if ($settings['restho_contact_content_style_selection']=='style_3') echo 'sibling4';
+                else if ($settings['restho_contact_content_style_selection']=='style_4') echo 'sibling3';
                 else echo ''; ?>">
                     <?php foreach ($items as $item): ?>
                         <li>
@@ -490,20 +490,20 @@ class Corelaw_Contact_Widget extends Widget_Base
                                 </div>
                             <?php endif ?>
                             <div class="text">
-                                <?php if( !empty( $item['corelaw_contact_content_item_title'] ) ) : ?>
-                                    <h4><?php echo esc_html($item['corelaw_contact_content_item_title']) ?></h4>
+                                <?php if( !empty( $item['restho_contact_content_item_title'] ) ) : ?>
+                                    <h4><?php echo esc_html($item['restho_contact_content_item_title']) ?></h4>
                                 <?php endif ?>
-                                <?php if( !empty( $item['corelaw_contact_content_item_description'] ) ) : ?>
-                                    <p><?php echo $item['corelaw_contact_content_item_description'] ?></p>
+                                <?php if( !empty( $item['restho_contact_content_item_description'] ) ) : ?>
+                                    <p><?php echo $item['restho_contact_content_item_description'] ?></p>
                                 <?php endif ?>
                             </div>
                         </li>
                     <?php endforeach ?>
                 </ul>
-                <?php if( !empty( $settings['corelaw_contact_content_style_selection'] ) && ($settings['corelaw_contact_content_style_selection'] == 'style_1') )  : ?>
-                    <?php if( !empty( $settings['corelaw_contact_content_image']['url'] ) ) : ?>
+                <?php if( !empty( $settings['restho_contact_content_style_selection'] ) && ($settings['restho_contact_content_style_selection'] == 'style_1') )  : ?>
+                    <?php if( !empty( $settings['restho_contact_content_image']['url'] ) ) : ?>
                         <div class="contact-image-area">
-                            <img src="<?php echo esc_url( $settings['corelaw_contact_content_image']['url']) ?>" alt="<?php esc_attr__('contact-background-image','corelaw-core') ?>" class="contact-img wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="400ms">
+                            <img src="<?php echo esc_url( $settings['restho_contact_content_image']['url']) ?>" alt="<?php esc_attr__('contact-background-image','restho-core') ?>" class="contact-img wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="400ms">
                         </div>
                     <?php endif ?>
                 <?php endif ?>
@@ -512,4 +512,4 @@ class Corelaw_Contact_Widget extends Widget_Base
     }
 }
 
-Plugin::instance()->widgets_manager->register(new Corelaw_Contact_Widget());
+Plugin::instance()->widgets_manager->register(new restho_Contact_Widget());

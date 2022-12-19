@@ -6,17 +6,17 @@ if (!defined('ABSPATH')) exit; // Exit if accessed directly
 
 use Elementor\core\Schemes;
 
-class Corelaw_Faq_Card_Widget extends Widget_Base
+class restho_Faq_Card_Widget extends Widget_Base
 {
 
     public function get_name()
     {
-        return 'corelaw_faq_card';
+        return 'restho_faq_card';
     }
 
     public function get_title()
     {
-        return esc_html__('EG Faq Card', 'corelaw-core');
+        return esc_html__('EG Faq Card', 'restho-core');
     }
 
     public function get_icon()
@@ -26,7 +26,7 @@ class Corelaw_Faq_Card_Widget extends Widget_Base
 
     public function get_categories()
     {
-        return ['corelaw_widgets'];
+        return ['restho_widgets'];
     }
 
     protected function register_controls()
@@ -34,9 +34,9 @@ class Corelaw_Faq_Card_Widget extends Widget_Base
         
         //Name Section
         $this->start_controls_section(
-            'corelaw_faq_card_card_section',
+            'restho_faq_card_card_section',
             [
-                'label' => esc_html__('Card List', 'corelaw-core')
+                'label' => esc_html__('Card List', 'restho-core')
             ]
         );
 
@@ -44,22 +44,22 @@ class Corelaw_Faq_Card_Widget extends Widget_Base
         $repeater = new \Elementor\Repeater();
         
         $repeater->add_control(
-            'corelaw_faq_card_name_section_title',
+            'restho_faq_card_name_section_title',
             [
-                'label' => esc_html__( 'Name', 'corelaw-core' ),
+                'label' => esc_html__( 'Name', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::TEXT,
-                'default' => esc_html__( 'Default title', 'corelaw-core' ),
-                'placeholder' => esc_html__( 'Type your title here', 'corelaw-core' ),
+                'default' => esc_html__( 'Default title', 'restho-core' ),
+                'placeholder' => esc_html__( 'Type your title here', 'restho-core' ),
                 'label_block' => true,
             ]
         );
 
         $repeater->add_control(
-            'corelaw_faq_card_url_section_link',
+            'restho_faq_card_url_section_link',
             [
-                'label' => esc_html__( 'URL', 'corelaw-core' ),
+                'label' => esc_html__( 'URL', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::URL,
-                'placeholder' => esc_html__( 'https://your-link.com', 'corelaw-core' ),
+                'placeholder' => esc_html__( 'https://your-link.com', 'restho-core' ),
                 'default' => [
                     'url' => '#',
                     'is_external' => true,
@@ -71,17 +71,17 @@ class Corelaw_Faq_Card_Widget extends Widget_Base
         );
         
         $this->add_control(
-            'corelaw_add_list',
+            'restho_add_list',
             [
-                'label' => esc_html__( 'Repeater List', 'corelaw-core' ),
+                'label' => esc_html__( 'Repeater List', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::REPEATER,
                 'fields' => $repeater->get_controls(),
                 'default' => [
                     [
-                        'corelaw_faq_card_name_section_title' => esc_html__( 'Title #1', 'corelaw-core' ),
+                        'restho_faq_card_name_section_title' => esc_html__( 'Title #1', 'restho-core' ),
                     ],
                 ],
-                'title_field' => '{{{ corelaw_faq_card_name_section_title }}}',
+                'title_field' => '{{{ restho_faq_card_name_section_title }}}',
             ]
         );
         
@@ -92,9 +92,9 @@ class Corelaw_Faq_Card_Widget extends Widget_Base
 
         //Name Style
         $this->start_controls_section(
-             'corelaw_faq_card_style_name',
+             'restho_faq_card_style_name',
              [
-                'label' => esc_html__('Name', 'corelaw-core'),
+                'label' => esc_html__('Name', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
              ]
         );
@@ -102,17 +102,17 @@ class Corelaw_Faq_Card_Widget extends Widget_Base
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'label'    => esc_html__('Typography', 'corelaw-core'),
-                'name'     => 'corelaw_faq_card_style_name_typ',
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_faq_card_style_name_typ',
                 'selector' => '{{WRAPPER}} .faq-section .nav-pills button.nav-link',
         
             ]
         );
         
         $this->add_control(
-            'corelaw_faq_card_style_name_color',
+            'restho_faq_card_style_name_color',
             [
-                'label'     => esc_html__('Color', 'corelaw-core'),
+                'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .faq-section .nav-pills button.nav-link' => 'color: {{VALUE}};',
@@ -120,9 +120,9 @@ class Corelaw_Faq_Card_Widget extends Widget_Base
             ]
         );
         $this->add_control(
-            'corelaw_faq_card_style_name_margin',
+            'restho_faq_card_style_name_margin',
             [
-                'label' => esc_html__( 'Margin', 'corelaw-core' ),
+                'label' => esc_html__( 'Margin', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -133,9 +133,9 @@ class Corelaw_Faq_Card_Widget extends Widget_Base
         
       
         $this->add_control(
-            'corelaw_faq_card_style_name_hovr_background',
+            'restho_faq_card_style_name_hovr_background',
             [
-                'label' => esc_html__( 'Hover Background', 'corelaw-core' ),
+                'label' => esc_html__( 'Hover Background', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .faq-section .nav-pills button.nav-link:hover' => 'background: {{VALUE}}',
@@ -148,18 +148,18 @@ class Corelaw_Faq_Card_Widget extends Widget_Base
 
         //card Style
         $this->start_controls_section(
-             'corelaw_faq_card_stylee',
+             'restho_faq_card_stylee',
              [
-                'label' => esc_html__('Card', 'corelaw-core'),
+                'label' => esc_html__('Card', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
              ]
         );
         
       
         $this->add_control(
-            'corelaw_faq_card_stylee_background',
+            'restho_faq_card_stylee_background',
             [
-                'label' => esc_html__( 'Card Background', 'corelaw-core' ),
+                'label' => esc_html__( 'Card Background', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .faq-section .nav-pills' => 'background: {{VALUE}}',
@@ -177,14 +177,14 @@ class Corelaw_Faq_Card_Widget extends Widget_Base
     {
 
         $settings = $this->get_settings_for_display();
-        $items = $settings['corelaw_add_list'];
+        $items = $settings['restho_add_list'];
         ?>
 
         <div class="faq-section">
             <div class="nav flex-column nav-pills gap-4 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay=".2s" id="v-pills-tab" role="tablist" aria-orientation="vertical" style="visibility: visible; animation-duration: 1.5s; animation-delay: 0.2s;">
                 <?php foreach ($items as $item): ?>
-                    <?php if( !empty( $item['corelaw_faq_card_name_section_title'] ) ) :   ?>
-                          <a href="<?php echo esc_url($item['corelaw_faq_card_url_section_link']['url'])?>"><button class="nav-link nav-btn-style mx-auto mb-20" id="v-pills-dashboard-tab"><?php echo esc_html($item['corelaw_faq_card_name_section_title'])?></button></a>           
+                    <?php if( !empty( $item['restho_faq_card_name_section_title'] ) ) :   ?>
+                          <a href="<?php echo esc_url($item['restho_faq_card_url_section_link']['url'])?>"><button class="nav-link nav-btn-style mx-auto mb-20" id="v-pills-dashboard-tab"><?php echo esc_html($item['restho_faq_card_name_section_title'])?></button></a>           
                     <?php endif ?>
                    
 
@@ -197,5 +197,5 @@ class Corelaw_Faq_Card_Widget extends Widget_Base
     }
 }
 
-Plugin::instance()->widgets_manager->register(new Corelaw_Faq_Card_Widget());
+Plugin::instance()->widgets_manager->register(new restho_Faq_Card_Widget());
 

@@ -8,17 +8,17 @@ if (!defined('ABSPATH')) {
 
 use Elementor\Core\Schemes;
 
-class Corelaw_Faq_Widget extends Widget_Base
+class restho_Faq_Widget extends Widget_Base
 {
 
     public function get_name()
     {
-        return 'corelaw_faq';
+        return 'restho_faq';
     }
 
     public function get_title()
     {
-        return esc_html__('EG FAQ', 'corelaw-core');
+        return esc_html__('EG FAQ', 'restho-core');
     }
 
     public function get_icon()
@@ -28,7 +28,7 @@ class Corelaw_Faq_Widget extends Widget_Base
 
     public function get_categories()
     {
-        return ['corelaw_widgets'];
+        return ['restho_widgets'];
     }
 
     protected function register_controls()
@@ -38,9 +38,9 @@ class Corelaw_Faq_Widget extends Widget_Base
         //faq Section
 
         $this->start_controls_section(
-            'corelaw_section_content_faq',
+            'restho_section_content_faq',
             [
-                'label' => esc_html__('FAQ', 'corelaw-core')
+                'label' => esc_html__('FAQ', 'restho-core')
             ]
         );
 
@@ -48,39 +48,39 @@ class Corelaw_Faq_Widget extends Widget_Base
         $repeater = new \Elementor\Repeater();
         // faq title
         $repeater->add_control(
-            'corelaw_section_content_faq_title', [
-                'label' => esc_html__( 'Title', 'corelaw-core' ),
+            'restho_section_content_faq_title', [
+                'label' => esc_html__( 'Title', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::TEXT,
-                'default' => esc_html__( 'Vivamus gravida sapien ut gravida volutpat Sed? ' , 'corelaw-core' ),
+                'default' => esc_html__( 'Vivamus gravida sapien ut gravida volutpat Sed? ' , 'restho-core' ),
                 'label_block' => true,
             ]
         );
 
         // faq Control
         $repeater->add_control(
-            'corelaw_section_content_faq_description',
+            'restho_section_content_faq_description',
             [
-                'label' => esc_html__( 'Description', 'corelaw-core' ),
+                'label' => esc_html__( 'Description', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::TEXTAREA,
                 'rows' => 15,
-                'default' => esc_html__( 'Donec scelerisque ut tellus at congue. Aenean viverra tincidunt velit, nec commodo Donec quis tellus eros. Nunc faucibus leo et pellentesque porta. Integer placerat ur molestie volutpat. Maecenas rutrum urna faucibus auctor hendrerit. Suspendisse si venenatis, venenatis nisi vel, malesuada justo. Vestibulum ultrices diam nibh, sit amlacus ornare a adonil gornara fitana.', 'corelaw-core' ),
-                'placeholder' => esc_html__( 'Type your description here', 'corelaw-core' ),
+                'default' => esc_html__( 'Donec scelerisque ut tellus at congue. Aenean viverra tincidunt velit, nec commodo Donec quis tellus eros. Nunc faucibus leo et pellentesque porta. Integer placerat ur molestie volutpat. Maecenas rutrum urna faucibus auctor hendrerit. Suspendisse si venenatis, venenatis nisi vel, malesuada justo. Vestibulum ultrices diam nibh, sit amlacus ornare a adonil gornara fitana.', 'restho-core' ),
+                'placeholder' => esc_html__( 'Type your description here', 'restho-core' ),
             ]
         );
         
         $this->add_control(
-            'corelaw_faq_section_list',
+            'restho_faq_section_list',
             [
-                'label' => esc_html__( 'FAQ List', 'corelaw-core' ),
+                'label' => esc_html__( 'FAQ List', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::REPEATER,
                 'fields' => $repeater->get_controls(),
                 'default' => [
                     [
-                        'corelaw_section_content_faq_title' => esc_html__( 'Vivamus gravida sapien ut gravida volutpat Sed? ', 'corelaw-core' ),
+                        'restho_section_content_faq_title' => esc_html__( 'Vivamus gravida sapien ut gravida volutpat Sed? ', 'restho-core' ),
                     ],
 
                 ],
-                'title_field' => '{{{ corelaw_section_content_faq_title }}}',
+                'title_field' => '{{{ restho_section_content_faq_title }}}',
             ]
         );
         
@@ -89,9 +89,9 @@ class Corelaw_Faq_Widget extends Widget_Base
         //---------------Style----------------------//
 
         $this->start_controls_section(
-			'corelaw_faq_style_title_typography',
+			'restho_faq_style_title_typography',
 			[
-				'label' => esc_html__( 'Title Typography', 'corelaw-core' ),
+				'label' => esc_html__( 'Title Typography', 'restho-core' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -106,9 +106,9 @@ class Corelaw_Faq_Widget extends Widget_Base
         $this->end_controls_section();
 
         $this->start_controls_section(
-			'corelaw_faq_style_toggle_title_typography',
+			'restho_faq_style_toggle_title_typography',
 			[
-				'label' => esc_html__( 'Description Typography', 'corelaw-core' ),
+				'label' => esc_html__( 'Description Typography', 'restho-core' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -125,28 +125,28 @@ class Corelaw_Faq_Widget extends Widget_Base
         $this->end_controls_section();
 
         $this->start_controls_section(
-			'corelaw_style_selection',
+			'restho_style_selection',
 			[
-				'label' => esc_html__( 'FAQ Style', 'corelaw-core' ),
+				'label' => esc_html__( 'FAQ Style', 'restho-core' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
 
 		$this->start_controls_tabs(
-			'corelaw_style_tabs'
+			'restho_style_tabs'
 		);
 
 		$this->start_controls_tab(
-			'corelaw_style_normal_tab',
+			'restho_style_normal_tab',
 			[
-				'label' => esc_html__( 'Normal', 'corelaw-core' ),
+				'label' => esc_html__( 'Normal', 'restho-core' ),
 			]
 		);
 
 		$this->add_control(
-            'corelaw_title_text_color',
+            'restho_title_text_color',
             [
-                'label' => esc_html__('Title Color', 'corelaw-core'),
+                'label' => esc_html__('Title Color', 'restho-core'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .faq-wrap .accordion-button' => 'color: {{VALUE}};',
@@ -155,9 +155,9 @@ class Corelaw_Faq_Widget extends Widget_Base
         );
         
         $this->add_control(
-            'corelaw_title_background_color',
+            'restho_title_background_color',
             [
-                'label' => esc_html__('Title Background Color', 'corelaw-core'),
+                'label' => esc_html__('Title Background Color', 'restho-core'),
                 'type' => Controls_Manager::COLOR,
                 
                 'selectors' => [
@@ -167,9 +167,9 @@ class Corelaw_Faq_Widget extends Widget_Base
         );
 
         $this->add_control(
-            'corelaw_toggle_title_text_color',
+            'restho_toggle_title_text_color',
             [
-                'label' => esc_html__('Toggle Title Color', 'corelaw-core'),
+                'label' => esc_html__('Toggle Title Color', 'restho-core'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .faq-wrap .faq-body' => 'color: {{VALUE}};',
@@ -177,9 +177,9 @@ class Corelaw_Faq_Widget extends Widget_Base
             ]
         );
         $this->add_control(
-            'corelaw_toggle_title_background_color',
+            'restho_toggle_title_background_color',
             [
-                'label' => esc_html__('Toggle Title Background Color', 'corelaw-core'),
+                'label' => esc_html__('Toggle Title Background Color', 'restho-core'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .faq-wrap .faq-body' => 'background: {{VALUE}};',
@@ -190,16 +190,16 @@ class Corelaw_Faq_Widget extends Widget_Base
 		$this->end_controls_tab();
 
 		$this->start_controls_tab(
-			'corelaw_style_hover_tab',
+			'restho_style_hover_tab',
 			[
-				'label' => esc_html__( 'Hover', 'corelaw-core' ),
+				'label' => esc_html__( 'Hover', 'restho-core' ),
 			]
 		);
 
 		$this->add_control(
-            'corelaw_title_text_hover_color',
+            'restho_title_text_hover_color',
             [
-                'label' => esc_html__('Title Color', 'corelaw-core'),
+                'label' => esc_html__('Title Color', 'restho-core'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .faq-wrap .accordion-button:hover' => 'color: {{VALUE}};',
@@ -207,9 +207,9 @@ class Corelaw_Faq_Widget extends Widget_Base
             ]
         );
         $this->add_control(
-            'corelaw_title_background_hover_color',
+            'restho_title_background_hover_color',
             [
-                'label' => esc_html__('Title Background Color', 'corelaw-core'),
+                'label' => esc_html__('Title Background Color', 'restho-core'),
                 'type' => Controls_Manager::COLOR,
                 
                 'selectors' => [
@@ -219,9 +219,9 @@ class Corelaw_Faq_Widget extends Widget_Base
         );
 
         $this->add_control(
-            'corelaw_toggle_title_text_hover_color',
+            'restho_toggle_title_text_hover_color',
             [
-                'label' => esc_html__('Toggle Title Color', 'corelaw-core'),
+                'label' => esc_html__('Toggle Title Color', 'restho-core'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .faq-wrap .faq-body:hover' => 'color: {{VALUE}};',
@@ -229,9 +229,9 @@ class Corelaw_Faq_Widget extends Widget_Base
             ]
         );
         $this->add_control(
-            'corelaw_toggle_title_background_hover_color',
+            'restho_toggle_title_background_hover_color',
             [
-                'label' => esc_html__('Toggle Title Background Color', 'corelaw-core'),
+                'label' => esc_html__('Toggle Title Background Color', 'restho-core'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .faq-wrap .faq-body:hover' => 'background: {{VALUE}};',
@@ -250,23 +250,23 @@ class Corelaw_Faq_Widget extends Widget_Base
     protected function render()
     {
         $settings = $this->get_settings_for_display();
-        $faqlists = $settings['corelaw_faq_section_list'];
+        $faqlists = $settings['restho_faq_section_list'];
     ?>  
 
         <div class="faq-wrap wow fadeInRight"  data-wow-duration="1.5s" data-wow-delay=".2s">
             <?php if( !empty( $faqlists) ) :   ?>
                 <?php foreach ($faqlists as $key => $item): ?>
                     <div class="faq-item hover-btn"><span></span>
-                        <?php if( !empty( $item['corelaw_section_content_faq_title'] ) ) : ?>
+                        <?php if( !empty( $item['restho_section_content_faq_title'] ) ) : ?>
                             <h5 id="heading<?php echo $key ; ?>" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $key;?>" aria-controls="collapse<?php echo $key;?>">
-                                <?php echo '0'.$key+1 .'. ' ; ?><?php echo esc_html($item['corelaw_section_content_faq_title']) ?>
+                                <?php echo '0'.$key+1 .'. ' ; ?><?php echo esc_html($item['restho_section_content_faq_title']) ?>
                             </h5>                           
                         <?php endif ?>
                         
                         <div id="collapse<?php echo $key ;?>" class="accordion-collapse collapse" aria-labelledby="heading<?php echo $key;?>">
-                            <?php if( !empty( $item['corelaw_section_content_faq_description'] ) ) : ?>
+                            <?php if( !empty( $item['restho_section_content_faq_description'] ) ) : ?>
                                 <div class="faq-body">
-                                    <?php echo esc_html($item['corelaw_section_content_faq_description']) ?>                    
+                                    <?php echo esc_html($item['restho_section_content_faq_description']) ?>                    
                                 </div>                          
                             <?php endif ?>    
                         </div>
@@ -279,6 +279,6 @@ class Corelaw_Faq_Widget extends Widget_Base
     }
 }
 
-Plugin::instance()->widgets_manager->register(new Corelaw_Faq_Widget());
+Plugin::instance()->widgets_manager->register(new restho_Faq_Widget());
 
 

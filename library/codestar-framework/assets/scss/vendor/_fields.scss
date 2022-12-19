@@ -1393,15 +1393,15 @@
 }
 
 /**
- * 03. 26. Field: spinner
+ * 03. 26. Field: restho
  */
-.csf-field-spinner{
+.csf-field-restho{
 
   .csf--spin{
     display: flex;
   }
 
-  .ui-spinner{
+  .ui-restho{
     display: flex;
   }
 
@@ -1417,7 +1417,7 @@
     background-color: #f5f5f5;
   }
 
-  .ui-spinner-button{
+  .ui-restho-button{
     cursor: pointer;
 
     &:hover{
@@ -1436,7 +1436,7 @@
     }
   }
 
-  .ui-spinner-down{
+  .ui-restho-down{
     order: 1;
     border-right: 0;
     border-radius: 4px 0 0 4px;
@@ -1446,7 +1446,7 @@
     }
   }
 
-  .ui-spinner-input{
+  .ui-restho-input{
     order: 2;
   }
 
@@ -1456,7 +1456,7 @@
     user-select: none;
   }
 
-  .ui-spinner-up{
+  .ui-restho-up{
     order: 4;
     border-left: 0;
     border-radius: 0 4px 4px 0;

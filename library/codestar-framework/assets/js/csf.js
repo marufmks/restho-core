@@ -1446,20 +1446,20 @@
   };
 
   //
-  // Field: spinner
+  // Field: restho
   //
-  $.fn.csf_field_spinner = function() {
+  $.fn.csf_field_restho = function() {
     return this.each( function() {
 
       var $this   = $(this),
           $input  = $this.find('input'),
-          $inited = $this.find('.ui-spinner-button');
+          $inited = $this.find('.ui-restho-button');
 
       if( $inited.length ) {
         $inited.remove();
       }
 
-      $input.spinner({
+      $input.restho({
         max: $input.data('max') || 100,
         min: $input.data('min') || 0,
         step: $input.data('step') || 1,
@@ -2996,7 +2996,7 @@
         $this.children('.csf-field-slider').csf_field_slider();
         $this.children('.csf-field-sortable').csf_field_sortable();
         $this.children('.csf-field-sorter').csf_field_sorter();
-        $this.children('.csf-field-spinner').csf_field_spinner();
+        $this.children('.csf-field-restho').csf_field_restho();
         $this.children('.csf-field-switcher').csf_field_switcher();
         $this.children('.csf-field-tabbed').csf_field_tabbed();
         $this.children('.csf-field-typography').csf_field_typography();
@@ -3015,7 +3015,7 @@
         $this.children('.csf-field-dimensions').find('.csf-number').csf_number();
         $this.children('.csf-field-slider').find('.csf-number').csf_number();
         $this.children('.csf-field-spacing').find('.csf-number').csf_number();
-        $this.children('.csf-field-spinner').find('.csf-number').csf_number();
+        $this.children('.csf-field-restho').find('.csf-number').csf_number();
         $this.children('.csf-field-typography').find('.csf-number').csf_number();
 
         // Field chosenjs

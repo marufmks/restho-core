@@ -6,17 +6,17 @@ if (!defined('ABSPATH')) exit; // Exit if accessed directly
 
 use Elementor\core\Schemes;
 
-class Corelaw_Heading_Widget extends Widget_Base
+class restho_Heading_Widget extends Widget_Base
 {
 
     public function get_name()
     {
-        return 'corelaw_heading';
+        return 'restho_heading';
     }
 
     public function get_title()
     {
-        return esc_html__('EG Heading', 'corelaw-core');
+        return esc_html__('EG Heading', 'restho-core');
     }
 
     public function get_icon()
@@ -26,98 +26,98 @@ class Corelaw_Heading_Widget extends Widget_Base
 
     public function get_categories()
     {
-        return ['corelaw_widgets'];
+        return ['restho_widgets'];
     }
 
     protected function register_controls()
     {
         //Content Section
         $this->start_controls_section(
-            'corelaw_heading_content_section',
+            'restho_heading_content_section',
             [
-                'label' => esc_html__('General', 'corelaw-core')
+                'label' => esc_html__('General', 'restho-core')
             ]
         );
         $this->add_control(
-			'corelaw_heading_content_title_style_selection',
+			'restho_heading_content_title_style_selection',
 			[
-				'label'   => esc_html__('Heading Style', 'corelaw-core'),
+				'label'   => esc_html__('Heading Style', 'restho-core'),
 				'type'    => Controls_Manager::SELECT,
 				'options' => [
-					'Style_1' => esc_html__('Style One', 'corelaw-core'),
-					'Style_2' => esc_html__('Style Two', 'corelaw-core'),
-                    'Style_3' => esc_html__('Style Three', 'corelaw-core'),
+					'Style_1' => esc_html__('Style One', 'restho-core'),
+					'Style_2' => esc_html__('Style Two', 'restho-core'),
+                    'Style_3' => esc_html__('Style Three', 'restho-core'),
 				],
 				'default' => 'Style_1',
 			]
 		);
         $this->add_control(
-            'corelaw_heading_content_sub_title',
+            'restho_heading_content_sub_title',
             [
-                'label' => esc_html__('Subtitle', 'corelaw-core'),
+                'label' => esc_html__('Subtitle', 'restho-core'),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__('This is Subtitle', 'corelaw-core'),
+                'default' => esc_html__('This is Subtitle', 'restho-core'),
                 'label_block' => true,
                 'condition' => [
-                    'corelaw_heading_content_title_style_selection' => [ 'Style_2', 'Style_3' ],
+                    'restho_heading_content_title_style_selection' => [ 'Style_2', 'Style_3' ],
                 ],
             ]
         );
         $this->add_control(
-            'corelaw_heading_content_main_title',
+            'restho_heading_content_main_title',
             [
-                'label' => esc_html__('Main Title', 'corelaw-core'),
+                'label' => esc_html__('Main Title', 'restho-core'),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__('This is Main Title', 'corelaw-core'),
+                'default' => esc_html__('This is Main Title', 'restho-core'),
                 'label_block' => true,
             ]
         );
         
         $this->add_control(
-            'corelaw_heading_content_description',
+            'restho_heading_content_description',
             [
-                'label' => esc_html__('Description', 'corelaw-core'),
+                'label' => esc_html__('Description', 'restho-core'),
                 'type' => Controls_Manager::TEXTAREA,
-                'default' => esc_html__('This is Description', 'corelaw-core'),
+                'default' => esc_html__('This is Description', 'restho-core'),
                 'label_block' => true,
                 'condition' => [
-                    'corelaw_heading_content_title_style_selection' => 'Style_1',
+                    'restho_heading_content_title_style_selection' => 'Style_1',
                 ],
             ]
         );
         $this->add_control(
-            'corelaw_heading_content_marquee',
+            'restho_heading_content_marquee',
             [
-                'label' => esc_html__('Marquee Text', 'corelaw-core'),
+                'label' => esc_html__('Marquee Text', 'restho-core'),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__('WELCOME', 'corelaw-core'),
+                'default' => esc_html__('WELCOME', 'restho-core'),
                 'label_block' => true,
                 'condition' => [
-                    'corelaw_heading_content_title_style_selection' => 'Style_3',
+                    'restho_heading_content_title_style_selection' => 'Style_3',
                 ],
             ]
         );
 
         $this->add_responsive_control(
-			'corelaw_heading_content_align',
+			'restho_heading_content_align',
 			[
-				'label' 		=> esc_html__( 'Alignment', 'corelaw-core' ),
+				'label' 		=> esc_html__( 'Alignment', 'restho-core' ),
 				'type' 			=> \Elementor\Controls_Manager::CHOOSE,
 				'options' 		=> [
 					'left' 		=> [
-						'title' => esc_html__( 'Left', 'corelaw-core' ),
+						'title' => esc_html__( 'Left', 'restho-core' ),
 						'icon' 	=> 'eicon-text-align-left',
 					],
 					'center' 	=> [
-						'title' => esc_html__( 'Center', 'corelaw-core' ),
+						'title' => esc_html__( 'Center', 'restho-core' ),
 						'icon' 	=> 'eicon-text-align-center',
 					],
 					'right' 	=> [
-						'title' => esc_html__( 'Right', 'corelaw-core' ),
+						'title' => esc_html__( 'Right', 'restho-core' ),
 						'icon' 	=> 'eicon-text-align-right',
 					],
 					'justify' 	=> [
-						'title' => esc_html__( 'Justified', 'corelaw-core' ),
+						'title' => esc_html__( 'Justified', 'restho-core' ),
 						'icon' 	=> 'eicon-text-align-justify',
 					],
 				],
@@ -140,19 +140,19 @@ class Corelaw_Heading_Widget extends Widget_Base
         
         //Subtitle Style
         $this->start_controls_section(
-            'corelaw_heading_style_sub_title_section',
+            'restho_heading_style_sub_title_section',
             [
-                'label' => esc_html__('Sub Title', 'corelaw-core'),
+                'label' => esc_html__('Sub Title', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'condition' => [
-                    'corelaw_heading_content_title_style_selection' => [ 'Style_2', 'Style_3' ],
+                    'restho_heading_content_title_style_selection' => [ 'Style_2', 'Style_3' ],
                 ],
             ]
         );
         $this->add_control(
-            'corelaw_heading_style_sub_title_color',
+            'restho_heading_style_sub_title_color',
             [
-                'label'     => esc_html__('Color', 'corelaw-core'),
+                'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .section-title2 span' => 'color: {{VALUE}};',
@@ -163,15 +163,15 @@ class Corelaw_Heading_Widget extends Widget_Base
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'label'    => esc_html__('Typography', 'corelaw-core'),
-                'name'     => 'corelaw_heading_style_sub_title_typography',
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_heading_style_sub_title_typography',
                 'selector' => '{{WRAPPER}} .section-title2 span, .section-title-area .section-title span',
             ]
         );
         $this->add_responsive_control(
-            'corelaw_heading_style_sub_title_padding',
+            'restho_heading_style_sub_title_padding',
             [
-                'label'      => __('Padding', 'corelaw-core'),
+                'label'      => __('Padding', 'restho-core'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors'  => [
@@ -183,8 +183,8 @@ class Corelaw_Heading_Widget extends Widget_Base
         $this->add_group_control(
 			\Elementor\Group_Control_Background::get_type(),
 			[
-				'name' => 'corelaw_heading_style_two_three_sub_title_bar_color',
-				'label' => esc_html__( 'Bar Color', 'corelaw-core' ),
+				'name' => 'restho_heading_style_two_three_sub_title_bar_color',
+				'label' => esc_html__( 'Bar Color', 'restho-core' ),
 				'types' => ['classic', 'gradient'],
 				'selector' => '{{WRAPPER}} .section-title2 span::after, .section-title-area .section-title span::before',
 			]
@@ -193,25 +193,25 @@ class Corelaw_Heading_Widget extends Widget_Base
         
         //Main Title Style
         $this->start_controls_section(
-            'corelaw_heading_style_main_title_section',
+            'restho_heading_style_main_title_section',
             [
-                'label' => esc_html__('Main Title', 'corelaw-core'),
+                'label' => esc_html__('Main Title', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
         $this->add_group_control(
 			\Elementor\Group_Control_Background::get_type(),
 			[
-				'name' => 'corelaw_heading_style_main_title_color',
-				'label' => esc_html__( 'Color', 'corelaw-core' ),
+				'name' => 'restho_heading_style_main_title_color',
+				'label' => esc_html__( 'Color', 'restho-core' ),
 				'types' => ['gradient'],
 				'selector' => '{{WRAPPER}} .section-title1 h2 ',
                 'condition' => [
-                    'corelaw_heading_content_title_style_selection' => 'Style_1',
+                    'restho_heading_content_title_style_selection' => 'Style_1',
                 ],
                 'fields_options' => [
                     'background' => [
-                        'label' => esc_html__('Color(Gradient)', 'corelaw-core'),
+                        'label' => esc_html__('Color(Gradient)', 'restho-core'),
                        
                     ],
                    
@@ -219,32 +219,32 @@ class Corelaw_Heading_Widget extends Widget_Base
 			]
 		);
         $this->add_control(
-            'corelaw_heading_style_main_title_color',
+            'restho_heading_style_main_title_color',
             [
-                'label'     => esc_html__('Color', 'corelaw-core'),
+                'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .section-title2 h2' => 'color: {{VALUE}};',
                     '{{WRAPPER}} .section-title-area .section-title h2' => 'color: {{VALUE}};',
                 ],
                 'condition' => [
-                    'corelaw_heading_content_title_style_selection' => [ 'Style_2', 'Style_3' ],
+                    'restho_heading_content_title_style_selection' => [ 'Style_2', 'Style_3' ],
                 ],
             ]
         );
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'label'    => esc_html__('Typography', 'corelaw-core'),
-                'name'     => 'corelaw_heading_style_main_title_typography',
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_heading_style_main_title_typography',
                 'selector' => '{{WRAPPER}} .section-title1 h2, .section-title2 h2, .section-title-area .section-title h2',
 
             ]
         );
         $this->add_responsive_control(
-            'corelaw_heading_style_main_title_padding',
+            'restho_heading_style_main_title_padding',
             [
-                'label'      => __('Padding', 'corelaw-core'),
+                'label'      => __('Padding', 'restho-core'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors'  => [
@@ -258,19 +258,19 @@ class Corelaw_Heading_Widget extends Widget_Base
         
         //Description Style
         $this->start_controls_section(
-            'corelaw_heading_style_description_section',
+            'restho_heading_style_description_section',
             [
-                'label' => esc_html__('Description', 'corelaw-core'),
+                'label' => esc_html__('Description', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'condition' => [
-                    'corelaw_heading_content_title_style_selection' => 'Style_1',
+                    'restho_heading_content_title_style_selection' => 'Style_1',
                 ],
             ]
         );
         $this->add_control(
-            'corelaw_heading_style_description_color',
+            'restho_heading_style_description_color',
             [
-                'label'     => esc_html__('Color', 'corelaw-core'),
+                'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .section-title1 p' => 'color: {{VALUE}};',
@@ -280,16 +280,16 @@ class Corelaw_Heading_Widget extends Widget_Base
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'label'    => esc_html__('Typography', 'corelaw-core'),
-                'name'     => 'corelaw_heading_style_description_typography',
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_heading_style_description_typography',
                 'selector' => '{{WRAPPER}} .section-title1 p',
 
             ]
         );
         $this->add_responsive_control(
-            'corelaw_heading_style_description_padding',
+            'restho_heading_style_description_padding',
             [
-                'label'      => __('Padding', 'corelaw-core'),
+                'label'      => __('Padding', 'restho-core'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors'  => [
@@ -303,19 +303,19 @@ class Corelaw_Heading_Widget extends Widget_Base
 
         // Marquee Style Start
         $this->start_controls_section(
-            'corelaw_heading_style_title_content_marquee_style_section',
+            'restho_heading_style_title_content_marquee_style_section',
             [
-                'label' => esc_html__('Marquee', 'corelaw-core'),
+                'label' => esc_html__('Marquee', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'condition' => [
-                    'corelaw_heading_content_title_style_selection' => 'Style_3',
+                    'restho_heading_content_title_style_selection' => 'Style_3',
                 ],
             ]
         );
         $this->add_control(
-            'corelaw_heading_style_marquee_color',
+            'restho_heading_style_marquee_color',
             [
-                'label'     => esc_html__('Color', 'corelaw-core'),
+                'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .marquee span' => '-webkit-text-fill-color: {{VALUE}};',
@@ -323,9 +323,9 @@ class Corelaw_Heading_Widget extends Widget_Base
             ]
         );
         $this->add_control(
-            'corelaw_heading_style_marquee_stock_color',
+            'restho_heading_style_marquee_stock_color',
             [
-                'label'     => esc_html__('Stock Text Color', 'corelaw-core'),
+                'label'     => esc_html__('Stock Text Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .marquee span' => '-webkit-text-stroke-color: {{VALUE}};',
@@ -335,16 +335,16 @@ class Corelaw_Heading_Widget extends Widget_Base
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'label'    => esc_html__('Typography', 'corelaw-core'),
-                'name'     => 'corelaw_heading_style_marquee_typography',
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_heading_style_marquee_typography',
                 'selector' => '{{WRAPPER}} .marquee span',
 
             ]
         );
         $this->add_responsive_control(
-            'corelaw_heading_style_marquee_padding',
+            'restho_heading_style_marquee_padding',
             [
-                'label'      => __('Padding', 'corelaw-core'),
+                'label'      => __('Padding', 'restho-core'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors'  => [
@@ -362,53 +362,53 @@ class Corelaw_Heading_Widget extends Widget_Base
 
         $settings = $this->get_settings_for_display();
         ?>
-            <?php if( !empty( $settings['corelaw_heading_content_title_style_selection'] ) && ($settings['corelaw_heading_content_title_style_selection'] == 'Style_1') )  : ?>
+            <?php if( !empty( $settings['restho_heading_content_title_style_selection'] ) && ($settings['restho_heading_content_title_style_selection'] == 'Style_1') )  : ?>
 
                 <div class="row justify-content-center">
                     <div class="section-title1">
-                        <?php if( !empty( $settings['corelaw_heading_content_main_title'] ) ) : ?>
-                            <h2><?php echo esc_html($settings['corelaw_heading_content_main_title']) ?></h2>
+                        <?php if( !empty( $settings['restho_heading_content_main_title'] ) ) : ?>
+                            <h2><?php echo esc_html($settings['restho_heading_content_main_title']) ?></h2>
                         <?php endif ?>
-                        <?php if( !empty( $settings['corelaw_heading_content_description'] ) ) : ?>
-                            <p><?php echo $settings['corelaw_heading_content_description'] ?></p>
+                        <?php if( !empty( $settings['restho_heading_content_description'] ) ) : ?>
+                            <p><?php echo $settings['restho_heading_content_description'] ?></p>
                         <?php endif ?>
                     </div>
                 </div>
 
             <?php endif ?>
-            <?php if( !empty( $settings['corelaw_heading_content_title_style_selection'] ) && ($settings['corelaw_heading_content_title_style_selection'] == 'Style_2') )  : ?>
+            <?php if( !empty( $settings['restho_heading_content_title_style_selection'] ) && ($settings['restho_heading_content_title_style_selection'] == 'Style_2') )  : ?>
 
                 <div class="row justify-content-center">
                     <div class="section-title2">
-                        <?php if( !empty( $settings['corelaw_heading_content_sub_title'] ) ) : ?>
-                            <span><?php echo esc_html($settings['corelaw_heading_content_sub_title']) ?></span>
+                        <?php if( !empty( $settings['restho_heading_content_sub_title'] ) ) : ?>
+                            <span><?php echo esc_html($settings['restho_heading_content_sub_title']) ?></span>
                         <?php endif ?>
-                        <?php if( !empty( $settings['corelaw_heading_content_main_title'] ) ) : ?>
-                            <h2><?php echo $settings['corelaw_heading_content_main_title'] ?></h2>
+                        <?php if( !empty( $settings['restho_heading_content_main_title'] ) ) : ?>
+                            <h2><?php echo $settings['restho_heading_content_main_title'] ?></h2>
                         <?php endif ?>
                     </div>
                 </div>
 
             <?php endif ?>
-            <?php if( !empty( $settings['corelaw_heading_content_title_style_selection'] ) && ($settings['corelaw_heading_content_title_style_selection'] == 'Style_3') )  : ?>
+            <?php if( !empty( $settings['restho_heading_content_title_style_selection'] ) && ($settings['restho_heading_content_title_style_selection'] == 'Style_3') )  : ?>
                 
                 <div class="section-title-area sibling2">
                     <div class="marquee">
                         <div>
-                            <?php if( !empty( $settings['corelaw_heading_content_marquee'] ) ) : ?>
-                                <span><?php echo esc_html($settings['corelaw_heading_content_marquee']) ?></span>
+                            <?php if( !empty( $settings['restho_heading_content_marquee'] ) ) : ?>
+                                <span><?php echo esc_html($settings['restho_heading_content_marquee']) ?></span>
                             <?php endif ?>
-                            <?php if( !empty( $settings['corelaw_heading_content_marquee'] ) ) : ?>
-                                <span><?php echo esc_html($settings['corelaw_heading_content_marquee']) ?></span>
+                            <?php if( !empty( $settings['restho_heading_content_marquee'] ) ) : ?>
+                                <span><?php echo esc_html($settings['restho_heading_content_marquee']) ?></span>
                             <?php endif ?>
                         </div>
                     </div>
                     <div class="section-title sibling2">
-                        <?php if( !empty( $settings['corelaw_heading_content_sub_title'] ) ) : ?>
-                            <span><?php echo esc_html($settings['corelaw_heading_content_sub_title']) ?></span>
+                        <?php if( !empty( $settings['restho_heading_content_sub_title'] ) ) : ?>
+                            <span><?php echo esc_html($settings['restho_heading_content_sub_title']) ?></span>
                         <?php endif ?>
-                        <?php if( !empty( $settings['corelaw_heading_content_main_title'] ) ) : ?>
-                            <h2><?php echo $settings['corelaw_heading_content_main_title'] ?></h2>
+                        <?php if( !empty( $settings['restho_heading_content_main_title'] ) ) : ?>
+                            <h2><?php echo $settings['restho_heading_content_main_title'] ?></h2>
                         <?php endif ?>
                     </div>
                 </div>
@@ -418,7 +418,7 @@ class Corelaw_Heading_Widget extends Widget_Base
     }
 }
 
-Plugin::instance()->widgets_manager->register(new Corelaw_Heading_Widget());
+Plugin::instance()->widgets_manager->register(new restho_Heading_Widget());
 
 
 

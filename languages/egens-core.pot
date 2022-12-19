@@ -181,7 +181,7 @@ msgid ""
 msgstr ""
 
 #: elementor/class-elementor-widget-init.php:55
-msgid "corelaw Widgets"
+msgid "restho Widgets"
 msgstr ""
 
 #: elementor/class-elementor-widget-init.php:124
@@ -303,7 +303,7 @@ msgstr ""
 
 #: elementor/widgets/class-about-elementor-widget.php:81
 #: elementor/widgets/class-about-elementor-widget.php:434
-msgid "About Corelaw"
+msgid "About restho"
 msgstr ""
 
 #: elementor/widgets/class-about-elementor-widget.php:90
@@ -1004,7 +1004,7 @@ msgstr ""
 #: elementor/widgets/class-banner-elementor-widget.php:110
 #: elementor/widgets/class-banner-elementor-widget.php:355
 #: elementor/widgets/class-case-study-elementor-widget.php:81
-msgid "Wellcome to Corelaw"
+msgid "Wellcome to restho"
 msgstr ""
 
 #: elementor/widgets/class-banner-elementor-widget.php:122
@@ -1156,7 +1156,7 @@ msgstr ""
 
 #: elementor/widgets/class-banner-elementor-widget.php:420
 #: elementor/widgets/class-banner-elementor-widget.php:590
-msgid "Welcome to Corelaw"
+msgid "Welcome to restho"
 msgstr ""
 
 #: elementor/widgets/class-banner-elementor-widget.php:435
@@ -2147,7 +2147,7 @@ msgid "2018"
 msgstr ""
 
 #: elementor/widgets/class-history-elementor-widget.php:58
-msgid "We Are Started New At Corelaw."
+msgid "We Are Started New At restho."
 msgstr ""
 
 #: elementor/widgets/class-history-elementor-widget.php:68
@@ -2432,7 +2432,7 @@ msgstr ""
 
 #: elementor/widgets/class-testimonial-elementor-widget.php:74
 msgid ""
-"Curabitur magna nisi, egestas quis est in, corelaw pulvinar ipsumai ni\n"
+"Curabitur magna nisi, egestas quis est in, restho pulvinar ipsumai ni\n"
 "                Nunc sitaa amet do odiotadin gone interdum, maximus "
 "dolorbankon quis, ullamcorper lectus. Mauris vitaelai faucibus andijovan "
 "godmar\n"

@@ -1,7 +1,7 @@
 <?php
 /**
  * All Elementor widget init
- * @package corelawlab
+ * @package restholab
  * @since 1.0.0
  */
 
@@ -50,9 +50,9 @@ if ( ! class_exists( 'Egens_Elementor_Widget_Init' ) ) {
 		 * */
 		public function _widget_categories( $elements_manager ) {
 			$elements_manager->add_category(
-				'corelaw_widgets',
+				'restho_widgets',
 				[
-					'title' => esc_html__( 'corelaw Widgets', 'corelaw-core' ),
+					'title' => esc_html__( 'restho Widgets', 'restho-core' ),
 					'icon'  => 'fa fa-plug',
 				]
 			);
@@ -97,7 +97,7 @@ if ( ! class_exists( 'Egens_Elementor_Widget_Init' ) ) {
 
 			);
 			
-			$elementor_widgets = apply_filters( 'corelaw_elementor_widget', $elementor_widgets );
+			$elementor_widgets = apply_filters( 'restho_elementor_widget', $elementor_widgets );
 			
 			if ( is_array( $elementor_widgets ) && ! empty( $elementor_widgets ) ) {
 				
@@ -121,7 +121,7 @@ if ( ! class_exists( 'Egens_Elementor_Widget_Init' ) ) {
 
 			$icons['flaticon'] = [
 				'name' => 'flaticon',
-				'label' => esc_html__( 'Flaticon', 'corelaw-core' ),
+				'label' => esc_html__( 'Flaticon', 'restho-core' ),
 				'url' => EGNS_CORE_FONT .'/flaticon.css', // icon css file
 				'enqueue' => [EGNS_CORE_FONT .'/flaticon.css'], // icon css file
 				'prefix' => 'flaticon-', //prefix ( like fas-fa  )
@@ -133,7 +133,7 @@ if ( ! class_exists( 'Egens_Elementor_Widget_Init' ) ) {
 
 			$icons['boxicons'] = [
 				'name' => 'boxicons',
-				'label' => esc_html__( 'Boxicons', 'corelaw-core' ),
+				'label' => esc_html__( 'Boxicons', 'restho-core' ),
 				'url' => EGNS_CORE_CSS .'/boxicons.min.css', // icon css file
 				'enqueue' => [EGNS_CORE_CSS .'/boxicons.min.css'], // icon css file
 				'prefix' => 'bx-', //prefix ( like fas-fa  )

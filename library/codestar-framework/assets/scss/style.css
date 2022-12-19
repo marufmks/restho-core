@@ -48,7 +48,7 @@
  *     03. 23. Field: slider
  *     03. 24. Field: sortable
  *     03. 25. Field: sorter
- *     03. 26. Field: spinner
+ *     03. 26. Field: restho
  *     03. 27. Field: switcher
  *     03. 28. Field: tabbed
  *     03. 29. Field: text
@@ -2083,17 +2083,17 @@
 }
 
 /**
- * 03. 26. Field: spinner
+ * 03. 26. Field: restho
  */
-.csf-field-spinner .csf--spin {
+.csf-field-restho .csf--spin {
   display: flex;
 }
 
-.csf-field-spinner .ui-spinner {
+.csf-field-restho .ui-restho {
   display: flex;
 }
 
-.csf-field-spinner .ui-button {
+.csf-field-restho .ui-button {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -2105,56 +2105,56 @@
   background-color: #f5f5f5;
 }
 
-.csf-field-spinner .ui-spinner-button {
+.csf-field-restho .ui-restho-button {
   cursor: pointer;
 }
 
-.csf-field-spinner .ui-spinner-button:hover {
+.csf-field-restho .ui-restho-button:hover {
   background-color: #e7e7e7;
 }
 
-.csf-field-spinner .ui-spinner-button:active {
+.csf-field-restho .ui-restho-button:active {
   background-color: #ddd;
 }
 
-.csf-field-spinner .ui-spinner-button:before {
+.csf-field-restho .ui-restho-button:before {
   font-family: "Font Awesome 5 Pro", "Font Awesome 5 Free", "FontAwesome";
   font-weight: 900;
   font-size: 14px;
   line-height: 14px;
 }
 
-.csf-field-spinner .ui-spinner-down {
+.csf-field-restho .ui-restho-down {
   order: 1;
   border-right: 0;
   border-radius: 4px 0 0 4px;
 }
 
-.csf-field-spinner .ui-spinner-down:before {
+.csf-field-restho .ui-restho-down:before {
   content: "\f0d9";
 }
 
-.csf-field-spinner .ui-spinner-input {
+.csf-field-restho .ui-restho-input {
   order: 2;
 }
 
-.csf-field-spinner .csf--unit {
+.csf-field-restho .csf--unit {
   order: 3;
   border-left: 0;
   user-select: none;
 }
 
-.csf-field-spinner .ui-spinner-up {
+.csf-field-restho .ui-restho-up {
   order: 4;
   border-left: 0;
   border-radius: 0 4px 4px 0;
 }
 
-.csf-field-spinner .ui-spinner-up:before {
+.csf-field-restho .ui-restho-up:before {
   content: "\f0da";
 }
 
-.csf-field-spinner input {
+.csf-field-restho input {
   position: relative;
   z-index: 1;
   width: 50px;
@@ -2164,9 +2164,9 @@
   border-radius: 0;
 }
 
-.csf-field-spinner .ui-button-text,
-.csf-field-spinner .ui-button-icon,
-.csf-field-spinner .ui-button-icon-space {
+.csf-field-restho .ui-button-text,
+.csf-field-restho .ui-button-icon,
+.csf-field-restho .ui-button-icon-space {
   display: none;
 }
 
@@ -3112,7 +3112,7 @@
   width: 100%;
 }
 
-.control-section .csf-field-spinner input {
+.control-section .csf-field-restho input {
   width: 50px;
 }
 

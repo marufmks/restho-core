@@ -122,7 +122,7 @@
         <td>spacing</td>
         <td>border</td>
         <td>palette</td>
-        <td>spinner</td>
+        <td>restho</td>
         <td>dimensions</td>
       </tr>
       <tr>

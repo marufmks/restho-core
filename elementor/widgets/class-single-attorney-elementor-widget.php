@@ -6,17 +6,17 @@ if (!defined('ABSPATH')) exit; // Exit if accessed directly
 
 use Elementor\core\Schemes;
 
-class Corelaw_Single_Attorney_Widget extends Widget_Base
+class restho_Single_Attorney_Widget extends Widget_Base
 {
 
     public function get_name()
     {
-        return 'corelaw_single_attorney';
+        return 'restho_single_attorney';
     }
 
     public function get_title()
     {
-        return esc_html__('EG Single Attorney', 'corelaw-core');
+        return esc_html__('EG Single Attorney', 'restho-core');
     }
 
     public function get_icon()
@@ -26,7 +26,7 @@ class Corelaw_Single_Attorney_Widget extends Widget_Base
 
     public function get_categories()
     {
-        return ['corelaw_widgets'];
+        return ['restho_widgets'];
     }
 
     protected function register_controls()
@@ -34,17 +34,17 @@ class Corelaw_Single_Attorney_Widget extends Widget_Base
 
         //general Section
         $this->start_controls_section(
-            'corelaw_single_attorney_general',
+            'restho_single_attorney_general',
             [
-                'label' => esc_html__('General', 'corelaw-core')
+                'label' => esc_html__('General', 'restho-core')
             ]
         );
 
 
         $this->add_control(
-			'corelaw_single_attorney_general_select',
+			'restho_single_attorney_general_select',
 			[
-				'label' 			=> __('Select Attorney', 'corelaw-core'),
+				'label' 			=> __('Select Attorney', 'restho-core'),
 				'type' 				=> \Elementor\Controls_Manager::SELECT2,
 				'label_block' 		=> true,
 				'multiple'    		=> true,
@@ -62,9 +62,9 @@ class Corelaw_Single_Attorney_Widget extends Widget_Base
 
         //Case title Style
         $this->start_controls_section(
-             'corelaw_single_attorney_case_style',
+             'restho_single_attorney_case_style',
              [
-                'label' => esc_html__('Case TItle', 'corelaw-core'),
+                'label' => esc_html__('Case TItle', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
              ]
         );
@@ -72,17 +72,17 @@ class Corelaw_Single_Attorney_Widget extends Widget_Base
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'label'    => esc_html__('Typography', 'corelaw-core'),
-                'name'     => 'corelaw_single_attorney_case_style_typ',
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_single_attorney_case_style_typ',
                 'selector' => '{{WRAPPER}} .title span',
         
             ]
         );
         
         $this->add_control(
-            'corelaw_single_attorney_case_style_color',
+            'restho_single_attorney_case_style_color',
             [
-                'label'     => esc_html__('Color', 'corelaw-core'),
+                'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .title span' => 'color: {{VALUE}};',
@@ -90,9 +90,9 @@ class Corelaw_Single_Attorney_Widget extends Widget_Base
             ]
         );
         $this->add_control(
-            'corelaw_single_attorney_case_style_margin',
+            'restho_single_attorney_case_style_margin',
             [
-                'label' => esc_html__( 'Margin', 'corelaw-core' ),
+                'label' => esc_html__( 'Margin', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -103,9 +103,9 @@ class Corelaw_Single_Attorney_Widget extends Widget_Base
 
       
         $this->add_control(
-            'corelaw_single_attorney_case_style_background',
+            'restho_single_attorney_case_style_background',
             [
-                'label' => esc_html__( 'Background', 'corelaw-core' ),
+                'label' => esc_html__( 'Background', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .title' => 'color: {{VALUE}}',
@@ -119,9 +119,9 @@ class Corelaw_Single_Attorney_Widget extends Widget_Base
 
         //Name Style
         $this->start_controls_section(
-             'corelaw_single_attorney_name_style',
+             'restho_single_attorney_name_style',
              [
-                'label' => esc_html__('Name', 'corelaw-core'),
+                'label' => esc_html__('Name', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
              ]
         );
@@ -129,17 +129,17 @@ class Corelaw_Single_Attorney_Widget extends Widget_Base
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'label'    => esc_html__('Typography', 'corelaw-core'),
-                'name'     => 'corelaw_single_attorney_name_style_typ',
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_single_attorney_name_style_typ',
                 'selector' => '{{WRAPPER}} .title span',
         
             ]
         );
         
         $this->add_control(
-            'corelaw_single_attorney_name_style_color',
+            'restho_single_attorney_name_style_color',
             [
-                'label'     => esc_html__('Color', 'corelaw-core'),
+                'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .title span' => 'color: {{VALUE}};',
@@ -147,9 +147,9 @@ class Corelaw_Single_Attorney_Widget extends Widget_Base
             ]
         );
         $this->add_control(
-            'corelaw_single_attorney_name_style_margin',
+            'restho_single_attorney_name_style_margin',
             [
-                'label' => esc_html__( 'Margin', 'corelaw-core' ),
+                'label' => esc_html__( 'Margin', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -165,9 +165,9 @@ class Corelaw_Single_Attorney_Widget extends Widget_Base
 
         //Designation Style
         $this->start_controls_section(
-             'corelaw_single_attorney_designation_style',
+             'restho_single_attorney_designation_style',
              [
-                'label' => esc_html__('Designation', 'corelaw-core'),
+                'label' => esc_html__('Designation', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
              ]
         );
@@ -176,17 +176,17 @@ class Corelaw_Single_Attorney_Widget extends Widget_Base
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'label'    => esc_html__('Typography', 'corelaw-core'),
-                'name'     => 'corelaw_single_attorney_designation_style_typ',
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_single_attorney_designation_style_typ',
                 'selector' => '{{WRAPPER}} .title span',
         
             ]
         );
         
         $this->add_control(
-            'corelaw_single_attorney_designation_style_color',
+            'restho_single_attorney_designation_style_color',
             [
-                'label'     => esc_html__('Color', 'corelaw-core'),
+                'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .title span' => 'color: {{VALUE}};',
@@ -194,9 +194,9 @@ class Corelaw_Single_Attorney_Widget extends Widget_Base
             ]
         );
         $this->add_control(
-            'corelaw_single_attorney_designation_style_margin',
+            'restho_single_attorney_designation_style_margin',
             [
-                'label' => esc_html__( 'Margin', 'corelaw-core' ),
+                'label' => esc_html__( 'Margin', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -210,18 +210,18 @@ class Corelaw_Single_Attorney_Widget extends Widget_Base
 
         //Card Style
         $this->start_controls_section(
-             'corelaw_single_attorney_card_style',
+             'restho_single_attorney_card_style',
              [
-                'label' => esc_html__('Card', 'corelaw-core'),
+                'label' => esc_html__('Card', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
              ]
         );
         
        
         $this->add_control(
-            'corelaw_single_attorney_card_style_bac_color',
+            'restho_single_attorney_card_style_bac_color',
             [
-                'label' => esc_html__( 'Background', 'corelaw-core' ),
+                'label' => esc_html__( 'Background', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .title' => 'background: {{VALUE}}',
@@ -242,7 +242,7 @@ class Corelaw_Single_Attorney_Widget extends Widget_Base
         $query = new \WP_Query(
 			array(
 				'post_type'      => 'egens-attorneys',
-				'post__in' => $settings['corelaw_single_attorney_general_select'],
+				'post__in' => $settings['restho_single_attorney_general_select'],
 				'post_status'    => 'publish',
                 
 			)
@@ -276,4 +276,4 @@ class Corelaw_Single_Attorney_Widget extends Widget_Base
     }
 }
 
-Plugin::instance()->widgets_manager->register(new Corelaw_Single_Attorney_Widget());
+Plugin::instance()->widgets_manager->register(new restho_Single_Attorney_Widget());

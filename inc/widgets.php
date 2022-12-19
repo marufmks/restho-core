@@ -3,7 +3,7 @@
 function egns_core_widgets_init() {
     
     register_sidebar( array(
-        'name'          => esc_html__( 'Footer 1', 'corelaw' ),
+        'name'          => esc_html__( 'Footer 1', 'restho' ),
         'id'            => 'footer_1',
         'before_widget' => '<div id="%1$s" class="footer-widget %2$s">',
         'after_widget'  => '</div>',
@@ -12,7 +12,7 @@ function egns_core_widgets_init() {
     ) );
     
     register_sidebar( array(
-        'name'          => esc_html__( 'Footer 2', 'corelaw' ),
+        'name'          => esc_html__( 'Footer 2', 'restho' ),
         'id'            => 'footer_2',
         'before_widget' => '<div id="%1$s" class="footer-widget %2$s">',
         'after_widget'  => '</div>',
@@ -21,7 +21,7 @@ function egns_core_widgets_init() {
     ) );
     
     register_sidebar( array(
-        'name'          => esc_html__( 'Footer 3', 'corelaw' ),
+        'name'          => esc_html__( 'Footer 3', 'restho' ),
         'id'            => 'footer_3',
         'before_widget' => '<div id="%1$s" class="footer-widget %2$s">',
         'after_widget'  => '</div>',
@@ -30,7 +30,7 @@ function egns_core_widgets_init() {
     ) );
     
     register_sidebar( array(
-        'name'          => esc_html__( 'Footer 4', 'corelaw' ),
+        'name'          => esc_html__( 'Footer 4', 'restho' ),
         'id'            => 'footer_4',
         'before_widget' => '<div id="%1$s" class="footer-widget %2$s">',
         'after_widget'  => '</div>',

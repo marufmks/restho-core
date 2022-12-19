@@ -8,10 +8,10 @@ function egens_core_import_files() {
 
 	return array(
 		array(
-			'import_file_name'           => esc_html('Corelaw'),
-			'import_file_url'            => 'https://demo.egenslab.com/wp/demo-data/corelaw-wp/contents.xml',
-			'import_widget_file_url'     => 'https://demo.egenslab.com/wp/demo-data/corelaw-wp/widgets.wie',
-			'import_customizer_file_url' => 'https://demo.egenslab.com/wp/demo-data/corelaw-wp/customizer.dat',
+			'import_file_name'           => esc_html('restho'),
+			'import_file_url'            => 'https://demo.egenslab.com/wp/demo-data/restho-wp/contents.xml',
+			'import_widget_file_url'     => 'https://demo.egenslab.com/wp/demo-data/restho-wp/widgets.wie',
+			'import_customizer_file_url' => 'https://demo.egenslab.com/wp/demo-data/restho-wp/customizer.dat',
 			'import_notice'              => __( 'Import process may take 3-5 minutes, please be patient. It\'s really based on your network speed.', 'egens-core' ),
 			'preview_url'                => '#',
 		),
@@ -38,7 +38,7 @@ function egens_core_after_import_setup() {
 	update_option( 'page_on_front', $front_page_id->ID );
 	update_option( 'page_for_posts', $blog_page_id->ID );
 
-    $options_data = file_get_contents( 'https://demo.egenslab.com/wp/demo-data/corelaw-wp/theme_option.txt'); // set file path 'EGNS_CORE_ROOT_URL'
+    $options_data = file_get_contents( 'https://demo.egenslab.com/wp/demo-data/restho-wp/theme_option.txt'); // set file path 'EGNS_CORE_ROOT_URL'
     $out = wp_kses_post_deep( json_decode(  trim( $options_data ) , true ) );
     update_option('egns_theme_options', $out ); // update option with proper option table name 'egns_theme_options'
 

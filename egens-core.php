@@ -15,8 +15,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 
-//Check corelaw active or not
-$theme_name_array   = array( 'Corelaw', 'Corelaw Child' );
+//Check restho active or not
+$theme_name_array   = array( 'restho', 'restho Child' );
 $current_theme      = wp_get_theme();
 $current_theme_name = $current_theme->get( 'Name' );
 define( 'EGNS_THEME_ACTIVE', in_array( $current_theme_name, $theme_name_array ) ? true : false );

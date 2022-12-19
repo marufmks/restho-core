@@ -72,14 +72,14 @@
 <ul>
   <li>Added: Page Templates "default" option for spesific metabox hide/show.</li>
   <li>Added: Post Formats "default" option for spesific metabox hide/show.</li>
-  <li>Added: Only allow number inputs for Spacing, Dimensions, Border, Slider, Spinner, Typography etc.</li>
+  <li>Added: Only allow number inputs for Spacing, Dimensions, Border, Slider, restho, Typography etc.</li>
   <li>Added: ChosenJS custom options support and improved width and css style.</li>
   <li>Fixed: Taxonomy framework jquery triggers. It was not working again after saving. It fixed now.</li>
   <li>Fixed: Code Editor style issue for used inside Group/Repeater.</li>
   <li>Fixed: Sortable field sortby issue.</li>
   <li>Fixed: Options panel show in customizer option.</li>
   <li>Fixed: Media field URL show/hide option issue.</li>
-  <li>Improved: Typography, Color, Spinner, Date, Chosen, Slider fields for used inside Group/Repeater.</li>
+  <li>Improved: Typography, Color, restho, Date, Chosen, Slider fields for used inside Group/Repeater.</li>
   <li>Improved: All fields javascript triggers for more performance.</li>
   <li>Improved: Customizer Framework field dependency feature.</li>
   <li>Improved: Customizer Framework field styles.</li>

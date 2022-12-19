@@ -6,17 +6,17 @@ if (!defined('ABSPATH')) exit; // Exit if accessed directly
 
 use Elementor\core\Schemes;
 
-class Corelaw_Case_Study_Tab_Widget extends Widget_Base
+class restho_Case_Study_Tab_Widget extends Widget_Base
 {
 
     public function get_name()
     {
-        return 'corelaw_case_study_tab';
+        return 'restho_case_study_tab';
     }
 
     public function get_title()
     {
-        return esc_html__('EG Case Study Tab', 'corelaw-core');
+        return esc_html__('EG Case Study Tab', 'restho-core');
     }
 
     public function get_icon()
@@ -26,7 +26,7 @@ class Corelaw_Case_Study_Tab_Widget extends Widget_Base
 
     public function get_categories()
     {
-        return ['corelaw_widgets'];
+        return ['restho_widgets'];
     }
 
     protected function register_controls()
@@ -35,20 +35,20 @@ class Corelaw_Case_Study_Tab_Widget extends Widget_Base
       
         //Content Section
         $this->start_controls_section(
-            'corelaw_case_study_tab_top_title',
+            'restho_case_study_tab_top_title',
             [
-                'label' => esc_html__('General', 'corelaw-core')
+                'label' => esc_html__('General', 'restho-core')
             ]
         );
 
     
         $this->add_control(
-            'corelaw_case_study_tab_top_title_control',
+            'restho_case_study_tab_top_title_control',
             [
-                'label' => esc_html__( 'Heading Title', 'corelaw-core' ),
+                'label' => esc_html__( 'Heading Title', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::TEXT,
-                'default' => esc_html__( 'Default title', 'corelaw-core' ),
-                'placeholder' => esc_html__( 'Type your title here', 'corelaw-core' ),
+                'default' => esc_html__( 'Default title', 'restho-core' ),
+                'placeholder' => esc_html__( 'Type your title here', 'restho-core' ),
                 'label_block' => true,
             ]
         );
@@ -60,9 +60,9 @@ class Corelaw_Case_Study_Tab_Widget extends Widget_Base
 
         //Top title Style
         $this->start_controls_section(
-             'corelaw_case_study_tab_top_title_style',
+             'restho_case_study_tab_top_title_style',
              [
-                'label' => esc_html__('Heading Title', 'corelaw-core'),
+                'label' => esc_html__('Heading Title', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
              ]
         );
@@ -70,17 +70,17 @@ class Corelaw_Case_Study_Tab_Widget extends Widget_Base
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'label'    => esc_html__('Typography', 'corelaw-core'),
-                'name'     => 'corelaw_case_study_tab_top_title_style_typ',
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_case_study_tab_top_title_style_typ',
                 'selector' => '{{WRAPPER}} .section-title2 h2',
         
             ]
         );
         
         $this->add_control(
-            'corelaw_case_study_tab_top_title_style_color',
+            'restho_case_study_tab_top_title_style_color',
             [
-                'label'     => esc_html__('Color', 'corelaw-core'),
+                'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .section-title2 h2' => 'color: {{VALUE}};',
@@ -88,9 +88,9 @@ class Corelaw_Case_Study_Tab_Widget extends Widget_Base
             ]
         );
         $this->add_control(
-            'corelaw_case_study_tab_top_title_style_margin',
+            'restho_case_study_tab_top_title_style_margin',
             [
-                'label' => esc_html__( 'Margin', 'corelaw-core' ),
+                'label' => esc_html__( 'Margin', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -105,9 +105,9 @@ class Corelaw_Case_Study_Tab_Widget extends Widget_Base
 
         //Button Style
         $this->start_controls_section(
-             'corelaw_case_study_tab_top_btn_style',
+             'restho_case_study_tab_top_btn_style',
              [
-                'label' => esc_html__('Button', 'corelaw-core'),
+                'label' => esc_html__('Button', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
              ]
         );
@@ -115,17 +115,17 @@ class Corelaw_Case_Study_Tab_Widget extends Widget_Base
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'label'    => esc_html__('Typography', 'corelaw-core'),
-                'name'     => 'corelaw_case_study_tab_top_btn_style_typ',
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_case_study_tab_top_btn_style_typ',
                 'selector' => '{{WRAPPER}} .casestudy-gallery .button-group button',
         
             ]
         );
         
         $this->add_control(
-            'corelaw_case_study_tab_top_btn_style_color',
+            'restho_case_study_tab_top_btn_style_color',
             [
-                'label'     => esc_html__('Color', 'corelaw-core'),
+                'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .casestudy-gallery .button-group button' => 'color: {{VALUE}};',
@@ -133,9 +133,9 @@ class Corelaw_Case_Study_Tab_Widget extends Widget_Base
             ]
         );
         $this->add_control(
-            'corelaw_case_study_tab_top_btn_style_margin',
+            'restho_case_study_tab_top_btn_style_margin',
             [
-                'label' => esc_html__( 'Margin', 'corelaw-core' ),
+                'label' => esc_html__( 'Margin', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -146,9 +146,9 @@ class Corelaw_Case_Study_Tab_Widget extends Widget_Base
 
         
         $this->add_control(
-            'corelaw_case_study_tab_top_btn_style_border_color',
+            'restho_case_study_tab_top_btn_style_border_color',
             [
-                'label' => esc_html__( 'Border Color', 'corelaw-core' ),
+                'label' => esc_html__( 'Border Color', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .casestudy-gallery .button-group' => 'border-bottom:2px solid {{VALUE}}',
@@ -161,9 +161,9 @@ class Corelaw_Case_Study_Tab_Widget extends Widget_Base
 
         //Category Style
         $this->start_controls_section(
-             'corelaw_case_study_tab_cat_style',
+             'restho_case_study_tab_cat_style',
              [
-                'label' => esc_html__('Category', 'corelaw-core'),
+                'label' => esc_html__('Category', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
              ]
         );
@@ -172,17 +172,17 @@ class Corelaw_Case_Study_Tab_Widget extends Widget_Base
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'label'    => esc_html__('Typography', 'corelaw-core'),
-                'name'     => 'corelaw_case_study_tab_cat_style_typ',
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_case_study_tab_cat_style_typ',
                 'selector' => '{{WRAPPER}} .casestudy-single .text span',
         
             ]
         );
         
         $this->add_control(
-            'corelaw_case_study_tab_cat_style_color',
+            'restho_case_study_tab_cat_style_color',
             [
-                'label'     => esc_html__('Color', 'corelaw-core'),
+                'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .casestudy-single .text span' => 'color: {{VALUE}};',
@@ -190,9 +190,9 @@ class Corelaw_Case_Study_Tab_Widget extends Widget_Base
             ]
         );
         $this->add_control(
-            'corelaw_case_study_tab_cat_style_margin',
+            'restho_case_study_tab_cat_style_margin',
             [
-                'label' => esc_html__( 'Margin', 'corelaw-core' ),
+                'label' => esc_html__( 'Margin', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -203,9 +203,9 @@ class Corelaw_Case_Study_Tab_Widget extends Widget_Base
 
         
         $this->add_control(
-            'corelaw_case_study_tab_cat_style_border_color',
+            'restho_case_study_tab_cat_style_border_color',
             [
-                'label' => esc_html__( 'Border Color', 'corelaw-core' ),
+                'label' => esc_html__( 'Border Color', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .casestudy-single .text span::after' => 'background: {{VALUE}};',
@@ -218,9 +218,9 @@ class Corelaw_Case_Study_Tab_Widget extends Widget_Base
 
         //Title Style
         $this->start_controls_section(
-             'corelaw_case_study_tab_title_style',
+             'restho_case_study_tab_title_style',
              [
-                'label' => esc_html__('Title', 'corelaw-core'),
+                'label' => esc_html__('Title', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
              ]
         );
@@ -228,17 +228,17 @@ class Corelaw_Case_Study_Tab_Widget extends Widget_Base
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'label'    => esc_html__('Typography', 'corelaw-core'),
-                'name'     => 'corelaw_case_study_tab_title_style_typ',
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_case_study_tab_title_style_typ',
                 'selector' => '{{WRAPPER}} .text h3 a',
         
             ]
         );
         
         $this->add_control(
-            'corelaw_case_study_tab_title_style_color',
+            'restho_case_study_tab_title_style_color',
             [
-                'label'     => esc_html__('Color', 'corelaw-core'),
+                'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .text h3 a' => 'color: {{VALUE}};',
@@ -246,9 +246,9 @@ class Corelaw_Case_Study_Tab_Widget extends Widget_Base
             ]
         );
         $this->add_control(
-            'corelaw_case_study_tab_title_style_margin',
+            'restho_case_study_tab_title_style_margin',
             [
-                'label' => esc_html__( 'Margin', 'corelaw-core' ),
+                'label' => esc_html__( 'Margin', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -263,9 +263,9 @@ class Corelaw_Case_Study_Tab_Widget extends Widget_Base
 
         //Icon Style
         $this->start_controls_section(
-             'corelaw_case_study_tab_icon_style',
+             'restho_case_study_tab_icon_style',
              [
-                'label' => esc_html__('Icon', 'corelaw-core'),
+                'label' => esc_html__('Icon', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
              ]
         );
@@ -273,9 +273,9 @@ class Corelaw_Case_Study_Tab_Widget extends Widget_Base
         
      
         $this->add_control(
-            'corelaw_case_study_tab_icon_style_color',
+            'restho_case_study_tab_icon_style_color',
             [
-                'label' => esc_html__( 'Icon Color', 'corelaw-core' ),
+                'label' => esc_html__( 'Icon Color', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .casestudy-single .read-more span.btn-arrow i' => 'color: {{VALUE}}',
@@ -285,9 +285,9 @@ class Corelaw_Case_Study_Tab_Widget extends Widget_Base
 
      
         $this->add_control(
-            'corelaw_case_study_tab_icon_border_color',
+            'restho_case_study_tab_icon_border_color',
             [
-                'label' => esc_html__( 'Border Color', 'corelaw-core' ),
+                'label' => esc_html__( 'Border Color', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .casestudy-single .read-more' => 'border:1px solid {{VALUE}}',
@@ -297,9 +297,9 @@ class Corelaw_Case_Study_Tab_Widget extends Widget_Base
 
         
         $this->add_control(
-            'corelaw_case_study_tab_icon_size',
+            'restho_case_study_tab_icon_size',
             [
-                'label' => esc_html__( 'Icon Size', 'corelaw-core' ),
+                'label' => esc_html__( 'Icon Size', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => [ 'px' ],
                 'range' => [
@@ -324,9 +324,9 @@ class Corelaw_Case_Study_Tab_Widget extends Widget_Base
 
         //Read more Style
         $this->start_controls_section(
-             'corelaw_case_study_tab_read_more_style',
+             'restho_case_study_tab_read_more_style',
              [
-                'label' => esc_html__('Read More Button', 'corelaw-core'),
+                'label' => esc_html__('Read More Button', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
              ]
         );
@@ -334,17 +334,17 @@ class Corelaw_Case_Study_Tab_Widget extends Widget_Base
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'label'    => esc_html__('Typography', 'corelaw-core'),
-                'name'     => 'corelaw_case_study_tab_read_more_style_typ',
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_case_study_tab_read_more_style_typ',
                 'selector' => '{{WRAPPER}} .casestudy-single .read-more span.btn-text',
         
             ]
         );
         
         $this->add_control(
-            'corelaw_case_study_tab_read_more_style_color',
+            'restho_case_study_tab_read_more_style_color',
             [
-                'label'     => esc_html__('Color', 'corelaw-core'),
+                'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .casestudy-single .read-more span.btn-text' => 'color: {{VALUE}};',
@@ -384,15 +384,15 @@ class Corelaw_Case_Study_Tab_Widget extends Widget_Base
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="section-title2 text-center">
-                        <?php if( !empty( $settings['corelaw_case_study_tab_top_title_control'] ) ) :   ?>
-                               <h2><?php echo $settings['corelaw_case_study_tab_top_title_control']?></h2>          
+                        <?php if( !empty( $settings['restho_case_study_tab_top_title_control'] ) ) :   ?>
+                               <h2><?php echo $settings['restho_case_study_tab_top_title_control']?></h2>          
                         <?php endif ?>
                     </div>
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-xl-6 col-lg-8 col-md-10">
                         <div class="button-group filter-button-group d-flex flex-wrap flex-row justify-content-md-between justify-content-center gap-3 mb-60">
-                            <button data-filter="*"><?php echo esc_html__("all","corelaw-core")?></button>
+                            <button data-filter="*"><?php echo esc_html__("all","restho-core")?></button>
                             <?php
                                 $portfolio_menus =  get_terms('egens-case-study-category');
                                 foreach ($portfolio_menus as $portfolio_menu){
@@ -447,4 +447,4 @@ class Corelaw_Case_Study_Tab_Widget extends Widget_Base
     }
 }
 
-Plugin::instance()->widgets_manager->register(new Corelaw_Case_Study_Tab_Widget());
+Plugin::instance()->widgets_manager->register(new restho_Case_Study_Tab_Widget());

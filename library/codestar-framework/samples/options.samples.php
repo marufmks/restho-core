@@ -2287,18 +2287,18 @@ CSF::createSection( $prefix, array(
 ) );
 
 //
-// Field: spinner
+// Field: restho
 //
 CSF::createSection( $prefix, array(
   'parent'      => 'design_fields',
-  'title'       => 'Spinner',
-  'description' => 'Visit documentation for more details on this field: <a href="http://codestarframework.com/documentation/#/fields?id=spinner" target="_blank">Field: spinner</a>',
+  'title'       => 'restho',
+  'description' => 'Visit documentation for more details on this field: <a href="http://codestarframework.com/documentation/#/fields?id=restho" target="_blank">Field: restho</a>',
   'fields'      => array(
 
     array(
-      'id'       => 'opt-spinner-1',
-      'type'     => 'spinner',
-      'title'    => 'Spinner',
+      'id'       => 'opt-restho-1',
+      'type'     => 'restho',
+      'title'    => 'restho',
       'subtitle' => 'max:100 | min:0 | step:1',
       'max'      => 100,
       'min'      => 0,
@@ -2307,9 +2307,9 @@ CSF::createSection( $prefix, array(
     ),
 
     array(
-      'id'       => 'opt-spinner-2',
-      'type'     => 'spinner',
-      'title'    => 'Spinner',
+      'id'       => 'opt-restho-2',
+      'type'     => 'restho',
+      'title'    => 'restho',
       'subtitle' => 'max:200 | min:100 | step:10',
       'max'      => 200,
       'min'      => 100,
@@ -2318,9 +2318,9 @@ CSF::createSection( $prefix, array(
     ),
 
     array(
-      'id'       => 'opt-spinner-3',
-      'type'     => 'spinner',
-      'title'    => 'Spinner',
+      'id'       => 'opt-restho-3',
+      'type'     => 'restho',
+      'title'    => 'restho',
       'subtitle' => 'max:1 | min:0 | step:0.1 | unit:px',
       'max'      => 1,
       'min'      => 0,

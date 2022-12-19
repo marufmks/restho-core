@@ -6,17 +6,17 @@ if (!defined('ABSPATH')) exit; // Exit if accessed directly
 
 use Elementor\core\Schemes;
 
-class corelaw_Blog_Widget extends Widget_Base
+class restho_Blog_Widget extends Widget_Base
 {
 
     public function get_name()
     {
-        return 'corelaw_blog';
+        return 'restho_blog';
     }
 
     public function get_title()
     {
-        return esc_html__('EG Blog', 'corelaw-core');
+        return esc_html__('EG Blog', 'restho-core');
     }
 
     public function get_icon()
@@ -26,7 +26,7 @@ class corelaw_Blog_Widget extends Widget_Base
 
     public function get_categories()
     {
-        return ['corelaw_widgets'];
+        return ['restho_widgets'];
     }
 
     protected function register_controls()
@@ -34,118 +34,118 @@ class corelaw_Blog_Widget extends Widget_Base
 
         //grneral section
         $this->start_controls_section(
-            'corelaw_blog_general_section',
+            'restho_blog_general_section',
             [
-                'label' => esc_html__('General', 'corelaw-core')
+                'label' => esc_html__('General', 'restho-core')
             ]
         );
 
 
         
         $this->add_control(
-            'corelaw_blog_general_section_select',
+            'restho_blog_general_section_select',
             [
-                'label'     => esc_html__( 'Style', 'corelaw-core' ),
+                'label'     => esc_html__( 'Style', 'restho-core' ),
                 'type'      => \Elementor\Controls_Manager::SELECT,
                 'default'   => 'style_one',
                 'options'   => [
-                    'style_one'        => esc_html__( 'Style One', 'corelaw-core' ),
-                    'style_two'        => esc_html__( 'Style Two', 'corelaw-core' ),
-                    'style_three'      => esc_html__( 'Style Three', 'corelaw-core' ),
-					'style_four'      => esc_html__( 'Blog Grid', 'corelaw-core' ),
-					'style_five'      => esc_html__( 'Blog Standard', 'corelaw-core' ),
+                    'style_one'        => esc_html__( 'Style One', 'restho-core' ),
+                    'style_two'        => esc_html__( 'Style Two', 'restho-core' ),
+                    'style_three'      => esc_html__( 'Style Three', 'restho-core' ),
+					'style_four'      => esc_html__( 'Blog Grid', 'restho-core' ),
+					'style_five'      => esc_html__( 'Blog Standard', 'restho-core' ),
                 ],
             ]
         );
         $this->add_control(
-            'corelaw_blog_heading_content_sub_title',
+            'restho_blog_heading_content_sub_title',
             [
-                'label' => esc_html__('Heading Subtitle', 'corelaw-core'),
+                'label' => esc_html__('Heading Subtitle', 'restho-core'),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__('This is Heading Subtitle', 'corelaw-core'),
+                'default' => esc_html__('This is Heading Subtitle', 'restho-core'),
                 'label_block' => true,
                 'condition' => [
-                    'corelaw_blog_general_section_select' => 'style_two',
+                    'restho_blog_general_section_select' => 'style_two',
                 ],
             ]
         );
         $this->add_control(
-            'corelaw_blog_heading_content_title',
+            'restho_blog_heading_content_title',
             [
-                'label' => esc_html__('Heading Title', 'corelaw-core'),
+                'label' => esc_html__('Heading Title', 'restho-core'),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__('This is Heading Title', 'corelaw-core'),
+                'default' => esc_html__('This is Heading Title', 'restho-core'),
                 'label_block' => true,
                 'condition' => [
-                    'corelaw_blog_general_section_select' => 'style_two',
+                    'restho_blog_general_section_select' => 'style_two',
                 ],
                 
             ]
         );
         $this->add_control(
-			'corelaw_blog_pagination_icon',
+			'restho_blog_pagination_icon',
 			[
-				'label' => esc_html__( 'Pagination Icon', 'corelaw-core' ),
+				'label' => esc_html__( 'Pagination Icon', 'restho-core' ),
 				'type' => \Elementor\Controls_Manager::SWITCHER,
-				'label_on' => esc_html__( 'Enable', 'corelaw-core' ),
-				'label_off' => esc_html__( 'Disable', 'corelaw-core' ),
+				'label_on' => esc_html__( 'Enable', 'restho-core' ),
+				'label_off' => esc_html__( 'Disable', 'restho-core' ),
 				'return_value' => 'yes',
 				'default' => 'yes',
                 'condition' => [
-                    'corelaw_blog_general_section_select' => 'style_two',
+                    'restho_blog_general_section_select' => 'style_two',
                 ],
 			]
 		);
 
         $this->add_control(
-			'corelaw_blog_design_three_box_shadow_choose_content',
+			'restho_blog_design_three_box_shadow_choose_content',
 			[
-				'label' => esc_html__( 'Card Shadow ON/OFF', 'corelaw-core' ),
+				'label' => esc_html__( 'Card Shadow ON/OFF', 'restho-core' ),
 				'type' => \Elementor\Controls_Manager::SWITCHER,
-				'shadow_on' => esc_html__( 'Show', 'corelaw-core' ),
-				'shadow_off' => esc_html__( 'Hide', 'corelaw-core' ),
+				'shadow_on' => esc_html__( 'Show', 'restho-core' ),
+				'shadow_off' => esc_html__( 'Hide', 'restho-core' ),
 				'return_value' => 'yes',
 				'default' => 'yes',
                 'condition' => [
-                    'corelaw_blog_general_section_select' => 'style_three',
+                    'restho_blog_general_section_select' => 'style_three',
                 ],
 			]
 		);
 
 
         $this->add_control(
-			'corelaw_blog_posts_per_page',
+			'restho_blog_posts_per_page',
 			[
-				'label'       => esc_html__('Posts Per Page', 'corelaw-core'),
+				'label'       => esc_html__('Posts Per Page', 'restho-core'),
 				'type'        => Controls_Manager::NUMBER,
 				'default'     => 5,
 				'label_block' => false,
 			]
 		);
 		$this->add_control(
-			'corelaw_blog_template_order_by',
+			'restho_blog_template_order_by',
 			[
-				'label'   => esc_html__('Order By', 'corelaw-core'),
+				'label'   => esc_html__('Order By', 'restho-core'),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'ID',
 				'options' => [
-					'ID'         => esc_html__('Post Id', 'corelaw-core'),
-					'author'     => esc_html__('Post Author', 'corelaw-core'),
-					'title'      => esc_html__('Title', 'corelaw-core'),
-					'post_date'  => esc_html__('Date', 'corelaw-core'),
-					'rand'       => esc_html__('Random', 'corelaw-core'),
-					'menu_order' => esc_html__('Menu Order', 'corelaw-core'),
+					'ID'         => esc_html__('Post Id', 'restho-core'),
+					'author'     => esc_html__('Post Author', 'restho-core'),
+					'title'      => esc_html__('Title', 'restho-core'),
+					'post_date'  => esc_html__('Date', 'restho-core'),
+					'rand'       => esc_html__('Random', 'restho-core'),
+					'menu_order' => esc_html__('Menu Order', 'restho-core'),
 				],
 			]
 		);
 		$this->add_control(
-			'corelaw_blog_template_order',
+			'restho_blog_template_order',
 			[
-				'label'   => esc_html__('Order', 'corelaw-core'),
+				'label'   => esc_html__('Order', 'restho-core'),
 				'type'    => Controls_Manager::SELECT,
 				'options' => [
-					'asc'  => esc_html__('Ascending', 'corelaw-core'),
-					'desc' => esc_html__('Descending', 'corelaw-core')
+					'asc'  => esc_html__('Ascending', 'restho-core'),
+					'desc' => esc_html__('Descending', 'restho-core')
 				],
 				'default' => 'desc',
 			]
@@ -157,33 +157,33 @@ class corelaw_Blog_Widget extends Widget_Base
 
         //btn Section
         $this->start_controls_section(
-            'corelaw_blogg_btn',
+            'restho_blogg_btn',
             [
-                'label' => esc_html__('Button', 'corelaw-core'),
+                'label' => esc_html__('Button', 'restho-core'),
                 'condition' => [
-                    'corelaw_blog_general_section_select' => 'style_two',
+                    'restho_blog_general_section_select' => 'style_two',
                 ],
             ]
         );
 
        
         $this->add_control(
-            'corelaw_blogg_btn_title',
+            'restho_blogg_btn_title',
             [
-                'label' => esc_html__( 'Title', 'corelaw-core' ),
+                'label' => esc_html__( 'Title', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::TEXT,
-                'default' => esc_html__( 'Default title', 'corelaw-core' ),
-                'placeholder' => esc_html__( 'Type your title here', 'corelaw-core' ),
+                'default' => esc_html__( 'Default title', 'restho-core' ),
+                'placeholder' => esc_html__( 'Type your title here', 'restho-core' ),
             ]
         );
 
        
         $this->add_control(
-            'corelaw_blogg_btn_link',
+            'restho_blogg_btn_link',
             [
-                'label' => esc_html__( 'Link', 'corelaw-core' ),
+                'label' => esc_html__( 'Link', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::URL,
-                'placeholder' => esc_html__( 'https://your-link.com', 'corelaw-core' ),
+                'placeholder' => esc_html__( 'https://your-link.com', 'restho-core' ),
                 'default' => [
                     'url' => '#',
                     'is_external' => true,
@@ -201,21 +201,21 @@ class corelaw_Blog_Widget extends Widget_Base
 
         //category Style
         $this->start_controls_section(
-             'corelaw_blog_one_category_section',
+             'restho_blog_one_category_section',
              [
-                'label' => esc_html__('Category', 'corelaw-core'),
+                'label' => esc_html__('Category', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'condition' => [
-                    'corelaw_blog_general_section_select' => 'style_one'
+                    'restho_blog_general_section_select' => 'style_one'
                 ]
              ]
         );
 
        
         $this->add_control(
-            'corelaw_blog_one_category_colorr',
+            'restho_blog_one_category_colorr',
             [
-                'label' => esc_html__( 'Color', 'corelaw-core' ),
+                'label' => esc_html__( 'Color', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .l-news-single .news-badge' => 'color: {{VALUE}}',
@@ -226,17 +226,17 @@ class corelaw_Blog_Widget extends Widget_Base
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'label'    => esc_html__('Typography', 'corelaw-core'),
-                'name'     => 'corelaw_blog_one_category_section_typ',
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_blog_one_category_section_typ',
                 'selector' => '{{WRAPPER}} .l-news-single .news-badge',
         
             ]
         );
         
         $this->add_control(
-            'corelaw_blog_one_category_section_color',
+            'restho_blog_one_category_section_color',
             [
-                'label'     => esc_html__('Background', 'corelaw-core'),
+                'label'     => esc_html__('Background', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .l-news-single .news-badge' => 'background: {{VALUE}};',
@@ -244,9 +244,9 @@ class corelaw_Blog_Widget extends Widget_Base
             ]
         );
         $this->add_control(
-            'corelaw_blog_one_category_section_margin',
+            'restho_blog_one_category_section_margin',
             [
-                'label' => esc_html__( 'Margin', 'corelaw-core' ),
+                'label' => esc_html__( 'Margin', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -255,10 +255,10 @@ class corelaw_Blog_Widget extends Widget_Base
             ]
         );
         $this->add_responsive_control(
-			'corelaw_blog_one_category_section_border_radius',
+			'restho_blog_one_category_section_border_radius',
 			[
-			'corelaw_blog_one_category_border_radius',
-				'label'      		=> __('Border Radius', 'corelaw-core'),
+			'restho_blog_one_category_border_radius',
+				'label'      		=> __('Border Radius', 'restho-core'),
 				'type'       		=> Controls_Manager::DIMENSIONS,
 				'size_units' 		=> ['px', '%'],
 				'selectors'  		=> [
@@ -271,9 +271,9 @@ class corelaw_Blog_Widget extends Widget_Base
 
         //Hover start
         $this->add_control(
-            'corelaw_blog_one_category_section_hover_color',
+            'restho_blog_one_category_section_hover_color',
             [
-                'label'     => esc_html__('Hover Color', 'corelaw-core'),
+                'label'     => esc_html__('Hover Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .l-news-single .news-badge:hover' => 'color: {{VALUE}};',
@@ -281,9 +281,9 @@ class corelaw_Blog_Widget extends Widget_Base
             ]
         );
         $this->add_control(
-            'corelaw_blog_one_category_section_hover_background',
+            'restho_blog_one_category_section_hover_background',
             [
-                'label'     => esc_html__('Hover Background', 'corelaw-core'),
+                'label'     => esc_html__('Hover Background', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .l-news-single .news-badge:hover' => 'background: {{VALUE}};',
@@ -295,12 +295,12 @@ class corelaw_Blog_Widget extends Widget_Base
 
         //date Style
         $this->start_controls_section(
-            'corelaw_blog_one_date_section',
+            'restho_blog_one_date_section',
             [
-               'label' => esc_html__('Date', 'corelaw-core'),
+               'label' => esc_html__('Date', 'restho-core'),
                'tab'   => Controls_Manager::TAB_STYLE,
                'condition' => [
-                   'corelaw_blog_general_section_select' => 'style_one'
+                   'restho_blog_general_section_select' => 'style_one'
                ]
             ]
        );
@@ -309,17 +309,17 @@ class corelaw_Blog_Widget extends Widget_Base
        $this->add_group_control(
            Group_Control_Typography::get_type(),
            [
-               'label'    => esc_html__('Typography', 'corelaw-core'),
-               'name'     => 'corelaw_blog_one_date_section_typ',
+               'label'    => esc_html__('Typography', 'restho-core'),
+               'name'     => 'restho_blog_one_date_section_typ',
                'selector' => '{{WRAPPER}} .l-news-single .text .date',
        
            ]
        );
        
        $this->add_control(
-           'corelaw_blog_one_date_section_color',
+           'restho_blog_one_date_section_color',
            [
-               'label'     => esc_html__('Color', 'corelaw-core'),
+               'label'     => esc_html__('Color', 'restho-core'),
                'type'      => Controls_Manager::COLOR,
                'selectors' => [
                    '{{WRAPPER}} .l-news-single .text .date' => 'color: {{VALUE}};',
@@ -327,9 +327,9 @@ class corelaw_Blog_Widget extends Widget_Base
            ]
        );
        $this->add_control(
-           'corelaw_blog_one_date_section_margin',
+           'restho_blog_one_date_section_margin',
            [
-               'label' => esc_html__( 'Margin', 'corelaw-core' ),
+               'label' => esc_html__( 'Margin', 'restho-core' ),
                'type' => \Elementor\Controls_Manager::DIMENSIONS,
                'size_units' => [ 'px', '%', 'em' ],
                'selectors' => [
@@ -342,20 +342,20 @@ class corelaw_Blog_Widget extends Widget_Base
 
         //title Style
         $this->start_controls_section(
-             'corelaw_blog_one_title_section',
+             'restho_blog_one_title_section',
              [
-                'label' => esc_html__('Title', 'corelaw-core'),
+                'label' => esc_html__('Title', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'condition' => [
-                    'corelaw_blog_general_section_select' => 'style_one'
+                    'restho_blog_general_section_select' => 'style_one'
                 ]
              ]
         );
 
         $this->add_control(
-            'corelaw_blog_one_title_section_color',
+            'restho_blog_one_title_section_color',
             [
-                'label'     => esc_html__('Color', 'corelaw-core'),
+                'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .l-news-single .text h4' => 'color: {{VALUE}};',
@@ -363,9 +363,9 @@ class corelaw_Blog_Widget extends Widget_Base
             ]
         );   
         $this->add_control(
-            'corelaw_blog_one_title_section_content_background',
+            'restho_blog_one_title_section_content_background',
             [
-                'label'     => esc_html__('Title Bar', 'corelaw-core'),
+                'label'     => esc_html__('Title Bar', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .l-news-single .text h4::after' => 'background: {{VALUE}};',
@@ -375,16 +375,16 @@ class corelaw_Blog_Widget extends Widget_Base
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'label'    => esc_html__('Typography', 'corelaw-core'),
-                'name'     => 'corelaw_blog_one_title_section_typ',
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_blog_one_title_section_typ',
                 'selector' => '{{WRAPPER}} .l-news-single .text h4',
         
             ]
         );
         $this->add_control(
-            'corelaw_blog_one_title_section_margin',
+            'restho_blog_one_title_section_margin',
             [
-                'label' => esc_html__( 'Margin', 'corelaw-core' ),
+                'label' => esc_html__( 'Margin', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -400,20 +400,20 @@ class corelaw_Blog_Widget extends Widget_Base
         // --------------style two start---------------//
         //Heading Title Style
         $this->start_controls_section(
-            'corelaw_blog_style_heading_title_section',
+            'restho_blog_style_heading_title_section',
             [
-                'label' => esc_html__('Heading Title', 'corelaw-core'),
+                'label' => esc_html__('Heading Title', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'condition' => [
-                    'corelaw_blog_general_section_select' => 'style_two'
+                    'restho_blog_general_section_select' => 'style_two'
                 ]
             ]
         );
 
         $this->add_control(
-            'corelaw_blog_style_heading_title_color',
+            'restho_blog_style_heading_title_color',
             [
-                'label'     => esc_html__('Color', 'corelaw-core'),
+                'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .section-title2.sibling3 h2' => 'color: {{VALUE}};',
@@ -423,17 +423,17 @@ class corelaw_Blog_Widget extends Widget_Base
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'label'    => esc_html__('Typography', 'corelaw-core'),
-                'name'     => 'corelaw_blog_style_heading_title_typography',
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_blog_style_heading_title_typography',
                 'selector' => '{{WRAPPER}} .section-title2 h2',
 
             ]
         );
         
         $this->add_responsive_control(
-            'corelaw_blog_style_heading_title_padding',
+            'restho_blog_style_heading_title_padding',
             [
-                'label'      => __('Padding', 'corelaw-core'),
+                'label'      => __('Padding', 'restho-core'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors'  => [
@@ -445,20 +445,20 @@ class corelaw_Blog_Widget extends Widget_Base
         $this->end_controls_section();
         //Heading Subtitle Style
         $this->start_controls_section(
-            'corelaw_blog_style_heading_sub_title_section',
+            'restho_blog_style_heading_sub_title_section',
             [
-                'label' => esc_html__('Heading Subtitle', 'corelaw-core'),
+                'label' => esc_html__('Heading Subtitle', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'condition' => [
-                    'corelaw_blog_general_section_select' => 'style_two'
+                    'restho_blog_general_section_select' => 'style_two'
                 ]
             ]
         );
 
         $this->add_control(
-            'corelaw_blog_style_heading_sub_title_color',
+            'restho_blog_style_heading_sub_title_color',
             [
-                'label'     => esc_html__('Color', 'corelaw-core'),
+                'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .section-title2.sibling3 span' => 'color: {{VALUE}};',
@@ -468,17 +468,17 @@ class corelaw_Blog_Widget extends Widget_Base
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'label'    => esc_html__('Typography', 'corelaw-core'),
-                'name'     => 'corelaw_blog_style_heading_sub_title_typography',
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_blog_style_heading_sub_title_typography',
                 'selector' => '{{WRAPPER}} .section-title2 span',
 
             ]
         );
         
         $this->add_responsive_control(
-            'corelaw_blog_style_heading_sub_title_padding',
+            'restho_blog_style_heading_sub_title_padding',
             [
-                'label'      => __('Padding', 'corelaw-core'),
+                'label'      => __('Padding', 'restho-core'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors'  => [
@@ -490,8 +490,8 @@ class corelaw_Blog_Widget extends Widget_Base
         $this->add_group_control(
 			\Elementor\Group_Control_Background::get_type(),
 			[
-				'name' => 'corelaw_blog_style_heading_sub_title_bar_color',
-				'label' => esc_html__( 'Bar Color', 'corelaw-core' ),
+				'name' => 'restho_blog_style_heading_sub_title_bar_color',
+				'label' => esc_html__( 'Bar Color', 'restho-core' ),
 				'types' => ['classic', 'gradient'],
 				'selector' => '{{WRAPPER}} .section-title2.sibling3 span::after',
 			]
@@ -500,19 +500,19 @@ class corelaw_Blog_Widget extends Widget_Base
 
         //categort Style
         $this->start_controls_section(
-            'corelaw_blog_two_section_category',
+            'restho_blog_two_section_category',
             [
-               'label' => esc_html__('Category', 'corelaw-core'),
+               'label' => esc_html__('Category', 'restho-core'),
                'tab'   => Controls_Manager::TAB_STYLE,
                'condition' => [
-                   'corelaw_blog_general_section_select' => 'style_two'
+                   'restho_blog_general_section_select' => 'style_two'
                ]
             ]
         );
         $this->add_control(
-            'corelaw_blog_two_section_category_color',
+            'restho_blog_two_section_category_color',
             [
-                'label'     => esc_html__('Color', 'corelaw-core'),
+                'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .blog-single1 .image .blog-badge' => 'color: {{VALUE}};',
@@ -522,17 +522,17 @@ class corelaw_Blog_Widget extends Widget_Base
         $this->add_group_control(
            Group_Control_Typography::get_type(),
            [
-               'label'    => esc_html__('Typography', 'corelaw-core'),
-               'name'     => 'corelaw_blog_two_section_category_typ',
+               'label'    => esc_html__('Typography', 'restho-core'),
+               'name'     => 'restho_blog_two_section_category_typ',
                'selector' => '{{WRAPPER}} .blog-single1 .image .blog-badge',
        
            ]
         );
          
         $this->add_control(
-           'corelaw_blog_two_section_category_background',
+           'restho_blog_two_section_category_background',
            [
-               'label'     => esc_html__('Background', 'corelaw-core'),
+               'label'     => esc_html__('Background', 'restho-core'),
                'type'      => Controls_Manager::COLOR,
                'selectors' => [
                    '{{WRAPPER}} .blog-single1 .image .blog-badge' => 'background: {{VALUE}};',
@@ -540,9 +540,9 @@ class corelaw_Blog_Widget extends Widget_Base
            ]
         );
         $this->add_control(
-           'corelaw_blog_two_section_category_margin',
+           'restho_blog_two_section_category_margin',
            [
-               'label' => esc_html__( 'Margin', 'corelaw-core' ),
+               'label' => esc_html__( 'Margin', 'restho-core' ),
                'type' => \Elementor\Controls_Manager::DIMENSIONS,
                'size_units' => [ 'px', '%', 'em' ],
                'selectors' => [
@@ -553,9 +553,9 @@ class corelaw_Blog_Widget extends Widget_Base
 
         //Hover start
         $this->add_control(
-           'corelaw_blog_two_section_category_hover_color',
+           'restho_blog_two_section_category_hover_color',
            [
-               'label'     => esc_html__('Hover Color', 'corelaw-core'),
+               'label'     => esc_html__('Hover Color', 'restho-core'),
                'type'      => Controls_Manager::COLOR,
                'selectors' => [
                    '{{WRAPPER}} .blog-single1 .image .blog-badge:hover' => 'color: {{VALUE}};',
@@ -563,9 +563,9 @@ class corelaw_Blog_Widget extends Widget_Base
            ]
         );
         $this->add_control(
-           'corelaw_blog_two_section_category_hover_background',
+           'restho_blog_two_section_category_hover_background',
            [
-               'label'     => esc_html__('Hover Background', 'corelaw-core'),
+               'label'     => esc_html__('Hover Background', 'restho-core'),
                'type'      => Controls_Manager::COLOR,
                'selectors' => [
                    '{{WRAPPER}} .blog-single1 .image .blog-badge:hover' => 'background: {{VALUE}};',
@@ -577,20 +577,20 @@ class corelaw_Blog_Widget extends Widget_Base
 
         //date Style
         $this->start_controls_section(
-           'corelaw_blog_two_date_section',
+           'restho_blog_two_date_section',
            [
-              'label' => esc_html__('Date', 'corelaw-core'),
+              'label' => esc_html__('Date', 'restho-core'),
               'tab'   => Controls_Manager::TAB_STYLE,
               'condition' => [
-                  'corelaw_blog_general_section_select' => 'style_two'
+                  'restho_blog_general_section_select' => 'style_two'
               ]
            ]
         );
       
         $this->add_control(
-            'corelaw_blog_two_date_section_color',
+            'restho_blog_two_date_section_color',
             [
-                'label'     => esc_html__('Color', 'corelaw-core'),
+                'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .blog-single1 .post-meta .date' => 'color: {{VALUE}};',
@@ -600,17 +600,17 @@ class corelaw_Blog_Widget extends Widget_Base
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'label'    => esc_html__('Typography', 'corelaw-core'),
-                'name'     => 'corelaw_blog_two_date_section_typ',
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_blog_two_date_section_typ',
                 'selector' => '{{WRAPPER}} .blog-single1 .post-meta .date',
 
         
             ]
         );
         $this->add_control(
-            'corelaw_blog_two_date_section_margin',
+            'restho_blog_two_date_section_margin',
             [
-                'label' => esc_html__( 'Margin', 'corelaw-core' ),
+                'label' => esc_html__( 'Margin', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -622,20 +622,20 @@ class corelaw_Blog_Widget extends Widget_Base
 
         //comments Style
         $this->start_controls_section(
-            'corelaw_blog_two_comments_section',
+            'restho_blog_two_comments_section',
             [
-            'label' => esc_html__('Comments', 'corelaw-core'),
+            'label' => esc_html__('Comments', 'restho-core'),
             'tab'   => Controls_Manager::TAB_STYLE,
             'condition' => [
-                'corelaw_blog_general_section_select' => 'style_two'
+                'restho_blog_general_section_select' => 'style_two'
             ]
             ]
         );
   
         $this->add_control(
-            'corelaw_blog_two_comments_section_color',
+            'restho_blog_two_comments_section_color',
             [
-                'label'     => esc_html__('Color', 'corelaw-core'),
+                'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .blog-single1 .post-meta a' => 'color: {{VALUE}};',
@@ -645,16 +645,16 @@ class corelaw_Blog_Widget extends Widget_Base
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'label'    => esc_html__('Typography', 'corelaw-core'),
-                'name'     => 'corelaw_blog_two_comments_section_typ',
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_blog_two_comments_section_typ',
                 'selector' => '{{WRAPPER}} .blog-single1 .post-meta a',
         
             ]
         );
         $this->add_control(
-            'corelaw_blog_two_comments_section_margin',
+            'restho_blog_two_comments_section_margin',
             [
-                'label' => esc_html__( 'Margin', 'corelaw-core' ),
+                'label' => esc_html__( 'Margin', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -666,19 +666,19 @@ class corelaw_Blog_Widget extends Widget_Base
 
         //title Style
         $this->start_controls_section(
-                'corelaw_blog_two_section_title',
+                'restho_blog_two_section_title',
                 [
-                'label' => esc_html__('Title', 'corelaw-core'),
+                'label' => esc_html__('Title', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'condition' => [
-                    'corelaw_blog_general_section_select' => 'style_two'
+                    'restho_blog_general_section_select' => 'style_two'
                 ]
                 ]
         );
         $this->add_control(
-            'corelaw_blog_two_section_title_color',
+            'restho_blog_two_section_title_color',
             [
-                'label'     => esc_html__('Color', 'corelaw-core'),
+                'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .blog-single1 .text h4 a' => 'color: {{VALUE}};',
@@ -688,16 +688,16 @@ class corelaw_Blog_Widget extends Widget_Base
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'label'    => esc_html__('Typography', 'corelaw-core'),
-                'name'     => 'corelaw_blog_two_section_title_typ',
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_blog_two_section_title_typ',
                 'selector' => '{{WRAPPER}} .blog-single1 .text h4 a',
         
             ]
         );
         $this->add_control(
-            'corelaw_blog_two_section_title_margin',
+            'restho_blog_two_section_title_margin',
             [
-                'label' => esc_html__( 'Margin', 'corelaw-core' ),
+                'label' => esc_html__( 'Margin', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -709,9 +709,9 @@ class corelaw_Blog_Widget extends Widget_Base
         //Hover start
 
         $this->add_control(
-            'corelaw_blog_two_section_title_hover_color',
+            'restho_blog_two_section_title_hover_color',
             [
-                'label' => esc_html__( 'Title Hover Color', 'corelaw-core' ),
+                'label' => esc_html__( 'Title Hover Color', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .single-blog-2 .content h4:hover a' => 'color: {{VALUE}}',
@@ -723,19 +723,19 @@ class corelaw_Blog_Widget extends Widget_Base
 
        //description Style
        $this->start_controls_section(
-            'corelaw_blog_two_section_description',
+            'restho_blog_two_section_description',
             [
-               'label' => esc_html__('Description', 'corelaw-core'),
+               'label' => esc_html__('Description', 'restho-core'),
                'tab'   => Controls_Manager::TAB_STYLE,
                'condition' => [
-                   'corelaw_blog_general_section_select' => 'style_two'
+                   'restho_blog_general_section_select' => 'style_two'
                ]
             ]
         );
         $this->add_control(
-            'corelaw_blog_two_section_description_color',
+            'restho_blog_two_section_description_color',
             [
-                'label'     => esc_html__('Color', 'corelaw-core'),
+                'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .para' => 'color: {{VALUE}};',
@@ -746,8 +746,8 @@ class corelaw_Blog_Widget extends Widget_Base
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'label'    => esc_html__('Typography', 'corelaw-core'),
-                'name'     => 'corelaw_blog_two_section_description_typ',
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_blog_two_section_description_typ',
                 'selector' => '{{WRAPPER}} .para',
         
             ]
@@ -755,9 +755,9 @@ class corelaw_Blog_Widget extends Widget_Base
        
        
         $this->add_control(
-            'corelaw_blog_two_section_description_margin',
+            'restho_blog_two_section_description_margin',
             [
-                'label' => esc_html__( 'Margin', 'corelaw-core' ),
+                'label' => esc_html__( 'Margin', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -770,12 +770,12 @@ class corelaw_Blog_Widget extends Widget_Base
 
         //Btn Style
         $this->start_controls_section(
-             'corelaw_blog_two_section_btn_section',
+             'restho_blog_two_section_btn_section',
              [
-                'label' => esc_html__('Button', 'corelaw-core'),
+                'label' => esc_html__('Button', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'condition' => [
-                    'corelaw_blog_general_section_select' => 'style_two'
+                    'restho_blog_general_section_select' => 'style_two'
                 ]
              ]
         );
@@ -783,9 +783,9 @@ class corelaw_Blog_Widget extends Widget_Base
         
        
         $this->add_control(
-            'corelaw_blog_two_section_btn_section_color',
+            'restho_blog_two_section_btn_section_color',
             [
-                'label' => esc_html__( 'Button Color', 'corelaw-core' ),
+                'label' => esc_html__( 'Button Color', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .btn--outline.sibling3' => 'color: {{VALUE}}',
@@ -795,9 +795,9 @@ class corelaw_Blog_Widget extends Widget_Base
 
      
         $this->add_control(
-            'corelaw_blog_two_section_btn_section_color_border',
+            'restho_blog_two_section_btn_section_color_border',
             [
-                'label' => esc_html__( 'Button Border Color', 'corelaw-core' ),
+                'label' => esc_html__( 'Button Border Color', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .btn--outline.sibling3' => 'border:1px solid {{VALUE}}',
@@ -807,9 +807,9 @@ class corelaw_Blog_Widget extends Widget_Base
 
        
         $this->add_control(
-            'corelaw_blog_two_section_btn_section_background_color',
+            'restho_blog_two_section_btn_section_background_color',
             [
-                'label' => esc_html__( 'Background Color', 'corelaw-core' ),
+                'label' => esc_html__( 'Background Color', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .btn--outline' => 'background: {{VALUE}}',
@@ -818,9 +818,9 @@ class corelaw_Blog_Widget extends Widget_Base
         );
 
         $this->add_control(
-            'corelaw_blog_two_section_btn_section_background_color_hover',
+            'restho_blog_two_section_btn_section_background_color_hover',
             [
-                'label' => esc_html__( 'Hover Background Color', 'corelaw-core' ),
+                'label' => esc_html__( 'Hover Background Color', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .btn--outline.sibling3:hover::after' => 'background: {{VALUE}}',
@@ -837,20 +837,20 @@ class corelaw_Blog_Widget extends Widget_Base
 
         //author Style
         $this->start_controls_section(
-             'corelaw_blog_three_author_section',
+             'restho_blog_three_author_section',
              [
-                'label' => esc_html__('Author', 'corelaw-core'),
+                'label' => esc_html__('Author', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'condition' => [
-                    'corelaw_blog_general_section_select' => 'style_three'
+                    'restho_blog_general_section_select' => 'style_three'
                 ]
              ]
         );
 
         $this->add_control(
-            'corelaw_blog_three_author_section_color',
+            'restho_blog_three_author_section_color',
             [
-                'label'     => esc_html__('Color', 'corelaw-core'),
+                'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .blog-single2 .image .blog-badge' => 'color: {{VALUE}};',
@@ -860,17 +860,17 @@ class corelaw_Blog_Widget extends Widget_Base
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'label'    => esc_html__('Typography', 'corelaw-core'),
-                'name'     => 'corelaw_blog_three_author_section_typ',
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_blog_three_author_section_typ',
                 'selector' => '{{WRAPPER}} .blog-single2 .image .blog-badge',
         
             ]
         );
 
         $this->add_control(
-            'corelaw_blog_three_author_section_background',
+            'restho_blog_three_author_section_background',
             [
-                'label'     => esc_html__('Background', 'corelaw-core'),
+                'label'     => esc_html__('Background', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .blog-single2 .image .blog-badge' => 'background: {{VALUE}};',
@@ -878,9 +878,9 @@ class corelaw_Blog_Widget extends Widget_Base
             ]
         );
         $this->add_control(
-            'corelaw_blog_three_author_section_margin',
+            'restho_blog_three_author_section_margin',
             [
-                'label' => esc_html__( 'Margin', 'corelaw-core' ),
+                'label' => esc_html__( 'Margin', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -889,10 +889,10 @@ class corelaw_Blog_Widget extends Widget_Base
             ]
         );
         $this->add_responsive_control(
-			'corelaw_blog_three_author_section_border_radius',
+			'restho_blog_three_author_section_border_radius',
 			[
-			'corelaw_blog_three_author_border_radius',
-				'label'      		=> __('Border Radius', 'corelaw-core'),
+			'restho_blog_three_author_border_radius',
+				'label'      		=> __('Border Radius', 'restho-core'),
 				'type'       		=> Controls_Manager::DIMENSIONS,
 				'size_units' 		=> ['px', '%'],
 				'selectors'  		=> [
@@ -907,19 +907,19 @@ class corelaw_Blog_Widget extends Widget_Base
 
         //category Style
         $this->start_controls_section(
-            'corelaw_blog_three_category_section',
+            'restho_blog_three_category_section',
             [
-               'label' => esc_html__('Categoryc& Date', 'corelaw-core'),
+               'label' => esc_html__('Categoryc& Date', 'restho-core'),
                'tab'   => Controls_Manager::TAB_STYLE,
                'condition' => [
-                   'corelaw_blog_general_section_select' => 'style_three'
+                   'restho_blog_general_section_select' => 'style_three'
                ]
             ]
         );
         $this->add_control(
-            'corelaw_blog_three_category_section_color',
+            'restho_blog_three_category_section_color',
             [
-                'label'     => esc_html__('Color', 'corelaw-core'),
+                'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .blog-single2 .content .post-meta-list li' => 'color: {{VALUE}};',
@@ -930,16 +930,16 @@ class corelaw_Blog_Widget extends Widget_Base
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'label'    => esc_html__('Typography', 'corelaw-core'),
-                'name'     => 'corelaw_blog_three_category_section_typ',
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_blog_three_category_section_typ',
                 'selector' => '{{WRAPPER}} .blog-single2 .content .post-meta-list li',
         
             ]
         );
         $this->add_control(
-            'corelaw_blog_three_category_section_margin',
+            'restho_blog_three_category_section_margin',
             [
-                'label' => esc_html__( 'Margin', 'corelaw-core' ),
+                'label' => esc_html__( 'Margin', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -950,9 +950,9 @@ class corelaw_Blog_Widget extends Widget_Base
         //Category Bar
 
         $this->add_control(
-            'corelaw_blog_three_category_section_content_background',
+            'restho_blog_three_category_section_content_background',
             [
-                'label'     => esc_html__('Category Bar', 'corelaw-core'),
+                'label'     => esc_html__('Category Bar', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .blog-single2 .content .post-meta-list li::after' => 'background: {{VALUE}};',
@@ -963,20 +963,20 @@ class corelaw_Blog_Widget extends Widget_Base
 
             //Title 
         $this->start_controls_section(
-            'corelaw_blog_three_title_section',
+            'restho_blog_three_title_section',
             [
-                'label' => esc_html__('Title', 'corelaw-core'),
+                'label' => esc_html__('Title', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'condition' => [
-                    'corelaw_blog_general_section_select' => 'style_three'
+                    'restho_blog_general_section_select' => 'style_three'
                 ]
             ]
         );
     
         $this->add_control(
-            'corelaw_blog_three_title_section_color',
+            'restho_blog_three_title_section_color',
             [
-                'label'     => esc_html__('Color', 'corelaw-core'),
+                'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .blog-single2 .content h5 a' => 'color: {{VALUE}};',
@@ -986,16 +986,16 @@ class corelaw_Blog_Widget extends Widget_Base
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'label'    => esc_html__('Typography', 'corelaw-core'),
-                'name'     => 'corelaw_blog_three_title_section_typ',
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_blog_three_title_section_typ',
                 'selector' => '{{WRAPPER}} .blog-single2 .content h5 a',
         
             ]
         );
         $this->add_control(
-            'corelaw_blog_three_title_section_margin',
+            'restho_blog_three_title_section_margin',
             [
-                'label' => esc_html__( 'Margin', 'corelaw-core' ),
+                'label' => esc_html__( 'Margin', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -1007,9 +1007,9 @@ class corelaw_Blog_Widget extends Widget_Base
         //Hover start
 
         $this->add_control(
-            'corelaw_blog_three_title_section_hover_color',
+            'restho_blog_three_title_section_hover_color',
             [
-                'label'     => esc_html__('Hover Color', 'corelaw-core'),
+                'label'     => esc_html__('Hover Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .blog-single2 .content h5:hover a' => 'color: {{VALUE}};',
@@ -1022,20 +1022,20 @@ class corelaw_Blog_Widget extends Widget_Base
         //description Style
 
             $this->start_controls_section(
-                'corelaw_blog_three_section_description',
+                'restho_blog_three_section_description',
                 [
-                'label' => esc_html__('Description', 'corelaw-core'),
+                'label' => esc_html__('Description', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'condition' => [
-                    'corelaw_blog_general_section_select' => 'style_three'
+                    'restho_blog_general_section_select' => 'style_three'
                 ]
                 ]
             );
         
         $this->add_control(
-            'corelaw_blog_three_section_description_color',
+            'restho_blog_three_section_description_color',
             [
-                'label'     => esc_html__('Color', 'corelaw-core'),
+                'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .blog-single2 .content p' => 'color: {{VALUE}};',
@@ -1045,16 +1045,16 @@ class corelaw_Blog_Widget extends Widget_Base
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'label'    => esc_html__('Typography', 'corelaw-core'),
-                'name'     => 'corelaw_blog_three_section_description_typ',
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_blog_three_section_description_typ',
                 'selector' => '{{WRAPPER}} .blog-single2 .content p',
         
             ]
         );
         $this->add_control(
-            'corelaw_blog_three_section_description_margin',
+            'restho_blog_three_section_description_margin',
             [
-                'label' => esc_html__( 'Margin', 'corelaw-core' ),
+                'label' => esc_html__( 'Margin', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -1069,29 +1069,29 @@ class corelaw_Blog_Widget extends Widget_Base
 
         //Latest Article Area Style
         $this->start_controls_section(
-            'corelaw_blog_two_latest_article',
+            'restho_blog_two_latest_article',
             [
-               'label' => esc_html__('Latest Article', 'corelaw-core'),
+               'label' => esc_html__('Latest Article', 'restho-core'),
                'tab'   => Controls_Manager::TAB_STYLE,
                'condition' => [
-                   'corelaw_blog_general_section_select' => 'style_two'
+                   'restho_blog_general_section_select' => 'style_two'
                ]
             ]
        );
        $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'label'    => esc_html__('Title Typography', 'corelaw-core'),
-                'name'     => 'corelaw_blog_two_latest_article_title_typ',
+                'label'    => esc_html__('Title Typography', 'restho-core'),
+                'name'     => 'restho_blog_two_latest_article_title_typ',
                 'selector' => '{{WRAPPER}} .recent-news li .text h6 a',
         
             ]
         );
         
         $this->add_control(
-            'corelaw_blog_two_latest_article_title_color',
+            'restho_blog_two_latest_article_title_color',
             [
-                'label'     => esc_html__('Title Color', 'corelaw-core'),
+                'label'     => esc_html__('Title Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .recent-news li .text h6 a' => 'color: {{VALUE}};',
@@ -1099,9 +1099,9 @@ class corelaw_Blog_Widget extends Widget_Base
             ]
         );
         $this->add_control(
-            'corelaw_blog_two_latest_article_title_margin',
+            'restho_blog_two_latest_article_title_margin',
             [
-                'label' => esc_html__( 'Title Margin', 'corelaw-core' ),
+                'label' => esc_html__( 'Title Margin', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -1113,9 +1113,9 @@ class corelaw_Blog_Widget extends Widget_Base
         //Hover start
 
         $this->add_control(
-            'corelaw_blog_two_latest_article_title_hover_color',
+            'restho_blog_two_latest_article_title_hover_color',
             [
-                'label' => esc_html__( 'Title Hover Color', 'corelaw-core' ),
+                'label' => esc_html__( 'Title Hover Color', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}}  .recent-news li .text h6 a:hover' => 'color: {{VALUE}}',
@@ -1128,8 +1128,8 @@ class corelaw_Blog_Widget extends Widget_Base
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'label'    => esc_html__('Date Typography', 'corelaw-core'),
-                'name'     => 'corelaw_blog_two_latest_article_date_section_typ',
+                'label'    => esc_html__('Date Typography', 'restho-core'),
+                'name'     => 'restho_blog_two_latest_article_date_section_typ',
                 'selector' => '{{WRAPPER}} .recent-news li .text .post-meta .date',
   
         
@@ -1137,9 +1137,9 @@ class corelaw_Blog_Widget extends Widget_Base
         );
         
         $this->add_control(
-            'corelaw_blog_two_latest_article_date_section_color',
+            'restho_blog_two_latest_article_date_section_color',
             [
-                'label'     => esc_html__('Date Color', 'corelaw-core'),
+                'label'     => esc_html__('Date Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .recent-news li .text .post-meta .date' => 'color: {{VALUE}};',
@@ -1147,9 +1147,9 @@ class corelaw_Blog_Widget extends Widget_Base
             ]
         );
         $this->add_control(
-            'corelaw_blog_two_latest_article_date_section_margin',
+            'restho_blog_two_latest_article_date_section_margin',
             [
-                'label' => esc_html__( 'Date Margin', 'corelaw-core' ),
+                'label' => esc_html__( 'Date Margin', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -1160,17 +1160,17 @@ class corelaw_Blog_Widget extends Widget_Base
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'label'    => esc_html__('Comments Typography', 'corelaw-core'),
-                'name'     => 'corelaw_blog_two_latest_article_comments_section_typ',
+                'label'    => esc_html__('Comments Typography', 'restho-core'),
+                'name'     => 'restho_blog_two_latest_article_comments_section_typ',
                 'selector' => '{{WRAPPER}} .recent-news li .text .post-meta a',
         
             ]
         );
    
         $this->add_control(
-            'corelaw_blog_two_latest_article_comments_section_color',
+            'restho_blog_two_latest_article_comments_section_color',
             [
-                'label'     => esc_html__('Comments Color', 'corelaw-core'),
+                'label'     => esc_html__('Comments Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .recent-news li .text .post-meta a' => 'color: {{VALUE}};',
@@ -1178,9 +1178,9 @@ class corelaw_Blog_Widget extends Widget_Base
             ]
         );
         $this->add_control(
-            'corelaw_blog_two_latest_article_comments_section_margin',
+            'restho_blog_two_latest_article_comments_section_margin',
             [
-                'label' => esc_html__( 'Comments Margin', 'corelaw-core' ),
+                'label' => esc_html__( 'Comments Margin', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -1191,17 +1191,17 @@ class corelaw_Blog_Widget extends Widget_Base
        $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'label'    => esc_html__('Button Typography', 'corelaw-core'),
-                'name'     => 'corelaw_blog_two_latest_article_btn_typ',
+                'label'    => esc_html__('Button Typography', 'restho-core'),
+                'name'     => 'restho_blog_two_latest_article_btn_typ',
                 'selector' => '{{WRAPPER}} .btn--outline.sibling3',
         
             ]
         );
 
        $this->add_control(
-            'corelaw_blog_two_latest_article_btn_color',
+            'restho_blog_two_latest_article_btn_color',
             [
-                'label'     => esc_html__('Button Color', 'corelaw-core'),
+                'label'     => esc_html__('Button Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .btn--outline.sibling3' => 'color: {{VALUE}};',
@@ -1212,14 +1212,14 @@ class corelaw_Blog_Widget extends Widget_Base
 			\Elementor\Group_Control_Border::get_type(),
 			[
 				'name' => 'border',
-				'label' => esc_html__( 'Button Border', 'corelaw-core' ),
+				'label' => esc_html__( 'Button Border', 'restho-core' ),
 				'selector' => '{{WRAPPER}} .btn--outline.sibling3',
 			]
 		);
         $this->add_control(
-            'corelaw_blog_two_latest_article_btn_hover_color',
+            'restho_blog_two_latest_article_btn_hover_color',
             [
-                'label'     => esc_html__('Hover Background', 'corelaw-core'),
+                'label'     => esc_html__('Hover Background', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}}  .btn--outline.sibling3::after' => 'background: {{VALUE}};',
@@ -1229,8 +1229,8 @@ class corelaw_Blog_Widget extends Widget_Base
         $this->add_group_control(
 			\Elementor\Group_Control_Box_Shadow::get_type(),
 			[
-				'name' => 'corelaw_blog_two_latest_article_box_shadow',
-				'label' => esc_html__( 'Box Shadow', 'corelaw-core' ),
+				'name' => 'restho_blog_two_latest_article_box_shadow',
+				'label' => esc_html__( 'Box Shadow', 'restho-core' ),
 				'selector' => '{{WRAPPER}} .latest-articel-area',
 			]
 		);
@@ -1240,12 +1240,12 @@ class corelaw_Blog_Widget extends Widget_Base
 
         //card content style one
         $this->start_controls_section(
-             'corelaw_blog_three_card_content_section',
+             'restho_blog_three_card_content_section',
              [
-                'label' => esc_html__('Card Content', 'corelaw-core'),
+                'label' => esc_html__('Card Content', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'condition' => [
-                    'corelaw_blog_general_section_select' => 'style_one'
+                    'restho_blog_general_section_select' => 'style_one'
                 ]
              ]
         );
@@ -1253,17 +1253,17 @@ class corelaw_Blog_Widget extends Widget_Base
         $this->add_group_control(
 			\Elementor\Group_Control_Background::get_type(),
 			[
-				'name' => 'corelaw_blog_three_card_content_background',
-				'label' => esc_html__( 'Background', 'corelaw-core' ),
+				'name' => 'restho_blog_three_card_content_background',
+				'label' => esc_html__( 'Background', 'restho-core' ),
 				'types' => [ 'classic', 'gradient', 'video' ],
 				'selector' => '{{WRAPPER}} .l-news-single',
 			]
 		);
         $this->add_responsive_control(
-			'corelaw_blog_one_card_content_section_border_radius',
+			'restho_blog_one_card_content_section_border_radius',
 			[
-			'corelaw_blog_one_card_content_border_radius',
-				'label'      		=> __('Border Radius', 'corelaw-core'),
+			'restho_blog_one_card_content_border_radius',
+				'label'      		=> __('Border Radius', 'restho-core'),
 				'type'       		=> Controls_Manager::DIMENSIONS,
 				'size_units' 		=> ['px', '%'],
 				'selectors'  		=> [
@@ -1279,28 +1279,28 @@ class corelaw_Blog_Widget extends Widget_Base
 
         //card content style two
         $this->start_controls_section(
-             'corelaw_blog_two_card_content_image_section',
+             'restho_blog_two_card_content_image_section',
              [
-                'label' => esc_html__('Card content', 'corelaw-core'),
+                'label' => esc_html__('Card content', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'condition' => [
-                    'corelaw_blog_general_section_select' => 'style_two'
+                    'restho_blog_general_section_select' => 'style_two'
                 ]
              ]
         );
         $this->add_group_control(
 			\Elementor\Group_Control_Box_Shadow::get_type(),
 			[
-				'name' => 'corelaw_blog_two_card_content_box_shadow',
-				'label' => esc_html__( 'Box Shadow', 'corelaw-core' ),
+				'name' => 'restho_blog_two_card_content_box_shadow',
+				'label' => esc_html__( 'Box Shadow', 'restho-core' ),
 				'selector' => '{{WRAPPER}} .blog-single1',
 			]
 		);
         $this->add_responsive_control(
-			'corelaw_blog_style_two_card_content_border_radius',
+			'restho_blog_style_two_card_content_border_radius',
 			[
-			'corelaw_blog_two_image_border_radius',
-				'label'      		=> __('Border Radius', 'corelaw-core'),
+			'restho_blog_two_image_border_radius',
+				'label'      		=> __('Border Radius', 'restho-core'),
 				'type'       		=> Controls_Manager::DIMENSIONS,
 				'size_units' 		=> ['px', '%'],
 				'selectors'  		=> [
@@ -1316,21 +1316,21 @@ class corelaw_Blog_Widget extends Widget_Base
 
         //card content style three
         $this->start_controls_section(
-            'corelaw_blog_three_card_content_image_section',
+            'restho_blog_three_card_content_image_section',
             [
-               'label' => esc_html__('Card content', 'corelaw-core'),
+               'label' => esc_html__('Card content', 'restho-core'),
                'tab'   => Controls_Manager::TAB_STYLE,
                'condition' => [
-                   'corelaw_blog_general_section_select' => 'style_three'
+                   'restho_blog_general_section_select' => 'style_three'
                ]
             ]
        );
 
        $this->add_responsive_control(
-           'corelaw_blog_style_three_card_content_border_radius',
+           'restho_blog_style_three_card_content_border_radius',
            [
-           'corelaw_blog_two_image_border_radius',
-               'label'      		=> __('Border Radius', 'corelaw-core'),
+           'restho_blog_two_image_border_radius',
+               'label'      		=> __('Border Radius', 'restho-core'),
                'type'       		=> Controls_Manager::DIMENSIONS,
                'size_units' 		=> ['px', '%'],
                'selectors'  		=> [
@@ -1344,17 +1344,17 @@ class corelaw_Blog_Widget extends Widget_Base
         $this->add_group_control(
             \Elementor\Group_Control_Box_Shadow::get_type(),
             [
-                'name' => 'corelaw_blog_style_three_card_content_box_shadow',
-                'label' => esc_html__( 'Box Shadow', 'corelaw-core' ),
+                'name' => 'restho_blog_style_three_card_content_box_shadow',
+                'label' => esc_html__( 'Box Shadow', 'restho-core' ),
                 'selector' => '{{WRAPPER}} .blog-single2.sibling2',
             ]
         );
 
        
        $this->add_control(
-           'corelaw_blog_three_reading_card_content_three_section_background',
+           'restho_blog_three_reading_card_content_three_section_background',
            [
-               'label' => esc_html__( 'Background', 'corelaw-core' ),
+               'label' => esc_html__( 'Background', 'restho-core' ),
                'type' => \Elementor\Controls_Manager::COLOR,
                'selectors' => [
                    '{{WRAPPER}} .blog-single2 .content' => 'background: {{VALUE}}',
@@ -1368,17 +1368,17 @@ class corelaw_Blog_Widget extends Widget_Base
        $this->start_controls_section(
             'style_blog_navigation_icon_section',
             [
-                'label' => esc_html__('Navigation Icon', 'corelaw-core'),
+                'label' => esc_html__('Navigation Icon', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'condition' => [
-                    'corelaw_blog_general_section_select' => 'style_one'
+                    'restho_blog_general_section_select' => 'style_one'
                 ]
             ]
         );
         $this->add_control(
-            'corelaw_blog_style_navigation_icon_color',
+            'restho_blog_style_navigation_icon_color',
             [
-                'label'     => esc_html__('Color', 'corelaw-core'),
+                'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .swiper-pagination .swiper-pagination-bullet-active::before' => 'background: {{VALUE}};',
@@ -1388,7 +1388,7 @@ class corelaw_Blog_Widget extends Widget_Base
         $this->add_group_control(
             \Elementor\Group_Control_Border::get_type(),
             [
-                'name' => 'corelaw_blog_style_navigation_icon_border',
+                'name' => 'restho_blog_style_navigation_icon_border',
                 'selector' => '{{WRAPPER}} .swiper-pagination .swiper-pagination-bullet-active',
             ]
         );
@@ -1398,12 +1398,12 @@ class corelaw_Blog_Widget extends Widget_Base
 
         //category Style
         $this->start_controls_section(
-            'corelaw_blog_four_category_section',
+            'restho_blog_four_category_section',
             [
-               'label' => esc_html__('Category', 'corelaw-core'),
+               'label' => esc_html__('Category', 'restho-core'),
                'tab'   => Controls_Manager::TAB_STYLE,
                'condition' => [
-                   'corelaw_blog_general_section_select' => 'style_four'
+                   'restho_blog_general_section_select' => 'style_four'
                ]
             ]
        );
@@ -1411,17 +1411,17 @@ class corelaw_Blog_Widget extends Widget_Base
        $this->add_group_control(
            Group_Control_Typography::get_type(),
            [
-               'label'    => esc_html__('Typography', 'corelaw-core'),
-               'name'     => 'corelaw_blog_four_category_section_typ',
+               'label'    => esc_html__('Typography', 'restho-core'),
+               'name'     => 'restho_blog_four_category_section_typ',
                'selector' => '{{WRAPPER}} .blog-single1 .image .blog-badge',
        
            ]
        );
 
        $this->add_control(
-        'corelaw_blog_four_category_section_text_color',
+        'restho_blog_four_category_section_text_color',
         [
-            'label'     => esc_html__('Text Color', 'corelaw-core'),
+            'label'     => esc_html__('Text Color', 'restho-core'),
             'type'      => Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .blog-single1 .image .blog-badge' => 'color: {{VALUE}};',
@@ -1430,9 +1430,9 @@ class corelaw_Blog_Widget extends Widget_Base
     );
        
        $this->add_control(
-           'corelaw_blog_four_category_section_color',
+           'restho_blog_four_category_section_color',
            [
-               'label'     => esc_html__('Background', 'corelaw-core'),
+               'label'     => esc_html__('Background', 'restho-core'),
                'type'      => Controls_Manager::COLOR,
                'selectors' => [
                    '{{WRAPPER}} .blog-single1 .image .blog-badge' => 'background: {{VALUE}};',
@@ -1440,9 +1440,9 @@ class corelaw_Blog_Widget extends Widget_Base
            ]
        );
        $this->add_control(
-           'corelaw_blog_four_category_section_margin',
+           'restho_blog_four_category_section_margin',
            [
-               'label' => esc_html__( 'Margin', 'corelaw-core' ),
+               'label' => esc_html__( 'Margin', 'restho-core' ),
                'type' => \Elementor\Controls_Manager::DIMENSIONS,
                'size_units' => [ 'px', '%', 'em' ],
                'selectors' => [
@@ -1451,10 +1451,10 @@ class corelaw_Blog_Widget extends Widget_Base
            ]
        );
        $this->add_responsive_control(
-           'corelaw_blog_four_category_section_border_radius',
+           'restho_blog_four_category_section_border_radius',
            [
-           'corelaw_blog_four_category_border_radius',
-               'label'      		=> __('Border Radius', 'corelaw-core'),
+           'restho_blog_four_category_border_radius',
+               'label'      		=> __('Border Radius', 'restho-core'),
                'type'       		=> Controls_Manager::DIMENSIONS,
                'size_units' 		=> ['px', '%'],
                'selectors'  		=> [
@@ -1466,9 +1466,9 @@ class corelaw_Blog_Widget extends Widget_Base
 
        //Hover start
        $this->add_control(
-           'corelaw_blog_four_category_section_hover_color',
+           'restho_blog_four_category_section_hover_color',
            [
-               'label'     => esc_html__('Hover Color', 'corelaw-core'),
+               'label'     => esc_html__('Hover Color', 'restho-core'),
                'type'      => Controls_Manager::COLOR,
                'selectors' => [
                    '{{WRAPPER}} .blog-single1 .image .blog-badge:hover' => 'color: {{VALUE}};',
@@ -1476,9 +1476,9 @@ class corelaw_Blog_Widget extends Widget_Base
            ]
        );
        $this->add_control(
-           'corelaw_blog_four_category_section_hover_background',
+           'restho_blog_four_category_section_hover_background',
            [
-               'label'     => esc_html__('Hover Background', 'corelaw-core'),
+               'label'     => esc_html__('Hover Background', 'restho-core'),
                'type'      => Controls_Manager::COLOR,
                'selectors' => [
                    '{{WRAPPER}} .blog-single1 .image .blog-badge:hover' => 'background: {{VALUE}};',
@@ -1490,12 +1490,12 @@ class corelaw_Blog_Widget extends Widget_Base
 
        //date Style
        $this->start_controls_section(
-           'corelaw_blog_four_date_section',
+           'restho_blog_four_date_section',
            [
-              'label' => esc_html__('Date', 'corelaw-core'),
+              'label' => esc_html__('Date', 'restho-core'),
               'tab'   => Controls_Manager::TAB_STYLE,
               'condition' => [
-                  'corelaw_blog_general_section_select' => 'style_four'
+                  'restho_blog_general_section_select' => 'style_four'
               ]
            ]
       );
@@ -1504,17 +1504,17 @@ class corelaw_Blog_Widget extends Widget_Base
       $this->add_group_control(
           Group_Control_Typography::get_type(),
           [
-              'label'    => esc_html__('Typography', 'corelaw-core'),
-              'name'     => 'corelaw_blog_four_date_section_typ',
+              'label'    => esc_html__('Typography', 'restho-core'),
+              'name'     => 'restho_blog_four_date_section_typ',
               'selector' => '{{WRAPPER}}  a.dateee',
       
           ]
       );
       
       $this->add_control(
-          'corelaw_blog_four_date_section_color',
+          'restho_blog_four_date_section_color',
           [
-              'label'     => esc_html__('Color', 'corelaw-core'),
+              'label'     => esc_html__('Color', 'restho-core'),
               'type'      => Controls_Manager::COLOR,
               'selectors' => [
                   '{{WRAPPER}}  a.dateee' => 'color: {{VALUE}};',
@@ -1522,9 +1522,9 @@ class corelaw_Blog_Widget extends Widget_Base
           ]
       );
       $this->add_control(
-          'corelaw_blog_four_date_section_margin',
+          'restho_blog_four_date_section_margin',
           [
-              'label' => esc_html__( 'Margin', 'corelaw-core' ),
+              'label' => esc_html__( 'Margin', 'restho-core' ),
               'type' => \Elementor\Controls_Manager::DIMENSIONS,
               'size_units' => [ 'px', '%', 'em' ],
               'selectors' => [
@@ -1537,20 +1537,20 @@ class corelaw_Blog_Widget extends Widget_Base
 
        //Comments Style
        $this->start_controls_section(
-            'corelaw_blog_four_comments_section',
+            'restho_blog_four_comments_section',
             [
-                'label' => esc_html__('Comments', 'corelaw-core'),
+                'label' => esc_html__('Comments', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'condition' => [
-                    'corelaw_blog_general_section_select' => 'style_four'
+                    'restho_blog_general_section_select' => 'style_four'
                 ]
             ]
         );
 
         $this->add_control(
-            'corelaw_blog_four_comments_section_color',
+            'restho_blog_four_comments_section_color',
             [
-                'label'     => esc_html__('Color', 'corelaw-core'),
+                'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .cmentt' => 'color: {{VALUE}};',
@@ -1561,16 +1561,16 @@ class corelaw_Blog_Widget extends Widget_Base
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'label'    => esc_html__('Typography', 'corelaw-core'),
-                'name'     => 'corelaw_blog_four_comments_section_typ',
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_blog_four_comments_section_typ',
                 'selector' => '{{WRAPPER}} .cmentt',
         
             ]
         );
         $this->add_control(
-            'corelaw_blog_four_comments_section_margin',
+            'restho_blog_four_comments_section_margin',
             [
-                'label' => esc_html__( 'Margin', 'corelaw-core' ),
+                'label' => esc_html__( 'Margin', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -1583,20 +1583,20 @@ class corelaw_Blog_Widget extends Widget_Base
 
         //title Style
         $this->start_controls_section(
-            'corelaw_blog_four_title_section',
+            'restho_blog_four_title_section',
             [
-                'label' => esc_html__('Title', 'corelaw-core'),
+                'label' => esc_html__('Title', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'condition' => [
-                    'corelaw_blog_general_section_select' => 'style_four'
+                    'restho_blog_general_section_select' => 'style_four'
                 ]
             ]
         );
 
        $this->add_control(
-           'corelaw_blog_four_title_section_color',
+           'restho_blog_four_title_section_color',
            [
-               'label'     => esc_html__('Color', 'corelaw-core'),
+               'label'     => esc_html__('Color', 'restho-core'),
                'type'      => Controls_Manager::COLOR,
                'selectors' => [
                    '{{WRAPPER}} .blog-single1 .text h4 a' => 'color: {{VALUE}};',
@@ -1604,9 +1604,9 @@ class corelaw_Blog_Widget extends Widget_Base
            ]
        );   
        $this->add_control(
-           'corelaw_blog_four_title_section_hover_color',
+           'restho_blog_four_title_section_hover_color',
            [
-               'label'     => esc_html__('Hover Color', 'corelaw-core'),
+               'label'     => esc_html__('Hover Color', 'restho-core'),
                'type'      => Controls_Manager::COLOR,
                'selectors' => [
                    '{{WRAPPER}} .blog-single1 .text h4 a' => 'color: {{VALUE}};',
@@ -1617,17 +1617,17 @@ class corelaw_Blog_Widget extends Widget_Base
        $this->add_group_control(
            Group_Control_Typography::get_type(),
            [
-               'label'    => esc_html__('Typography', 'corelaw-core'),
-               'name'     => 'corelaw_blog_four_title_section_typ',
+               'label'    => esc_html__('Typography', 'restho-core'),
+               'name'     => 'restho_blog_four_title_section_typ',
                'selector' => '{{WRAPPER}} .blog-single1 .text h4 a',
        
            ]
        );
 
        $this->add_control(
-           'corelaw_blog_four_title_section_margin',
+           'restho_blog_four_title_section_margin',
            [
-               'label' => esc_html__( 'Margin', 'corelaw-core' ),
+               'label' => esc_html__( 'Margin', 'restho-core' ),
                'type' => \Elementor\Controls_Manager::DIMENSIONS,
                'size_units' => [ 'px', '%', 'em' ],
                'selectors' => [
@@ -1641,20 +1641,20 @@ class corelaw_Blog_Widget extends Widget_Base
        //card Content style
 
        $this->start_controls_section(
-        'corelaw_blog_four_card_style_section',
+        'restho_blog_four_card_style_section',
             [
-                'label' => esc_html__('Card Content', 'corelaw-core'),
+                'label' => esc_html__('Card Content', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'condition' => [
-                    'corelaw_blog_general_section_select' => 'style_four'
+                    'restho_blog_general_section_select' => 'style_four'
                 ]
             ]
         );
 
         $this->add_control(
-            'corelaw_blog_four_card_section_normal_color',
+            'restho_blog_four_card_section_normal_color',
             [
-                'label'     => esc_html__('Card Color', 'corelaw-core'),
+                'label'     => esc_html__('Card Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .blog-single1' => 'background: {{VALUE}};',
@@ -1663,10 +1663,10 @@ class corelaw_Blog_Widget extends Widget_Base
         );
 
         $this->add_responsive_control(
-            'corelaw_blog_four_category_card_border_radius',
+            'restho_blog_four_category_card_border_radius',
             [
-            'corelaw_blog_four_category_border_radius',
-                'label'      		=> __('Card Radius', 'corelaw-core'),
+            'restho_blog_four_category_border_radius',
+                'label'      		=> __('Card Radius', 'restho-core'),
                 'type'       		=> Controls_Manager::DIMENSIONS,
                 'size_units' 		=> ['px', '%'],
                 'selectors'  		=> [
@@ -1683,12 +1683,12 @@ class corelaw_Blog_Widget extends Widget_Base
 
         //category Style
         $this->start_controls_section(
-            'corelaw_blog_five_category_section',
+            'restho_blog_five_category_section',
             [
-               'label' => esc_html__('Category', 'corelaw-core'),
+               'label' => esc_html__('Category', 'restho-core'),
                'tab'   => Controls_Manager::TAB_STYLE,
                'condition' => [
-                   'corelaw_blog_general_section_select' => 'style_five'
+                   'restho_blog_general_section_select' => 'style_five'
                ]
             ]
        );
@@ -1696,17 +1696,17 @@ class corelaw_Blog_Widget extends Widget_Base
        $this->add_group_control(
            Group_Control_Typography::get_type(),
            [
-               'label'    => esc_html__('Typography', 'corelaw-core'),
-               'name'     => 'corelaw_blog_five_category_section_typ',
+               'label'    => esc_html__('Typography', 'restho-core'),
+               'name'     => 'restho_blog_five_category_section_typ',
                'selector' => '{{WRAPPER}} .blog-standard-single .image .blog-badge',
        
            ]
        );
 
        $this->add_control(
-        'corelaw_blog_five_category_section_text_color',
+        'restho_blog_five_category_section_text_color',
         [
-            'label'     => esc_html__('Text Color', 'corelaw-core'),
+            'label'     => esc_html__('Text Color', 'restho-core'),
             'type'      => Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .blog-standard-single .image .blog-badge' => 'color: {{VALUE}};',
@@ -1715,9 +1715,9 @@ class corelaw_Blog_Widget extends Widget_Base
     );
        
        $this->add_control(
-           'corelaw_blog_five_category_section_color',
+           'restho_blog_five_category_section_color',
            [
-               'label'     => esc_html__('Background', 'corelaw-core'),
+               'label'     => esc_html__('Background', 'restho-core'),
                'type'      => Controls_Manager::COLOR,
                'selectors' => [
                    '{{WRAPPER}} .blog-standard-single .image .blog-badge' => 'background: {{VALUE}};',
@@ -1725,9 +1725,9 @@ class corelaw_Blog_Widget extends Widget_Base
            ]
        );
        $this->add_control(
-           'corelaw_blog_five_category_section_margin',
+           'restho_blog_five_category_section_margin',
            [
-               'label' => esc_html__( 'Margin', 'corelaw-core' ),
+               'label' => esc_html__( 'Margin', 'restho-core' ),
                'type' => \Elementor\Controls_Manager::DIMENSIONS,
                'size_units' => [ 'px', '%', 'em' ],
                'selectors' => [
@@ -1736,10 +1736,10 @@ class corelaw_Blog_Widget extends Widget_Base
            ]
        );
        $this->add_responsive_control(
-           'corelaw_blog_five_category_section_border_radius',
+           'restho_blog_five_category_section_border_radius',
            [
-           'corelaw_blog_five_category_border_radius',
-               'label'      		=> __('Border Radius', 'corelaw-core'),
+           'restho_blog_five_category_border_radius',
+               'label'      		=> __('Border Radius', 'restho-core'),
                'type'       		=> Controls_Manager::DIMENSIONS,
                'size_units' 		=> ['px', '%'],
                'selectors'  		=> [
@@ -1751,9 +1751,9 @@ class corelaw_Blog_Widget extends Widget_Base
 
        //Hover start
        $this->add_control(
-           'corelaw_blog_five_category_section_hover_color',
+           'restho_blog_five_category_section_hover_color',
            [
-               'label'     => esc_html__('Hover Color', 'corelaw-core'),
+               'label'     => esc_html__('Hover Color', 'restho-core'),
                'type'      => Controls_Manager::COLOR,
                'selectors' => [
                    '{{WRAPPER}} .blog-standard-single .image .blog-badge:hover' => 'color: {{VALUE}};',
@@ -1761,9 +1761,9 @@ class corelaw_Blog_Widget extends Widget_Base
            ]
        );
        $this->add_control(
-           'corelaw_blog_five_category_section_hover_background',
+           'restho_blog_five_category_section_hover_background',
            [
-               'label'     => esc_html__('Hover Background', 'corelaw-core'),
+               'label'     => esc_html__('Hover Background', 'restho-core'),
                'type'      => Controls_Manager::COLOR,
                'selectors' => [
                    '{{WRAPPER}} .blog-standard-single .image .blog-badge:hover' => 'background: {{VALUE}};',
@@ -1775,20 +1775,20 @@ class corelaw_Blog_Widget extends Widget_Base
 
         //title Style
         $this->start_controls_section(
-            'corelaw_blog_five_title_section',
+            'restho_blog_five_title_section',
             [
-                'label' => esc_html__('Title', 'corelaw-core'),
+                'label' => esc_html__('Title', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'condition' => [
-                    'corelaw_blog_general_section_select' => 'style_five'
+                    'restho_blog_general_section_select' => 'style_five'
                 ]
             ]
         );
 
         $this->add_control(
-            'corelaw_blog_five_title_section_color',
+            'restho_blog_five_title_section_color',
             [
-                'label'     => esc_html__('Color', 'corelaw-core'),
+                'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .blog-standard-single .text h2 a' => 'color: {{VALUE}};',
@@ -1800,17 +1800,17 @@ class corelaw_Blog_Widget extends Widget_Base
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'label'    => esc_html__('Typography', 'corelaw-core'),
-                'name'     => 'corelaw_blog_five_title_section_typ',
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_blog_five_title_section_typ',
                 'selector' => '{{WRAPPER}} .blog-standard-single .text h2 a',
 
             ]
         );
 
         $this->add_control(
-            'corelaw_blog_five_title_section_margin',
+            'restho_blog_five_title_section_margin',
             [
-                'label' => esc_html__( 'Margin', 'corelaw-core' ),
+                'label' => esc_html__( 'Margin', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -1823,12 +1823,12 @@ class corelaw_Blog_Widget extends Widget_Base
 
        //Post Meta Style
        $this->start_controls_section(
-           'corelaw_blog_five_post_meta_section',
+           'restho_blog_five_post_meta_section',
            [
-              'label' => esc_html__('Post Meta List', 'corelaw-core'),
+              'label' => esc_html__('Post Meta List', 'restho-core'),
               'tab'   => Controls_Manager::TAB_STYLE,
               'condition' => [
-                  'corelaw_blog_general_section_select' => 'style_five'
+                  'restho_blog_general_section_select' => 'style_five'
               ]
            ]
       );
@@ -1837,17 +1837,17 @@ class corelaw_Blog_Widget extends Widget_Base
       $this->add_group_control(
           Group_Control_Typography::get_type(),
           [
-              'label'    => esc_html__('Typography', 'corelaw-core'),
-              'name'     => 'corelaw_blog_five_post_meta_section_typ',
+              'label'    => esc_html__('Typography', 'restho-core'),
+              'name'     => 'restho_blog_five_post_meta_section_typ',
               'selector' => '{{WRAPPER}}  .blog-standard-single .text .post-meta-list li',
       
           ]
       );
       
       $this->add_control(
-          'corelaw_blog_five_post_meta_section_color',
+          'restho_blog_five_post_meta_section_color',
           [
-              'label'     => esc_html__('Color', 'corelaw-core'),
+              'label'     => esc_html__('Color', 'restho-core'),
               'type'      => Controls_Manager::COLOR,
               'selectors' => [
                   '{{WRAPPER}}  .blog-standard-single .text .post-meta-list li' => 'color: {{VALUE}};',
@@ -1855,9 +1855,9 @@ class corelaw_Blog_Widget extends Widget_Base
           ]
       );
       $this->add_control(
-          'corelaw_blog_five_post_meta_section_margin',
+          'restho_blog_five_post_meta_section_margin',
           [
-              'label' => esc_html__( 'Margin', 'corelaw-core' ),
+              'label' => esc_html__( 'Margin', 'restho-core' ),
               'type' => \Elementor\Controls_Manager::DIMENSIONS,
               'size_units' => [ 'px', '%', 'em' ],
               'selectors' => [
@@ -1870,20 +1870,20 @@ class corelaw_Blog_Widget extends Widget_Base
 
     //Description Style
     $this->start_controls_section(
-            'corelaw_blog_five_description_section',
+            'restho_blog_five_description_section',
             [
-            'label' => esc_html__('Description', 'corelaw-core'),
+            'label' => esc_html__('Description', 'restho-core'),
             'tab'   => Controls_Manager::TAB_STYLE,
             'condition' => [
-                'corelaw_blog_general_section_select' => 'style_five'
+                'restho_blog_general_section_select' => 'style_five'
             ]
             ]
     );
 
     $this->add_control(
-        'corelaw_blog_five_description_section_color',
+        'restho_blog_five_description_section_color',
         [
-            'label'     => esc_html__('Color', 'corelaw-core'),
+            'label'     => esc_html__('Color', 'restho-core'),
             'type'      => Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .para, .faq-wrap .faq-body' => 'color: {{VALUE}};',
@@ -1895,17 +1895,17 @@ class corelaw_Blog_Widget extends Widget_Base
     $this->add_group_control(
         Group_Control_Typography::get_type(),
         [
-            'label'    => esc_html__('Typography', 'corelaw-core'),
-            'name'     => 'corelaw_blog_five_description_section_typ',
+            'label'    => esc_html__('Typography', 'restho-core'),
+            'name'     => 'restho_blog_five_description_section_typ',
             'selector' => '{{WRAPPER}} .para, .faq-wrap .faq-body',
     
         ]
     );
 
     $this->add_control(
-        'corelaw_blog_five_description_section_margin',
+        'restho_blog_five_description_section_margin',
         [
-            'label' => esc_html__( 'Margin', 'corelaw-core' ),
+            'label' => esc_html__( 'Margin', 'restho-core' ),
             'type' => \Elementor\Controls_Manager::DIMENSIONS,
             'size_units' => [ 'px', '%', 'em' ],
             'selectors' => [
@@ -1917,20 +1917,20 @@ class corelaw_Blog_Widget extends Widget_Base
     $this->end_controls_section();
     //Read More Button Style
     $this->start_controls_section(
-            'corelaw_blog_five_read_more_button_section',
+            'restho_blog_five_read_more_button_section',
             [
-            'label' => esc_html__('Read More Button', 'corelaw-core'),
+            'label' => esc_html__('Read More Button', 'restho-core'),
             'tab'   => Controls_Manager::TAB_STYLE,
             'condition' => [
-                'corelaw_blog_general_section_select' => 'style_five'
+                'restho_blog_general_section_select' => 'style_five'
             ]
             ]
     );
 
     $this->add_control(
-        'corelaw_blog_five_read_more_button_section_color',
+        'restho_blog_five_read_more_button_section_color',
         [
-            'label'     => esc_html__('Color', 'corelaw-core'),
+            'label'     => esc_html__('Color', 'restho-core'),
             'type'      => Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .blog-standard-single .text .read-more-btn' => 'color: {{VALUE}};',
@@ -1938,9 +1938,9 @@ class corelaw_Blog_Widget extends Widget_Base
         ]
     );   
     $this->add_control(
-        'corelaw_blog_five_read_more_button_hover_section_color',
+        'restho_blog_five_read_more_button_hover_section_color',
         [
-            'label'     => esc_html__('Hover Color', 'corelaw-core'),
+            'label'     => esc_html__('Hover Color', 'restho-core'),
             'type'      => Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .blog-standard-single .text .read-more-btn:hover' => 'color: {{VALUE}};',
@@ -1952,17 +1952,17 @@ class corelaw_Blog_Widget extends Widget_Base
     $this->add_group_control(
         Group_Control_Typography::get_type(),
         [
-            'label'    => esc_html__('Typography', 'corelaw-core'),
-            'name'     => 'corelaw_blog_five_read_more_button_section_typ',
+            'label'    => esc_html__('Typography', 'restho-core'),
+            'name'     => 'restho_blog_five_read_more_button_section_typ',
             'selector' => '{{WRAPPER}} .blog-standard-single .text .read-more-btn',
     
         ]
     );
 
     $this->add_control(
-        'corelaw_blog_five_read_more_button_section_margin',
+        'restho_blog_five_read_more_button_section_margin',
         [
-            'label' => esc_html__( 'Margin', 'corelaw-core' ),
+            'label' => esc_html__( 'Margin', 'restho-core' ),
             'type' => \Elementor\Controls_Manager::DIMENSIONS,
             'size_units' => [ 'px', '%', 'em' ],
             'selectors' => [
@@ -1985,9 +1985,9 @@ class corelaw_Blog_Widget extends Widget_Base
         $query = new \WP_Query(
 			array(
 				'post_type'      => 'post',
-				'posts_per_page' => $settings['corelaw_blog_posts_per_page'],
-				'orderby'        => $settings['corelaw_blog_template_order_by'],
-				'order'          => $settings['corelaw_blog_template_order'],
+				'posts_per_page' => $settings['restho_blog_posts_per_page'],
+				'orderby'        => $settings['restho_blog_template_order_by'],
+				'order'          => $settings['restho_blog_template_order'],
 				'offset'         => 0,
 				'post_status'    => 'publish'
 			)
@@ -2075,7 +2075,7 @@ class corelaw_Blog_Widget extends Widget_Base
         </script>
 
 
-        <?php if ( $settings['corelaw_blog_general_section_select'] == 'style_one' ) : ?>
+        <?php if ( $settings['restho_blog_general_section_select'] == 'style_one' ) : ?>
             <div class="l-news-section">
                 <div class="row justify-content-center">
                     <div class="swiper blog-slider1 pb-65">
@@ -2115,20 +2115,20 @@ class corelaw_Blog_Widget extends Widget_Base
         <?php endif;?>
 
 
-        <?php if ( $settings['corelaw_blog_general_section_select'] == 'style_two' ) : ?>
+        <?php if ( $settings['restho_blog_general_section_select'] == 'style_two' ) : ?>
             <div class="l-news-section">
                 <div class="row align-items-center">
                     <div class="col-xl-6 col-lg-8 col-md-9">
                         <div class="section-title2 sibling3 text-md-start text-center">
-                            <?php if( !empty( $settings['corelaw_blog_heading_content_sub_title'] ) ) : ?>
-                                <span><?php echo esc_html($settings['corelaw_blog_heading_content_sub_title']) ?></span>
+                            <?php if( !empty( $settings['restho_blog_heading_content_sub_title'] ) ) : ?>
+                                <span><?php echo esc_html($settings['restho_blog_heading_content_sub_title']) ?></span>
                             <?php endif ?>
-                            <?php if( !empty( $settings['corelaw_blog_heading_content_title'] ) ) : ?>
-                                <h2><?php echo esc_html($settings['corelaw_blog_heading_content_title']) ?></h2>
+                            <?php if( !empty( $settings['restho_blog_heading_content_title'] ) ) : ?>
+                                <h2><?php echo esc_html($settings['restho_blog_heading_content_title']) ?></h2>
                             <?php endif ?>
                         </div>
                     </div>
-                    <?php if ( 'yes' === $settings['corelaw_blog_pagination_icon'] ) :?>    
+                    <?php if ( 'yes' === $settings['restho_blog_pagination_icon'] ) :?>    
                         <div class="col-xl-6 col-lg-4 col-md-3 d-md-flex d-none justify-content-end">
                             <div class="slider-arrows banner2-arrows text-center d-sm-flex d-none flex-row justify-content-center align-items-center gap-4">
                                 <div class="blog2-prev swiper-prev-arrow" tabindex="0" role="button" aria-label="Previous slide"> 
@@ -2150,8 +2150,8 @@ class corelaw_Blog_Widget extends Widget_Base
                                         array(
                                             'post_type'      => 'post',
                                             'posts_per_page' => 3,
-                                            'orderby'        => $settings['corelaw_blog_template_order_by'],
-                                            'order'          => $settings['corelaw_blog_template_order'],
+                                            'orderby'        => $settings['restho_blog_template_order_by'],
+                                            'order'          => $settings['restho_blog_template_order'],
                                             'offset'         => 0,
                                             'post_status'    => 'publish'
                                         )
@@ -2189,8 +2189,8 @@ class corelaw_Blog_Widget extends Widget_Base
 
 
                              <div class="blog-details-btn d-block text-center">
-                                <?php if( !empty( $settings['corelaw_blogg_btn_title'] ) ) :   ?>
-                                    <a href="<?php echo esc_url($settings['corelaw_blogg_btn_link']['url'] )?>" class="eg-btn capsule btn--outline sibling3 btn--md"><?php echo esc_html($settings['corelaw_blogg_btn_title'] )?></a>            
+                                <?php if( !empty( $settings['restho_blogg_btn_title'] ) ) :   ?>
+                                    <a href="<?php echo esc_url($settings['restho_blogg_btn_link']['url'] )?>" class="eg-btn capsule btn--outline sibling3 btn--md"><?php echo esc_html($settings['restho_blogg_btn_title'] )?></a>            
                                 <?php endif ?>
                                 
                             </div> 
@@ -2204,9 +2204,9 @@ class corelaw_Blog_Widget extends Widget_Base
                                 $query_three = new \WP_Query(
                                     array(
                                         'post_type'      => 'post',
-                                        'posts_per_page' => $settings['corelaw_blog_posts_per_page'],
-                                        'orderby'        => $settings['corelaw_blog_template_order_by'],
-                                        'order'          => $settings['corelaw_blog_template_order'],
+                                        'posts_per_page' => $settings['restho_blog_posts_per_page'],
+                                        'orderby'        => $settings['restho_blog_template_order_by'],
+                                        'order'          => $settings['restho_blog_template_order'],
                                         'offset'         => 3,
                                         'post_status'    => 'publish'
                                     )
@@ -2255,7 +2255,7 @@ class corelaw_Blog_Widget extends Widget_Base
         <?php endif;?>
 
 
-        <?php if ( $settings['corelaw_blog_general_section_select'] == 'style_three' ) : ?>
+        <?php if ( $settings['restho_blog_general_section_select'] == 'style_three' ) : ?>
 
             <div class="blog-section">
                 <div class="row justify-content-center g-4">
@@ -2266,7 +2266,7 @@ class corelaw_Blog_Widget extends Widget_Base
                     ?>
 
                         <div class="col-lg-4 col-md-6 col-sm-10 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="200ms">
-                            <div class="blog-single2 <?php echo $settings['corelaw_blog_design_three_box_shadow_choose_content'] == 'yes' ? 'sibling2' : '' ?>">
+                            <div class="blog-single2 <?php echo $settings['restho_blog_design_three_box_shadow_choose_content'] == 'yes' ? 'sibling2' : '' ?>">
                                 <div class="image">
                                     <span class="blog-badge"><?php the_author(); ?></span>
                                     <a href="<?php the_permalink()?>"><?php the_post_thumbnail('',['class' => 'img-fluid']); ?></a>
@@ -2298,7 +2298,7 @@ class corelaw_Blog_Widget extends Widget_Base
             </div>
         
         <?php endif;?>
-		 <?php if ( $settings['corelaw_blog_general_section_select'] == 'style_four' ) : ?>
+		 <?php if ( $settings['restho_blog_general_section_select'] == 'style_four' ) : ?>
             <div class="blog-grid-section">
                 <div class="row justify-content-center">
                     <?php
@@ -2344,7 +2344,7 @@ class corelaw_Blog_Widget extends Widget_Base
             </div>
         <?php endif;?>
 
-		 <?php if ( $settings['corelaw_blog_general_section_select'] == 'style_five' ) : ?>
+		 <?php if ( $settings['restho_blog_general_section_select'] == 'style_five' ) : ?>
             <div class="blog-standard-section">
                 <div class="row gy-5">
                     <div class="blog-standard-area">
@@ -2369,7 +2369,7 @@ class corelaw_Blog_Widget extends Widget_Base
                                     <li><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/icons/bubble.svg' ) ?>" alt="image"><span><?php echo esc_html('Comments') ?>  <?php echo "(".get_comments_number().")" ?></span></li>
                                 </ul>
                                 <p class="para"><?php echo wp_trim_words( get_the_content(), 15 );?></p>
-                                <a href="<?php the_permalink()?>" class="read-more-btn"><?php echo esc_attr('Continue Reading','corelaw-core') ?><i class="bi bi-arrow-right"></i></a>
+                                <a href="<?php the_permalink()?>" class="read-more-btn"><?php echo esc_attr('Continue Reading','restho-core') ?><i class="bi bi-arrow-right"></i></a>
                             </div>
                         </div>
                             <?php
@@ -2393,4 +2393,4 @@ class corelaw_Blog_Widget extends Widget_Base
     }
 }
 
-Plugin::instance()->widgets_manager->register(new corelaw_Blog_Widget());
+Plugin::instance()->widgets_manager->register(new restho_Blog_Widget());

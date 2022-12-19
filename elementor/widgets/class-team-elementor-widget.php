@@ -6,17 +6,17 @@ if (!defined('ABSPATH')) exit; // Exit if accessed directly
 
 use Elementor\core\Schemes;
 
-class Corelaw_Team_Widget extends Widget_Base
+class restho_Team_Widget extends Widget_Base
 {
 
     public function get_name()
     {
-        return 'corelaw_team';
+        return 'restho_team';
     }
 
     public function get_title()
     {
-        return esc_html__('EG Attorney', 'corelaw-core');
+        return esc_html__('EG Attorney', 'restho-core');
     }
 
     public function get_icon()
@@ -26,26 +26,26 @@ class Corelaw_Team_Widget extends Widget_Base
 
     public function get_categories()
     {
-        return ['corelaw_widgets'];
+        return ['restho_widgets'];
     }
 
     protected function register_controls()
     {
         $this->start_controls_section(
-            'corelaw_team_content_section',
+            'restho_team_content_section',
             [
-                'label' => esc_html__('Attorneys', 'corelaw-core')
+                'label' => esc_html__('Attorneys', 'restho-core')
             ]
         );
         $this->add_control(
-			'corelaw_attorneys_style_selection',
+			'restho_attorneys_style_selection',
 			[
-				'label'   => esc_html__('Attorneys Design', 'corelaw-core'),
+				'label'   => esc_html__('Attorneys Design', 'restho-core'),
 				'type'    => Controls_Manager::SELECT,
 				'options' => [
-					'style_one' => esc_html__('Style One', 'corelaw-core'),
-					'style_two' => esc_html__('Style Two', 'corelaw-core'),
-                    'style_three' => esc_html__('Style Three', 'corelaw-core')
+					'style_one' => esc_html__('Style One', 'restho-core'),
+					'style_two' => esc_html__('Style Two', 'restho-core'),
+                    'style_three' => esc_html__('Style Three', 'restho-core')
 				],
 				'default' => 'style_one',
 			]
@@ -59,22 +59,22 @@ class Corelaw_Team_Widget extends Widget_Base
         // template section starts here //
 
         $this->start_controls_section(
-            'corelaw_attorneys_design_two_slider_choose_section',
+            'restho_attorneys_design_two_slider_choose_section',
             [
-                'label' => esc_html__('Slider ON/OFF', 'corelaw-core'),
+                'label' => esc_html__('Slider ON/OFF', 'restho-core'),
                 'condition' => [
-                    'corelaw_attorneys_style_selection' => 'style_two',
+                    'restho_attorneys_style_selection' => 'style_two',
                 ],
             ]
         );
 
         $this->add_control(
-			'corelaw_attorneys_design_two_slider_choose_content',
+			'restho_attorneys_design_two_slider_choose_content',
 			[
-				'label' => esc_html__( 'Slider', 'corelaw-core' ),
+				'label' => esc_html__( 'Slider', 'restho-core' ),
 				'type' => \Elementor\Controls_Manager::SWITCHER,
-				'slider_on' => esc_html__( 'Show', 'corelaw-core' ),
-				'slider_off' => esc_html__( 'Hide', 'corelaw-core' ),
+				'slider_on' => esc_html__( 'Show', 'restho-core' ),
+				'slider_off' => esc_html__( 'Hide', 'restho-core' ),
 				'return_value' => 'yes',
 				'default' => 'yes',
 			]
@@ -83,46 +83,46 @@ class Corelaw_Team_Widget extends Widget_Base
         $this->end_controls_section();
 
         $this->start_controls_section(
-            'corelaw_team_content_templates_section',
+            'restho_team_content_templates_section',
             [
-                'label' => esc_html__('Templates', 'corelaw-core')
+                'label' => esc_html__('Templates', 'restho-core')
             ]
         );
 
 
         $this->add_control(
-			'corelaw_attorneys_posts_per_page',
+			'restho_attorneys_posts_per_page',
 			[
-				'label'       => esc_html__('Posts Per Page', 'corelaw-core'),
+				'label'       => esc_html__('Posts Per Page', 'restho-core'),
 				'type'        => Controls_Manager::NUMBER,
 				'default'     => 4,
 				'label_block' => false,
 			]
 		);
 		$this->add_control(
-			'corelaw_attorneys_template_order_by',
+			'restho_attorneys_template_order_by',
 			[
-				'label'   => esc_html__('Order By', 'corelaw-core'),
+				'label'   => esc_html__('Order By', 'restho-core'),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'ID',
 				'options' => [
-					'ID'         => esc_html__('Post Id', 'corelaw-core'),
-					'author'     => esc_html__('Post Author', 'corelaw-core'),
-					'title'      => esc_html__('Title', 'corelaw-core'),
-					'post_date'  => esc_html__('Date', 'corelaw-core'),
-					'rand'       => esc_html__('Random', 'corelaw-core'),
-					'menu_order' => esc_html__('Menu Order', 'corelaw-core'),
+					'ID'         => esc_html__('Post Id', 'restho-core'),
+					'author'     => esc_html__('Post Author', 'restho-core'),
+					'title'      => esc_html__('Title', 'restho-core'),
+					'post_date'  => esc_html__('Date', 'restho-core'),
+					'rand'       => esc_html__('Random', 'restho-core'),
+					'menu_order' => esc_html__('Menu Order', 'restho-core'),
 				],
 			]
 		);
 		$this->add_control(
-			'corelaw_attorneys_template_order',
+			'restho_attorneys_template_order',
 			[
-				'label'   => esc_html__('Order', 'corelaw-core'),
+				'label'   => esc_html__('Order', 'restho-core'),
 				'type'    => Controls_Manager::SELECT,
 				'options' => [
-					'asc'  => esc_html__('Ascending', 'corelaw-core'),
-					'desc' => esc_html__('Descending', 'corelaw-core')
+					'asc'  => esc_html__('Ascending', 'restho-core'),
+					'desc' => esc_html__('Descending', 'restho-core')
 				],
 				'default' => 'desc',
 			]
@@ -135,16 +135,16 @@ class Corelaw_Team_Widget extends Widget_Base
 
         //Title Style Start
         $this->start_controls_section(
-            'corelaw_team_title_style_section',
+            'restho_team_title_style_section',
             [
-                'label' => esc_html__('Title', 'corelaw-core'),
+                'label' => esc_html__('Title', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
         $this->add_control(
-            'corelaw_team_style_title_color',
+            'restho_team_style_title_color',
             [
-                'label'     => esc_html__('Color', 'corelaw-core'),
+                'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .attorney-single .content h4' => 'color: {{VALUE}};',
@@ -152,9 +152,9 @@ class Corelaw_Team_Widget extends Widget_Base
             ]
         );
         $this->add_control(
-            'corelaw_team_style_title_bar_color',
+            'restho_team_style_title_bar_color',
             [
-                'label'     => esc_html__('Title Bar Color', 'corelaw-core'),
+                'label'     => esc_html__('Title Bar Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .attorney-single .content h4::after' => 'background: {{VALUE}};',
@@ -164,16 +164,16 @@ class Corelaw_Team_Widget extends Widget_Base
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'label'    => esc_html__('Typography', 'corelaw-core'),
-                'name'     => 'corelaw_team_style_title_typography',
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_team_style_title_typography',
                 'selector' => '{{WRAPPER}} .attorney-single .content h4',
 
             ]
         );
         $this->add_responsive_control(
-            'corelaw_team_style_title_padding',
+            'restho_team_style_title_padding',
             [
-                'label'      => __('Padding', 'corelaw-core'),
+                'label'      => __('Padding', 'restho-core'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors'  => [
@@ -188,14 +188,14 @@ class Corelaw_Team_Widget extends Widget_Base
         $this->start_controls_section(
             'style_team_designation_section',
             [
-                'label' => esc_html__('Designation', 'corelaw-core'),
+                'label' => esc_html__('Designation', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
         $this->add_control(
-            'corelaw_team_style_designation_color',
+            'restho_team_style_designation_color',
             [
-                'label'     => esc_html__('Color', 'corelaw-core'),
+                'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .attorney-single .content p' => 'color: {{VALUE}};',
@@ -205,16 +205,16 @@ class Corelaw_Team_Widget extends Widget_Base
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'label'    => esc_html__('Typography', 'corelaw-core'),
-                'name'     => 'corelaw_team_style_designation_typography',
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_team_style_designation_typography',
                 'selector' => '{{WRAPPER}} .attorney-single .content p',
 
             ]
         );
         $this->add_responsive_control(
-            'corelaw_team_style_designation_padding',
+            'restho_team_style_designation_padding',
             [
-                'label'      => __('Padding', 'corelaw-core'),
+                'label'      => __('Padding', 'restho-core'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors'  => [
@@ -227,9 +227,9 @@ class Corelaw_Team_Widget extends Widget_Base
 
          //Social Icon Style Start
         $this->start_controls_section(
-            'corelaw_team_style_icon_section',
+            'restho_team_style_icon_section',
             [
-                'label' => esc_html__('Social Icon', 'corelaw-core'),
+                'label' => esc_html__('Social Icon', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -240,13 +240,13 @@ class Corelaw_Team_Widget extends Widget_Base
 		$this->start_controls_tab(
 			'style_normal_tab',
 			[
-				'label' => esc_html__( 'Normal', 'corelaw-core' ),
+				'label' => esc_html__( 'Normal', 'restho-core' ),
 			]
 		);
         $this->add_control(
-            'corelaw_team_style_icon_color',
+            'restho_team_style_icon_color',
             [
-                'label'     => esc_html__('Icon Color', 'corelaw-core'),
+                'label'     => esc_html__('Icon Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .attorney-single .content .social-list li a .bx' => 'color: {{VALUE}};',
@@ -256,9 +256,9 @@ class Corelaw_Team_Widget extends Widget_Base
             ]
         );
         $this->add_control(
-            'corelaw_team_style_icon_background',
+            'restho_team_style_icon_background',
             [
-                'label'     => esc_html__('Icon Background', 'corelaw-core'),
+                'label'     => esc_html__('Icon Background', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .attorney-single .content .social-list li a .bx' => 'background: {{VALUE}};',
@@ -266,14 +266,14 @@ class Corelaw_Team_Widget extends Widget_Base
                     
                 ],
                 'condition' => [
-                    'corelaw_attorneys_style_selection' => [ 'style_one', 'style_two' ],
+                    'restho_attorneys_style_selection' => [ 'style_one', 'style_two' ],
                 ],
             ]
         );
         $this->add_control(
-            'corelaw_team_style_social_icon_background',
+            'restho_team_style_social_icon_background',
             [
-                'label'     => esc_html__('Background', 'corelaw-core'),
+                'label'     => esc_html__('Background', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .attorney-single .content .social-list' => 'background: {{VALUE}};',
@@ -287,45 +287,45 @@ class Corelaw_Team_Widget extends Widget_Base
         $this->start_controls_tab(
             'style_team_hover_tab',
             [
-                'label' => esc_html__( 'Hover', 'corelaw-core' ),
+                'label' => esc_html__( 'Hover', 'restho-core' ),
                 'condition' => [
-                    'corelaw_attorneys_style_selection' => [ 'style_two', 'style_three' ],
+                    'restho_attorneys_style_selection' => [ 'style_two', 'style_three' ],
                 ],
             ]
         );
         
         $this->add_control(
-			'corelaw_team_style_icon_hover_color',
+			'restho_team_style_icon_hover_color',
 			[
-				'label' => esc_html__( 'Icon Color', 'corelaw-core' ),
+				'label' => esc_html__( 'Icon Color', 'restho-core' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .attorney-single.sibling3 .social-list2 li:hover a .bx' => 'color: {{VALUE}}',              
 				],
                 'condition' => [
-                    'corelaw_attorneys_style_selection' => 'style_three',
+                    'restho_attorneys_style_selection' => 'style_three',
                 ],
 			]
 		);
 
         $this->add_control(
-			'corelaw_team_style_icon_hover_background_color',
+			'restho_team_style_icon_hover_background_color',
 			[
-				'label' => esc_html__( 'Icon Background', 'corelaw-core' ),
+				'label' => esc_html__( 'Icon Background', 'restho-core' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .attorney-single.sibling2 .social-list2 li:hover a .bx' => 'background: {{VALUE}}',  
 				],
                 'condition' => [
-                    'corelaw_attorneys_style_selection' => 'style_two',
+                    'restho_attorneys_style_selection' => 'style_two',
                 ],
 			]
 		);
 
         $this->add_responsive_control(
-            'corelaw_team_style_social_list_background_padding',
+            'restho_team_style_social_list_background_padding',
             [
-                'label'      => __('Padding', 'corelaw-core'),
+                'label'      => __('Padding', 'restho-core'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors'  => [
@@ -344,14 +344,14 @@ class Corelaw_Team_Widget extends Widget_Base
         $this->start_controls_section(
             'style_team_navigation_icon_section',
             [
-                'label' => esc_html__('Navigation Icon', 'corelaw-core'),
+                'label' => esc_html__('Navigation Icon', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
         $this->add_control(
-            'corelaw_team_style_navigation_icon_color',
+            'restho_team_style_navigation_icon_color',
             [
-                'label'     => esc_html__('Color', 'corelaw-core'),
+                'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .swiper-pagination .swiper-pagination-bullet-active::before' => 'background: {{VALUE}};',
@@ -361,7 +361,7 @@ class Corelaw_Team_Widget extends Widget_Base
         $this->add_group_control(
 			\Elementor\Group_Control_Border::get_type(),
 			[
-				'name' => 'corelaw_team_style_navigation_icon_border',
+				'name' => 'restho_team_style_navigation_icon_border',
 				'selector' => '{{WRAPPER}} .swiper-pagination .swiper-pagination-bullet-active',
 			]
 		);
@@ -371,14 +371,14 @@ class Corelaw_Team_Widget extends Widget_Base
         $this->start_controls_section(
             'style_team_background_section',
             [
-                'label' => esc_html__('Card', 'corelaw-core'),
+                'label' => esc_html__('Card', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
         $this->add_responsive_control(
-			'corelaw_team_style_border_radius',
+			'restho_team_style_border_radius',
 			[
-				'label'      		=> __('Border Radius', 'corelaw-core'),
+				'label'      		=> __('Border Radius', 'restho-core'),
 				'type'       		=> Controls_Manager::DIMENSIONS,
 				'size_units' 		=> ['px', '%'],
 				'selectors'  		=> [
@@ -397,9 +397,9 @@ class Corelaw_Team_Widget extends Widget_Base
         $query = new \WP_Query(
 			array(
 				'post_type'      => 'egens-attorneys',
-				'posts_per_page' => $settings['corelaw_attorneys_posts_per_page'],
-				'orderby'        => $settings['corelaw_attorneys_template_order_by'],
-				'order'          => $settings['corelaw_attorneys_template_order'],
+				'posts_per_page' => $settings['restho_attorneys_posts_per_page'],
+				'orderby'        => $settings['restho_attorneys_template_order_by'],
+				'order'          => $settings['restho_attorneys_template_order'],
 				'offset'         => 0,
 				'post_status'    => 'publish'
 			)
@@ -450,7 +450,7 @@ class Corelaw_Team_Widget extends Widget_Base
         <?php endif ?>  
             
            
-        <?php if($settings['corelaw_attorneys_style_selection']=='style_one' ) : ?>
+        <?php if($settings['restho_attorneys_style_selection']=='style_one' ) : ?>
             <div class="attorneys-section">
                 <div class="swiper attorney-slider pb-65">
                     <div class="swiper-wrapper">
@@ -497,10 +497,10 @@ class Corelaw_Team_Widget extends Widget_Base
 
             <?php endif ?>
 
-            <?php if($settings['corelaw_attorneys_style_selection']=='style_two' ) : ?>
-                <div class="<?php echo $settings['corelaw_attorneys_design_two_slider_choose_content'] == 'yes' ? 'attorneys' : 'team' ?>-section">
-                    <div class="<?php echo $settings['corelaw_attorneys_design_two_slider_choose_content'] == 'yes' ? 'swiper attorney-slider pb-65' : '' ?>">
-                        <div class="<?php echo $settings['corelaw_attorneys_design_two_slider_choose_content'] == 'yes' ? 'swiper-wrapper' : 'row justify-content-center g-4' ?>">
+            <?php if($settings['restho_attorneys_style_selection']=='style_two' ) : ?>
+                <div class="<?php echo $settings['restho_attorneys_design_two_slider_choose_content'] == 'yes' ? 'attorneys' : 'team' ?>-section">
+                    <div class="<?php echo $settings['restho_attorneys_design_two_slider_choose_content'] == 'yes' ? 'swiper attorney-slider pb-65' : '' ?>">
+                        <div class="<?php echo $settings['restho_attorneys_design_two_slider_choose_content'] == 'yes' ? 'swiper-wrapper' : 'row justify-content-center g-4' ?>">
                             <?php
 
                                 if ( $query ->have_posts() ) {
@@ -509,7 +509,7 @@ class Corelaw_Team_Widget extends Widget_Base
                                     $designationn = get_post_meta( get_the_ID(), 'egens_attorneys_designation', true);
                                 ?>
                             
-                                <div class="<?php echo $settings['corelaw_attorneys_design_two_slider_choose_content'] == 'yes' ? 'swiper-slide' : 'col-xl-3 col-lg-4 col-md-6 col-sm-10' ?>  wow fadeInDown" data-wow-duration="1.5s" data-wow-delay="0.2s">
+                                <div class="<?php echo $settings['restho_attorneys_design_two_slider_choose_content'] == 'yes' ? 'swiper-slide' : 'col-xl-3 col-lg-4 col-md-6 col-sm-10' ?>  wow fadeInDown" data-wow-duration="1.5s" data-wow-delay="0.2s">
                                     <div class="attorney-single sibling2">
                                         <?php the_post_thumbnail('',['class' => 'casestudy1']); ?>                                                
                                         <div class="content">
@@ -549,7 +549,7 @@ class Corelaw_Team_Widget extends Widget_Base
 
             <?php endif ?>
 
-            <?php if($settings['corelaw_attorneys_style_selection']=='style_three' ) : ?>
+            <?php if($settings['restho_attorneys_style_selection']=='style_three' ) : ?>
             
                 <div class="attorneys-section">
                     <div class="swiper attorney-slider pb-65">
@@ -605,4 +605,4 @@ class Corelaw_Team_Widget extends Widget_Base
     }
 }
 
-Plugin::instance()->widgets_manager->register(new Corelaw_Team_Widget());
+Plugin::instance()->widgets_manager->register(new restho_Team_Widget());

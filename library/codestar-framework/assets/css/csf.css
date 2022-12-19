@@ -46,7 +46,7 @@
  *     03. 22. Field: slider
  *     03. 23. Field: sortable
  *     03. 24. Field: sorter
- *     03. 25. Field: spinner
+ *     03. 25. Field: restho
  *     03. 26. Field: switcher
  *     03. 27. Field: tabbed
  *     03. 28. Field: text
@@ -1675,12 +1675,12 @@
 }
 
 /**
- * 03. 25. Field: spinner
+ * 03. 25. Field: restho
  */
-.csf-field-spinner .csf--spin {
+.csf-field-restho .csf--spin {
   float: left;
 }
-.csf-field-spinner .csf--unit {
+.csf-field-restho .csf--unit {
   float: right;
   height: 30px;
   line-height: 26px;
@@ -1694,7 +1694,7 @@
   margin: 0;
   box-sizing: border-box;
 }
-.csf-field-spinner .ui-spinner-button {
+.csf-field-restho .ui-restho-button {
   cursor: pointer;
   position: relative;
   overflow: hidden;
@@ -1709,34 +1709,34 @@
   background-color: #eee;
   box-sizing: border-box;
 }
-.csf-field-spinner .ui-spinner-button:hover {
+.csf-field-restho .ui-restho-button:hover {
   background-color: #e7e7e7;
 }
-.csf-field-spinner .ui-spinner-button:active {
+.csf-field-restho .ui-restho-button:active {
   background-color: #ddd;
 }
-.csf-field-spinner .ui-spinner-button:before {
+.csf-field-restho .ui-restho-button:before {
   font-family: FontAwesome;
   font-size: 16px;
   line-height: 16px;
 }
-.csf-field-spinner .ui-spinner-down {
+.csf-field-restho .ui-restho-down {
   float: left;
   border-right: 0;
   border-radius: 2px 0 0 2px;
 }
-.csf-field-spinner .ui-spinner-down:before {
+.csf-field-restho .ui-restho-down:before {
   content: "\f0d9";
 }
-.csf-field-spinner .ui-spinner-up {
+.csf-field-restho .ui-restho-up {
   float: right;
   border-left: 0;
   border-radius: 0 2px 2px 0;
 }
-.csf-field-spinner .ui-spinner-up:before {
+.csf-field-restho .ui-restho-up:before {
   content: "\f0da";
 }
-.csf-field-spinner input {
+.csf-field-restho input {
   width: 50px;
   text-align: center;
   margin: 0;
@@ -1745,10 +1745,10 @@
   line-height: 30px;
   border: 1px solid #ddd;
 }
-.csf-field-spinner input:focus {
+.csf-field-restho input:focus {
   outline: none;
 }
-.csf-field-spinner .ui-button-text {
+.csf-field-restho .ui-button-text {
   display: none;
 }
 
@@ -2449,7 +2449,7 @@
 .control-section .csf-field-dimensions select {
   width: auto;
 }
-.control-section .csf-field-spinner input {
+.control-section .csf-field-restho input {
   width: 50px;
 }
 .control-section .csf-field-backup .csf-export-data {
