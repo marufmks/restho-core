@@ -70,28 +70,9 @@ if ( ! class_exists( 'Egens_Elementor_Widget_Init' ) ) {
 			}
 
 			$elementor_widgets = array(
-				'intro',
 				'heading',
-				'about',
-				'info',
-				'team',
-				'contact',
-				'faq',
-				'testimonial',
-				'blog',
-				'banner',
-				'practice',
-				'case-study',
-				'history',
-				'single-attorney',
-				'feature',
-				'histroy',
-				'case-study-info',
-				'case-study-cat',
-				'case-study-tab',
-				'feature',
-				'faq-card',
-				'faq-form',
+				'button',
+				
 
 
 
