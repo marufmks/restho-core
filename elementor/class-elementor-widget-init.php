@@ -74,8 +74,9 @@ if ( ! class_exists( 'Egens_Elementor_Widget_Init' ) ) {
 				'button',
 				'faq',
 				'contact',
-				'counter'
-				
+				'counter',
+				'banner',
+				'offer',
 
 
 
