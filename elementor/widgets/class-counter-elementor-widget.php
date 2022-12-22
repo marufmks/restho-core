@@ -489,40 +489,38 @@ class Restho_Counter_Widget extends Widget_Base
                 </div>
             <?php endif ?>
             <?php if( !empty( $settings['restho_counter_content_style_selection'] ) && ($settings['restho_counter_content_style_selection'] == 'style_two') )  : ?> 
-                <div class="about-counter mb-120">
-                    <div class="container">
-                        <div class="row justify-content-center g-md-4 gy-5">
-                            <?php foreach($Items as $Item):?>
-                                <?php if( $settings['restho_counter_column_selection'] == 'column_two' ) : ?>
-                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
-                                <?php elseif ($settings['restho_counter_column_selection'] == 'column_three') : ?>
-                                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6">
-                                <?php elseif ($settings['restho_counter_column_selection'] == 'column_four') : ?>
-                                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6">
-                                <?php elseif ($settings['restho_counter_column_selection'] == 'column_six') : ?>
-                                    <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-6">
-                                <?php endif ?>
-                                    <div class="counter-single">
-                                        <?php if( !empty( $Item['restho_counter_icon'] ) ) : ?>
-                                            <div class="counter-icon">                                              
-                                                <?php \Elementor\Icons_Manager::render_icon( $Item['restho_counter_icon'], [ 'aria-hidden' => 'true' ] ); ?>                                       
+                <div class="about-counter">
+                    <div class="row justify-content-center g-md-4 gy-5">
+                        <?php foreach($Items as $Item):?>
+                            <?php if( $settings['restho_counter_column_selection'] == 'column_two' ) : ?>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+                            <?php elseif ($settings['restho_counter_column_selection'] == 'column_three') : ?>
+                                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6">
+                            <?php elseif ($settings['restho_counter_column_selection'] == 'column_four') : ?>
+                                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6">
+                            <?php elseif ($settings['restho_counter_column_selection'] == 'column_six') : ?>
+                                <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-6">
+                            <?php endif ?>
+                                <div class="counter-single">
+                                    <?php if( !empty( $Item['restho_counter_icon'] ) ) : ?>
+                                        <div class="counter-icon">                                              
+                                            <?php \Elementor\Icons_Manager::render_icon( $Item['restho_counter_icon'], [ 'aria-hidden' => 'true' ] ); ?>                                       
+                                        </div>
+                                    <?php endif ?>
+                                    <div class="coundown">
+                                        <?php if( !empty( $Item['restho_counter_odometer_number'] ) ) : ?>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <h3 class="odometer" data-odometer-final="<?php echo wp_kses($Item['restho_counter_odometer_number'], wp_kses_allowed_html('post')) ?>">&nbsp;</h3>
                                             </div>
                                         <?php endif ?>
-                                        <div class="coundown">
-                                            <?php if( !empty( $Item['restho_counter_odometer_number'] ) ) : ?>
-                                                <div class="d-flex align-items-center gap-2">
-                                                    <h3 class="odometer" data-odometer-final="<?php echo wp_kses($Item['restho_counter_odometer_number'], wp_kses_allowed_html('post')) ?>">&nbsp;</h3>
-                                                </div>
-                                            <?php endif ?>
-                                            <?php if( !empty( $Item['restho_counter_odometer_title'] ) ) : ?>
-                                                <p><?php echo esc_html($Item['restho_counter_odometer_title']) ?></p>
-                                            <?php endif ?>
-                                        </div>
+                                        <?php if( !empty( $Item['restho_counter_odometer_title'] ) ) : ?>
+                                            <p><?php echo esc_html($Item['restho_counter_odometer_title']) ?></p>
+                                        <?php endif ?>
                                     </div>
                                 </div>
-                            <?php endforeach ?>
+                            </div>
+                        <?php endforeach ?>
 
-                        </div>
                     </div>
                 </div>
             <?php endif ?>
