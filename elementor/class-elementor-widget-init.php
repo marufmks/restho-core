@@ -72,6 +72,9 @@ if ( ! class_exists( 'Egens_Elementor_Widget_Init' ) ) {
 			$elementor_widgets = array(
 				'heading',
 				'button',
+				'faq',
+				'contact',
+				'counter'
 				
 
 

@@ -21,7 +21,7 @@ class Restho_Button_Widget extends Widget_Base
 
     public function get_icon()
     {
-        return '';
+        return 'eicon-button';
     }
 
     public function get_categories()
