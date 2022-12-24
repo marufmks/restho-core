@@ -480,7 +480,7 @@ class restho_about_Widget extends Widget_Base
         $this->add_control(
             'restho_about_three_achivement_heading_title',
             [
-                'label' => esc_html__('Heading Title', 'restho-core'),
+                'label' => esc_html__('Achivement Title', 'restho-core'),
                 'type' => Controls_Manager::TEXT,
                 'default' => esc_html__('Our Achievement:', 'restho-core'),
                 'label_block' => true,
@@ -533,7 +533,7 @@ class restho_about_Widget extends Widget_Base
         $this->add_control(
             'restho_about_three_content_achivement_list',
             [
-                'label' => esc_html__('Feature List', 'restho-core'),
+                'label' => esc_html__('Achivement List', 'restho-core'),
                 'type' => \Elementor\Controls_Manager::REPEATER,
                 'fields' => $repeater3->get_controls(),
                 'default' => [
@@ -1014,6 +1014,96 @@ class restho_about_Widget extends Widget_Base
         );
 
         $this->end_controls_section();
+         //achivement_title Style
+         $this->start_controls_section(
+            'restho_about_style_achivement_title_section',
+            [
+                'label' => esc_html__('Achivement Title', 'restho-core'),
+                'tab'   => Controls_Manager::TAB_STYLE,
+                'condition' => [
+                    'restho_about_content_style_selection' => ['style_three',],
+                ],
+
+            ]
+        );
+        $this->add_control(
+            'restho_about_style_achivement_title_color',
+            [
+                'label'     => esc_html__('Color', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .introduction-area .introduction-content .achievement h5' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_about_style_achivement_title_typography',
+                'selector' => '{{WRAPPER}} .introduction-area .introduction-content .achievement h5',
+            ]
+        );
+        
+       
+        $this->add_responsive_control(
+            'restho_about_style_achivement_title_padding',
+            [
+                'label'      => __('Padding', 'restho-core'),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', '%'],
+                'selectors'  => [
+                    '{{WRAPPER}} .introduction-area .introduction-content .achievement h5' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ]
+            ]
+        );
+
+        $this->end_controls_section();
+         //achivement award Style
+         $this->start_controls_section(
+            'restho_about_style_award_title_section',
+            [
+                'label' => esc_html__('Award Title', 'restho-core'),
+                'tab'   => Controls_Manager::TAB_STYLE,
+                'condition' => [
+                    'restho_about_content_style_selection' => ['style_three',],
+                ],
+
+            ]
+        );
+        $this->add_control(
+            'restho_about_style_award_title_color',
+            [
+                'label'     => esc_html__('Color', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .introduction-area .introduction-content .achievement ul li .award-name a' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_about_style_award_title_typography',
+                'selector' => '{{WRAPPER}} .introduction-area .introduction-content .achievement ul li .award-name a',
+            ]
+        );
+        
+       
+        $this->add_responsive_control(
+            'restho_about_style_award_title_padding',
+            [
+                'label'      => __('Padding', 'restho-core'),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', '%'],
+                'selectors'  => [
+                    '{{WRAPPER}} .introduction-area .introduction-content .achievement ul li .award-name a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ]
+            ]
+        );
+
+        $this->end_controls_section();
 
         //about Button Style
         $this->start_controls_section(
@@ -1138,7 +1228,6 @@ class restho_about_Widget extends Widget_Base
 
             ]
         );
-
 
         $this->end_controls_tab();
         $this->end_controls_tab();
