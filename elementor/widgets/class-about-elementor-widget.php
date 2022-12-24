@@ -733,8 +733,8 @@ class restho_about_Widget extends Widget_Base
                 'label'     => esc_html__('Icon Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .home1-introduction-area .our-mission .icon svg' => 'fill: {{VALUE}};',
-                    '{{WRAPPER}} .about-introduction-area .our-mission .icon svg' => 'fill: {{VALUE}};',
+                    '{{WRAPPER}} .home1-introduction-area .our-mission .icon svg path' => 'fill: {{VALUE}};',
+                    '{{WRAPPER}} .about-introduction-area .our-mission .icon svg path' => 'fill: {{VALUE}};',
                 ],
             ]
         );
@@ -794,7 +794,8 @@ class restho_about_Widget extends Widget_Base
                     '{{WRAPPER}} .home1-introduction-area .intro-right .features-author .intro-features ul li i' => 'color: {{VALUE}};',
                     '{{WRAPPER}} .introduction-area .introduction-content .about-features ul li i' => 'color: {{VALUE}};',
                     '{{WRAPPER}} .about-introduction-area .intro-right .features-author .intro-features ul li i' => 'color: {{VALUE}};',
-                    '{{WRAPPER}} .h2-about-area .about-right .about-featurs ul li .features-img svg' => 'fill: {{VALUE}};',
+                    '{{WRAPPER}} .h2-about-area .about-right .about-featurs ul li .features-img svg path' => 'fill: {{VALUE}};',
+                    '{{WRAPPER}} .h2-about-area .about-right .about-featurs ul li .features-img' => 'border:1px solid {{VALUE}};',
                 ],
             ]
         );
