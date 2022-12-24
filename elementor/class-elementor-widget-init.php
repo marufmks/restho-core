@@ -78,6 +78,7 @@ if ( ! class_exists( 'Egens_Elementor_Widget_Init' ) ) {
 				'banner',
 				'offer',
 				'about',
+				'chef',
 
 
 
