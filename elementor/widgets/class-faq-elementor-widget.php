@@ -197,7 +197,7 @@ class Restho_Faq_Widget extends Widget_Base
                             <div id="collapse<?php echo $key; ?>" class="accordion-collapse collapse" aria-labelledby="heading<?php echo $key; ?>" data-bs-parent="#accordionExample" style="">
                                 <?php if (!empty($item['restho_section_content_faq_description'])) : ?>
                                     <div class="accordion-body">
-                                        <?php echo esc_html($item['restho_section_content_faq_description']) ?>
+                                        <?php echo wp_kses($item['restho_section_content_faq_description'], wp_kses_allowed_html('post')) ?>
                                     </div>
                                 <?php endif ?>
                             </div>

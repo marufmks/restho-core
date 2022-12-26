@@ -80,6 +80,7 @@ if ( ! class_exists( 'Egens_Elementor_Widget_Init' ) ) {
 				'facilities',
 				'about',
 				'chef',
+				'testimonial',
 
 
 
