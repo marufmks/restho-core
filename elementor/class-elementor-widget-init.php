@@ -77,6 +77,7 @@ if ( ! class_exists( 'Egens_Elementor_Widget_Init' ) ) {
 				'counter',
 				'banner',
 				'offer',
+				'facilities'
 
 
 
