@@ -11,7 +11,7 @@ class Restho_Blog_One_Widget extends Widget_Base
 
     public function get_name()
     {
-        return 'restho_video';
+        return 'restho_blog_one';
     }
 
     public function get_title()
@@ -100,6 +100,19 @@ class Restho_Blog_One_Widget extends Widget_Base
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
+        $this->add_responsive_control(
+            'restho_blog_one_thumb_border_radius',
+            [
+                'label'      		=> __('Thumbnail Border Radius', 'restho-core'),
+                'type'       		=> Controls_Manager::DIMENSIONS,
+                'size_units' 		=> ['px', '%'],
+                'selectors'  		=> [
+                    '{{WRAPPER}} .news-wrap .post-thum' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .news-wrap .post-thum img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+
+        );
         $this->add_control(
             'restho_blog_one_auth_border_line_color',
             [
@@ -154,7 +167,7 @@ class Restho_Blog_One_Widget extends Widget_Base
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors'  => [
-                    '{{WRAPPER}} .news-wrap .news-content h3 a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',   
+                    '{{WRAPPER}} .news-wrap .news-content h3' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',   
                 ]
             ]
         );
@@ -165,7 +178,7 @@ class Restho_Blog_One_Widget extends Widget_Base
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
-                    '{{WRAPPER}} .news-wrap .news-content h3 a' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .news-wrap .news-content h3' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -199,6 +212,18 @@ class Restho_Blog_One_Widget extends Widget_Base
                     '{{WRAPPER}} .news-wrap .post-thum .batch a' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
+        );
+        $this->add_responsive_control(
+            'restho_blog_one_date_border_radius',
+            [
+                'label'      		=> __('Border Radius', 'restho-core'),
+                'type'       		=> Controls_Manager::DIMENSIONS,
+                'size_units' 		=> ['px', '%'],
+                'selectors'  		=> [
+                    '{{WRAPPER}} .news-wrap .post-thum .batch a' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+
         );
         $this->start_controls_tabs('_tab_button');
 
@@ -425,7 +450,7 @@ class Restho_Blog_One_Widget extends Widget_Base
         );
 
         ?>
-            <div class="recent-post-area mb-120">
+            <div class="recent-post-area">
                 <div class="row g-4 justify-content-center">
                     <?php
                         if ($query->have_posts()) {
@@ -433,11 +458,11 @@ class Restho_Blog_One_Widget extends Widget_Base
                                 $query->the_post();
                         ?>
                             <?php if( $settings['restho_blog_one_column_selection'] == 'column_two' ) : ?>
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-10">
                             <?php elseif ($settings['restho_blog_one_column_selection'] == 'column_three') : ?>
-                                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6">
+                                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-10">
                             <?php elseif ($settings['restho_blog_one_column_selection'] == 'column_four') : ?>
-                                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6">
+                                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-10">
                             <?php endif ?>
                                 <div class="news-wrap">
                                     <div class="post-thum">
