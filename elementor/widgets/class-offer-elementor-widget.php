@@ -106,7 +106,7 @@ class Restho_Offer_Widget extends Widget_Base
             [
                 'label' => esc_html__( 'Offer List', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::TEXTAREA,
-                'default' => esc_html__( 'Prawn with Noodls.', 'restho-core' ),
+                'default' => esc_html__( 'Prawn with Noodls', 'restho-core' ),
                 'placeholder' => esc_html__( 'Your offer list here', 'restho-core' ),
                 'label_block' => true,
             ]
@@ -119,7 +119,7 @@ class Restho_Offer_Widget extends Widget_Base
 				'fields' => $repeater->get_controls(),
 				'default' => [
 					[
-						'restho_offer_list_title' => esc_html__( 'Prawn with Noodls.', 'restho-core' ),
+						'restho_offer_list_title' => esc_html__( 'Prawn with Noodls', 'restho-core' ),
 					],
 
 				],
