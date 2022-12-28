@@ -460,7 +460,7 @@ class restho_chef_Widget extends Widget_Base
                                                             foreach ($socilas as $socila) {
                                                             ?>
                                                                 <?php if (!empty($socila['egens_chef_social_icon'])) :   ?>
-                                                                    <li><a href="<?php echo esc_url($socila['egens_chef_social_link']) ?>"><i class='<?php echo esc_html($socila['egens_chef_social_icon']) ?>'></i></a></li>
+                                                                    <li><a href="<?php echo esc_url($socila['egens_chef_social_link']['url']) ?>"><i class='<?php echo esc_html($socila['egens_chef_social_icon']) ?>'></i></a></li>
                                                                 <?php endif ?>
 
                                                             <?php
@@ -516,7 +516,7 @@ class restho_chef_Widget extends Widget_Base
                                                 foreach ($socilas as $socila) {
                                                 ?>
                                                     <?php if (!empty($socila['egens_chef_social_icon'])) :   ?>
-                                                        <li><a href="<?php echo esc_url($socila['egens_chef_social_link']) ?>"><i class='<?php echo esc_html($socila['egens_chef_social_icon']) ?>'></i></a></li>
+                                                        <li><a href="<?php echo esc_url($socila['egens_chef_social_link']['url']) ?>"><i class='<?php echo esc_html($socila['egens_chef_social_icon']) ?>'></i></a></li>
                                                     <?php endif ?>
 
                                                 <?php
@@ -561,7 +561,7 @@ class restho_chef_Widget extends Widget_Base
                                                     foreach ($socilas as $socila) {
                                                     ?>
                                                         <?php if (!empty($socila['egens_chef_social_icon'])) :   ?>
-                                                            <li><a href="<?php echo esc_url($socila['egens_chef_social_link']) ?>"><i class='<?php echo esc_html($socila['egens_chef_social_icon']) ?>'></i></a></li>
+                                                            <li><a href="<?php echo esc_url($socila['egens_chef_social_link']['url']) ?>"><i class='<?php echo esc_html($socila['egens_chef_social_icon']) ?>'></i></a></li>
                                                         <?php endif ?>
 
                                                     <?php
