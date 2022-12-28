@@ -83,6 +83,7 @@ if ( ! class_exists( 'Egens_Elementor_Widget_Init' ) ) {
 				'testimonial',
 				'blog-one',
 				'blog-two',
+				'blog-three',
 
 
 

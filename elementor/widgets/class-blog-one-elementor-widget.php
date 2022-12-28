@@ -124,65 +124,6 @@ class Restho_Blog_One_Widget extends Widget_Base
             ]
         );
         $this->end_controls_section();
-        //Title
-        $this->start_controls_section(
-            'restho_blog_one_style_title',
-            [
-                'label' => esc_html__('Title', 'restho-core'),
-                'tab'   => Controls_Manager::TAB_STYLE,
-            ]
-        );
-        $this->add_control(
-            'restho_blog_one_title_color',
-            [
-                'label'     => esc_html__('Color', 'restho-core'),
-                'type'      => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .news-wrap .news-content h3 a' => 'color: {{VALUE}};',
-                ],
-            ]
-        );
-        $this->add_control(
-            'restho_blog_one_title_hvr_color',
-            [
-                'label'     => esc_html__('Hover Color', 'restho-core'),
-                'type'      => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .news-wrap .news-content h3 a:hover' => 'color: {{VALUE}};',
-                ],
-            ]
-        );
-        $this->add_group_control(
-            Group_Control_Typography::get_type(),
-            [
-                'label'    => esc_html__('Typography', 'restho-core'),
-                'name'     => 'restho_blog_one_title_typography',
-                'selector' => '{{WRAPPER}} .news-wrap .news-content h3 a',
-            ],
-        );
-        $this->add_responsive_control(
-            'restho_blog_one_title_padding',
-            [
-                'label'      => __('Padding', 'restho-core'),
-                'type'       => Controls_Manager::DIMENSIONS,
-                'size_units' => ['px', '%'],
-                'selectors'  => [
-                    '{{WRAPPER}} .news-wrap .news-content h3' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',   
-                ]
-            ]
-        );
-        $this->add_responsive_control(
-            'restho_blog_one_title_margin',
-            [
-                'label' => esc_html__( 'Margin', 'restho-core' ),
-                'type' => \Elementor\Controls_Manager::DIMENSIONS,
-                'size_units' => [ 'px', '%', 'em' ],
-                'selectors' => [
-                    '{{WRAPPER}} .news-wrap .news-content h3' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                ],
-            ]
-        );
-        $this->end_controls_section();
         //Date
         $this->start_controls_section(
             'restho_blog_one_style_date',
@@ -426,7 +367,66 @@ class Restho_Blog_One_Widget extends Widget_Base
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
-                    '{{WRAPPER}} .news-wrap .news-content .news-meta .comment a' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .news-wrap .news-content .news-meta .comment' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+        $this->end_controls_section();
+        //Title
+        $this->start_controls_section(
+            'restho_blog_one_style_title',
+            [
+                'label' => esc_html__('Title', 'restho-core'),
+                'tab'   => Controls_Manager::TAB_STYLE,
+            ]
+        );
+        $this->add_control(
+            'restho_blog_one_title_color',
+            [
+                'label'     => esc_html__('Color', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .news-wrap .news-content h3 a' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_control(
+            'restho_blog_one_title_hvr_color',
+            [
+                'label'     => esc_html__('Hover Color', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .news-wrap .news-content h3 a:hover' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_blog_one_title_typography',
+                'selector' => '{{WRAPPER}} .news-wrap .news-content h3 a',
+            ],
+        );
+        $this->add_responsive_control(
+            'restho_blog_one_title_padding',
+            [
+                'label'      => __('Padding', 'restho-core'),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', '%'],
+                'selectors'  => [
+                    '{{WRAPPER}} .news-wrap .news-content h3' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',   
+                ]
+            ]
+        );
+        $this->add_responsive_control(
+            'restho_blog_one_title_margin',
+            [
+                'label' => esc_html__( 'Margin', 'restho-core' ),
+                'type' => \Elementor\Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em' ],
+                'selectors' => [
+                    '{{WRAPPER}} .news-wrap .news-content h3' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
