@@ -75,40 +75,7 @@ if ( ! class_exists( 'Egens_Custom_Post_Type' ) ) {
 						"show_in_rest"		 => false,
 					)
 				],
-				[
-					'post_type' => 'egens-food',
-					'args'      => array(
-						'label'              => esc_html__( 'Food', 'restho-core' ),
-						'description'        => esc_html__( 'Food', 'restho-core' ),
-						'menu_icon'           => 'dashicons-food',
-						'labels'             => array(
-							'name'               => esc_html_x( 'Food', 'Post Type General Name', 'restho-core' ),
-							'singular_name'      => esc_html_x( 'Food', 'Post Type Singular Name', 'restho-core' ),
-							'menu_name'          => esc_html__( 'Food', 'restho-core' ),
-							'all_items'          => esc_html__( 'All Food', 'restho-core' ),
-							'view_item'          => esc_html__( 'View Food', 'restho-core' ),
-							'add_new_item'       => esc_html__( 'Add New Food', 'restho-core' ),
-							'add_new'            => esc_html__( 'Add New Food', 'restho-core' ),
-							'edit_item'          => esc_html__( 'Edit Food', 'restho-core' ),
-							'update_item'        => esc_html__( 'Update Food', 'restho-core' ),
-							'search_items'       => esc_html__( 'Search Food', 'restho-core' ),
-							'not_found'          => esc_html__( 'Not Found', 'restho-core' ),
-							'not_found_in_trash' => esc_html__( 'Not found in Trash', 'restho-core' ),
-						),
-						'supports'           => array( 'title','editor', 'excerpt','thumbnail'),
-						'hierarchical'       => true,
-						'public'             => true,
-						'has_archive' 		=> false,
-						"publicly_queryable" => true,
-						'show_ui'            => true,
-						"rewrite" => array( 'slug' => 'food', 'with_front' => true),
-						'exclude_from_search'   => false,
-						'can_export'         => true,
-						'capability_type'    => 'post',
-						'query_var'          => true,
-						"show_in_rest"		 => false,
-					)
-				],
+				
 				
 			);
 			
@@ -145,33 +112,7 @@ if ( ! class_exists( 'Egens_Custom_Post_Type' ) ) {
 						"show_in_rest" => false,
 						"show_in_quick_edit" => true,
 					)
-				),
-
-				array(
-					'taxonomy' => 'egens-food-category',
-					'object_type' => 'egens-food',
-					'args' => array(
-						"labels" => array(
-							"name" => esc_html__( "Food Categories", 'restho-core' ),
-							"singular_name" => esc_html__( "Food Categories", 'restho-core' ),
-							"menu_name" => esc_html__( "Food Categories", 'restho-core' ),
-							"all_items" => esc_html__( "All Food Category", 'restho-core' ),
-							"add_new_item" => esc_html__( "Add New Food Category", 'restho-core' )
-						),
-						"public" => true,
-						"hierarchical" => true,
-						'has_archive' => true,
-						"show_ui" => true,
-						"show_in_menu" => true,
-						"show_in_nav_menus" => true,
-						"rewrite" => array( 'slug' => 'food-category', 'with_front' => true),
-						"query_var" => true,
-						"show_admin_column" => true,
-						"show_in_rest" => false,
-						"show_in_quick_edit" => true,
-					)
-				),
-				
+				),				
 				
 			);
 			
