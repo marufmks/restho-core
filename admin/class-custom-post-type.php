@@ -64,7 +64,7 @@ if ( ! class_exists( 'Egens_Custom_Post_Type' ) ) {
 						'supports'           => array( 'title','editor', 'excerpt','thumbnail'),
 						'hierarchical'       => true,
 						'public'             => true,
-						'has_archive' 		=> false,
+						'has_archive' 		=> true,
 						"publicly_queryable" => true,
 						'show_ui'            => true,
 						"rewrite" => array( 'slug' => 'chef', 'with_front' => true),
