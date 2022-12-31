@@ -301,6 +301,74 @@ class Restho_Food_Item_Carousel_Widget extends Widget_Base
             ]
         );
         $this->end_controls_section();
+        // Repeater Four
+        $this->start_controls_section(
+            'restho_section_content_food_it_caro_st_four',
+            [
+                'label' => esc_html__('Food Item', 'restho-core'),
+                'condition' => [
+                    'restho_food_it_caro_style_selection' => 'style_four'
+                ],
+            ]
+        );
+
+        $repeater4 = new \Elementor\Repeater();
+
+        $repeater4->add_control(
+            'restho_section_content_food_it_caro_st_four_price_tag',
+            [
+                'label' => esc_html__('Price', 'restho-core'),
+                'type' => Controls_Manager::TEXT,
+                'default' => esc_html__('$55', 'restho-core'),
+                'label_block' => true,
+            ]
+        );
+        $repeater4->add_control(
+			'restho_section_content_food_it_caro_st_four_image',
+			[
+				'label' => esc_html__( 'Food Image', 'restho-core' ),
+				'type' => \Elementor\Controls_Manager::MEDIA,
+				'default' => [
+					'url' => \Elementor\Utils::get_placeholder_image_src(),
+				],
+			]
+		);
+        $repeater4->add_control(
+            'restho_section_content_food_it_caro_st_four_title',
+            [
+                'label' => esc_html__('Title', 'restho-core'),
+                'type' => \Elementor\Controls_Manager::TEXT,
+                'default' => esc_html__('Chicken with Drinks.', 'restho-core'),
+                'label_block' => true,
+            ]
+        );
+        $repeater4->add_control(
+            'restho_section_content_food_it_caro_st_four_description',
+            [
+                'label' => esc_html__('Description', 'restho-core'),
+                'type' => \Elementor\Controls_Manager::TEXTAREA,
+                'rows' => 15,
+                'default' => esc_html__("It is a long established fact that a reader will be distracted.", 'restho-core'),
+                'placeholder' => esc_html__('Type your description here', 'restho-core'),
+            ]
+        );
+
+        $this->add_control(
+            'restho_food_it_caro_st_four_section_list',
+            [
+                'label' => esc_html__('Food Item Lists', 'restho-core'),
+                'type' => \Elementor\Controls_Manager::REPEATER,
+                'fields' => $repeater4->get_controls(),
+                'default' => [
+                    [
+                        'restho_section_content_food_it_caro_st_four_title' => esc_html__('Chicken with Drinks.', 'restho-core'),
+                    ],
+
+                ],
+                'title_field' => '{{{ restho_section_content_food_it_caro_st_four_title }}}',
+            ]
+        );
+        $this->end_controls_section();
         // Style Section Start
         //General
         $this->start_controls_section(
@@ -1062,6 +1130,7 @@ class Restho_Food_Item_Carousel_Widget extends Widget_Base
         $fooditems1 = $settings['restho_food_it_caro_section_list'];
         $fooditems2 = $settings['restho_food_it_caro_st_two_section_list'];
         $fooditems3 = $settings['restho_food_it_caro_st_three_section_list'];
+        $fooditems4 = $settings['restho_food_it_caro_st_four_section_list'];
         
 ?>
         <?php if( is_admin() ) : ?>
@@ -1192,6 +1261,17 @@ class Restho_Food_Item_Carousel_Widget extends Widget_Base
                     },
                 }
                 });
+                // double row  slider
+                jQuery('#slick1').slick({
+                    rows: 2,
+                    dots: false,
+                    arrows: true,
+                    infinite: true,
+                    speed: 300,
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                });
+
             </script>
         <?php endif ?>
         <?php if( !empty( $settings['restho_food_it_caro_style_selection'] ) && ($settings['restho_food_it_caro_style_selection'] == 'style_one') )  : ?>
@@ -1335,114 +1415,31 @@ class Restho_Food_Item_Carousel_Widget extends Widget_Base
         <?php if( !empty( $settings['restho_food_it_caro_style_selection'] ) && ($settings['restho_food_it_caro_style_selection'] == 'style_four') )  : ?>
             <div class="h3-spacial-offer-area mb-120 ">
                 <div class="container">
-                    <div class="row mb-40">
-                        <div class="swiper h3-spacial-offer-slider">
-                            <div class="swiper-wrapper">
-
-                                <div class="swiper-slide">
-                                    <div class="row position-relative g-lg-5 g-4">
-                                        <div class="divider"></div>
-
-                                        <div class="col-lg-6">
-                                                                                   
-                                            <div class="single-offer-card">
-                                                <div class="offer-img">
-                                                    <img src="assets/images/bg/h3-special-01.png" alt="h3-special-01">
-                                                    <div class="sm-img">
-                                                        <img src="assets/images/bg/h3-special-01-sm.png" alt="h3-special-01-sm">
-                                                    </div>
-                                                </div>
-                                                <div class="offer-content">
-                                                    <div class="price-sl">
-                                                        <div class="price-tag">
-                                                            <span>$60 <del>$75</del></span>
-                                                        </div>
-                                                        <div class="sl-no">
-                                                            <span>01</span>
-                                                        </div>
-                                                    </div>
-                                                    <h3><a href="shop-details.html">Chicken with Drinks.</a></h3>
-                                                    <p>It’s so tasty and delicious for creating our customer. So visit our restaurant. </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 d-flex justify-content-lg-end">
-                                            <div class="single-offer-card">
-                                                <div class="offer-img">
-                                                    <img src="assets/images/bg/h3-special-02.png" alt="h3-special-01">
-                                                    <div class="sm-img">
-                                                        <img src="assets/images/bg/h3-special-02-sm.png" alt="h3-special-01-sm">
-                                                    </div>
-                                                </div>
-                                                <div class="offer-content">
-                                                    <div class="price-sl">
-                                                        <div class="price-tag">
-                                                            <span>$40 <del>$55</del></span>
-                                                        </div>
-                                                        <div class="sl-no">
-                                                            <span>02</span>
-                                                        </div>
-                                                    </div>
-                                                    <h3><a href="shop-details.html">Burger with Drinks.</a></h3>
-                                                    <p>It’s so tasty and delicious for creating our customer. So visit our restaurant. </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="single-offer-card">
-                                                <div class="offer-img">
-                                                    <img src="assets/images/bg/h3-special-03.png" alt="h3-special-03">
-                                                    <div class="sm-img">
-                                                        <img src="assets/images/bg/h3-special-03-sm.png" alt="h3-special-03-sm">
-                                                    </div>
-                                                </div>
-                                                <div class="offer-content">
-                                                    <div class="price-sl">
-                                                        <div class="price-tag">
-                                                            <span>$90 <del>$95</del></span>
-                                                        </div>
-                                                        <div class="sl-no">
-                                                            <span>03</span>
-                                                        </div>
-                                                    </div>
-                                                    <h3><a href="shop-details.html">Soup with Kabab.</a></h3>
-                                                    <p>It’s so tasty and delicious for creating our customer. So visit our restaurant. </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 d-flex justify-content-lg-end">
-                                            <div class="single-offer-card">
-                                                <div class="offer-img">
-                                                    <img src="assets/images/bg/h3-special-04.png" alt="h3-special-04">
-                                                    <div class="sm-img">
-                                                        <img src="assets/images/bg/h3-special-04-sm.png" alt="h3-special-04-sm">
-                                                    </div>
-                                                </div>
-                                                <div class="offer-content">
-                                                    <div class="price-sl">
-                                                        <div class="price-tag">
-                                                            <span>$75 <del>$85</del></span>
-                                                        </div>
-                                                        <div class="sl-no">
-                                                            <span>04</span>
-                                                        </div>
-                                                    </div>
-                                                    <h3><a href="shop-details.html">Pizza with Pasta.</a></h3>
-                                                    <p>It’s so tasty and delicious for creating our customer. So visit our restaurant. </p>
-                                                </div>
-                                            </div>
-                                        </div>
+                    <div id="slick1">
+                    <?php foreach($fooditems4 as $key=> $item): ?>
+                        <div class="slide-item">
+                            <div class="single-offer-card">
+                                <div class="offer-img">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bg/h3-special-01.png" alt="h3-special-01">
+                                    <div class="sm-img">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bg/h3-special-01-sm.png" alt="h3-special-01-sm">
                                     </div>
                                 </div>
-
+                                <div class="offer-content">
+                                    <div class="price-sl">
+                                        <div class="price-tag">
+                                            <span>$60 <del>$75</del></span>
+                                        </div>
+                                        <div class="sl-no">
+                                            <span>01</span>
+                                        </div>
+                                    </div>
+                                    <h3><a href="shop-details.html">Chicken with Drinks.</a></h3>
+                                    <p>It’s so tasty and delicious for creating our customer. So visit our restaurant. </p>
+                                </div>
                             </div>
                         </div>
-                        
-                    </div>
-                    <div class="row position-relative">
-                        <div class="col-lg-12 d-flex justify-content-center">
-                            <div class="swiper-pagination-i"></div>
-                        </div>
+                    <?php endforeach ?>
                     </div>
                 </div>
             </div>

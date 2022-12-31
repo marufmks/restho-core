@@ -46,7 +46,7 @@ if ( ! class_exists( 'Egens_Custom_Post_Type' ) ) {
 					'args'      => array(
 						'label'              => esc_html__( 'Chef', 'restho-core' ),
 						'description'        => esc_html__( 'Chef', 'restho-core' ),
-						'menu_icon'           => 'dashicons-food',
+						'menu_icon'           => 'dashicons-groups',
 						'labels'             => array(
 							'name'               => esc_html_x( 'Chef', 'Post Type General Name', 'restho-core' ),
 							'singular_name'      => esc_html_x( 'Chef', 'Post Type Singular Name', 'restho-core' ),
@@ -64,7 +64,7 @@ if ( ! class_exists( 'Egens_Custom_Post_Type' ) ) {
 						'supports'           => array( 'title','editor', 'excerpt','thumbnail'),
 						'hierarchical'       => true,
 						'public'             => true,
-						'has_archive' 		=> false,
+						'has_archive' 		=> true,
 						"publicly_queryable" => true,
 						'show_ui'            => true,
 						"rewrite" => array( 'slug' => 'chef', 'with_front' => true),
@@ -75,6 +75,7 @@ if ( ! class_exists( 'Egens_Custom_Post_Type' ) ) {
 						"show_in_rest"		 => false,
 					)
 				],
+				
 				
 			);
 			
@@ -111,8 +112,7 @@ if ( ! class_exists( 'Egens_Custom_Post_Type' ) ) {
 						"show_in_rest" => false,
 						"show_in_quick_edit" => true,
 					)
-				),
-				
+				),				
 				
 			);
 			
