@@ -453,9 +453,9 @@ class Restho_Blog_Two_Widget extends Widget_Base
                                         <?php $author_url = get_author_posts_url(get_the_author_meta("ID")); ?>
                                             <a href="<?php echo esc_url($author_url) ?>"><?php echo esc_html__('By', 'restho') . ' ' . esc_html(get_the_author()); ?></a></a>
                                     </div>
-                                    <h3><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h3>
+                                    <h3><a href="<?php esc_url( the_permalink() ) ?>"><?php echo wp_kses(get_the_title(), wp_kses_allowed_html('post')) ?></a></h3>
                                     <div class="read-more-btn">
-                                        <a href="<?php the_permalink() ?>"><span><?php echo esc_attr('Read More','restho-core') ?></span><span><i class="bi bi-arrow-right"></i></span></a>
+                                        <a href="<?php esc_url( the_permalink() ) ?>"><span><?php echo esc_attr('Read More','restho-core') ?></span><span><i class="bi bi-arrow-right"></i></span></a>
                                     </div>
                                 </div>
                             </div>
