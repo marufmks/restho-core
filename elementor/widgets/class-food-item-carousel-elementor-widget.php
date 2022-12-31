@@ -315,11 +315,20 @@ class Restho_Food_Item_Carousel_Widget extends Widget_Base
         $repeater4 = new \Elementor\Repeater();
 
         $repeater4->add_control(
-            'restho_section_content_food_it_caro_st_four_price_tag',
+            'restho_section_content_food_it_caro_st_four_new_price_tag',
             [
-                'label' => esc_html__('Price', 'restho-core'),
+                'label' => esc_html__('New Price', 'restho-core'),
                 'type' => Controls_Manager::TEXT,
                 'default' => esc_html__('$55', 'restho-core'),
+                'label_block' => true,
+            ]
+        );
+        $repeater4->add_control(
+            'restho_section_content_food_it_caro_st_four_old_price_tag',
+            [
+                'label' => esc_html__('Old Price', 'restho-core'),
+                'type' => Controls_Manager::TEXT,
+                'default' => esc_html__('$65', 'restho-core'),
                 'label_block' => true,
             ]
         );
@@ -327,6 +336,16 @@ class Restho_Food_Item_Carousel_Widget extends Widget_Base
 			'restho_section_content_food_it_caro_st_four_image',
 			[
 				'label' => esc_html__( 'Food Image', 'restho-core' ),
+				'type' => \Elementor\Controls_Manager::MEDIA,
+				'default' => [
+					'url' => \Elementor\Utils::get_placeholder_image_src(),
+				],
+			]
+		);
+        $repeater4->add_control(
+			'restho_section_content_food_it_caro_st_four_sml_image',
+			[
+				'label' => esc_html__( 'Food Image (Small)', 'restho-core' ),
 				'type' => \Elementor\Controls_Manager::MEDIA,
 				'default' => [
 					'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -1122,6 +1141,294 @@ class Restho_Food_Item_Carousel_Widget extends Widget_Base
             ]
         );
         $this->end_controls_section();
+        //Style Four
+        //General
+        $this->start_controls_section(
+            'restho_food_itm_sty_four_general_section',
+            [
+                'label' => esc_html__('General', 'restho-core'),
+                'tab'   => Controls_Manager::TAB_STYLE,
+                'condition' => [
+                    'restho_food_it_caro_style_selection' => 'style_four'
+                ],
+            ]
+        );
+        $this->add_control(
+            'restho_food_itm_sty_four_img_brdr_color',
+            [
+                'label'     => esc_html__('Food Image Border', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .h3-spacial-offer-area .single-offer-card .offer-img::after' => 'border:2x dashed {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_control(
+            'restho_food_itm_sty_four_sl_num_color',
+            [
+                'label'     => esc_html__('Sl. Number', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .h3-spacial-offer-area .single-offer-card .offer-content .price-sl .sl-no span' => '-webkit-text-stroke:1px {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->end_controls_section();
+        //New Price
+        $this->start_controls_section(
+            'restho_food_itm_sty_four_new_price',
+            [
+                'label' => esc_html__('New Price', 'restho-core'),
+                'tab'   => Controls_Manager::TAB_STYLE,
+                'condition' => [
+                    'restho_food_it_caro_style_selection' => 'style_four'
+                ],
+            ]
+        );
+        $this->add_control(
+            'restho_food_itm_sty_four_new_price_color',
+            [
+                'label'     => esc_html__('Color', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .h3-spacial-offer-area .single-offer-card .offer-content .price-sl .price-tag span' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_food_itm_sty_four_new_price_typography',
+                'selector' => '{{WRAPPER}} .h3-spacial-offer-area .single-offer-card .offer-content .price-sl .price-tag span',
+            ],
+        );
+        $this->end_controls_section();
+        //Old Price
+        $this->start_controls_section(
+            'restho_food_itm_sty_four_old_price',
+            [
+                'label' => esc_html__('Old Price', 'restho-core'),
+                'tab'   => Controls_Manager::TAB_STYLE,
+                'condition' => [
+                    'restho_food_it_caro_style_selection' => 'style_four'
+                ],
+            ]
+        );
+        $this->add_control(
+            'restho_food_itm_sty_four_old_price_color',
+            [
+                'label'     => esc_html__('Color', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .h3-spacial-offer-area .single-offer-card .offer-content .price-sl .price-tag span del' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_food_itm_sty_four_old_price_typography',
+                'selector' => '{{WRAPPER}} .h3-spacial-offer-area .single-offer-card .offer-content .price-sl .price-tag span del',
+            ],
+        );
+        $this->end_controls_section();
+        //Title
+        $this->start_controls_section(
+            'restho_food_itm_sty_four_title',
+            [
+                'label' => esc_html__('Title', 'restho-core'),
+                'tab'   => Controls_Manager::TAB_STYLE,
+                'condition' => [
+                    'restho_food_it_caro_style_selection' => 'style_four'
+                ],
+            ]
+        );
+        $this->add_control(
+            'restho_food_itm_sty_four_title_color',
+            [
+                'label'     => esc_html__('Color', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .h3-spacial-offer-area .single-offer-card .offer-content h3' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_control(
+            'restho_food_itm_sty_four_title_hvr_color',
+            [
+                'label'     => esc_html__('Hover', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .h3-spacial-offer-area .single-offer-card .offer-content h3:hover' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_food_itm_sty_four_title_typography',
+                'selector' => '{{WRAPPER}} .h3-spacial-offer-area .single-offer-card .offer-content h3',
+            ],
+        );
+        $this->add_responsive_control(
+            'restho_food_itm_sty_four_title_padding',
+            [
+                'label'      => __('Padding', 'restho-core'),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', '%'],
+                'selectors'  => [
+                    '{{WRAPPER}} .h3-spacial-offer-area .single-offer-card .offer-content h3' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',   
+                ]
+            ]
+        );
+        $this->add_responsive_control(
+            'restho_food_itm_sty_four_title_margin',
+            [
+                'label' => esc_html__( 'Margin', 'restho-core' ),
+                'type' => \Elementor\Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em' ],
+                'selectors' => [
+                    '{{WRAPPER}} .h3-spacial-offer-area .single-offer-card .offer-content h3' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+        $this->end_controls_section();
+        //Description
+        $this->start_controls_section(
+            'restho_food_itm_sty_four_desc',
+            [
+                'label' => esc_html__('Description', 'restho-core'),
+                'tab'   => Controls_Manager::TAB_STYLE,
+                'condition' => [
+                    'restho_food_it_caro_style_selection' => 'style_four'
+                ],
+            ]
+        );
+        $this->add_control(
+            'restho_food_itm_sty_four_desc_color',
+            [
+                'label'     => esc_html__('Color', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .h3-spacial-offer-area .single-offer-card .offer-content p' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_food_itm_sty_four_desc_typography',
+                'selector' => '{{WRAPPER}} .h3-spacial-offer-area .single-offer-card .offer-content p',
+            ],
+        );
+        $this->add_responsive_control(
+            'restho_food_itm_sty_four_desc_padding',
+            [
+                'label'      => __('Padding', 'restho-core'),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', '%'],
+                'selectors'  => [
+                    '{{WRAPPER}} .h3-spacial-offer-area .single-offer-card .offer-content p' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',   
+                ]
+            ]
+        );
+        $this->add_responsive_control(
+            'restho_food_itm_sty_four_desc_margin',
+            [
+                'label' => esc_html__( 'Margin', 'restho-core' ),
+                'type' => \Elementor\Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em' ],
+                'selectors' => [
+                    '{{WRAPPER}} .h3-spacial-offer-area .single-offer-card .offer-content p' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+        $this->end_controls_section();
+        //Pagination
+        $this->start_controls_section(
+            'restho_food_itm_sty_four_pagination',
+            [
+                'label' => esc_html__('Pagination (prev/next)', 'restho-core'),
+                'tab'   => Controls_Manager::TAB_STYLE,
+                'condition' => [
+                    'restho_food_it_caro_style_selection' => 'style_four'
+                ],
+            ]
+        );
+        $this->add_control(
+            'restho_food_itm_sty_four_pagination_icon_color',
+            [
+                'label'     => esc_html__('Icon Color', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .populer-food-area .slider-btn .prev-btn-3 i' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .populer-food-area .slider-btn .next-btn-3 i' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_control(
+            'restho_food_itm_sty_four_pagination_icon_hvr_color',
+            [
+                'label'     => esc_html__('Icon Hover', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .populer-food-area .slider-btn .prev-btn-3:hover i' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .populer-food-area .slider-btn .next-btn-3:hover i' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_control(
+            'restho_food_itm_sty_four_pagination_bg_color',
+            [
+                'label'     => esc_html__('Background Color', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .populer-food-area .slider-btn .prev-btn-3' => 'background-color: {{VALUE}};',
+                    '{{WRAPPER}} .populer-food-area .slider-btn .next-btn-3' => 'background-color: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_control(
+            'restho_food_itm_sty_four_pagination_bg_hvr_color',
+            [
+                'label'     => esc_html__('Background Hover', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .populer-food-area .slider-btn .prev-btn-3:hover' => 'background-color: {{VALUE}};',
+                    '{{WRAPPER}} .populer-food-area .slider-btn .next-btn-3:hover' => 'background-color: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_responsive_control(
+            'restho_food_itm_sty_four_pagination_border_radius',
+            [
+                'label'      		=> __('Border Radius', 'restho-core'),
+                'type'       		=> Controls_Manager::DIMENSIONS,
+                'size_units' 		=> ['px', '%'],
+                'selectors'  		=> [
+                    '{{WRAPPER}} .populer-food-area .slider-btn .prev-btn-3' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .populer-food-area .slider-btn .next-btn-3' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+
+        );
+        $this->add_control(
+            'restho_food_itm_sty_four_border_color',
+            [
+                'label'     => esc_html__('Border Color', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .populer-food-area .slider-btn .prev-btn-3' => 'border:1px solid {{VALUE}};',
+                    '{{WRAPPER}} .populer-food-area .slider-btn .next-btn-3' => 'border:1px solid {{VALUE}};',
+                ],
+            ]
+        );
+        $this->end_controls_section();
  
     }
     protected function render()
@@ -1414,33 +1721,46 @@ class Restho_Food_Item_Carousel_Widget extends Widget_Base
         <?php endif ?>
         <?php if( !empty( $settings['restho_food_it_caro_style_selection'] ) && ($settings['restho_food_it_caro_style_selection'] == 'style_four') )  : ?>
             <div class="h3-spacial-offer-area mb-120 ">
-                <div class="container">
-                    <div id="slick1">
-                    <?php foreach($fooditems4 as $key=> $item): ?>
+                <div id="slick1">
+                    <?php foreach($fooditems4 as $key=> $item4): ?>
                         <div class="slide-item">
                             <div class="single-offer-card">
                                 <div class="offer-img">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bg/h3-special-01.png" alt="h3-special-01">
-                                    <div class="sm-img">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bg/h3-special-01-sm.png" alt="h3-special-01-sm">
-                                    </div>
+                                    <?php if (!empty($item4['restho_section_content_food_it_caro_st_four_image']['url'])) : ?>
+                                        <img src="<?php echo esc_url($item4['restho_section_content_food_it_caro_st_four_image']['url']) ?>" alt="<?php echo esc_attr__('food-img', 'restho') ?>">
+                                    <?php endif ?>
+                                    <?php if (!empty($item4['restho_section_content_food_it_caro_st_four_sml_image']['url'])) : ?>
+                                        <div class="sm-img">
+                                            <img src="<?php echo esc_url($item4['restho_section_content_food_it_caro_st_four_sml_image']['url']) ?>" alt="<?php echo esc_attr__('food-img', 'restho') ?>">
+                                        </div>
+                                    <?php endif ?>
                                 </div>
                                 <div class="offer-content">
                                     <div class="price-sl">
                                         <div class="price-tag">
-                                            <span>$60 <del>$75</del></span>
+                                            <span>
+                                                <?php if (!empty($item4['restho_section_content_food_it_caro_st_four_new_price_tag'])) : ?>
+                                                    <?php echo wp_kses($item4['restho_section_content_food_it_caro_st_four_new_price_tag'], wp_kses_allowed_html('post')) ?> 
+                                                <?php endif ?>
+                                                <?php if (!empty($item4['restho_section_content_food_it_caro_st_four_old_price_tag'])) : ?>
+                                                    <del><?php echo wp_kses($item4['restho_section_content_food_it_caro_st_four_old_price_tag'], wp_kses_allowed_html('post')) ?></del>
+                                                <?php endif ?>
+                                            </span>
                                         </div>
                                         <div class="sl-no">
-                                            <span>01</span>
+                                            <span><?php echo "0".$key+1 ;?></span>
                                         </div>
                                     </div>
-                                    <h3><a href="shop-details.html">Chicken with Drinks.</a></h3>
-                                    <p>It’s so tasty and delicious for creating our customer. So visit our restaurant. </p>
+                                    <?php if (!empty($item4['restho_section_content_food_it_caro_st_four_title'])) : ?>
+                                        <h3><?php echo wp_kses($item4['restho_section_content_food_it_caro_st_four_title'], wp_kses_allowed_html('post')) ?></h3>
+                                    <?php endif ?>
+                                    <?php if (!empty($item4['restho_section_content_food_it_caro_st_four_description'])) : ?>
+                                        <p><?php echo wp_kses($item4['restho_section_content_food_it_caro_st_four_description'], wp_kses_allowed_html('post')) ?></p>
+                                    <?php endif ?>
                                 </div>
                             </div>
                         </div>
                     <?php endforeach ?>
-                    </div>
                 </div>
             </div>
         <?php endif ?>
