@@ -476,7 +476,7 @@ class restho_gallery_Widget extends Widget_Base
                             <div class="filters filter-button-group">
                                 <ul class="d-flex justify-content-center flex-wrap">
                                     <li class="active" data-filter="*"><?php echo esc_html__('All', 'restho') ?></li>
-                                    <?php foreach ($data2 as $key => $item) {
+                                    <?php foreach ($data2 as $item) {
                                         if (!empty($item['restho_gallery_content_gallery_images_title'])) {
                                             $str = $item['restho_gallery_content_gallery_images_title'];
                                             $new_str = str_replace(' ', '', $str);
@@ -485,14 +485,13 @@ class restho_gallery_Widget extends Widget_Base
 
                                     <?php }
 
-                                        $key++;
                                     } ?>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="row grid g-4">
-                        <?php foreach ($data2 as $key => $item) {
+                        <?php foreach ($data2 as $item) {
                             $str = $item['restho_gallery_content_gallery_images_title'];
                             $new_str = str_replace(' ', '', $str); ?>
                             <?php foreach ($item['restho_gallery_content_gallery_images_two'] as $image) { ?>
@@ -508,13 +507,9 @@ class restho_gallery_Widget extends Widget_Base
                                         </div>
                                     </a>
                                 </div>
-                            <?php } ?>
-                        <?php } ?>
+                        <?php }
+                        } ?>
                     </div>
-
-
-
-
                 </div>
             </div>
             </div>
