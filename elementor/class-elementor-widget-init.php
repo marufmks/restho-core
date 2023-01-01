@@ -85,6 +85,7 @@ if ( ! class_exists( 'Egens_Elementor_Widget_Init' ) ) {
 				'blog-two',
 				'blog-three',
 				'foods-intro',
+				'gallery',
 
 
 
