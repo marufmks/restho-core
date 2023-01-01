@@ -492,7 +492,7 @@ class Restho_Blog_One_Widget extends Widget_Base
                                                 <?php echo esc_html('Comments'). ' ' ?> <?php echo "(".get_comments_number().")" ?></a>
                                             </div>
                                         </div>
-                                        <h3><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h3>
+                                        <h3><a href="<?php esc_url( the_permalink() ) ?>"><?php echo wp_kses(get_the_title(), wp_kses_allowed_html('post')) ?></a></h3>
                                     </div>
                                 </div>
                             </div>
