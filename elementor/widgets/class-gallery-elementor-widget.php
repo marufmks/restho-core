@@ -47,7 +47,6 @@ class restho_gallery_Widget extends Widget_Base
                     'style_one' => esc_html__('Style One', 'restho-core'),
                     'style_two' => esc_html__('Style Two', 'restho-core'),
                     'style_three' => esc_html__('Style Three', 'restho-core'),
-                    'style_four' => esc_html__('Style Four', 'restho-core'),
                 ],
                 'default' => 'style_one',
             ]
@@ -152,7 +151,19 @@ class restho_gallery_Widget extends Widget_Base
             ]
         );
 
+        $this->add_control(
+            'restho_gallery_column_selection',
+            [
+                'label'   => esc_html__('Column', 'restho-core'),
+                'type'    => Controls_Manager::SELECT,
+                'options' => [
+                    'column_two'  => esc_html__('2', 'restho-core'),
+                    'column_three' => esc_html__('3', 'restho-core'),
 
+                ],
+                'default' => 'column_three',
+            ]
+        );
 
         $repeater2 = new \Elementor\Repeater();
 
@@ -166,6 +177,8 @@ class restho_gallery_Widget extends Widget_Base
 
             ]
         );
+
+
 
         $repeater2->add_control(
             'restho_gallery_content_gallery_images_two',
@@ -205,6 +218,9 @@ class restho_gallery_Widget extends Widget_Base
             [
                 'label' => esc_html__('Sub Title', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
+                'condition' => [
+                    'restho_gallery_content_style_selection' => ['style_one',],
+                ],
 
             ]
         );
@@ -248,6 +264,9 @@ class restho_gallery_Widget extends Widget_Base
             [
                 'label' => esc_html__('Main Title', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
+                'condition' => [
+                    'restho_gallery_content_style_selection' => ['style_one',],
+                ],
             ]
         );
 
@@ -484,7 +503,6 @@ class restho_gallery_Widget extends Widget_Base
                                             <li data-filter=".<?php echo esc_attr($new_str) ?>"><?php echo esc_html__($item['restho_gallery_content_gallery_images_title'], 'restho') ?></li>
 
                                     <?php }
-
                                     } ?>
                                 </ul>
                             </div>
@@ -495,23 +513,27 @@ class restho_gallery_Widget extends Widget_Base
                             $str = $item['restho_gallery_content_gallery_images_title'];
                             $new_str = str_replace(' ', '', $str); ?>
                             <?php foreach ($item['restho_gallery_content_gallery_images_two'] as $image) { ?>
-                                <div class="col-lg-4 col-md-6 col-sm-12 grid-item <?php echo $new_str ?>">
-                                    <a href="<?php echo esc_url($image['url']) ?>" data-fancybox="gallery" class="gallery2-img">
-                                        <div class="gallery-img">
-                                            <img class="img-fluid" src="<?php echo esc_url($image['url']) ?>" alt="<?php echo esc_attr__('gallery_image', 'restho') ?>">
-                                            <div class="overlay">
-                                                <div class="zoom-icon">
-                                                    <img src="<?php echo get_template_directory_uri() ?>/assets/images/icon/Zoom.svg" alt="<?php echo esc_attr__('zoom-icon', 'restho') ?>">
+                                <?php if ($settings['restho_gallery_column_selection'] == 'column_two') : ?>
+                                    <div class="col-md-6 col-sm-12 grid-item <?php echo $new_str ?>">
+                                    <?php elseif ($settings['restho_gallery_column_selection'] == 'column_three') : ?>
+                                        <div class="col-lg-4 col-md-6 col-sm-12 grid-item <?php echo $new_str ?>">
+                                        <?php endif ?>
+                                        <a href="<?php echo esc_url($image['url']) ?>" data-fancybox="gallery" class="gallery2-img">
+                                            <div class="gallery-img">
+                                                <img class="img-fluid" src="<?php echo esc_url($image['url']) ?>" alt="<?php echo esc_attr__('gallery_image', 'restho') ?>">
+                                                <div class="overlay">
+                                                    <div class="zoom-icon">
+                                                        <img src="<?php echo get_template_directory_uri() ?>/assets/images/icon/Zoom.svg" alt="<?php echo esc_attr__('zoom-icon', 'restho') ?>">
+                                                    </div>
                                                 </div>
                                             </div>
+                                        </a>
                                         </div>
-                                    </a>
-                                </div>
-                        <?php }
-                        } ?>
+                                <?php }
+                                } ?>
+                            </div>
                     </div>
                 </div>
-            </div>
             </div>
         <?php endif ?>
 
