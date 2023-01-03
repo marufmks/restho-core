@@ -118,7 +118,18 @@ class restho_menu_tab_Widget extends Widget_Base
             ]
         );
 
+        
         $repeater2 = new \Elementor\Repeater();
+
+        $repeater2->add_control(
+            'restho_menu_tab_content_menu_tab_title_two',
+            [
+                'label' => esc_html__('Category Title', 'restho-core'),
+                'type' => Controls_Manager::TEXT,
+                'default' => esc_html__('Dinner', 'restho-core'),
+                'label_block' => true,
+            ]
+        );
 
         $repeater2->add_control(
             'restho_menu_tab_content_menu_food_title',
@@ -158,15 +169,15 @@ class restho_menu_tab_Widget extends Widget_Base
                 'fields' => $repeater2->get_controls(),
                 'default' => [
                     [
-                        'restho_menu_tab_content_menu_food_title' => esc_html__('Veggie Burgers', 'restho-core'),
+                        'restho_menu_tab_content_menu_tab_title_two' => esc_html__('Veggie Burgers', 'restho-core'),
                         'list_content' => esc_html__('Item content. Click the edit button to change this text.', 'restho-core'),
                     ],
                     [
-                        'restho_menu_tab_content_menu_food_title' => esc_html__('Sweet Papers', 'restho-core'),
+                        'restho_menu_tab_content_menu_tab_title_two' => esc_html__('Sweet Papers', 'restho-core'),
                         'list_content' => esc_html__('Item content. Click the edit button to change this text.', 'restho-core'),
                     ],
                 ],
-                'title_field' => '{{{ restho_menu_tab_content_menu_food_title }}}',
+                'title_field' => '{{{ restho_menu_tab_content_menu_tab_title_two }}}',
             ]
         );
 
@@ -266,24 +277,24 @@ class restho_menu_tab_Widget extends Widget_Base
                                         <div class="row">
                                             <div class="col-lg-6 p-0">
                                                 <div class="menu2-left-img">
-                                                    <?php if( !empty( $item['restho_menu_tab_content_menu_tab_offer_menu_image']['url'] ) ) : ?>
-                                                        <img src="<?php echo esc_url($item['restho_menu_tab_content_menu_tab_offer_menu_image']['url']) ?>" alt="<?php echo esc_attr__('offer-menu-image','restho')?>">
+                                                    <?php if (!empty($item['restho_menu_tab_content_menu_tab_offer_menu_image']['url'])) : ?>
+                                                        <img src="<?php echo esc_url($item['restho_menu_tab_content_menu_tab_offer_menu_image']['url']) ?>" alt="<?php echo esc_attr__('offer-menu-image', 'restho') ?>">
                                                     <?php endif ?>
                                                     <div class="overlay">
                                                         <div class="vec-left">
-                                                            <img src="<?php echo get_template_directory_uri() ?>/assets/images/icon/menu1-left-vec.svg" alt="<?php echo esc_attr__('left-vec-icon','restho')?>">
+                                                            <img src="<?php echo get_template_directory_uri() ?>/assets/images/icon/menu1-left-vec.svg" alt="<?php echo esc_attr__('left-vec-icon', 'restho') ?>">
                                                         </div>
                                                         <div class="vec-right">
-                                                            <img src="<?php echo get_template_directory_uri() ?>/assets/images/icon/menu1-right-vec.svg" alt="<?php echo esc_attr__('right-vec-icon','restho')?>">
+                                                            <img src="<?php echo get_template_directory_uri() ?>/assets/images/icon/menu1-right-vec.svg" alt="<?php echo esc_attr__('right-vec-icon', 'restho') ?>">
                                                         </div>
-                                                        <?php if( !empty( $item['restho_menu_tab_content_menu_tab_offer_name'] ) ) : ?>
+                                                        <?php if (!empty($item['restho_menu_tab_content_menu_tab_offer_name'])) : ?>
                                                             <span><?php echo esc_html__($item['restho_menu_tab_content_menu_tab_offer_name'], 'restho') ?></span>
                                                         <?php endif ?>
-                                                        <?php if( !empty( $item['restho_menu_tab_content_menu_tab_offer_discount'] ) ) : ?>
-                                                            <h2><?php echo wp_kses($item['restho_menu_tab_content_menu_tab_offer_discount'],wp_kses_allowed_html('post')) ?></h2>
+                                                        <?php if (!empty($item['restho_menu_tab_content_menu_tab_offer_discount'])) : ?>
+                                                            <h2><?php echo wp_kses($item['restho_menu_tab_content_menu_tab_offer_discount'], wp_kses_allowed_html('post')) ?></h2>
                                                         <?php endif ?>
-                                                        <?php if( !empty( $item['restho_menu_tab_content_menu_tab_offer_menu_name'] ) ) : ?>
-                                                            <h3><?php echo esc_html__($item['restho_menu_tab_content_menu_tab_offer_menu_name'],'reshto') ?></h3>
+                                                        <?php if (!empty($item['restho_menu_tab_content_menu_tab_offer_menu_name'])) : ?>
+                                                            <h3><?php echo esc_html__($item['restho_menu_tab_content_menu_tab_offer_menu_name'], 'reshto') ?></h3>
                                                         <?php endif ?>
                                                     </div>
                                                 </div>
@@ -291,30 +302,32 @@ class restho_menu_tab_Widget extends Widget_Base
                                             <div class="col-lg-6 p-0">
                                                 <div class="menu2-wrap">
                                                     <div class="menu-title">
-                                                        <?php if( !empty( $item['restho_menu_tab_content_menu_tab_title'] ) ) : ?>
+                                                        <?php if (!empty($item['restho_menu_tab_content_menu_tab_title'])) : ?>
                                                             <h2><?php echo esc_html__($item['restho_menu_tab_content_menu_tab_title'], 'restho') ?></h2>
                                                         <?php endif ?>
                                                     </div>
                                                     <ul>
                                                         <?php foreach ($data2 as $item2) : ?>
-                                                            <li>
-                                                                <div class="single-menu">
-                                                                    <div class="menu-name">
-                                                                        <?php if (!empty($item2['restho_menu_tab_content_menu_food_title'])) : ?>
-                                                                            <h4><?php echo esc_html__($item2['restho_menu_tab_content_menu_food_title'], 'restho') ?></h4>
-                                                                        <?php endif ?>
-                                                                        <?php if (!empty($item2['restho_menu_content_food_description'])) : ?>
-                                                                            <p><?php echo wp_kses($item2['restho_menu_content_food_description'], wp_kses_allowed_html('post')) ?></p>
-                                                                        <?php endif ?>
+                                                            <?php if ($item['restho_menu_tab_content_menu_tab_title'] == $item2['restho_menu_tab_content_menu_tab_title_two']) { ?>
+                                                                <li>
+                                                                    <div class="single-menu">
+                                                                        <div class="menu-name">
+                                                                            <?php if (!empty($item2['restho_menu_tab_content_menu_food_title'])) : ?>
+                                                                                <h4><?php echo esc_html__($item2['restho_menu_tab_content_menu_food_title'], 'restho') ?></h4>
+                                                                            <?php endif ?>
+                                                                            <?php if (!empty($item2['restho_menu_content_food_description'])) : ?>
+                                                                                <p><?php echo wp_kses($item2['restho_menu_content_food_description'], wp_kses_allowed_html('post')) ?></p>
+                                                                            <?php endif ?>
+                                                                        </div>
+                                                                        <div class="price">
+                                                                            <?php if (!empty($item2['restho_menu_content_food_price'])) : ?>
+                                                                                <span><?php echo esc_html__($item2['restho_menu_content_food_price'], 'restho') ?></span>
+                                                                            <?php endif ?>
+                                                                        </div>
                                                                     </div>
-                                                                    <div class="price">
-                                                                        <?php if (!empty($item2['restho_menu_content_food_price'])) : ?>
-                                                                            <span><?php echo esc_html__($item2['restho_menu_content_food_price'], 'restho') ?></span>
-                                                                        <?php endif ?>
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-                                                        <?php endforeach ?>
+                                                                </li>
+                                                                <?php } ?>
+                                                            <?php endforeach ?>
                                                     </ul>
                                                 </div>
                                             </div>
