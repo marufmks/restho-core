@@ -1,0 +1,335 @@
+<?php
+
+namespace Elementor;
+
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
+
+use Elementor\core\Schemes;
+
+class restho_menu_tab_Widget extends Widget_Base
+{
+
+    public function get_name()
+    {
+        return 'restho_menu_tab';
+    }
+
+    public function get_title()
+    {
+        return esc_html__('EG Menu Tab', 'restho-core');
+    }
+
+    public function get_icon()
+    {
+        return 'eicon-price-table';
+    }
+
+    public function get_categories()
+    {
+        return ['restho_widgets'];
+    }
+
+    protected function register_controls()
+    {
+        //Content Section
+        $this->start_controls_section(
+            'restho_menu_tab_content_category_section',
+            [
+                'label' => esc_html__('Category Contents', 'restho-core')
+            ]
+        );
+
+        $repeater = new \Elementor\Repeater();
+
+        $repeater->add_control(
+            'restho_menu_tab_content_menu_tab_title',
+            [
+                'label' => esc_html__('Category Title', 'restho-core'),
+                'type' => Controls_Manager::TEXT,
+                'default' => esc_html__('Dinner', 'restho-core'),
+                'label_block' => true,
+            ]
+        );
+        $repeater->add_control(
+            'restho_menu_tab_content_menu_tab_offer_name',
+            [
+                'label' => esc_html__('Offer Name', 'restho-core'),
+                'type' => Controls_Manager::TEXT,
+                'default' => esc_html__('Friday Offer', 'restho-core'),
+                'label_block' => true,
+            ]
+        );
+        $repeater->add_control(
+            'restho_menu_tab_content_menu_tab_offer_discount',
+            [
+                'label' => esc_html__('Offer Discount', 'restho-core'),
+                'type' => Controls_Manager::TEXT,
+                'default' => esc_html__('20% Discount', 'restho-core'),
+                'label_block' => true,
+            ]
+        );
+        $repeater->add_control(
+            'restho_menu_tab_content_menu_tab_offer_menu_name',
+            [
+                'label' => esc_html__('Offer Menu Name', 'restho-core'),
+                'type' => Controls_Manager::TEXT,
+                'default' => esc_html__('Our Breakfast Menu', 'restho-core'),
+                'label_block' => true,
+            ]
+        );
+
+        $repeater->add_control(
+            'restho_menu_tab_content_menu_tab_offer_menu_image',
+            [
+                'label' => esc_html__('Offer Image', 'textdomain'),
+                'type' => \Elementor\Controls_Manager::MEDIA,
+                'default' => [
+                    'url' => \Elementor\Utils::get_placeholder_image_src(),
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'restho_menu_tab_content_category_list_three',
+            [
+                'label' => esc_html__('Category Items', 'restho-core'),
+                'type' => \Elementor\Controls_Manager::REPEATER,
+                'fields' => $repeater->get_controls(),
+                'default' => [
+                    [
+                        'restho_menu_tab_content_menu_tab_title' => esc_html__('Breakfast', 'restho-core'),
+                        'list_content' => esc_html__('Item content. Click the edit button to change this text.', 'restho-core'),
+                    ],
+                    [
+                        'restho_menu_tab_content_menu_tab_title' => esc_html__('Lunch', 'restho-core'),
+                        'list_content' => esc_html__('Item content. Click the edit button to change this text.', 'restho-core'),
+                    ],
+                ],
+                'title_field' => '{{{ restho_menu_tab_content_menu_tab_title }}}',
+            ]
+        );
+
+        $this->end_controls_section();
+
+        $this->start_controls_section(
+            'restho_menu_tab_content_items_section',
+            [
+                'label' => esc_html__('Menu Food Items', 'restho-core')
+            ]
+        );
+
+        $repeater2 = new \Elementor\Repeater();
+
+        $repeater2->add_control(
+            'restho_menu_tab_content_menu_food_title',
+            [
+                'label' => esc_html__('Food Title', 'restho-core'),
+                'type' => Controls_Manager::TEXT,
+                'default' => esc_html__('French Fries', 'restho-core'),
+                'label_block' => true,
+            ]
+        );
+
+        $repeater2->add_control(
+            'restho_menu_content_food_description',
+            [
+                'label' => esc_html__('Food Description', 'restho-core'),
+                'type' => Controls_Manager::TEXTAREA,
+                'default' => esc_html__('Special Breakfast to make for our customer.', 'restho-core'),
+                'label_block' => true,
+            ]
+        );
+
+        $repeater2->add_control(
+            'restho_menu_content_food_price',
+            [
+                'label' => esc_html__('Food Price', 'restho-core'),
+                'type' => Controls_Manager::TEXT,
+                'default' => esc_html__('$10', 'restho-core'),
+                'label_block' => true,
+            ]
+        );
+
+        $this->add_control(
+            'restho_menu_tab_content_food_items_list',
+            [
+                'label' => esc_html__('Food Items', 'restho-core'),
+                'type' => \Elementor\Controls_Manager::REPEATER,
+                'fields' => $repeater2->get_controls(),
+                'default' => [
+                    [
+                        'restho_menu_tab_content_menu_food_title' => esc_html__('Veggie Burgers', 'restho-core'),
+                        'list_content' => esc_html__('Item content. Click the edit button to change this text.', 'restho-core'),
+                    ],
+                    [
+                        'restho_menu_tab_content_menu_food_title' => esc_html__('Sweet Papers', 'restho-core'),
+                        'list_content' => esc_html__('Item content. Click the edit button to change this text.', 'restho-core'),
+                    ],
+                ],
+                'title_field' => '{{{ restho_menu_tab_content_menu_food_title }}}',
+            ]
+        );
+
+        $this->end_controls_section();
+
+        //Subtitle Style
+        $this->start_controls_section(
+            'restho_menu_tab_style_sub_title_section',
+            [
+                'label' => esc_html__('Sub Title', 'restho-core'),
+                'tab'   => Controls_Manager::TAB_STYLE,
+
+            ]
+        );
+        $this->add_control(
+            'restho_menu_tab_style_sub_title_color',
+            [
+                'label'     => esc_html__('Color', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .section-title span' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .section-title3 span' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_control(
+            'restho_menu_tab_style_sub_title_icon_color',
+            [
+                'label'     => esc_html__('Icon Color', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .section-title span svg' => 'fill: {{VALUE}};',
+                    '{{WRAPPER}} .section-title3 span svg path' => 'fill: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_menu_tab_style_sub_title_typography',
+                'selector' => '{{WRAPPER}} .section-title span, .section-title3 span',
+            ]
+        );
+        $this->add_responsive_control(
+            'restho_menu_tab_style_sub_title_padding',
+            [
+                'label'      => __('Padding', 'restho-core'),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', '%'],
+                'selectors'  => [
+                    '{{WRAPPER}} .section-title span' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .section-title3 span' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+                ]
+            ]
+        );
+
+        $this->end_controls_section();
+    }
+    protected function render()
+    {
+
+        $settings = $this->get_settings_for_display();
+        $data = $settings['restho_menu_tab_content_category_list_three'];
+        $data2 = $settings['restho_menu_tab_content_food_items_list'];
+?>
+
+
+        <div class="menu2-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="menu2-tab mb-70">
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <?php foreach ($data as $key => $item) {
+                                    if (!empty($item['restho_menu_tab_content_menu_tab_title'])) {
+                                        $str = $item['restho_menu_tab_content_menu_tab_title'];
+                                        $new_str = str_replace(' ', '', $str);
+                                ?>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link <?php echo ($key == 0) ? 'active' : '' ?>" id="<?php echo esc_attr($new_str) ?>-tab" data-bs-toggle="tab" data-bs-target="#<?php echo esc_attr($new_str) ?>" type="button" role="tab" aria-controls="<?php echo esc_attr($new_str) ?>" aria-selected="true"><?php echo esc_html__($item['restho_menu_tab_content_menu_tab_title'], 'restho') ?></button>
+                                        </li>
+                                <?php }
+                                } ?>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="tab-content" id="myTabContent">
+                            <?php foreach ($data as $key => $item) {
+                                if (!empty($item['restho_menu_tab_content_menu_tab_title'])) {
+                                    $str = $item['restho_menu_tab_content_menu_tab_title'];
+                                    $new_str = str_replace(' ', '', $str);
+                            ?>
+                                    <div class="tab-pane fade <?php echo ($key == 0) ? 'show active' : '' ?>" id="<?php echo esc_attr($new_str) ?>" role="tabpanel" aria-labelledby="<?php echo esc_attr($new_str) ?>-tab">
+                                        <div class="row">
+                                            <div class="col-lg-6 p-0">
+                                                <div class="menu2-left-img">
+                                                    <?php if( !empty( $item['restho_menu_tab_content_menu_tab_offer_menu_image']['url'] ) ) : ?>
+                                                        <img src="<?php echo esc_url($item['restho_menu_tab_content_menu_tab_offer_menu_image']['url']) ?>" alt="<?php echo esc_attr__('offer-menu-image','restho')?>">
+                                                    <?php endif ?>
+                                                    <div class="overlay">
+                                                        <div class="vec-left">
+                                                            <img src="<?php echo get_template_directory_uri() ?>/assets/images/icon/menu1-left-vec.svg" alt="<?php echo esc_attr__('left-vec-icon','restho')?>">
+                                                        </div>
+                                                        <div class="vec-right">
+                                                            <img src="<?php echo get_template_directory_uri() ?>/assets/images/icon/menu1-right-vec.svg" alt="<?php echo esc_attr__('right-vec-icon','restho')?>">
+                                                        </div>
+                                                        <?php if( !empty( $item['restho_menu_tab_content_menu_tab_offer_name'] ) ) : ?>
+                                                            <span><?php echo esc_html__($item['restho_menu_tab_content_menu_tab_offer_name'], 'restho') ?></span>
+                                                        <?php endif ?>
+                                                        <?php if( !empty( $item['restho_menu_tab_content_menu_tab_offer_discount'] ) ) : ?>
+                                                            <h2><?php echo wp_kses($item['restho_menu_tab_content_menu_tab_offer_discount'],wp_kses_allowed_html('post')) ?></h2>
+                                                        <?php endif ?>
+                                                        <?php if( !empty( $item['restho_menu_tab_content_menu_tab_offer_menu_name'] ) ) : ?>
+                                                            <h3><?php echo esc_html__($item['restho_menu_tab_content_menu_tab_offer_menu_name'],'reshto') ?></h3>
+                                                        <?php endif ?>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 p-0">
+                                                <div class="menu2-wrap">
+                                                    <div class="menu-title">
+                                                        <?php if( !empty( $item['restho_menu_tab_content_menu_tab_title'] ) ) : ?>
+                                                            <h2><?php echo esc_html__($item['restho_menu_tab_content_menu_tab_title'], 'restho') ?></h2>
+                                                        <?php endif ?>
+                                                    </div>
+                                                    <ul>
+                                                        <?php foreach ($data2 as $item2) : ?>
+                                                            <li>
+                                                                <div class="single-menu">
+                                                                    <div class="menu-name">
+                                                                        <?php if (!empty($item2['restho_menu_tab_content_menu_food_title'])) : ?>
+                                                                            <h4><?php echo esc_html__($item2['restho_menu_tab_content_menu_food_title'], 'restho') ?></h4>
+                                                                        <?php endif ?>
+                                                                        <?php if (!empty($item2['restho_menu_content_food_description'])) : ?>
+                                                                            <p><?php echo wp_kses($item2['restho_menu_content_food_description'], wp_kses_allowed_html('post')) ?></p>
+                                                                        <?php endif ?>
+                                                                    </div>
+                                                                    <div class="price">
+                                                                        <?php if (!empty($item2['restho_menu_content_food_price'])) : ?>
+                                                                            <span><?php echo esc_html__($item2['restho_menu_content_food_price'], 'restho') ?></span>
+                                                                        <?php endif ?>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                        <?php endforeach ?>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            <?php }
+                            } ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<?php
+    }
+}
+
+Plugin::instance()->widgets_manager->register(new restho_menu_tab_Widget());
