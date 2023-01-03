@@ -104,6 +104,18 @@ class restho_menu_tab_Widget extends Widget_Base
                         'restho_menu_tab_content_menu_tab_title' => esc_html__('Lunch', 'restho-core'),
                         'list_content' => esc_html__('Item content. Click the edit button to change this text.', 'restho-core'),
                     ],
+                    [
+                        'restho_menu_tab_content_menu_tab_title' => esc_html__('Dinner', 'restho-core'),
+                        'list_content' => esc_html__('Item content. Click the edit button to change this text.', 'restho-core'),
+                    ],
+                    [
+                        'restho_menu_tab_content_menu_tab_title' => esc_html__('Starter', 'restho-core'),
+                        'list_content' => esc_html__('Item content. Click the edit button to change this text.', 'restho-core'),
+                    ],
+                    [
+                        'restho_menu_tab_content_menu_tab_title' => esc_html__('Berverage', 'restho-core'),
+                        'list_content' => esc_html__('Item content. Click the edit button to change this text.', 'restho-core'),
+                    ],
                 ],
                 'title_field' => '{{{ restho_menu_tab_content_menu_tab_title }}}',
             ]
@@ -169,11 +181,23 @@ class restho_menu_tab_Widget extends Widget_Base
                 'fields' => $repeater2->get_controls(),
                 'default' => [
                     [
-                        'restho_menu_tab_content_menu_tab_title_two' => esc_html__('Veggie Burgers', 'restho-core'),
+                        'restho_menu_tab_content_menu_tab_title_two' => esc_html__('Breakfast', 'restho-core'),
                         'list_content' => esc_html__('Item content. Click the edit button to change this text.', 'restho-core'),
                     ],
                     [
-                        'restho_menu_tab_content_menu_tab_title_two' => esc_html__('Sweet Papers', 'restho-core'),
+                        'restho_menu_tab_content_menu_tab_title_two' => esc_html__('Lunch', 'restho-core'),
+                        'list_content' => esc_html__('Item content. Click the edit button to change this text.', 'restho-core'),
+                    ],
+                    [
+                        'restho_menu_tab_content_menu_tab_title_two' => esc_html__('Dinner', 'restho-core'),
+                        'list_content' => esc_html__('Item content. Click the edit button to change this text.', 'restho-core'),
+                    ],
+                    [
+                        'restho_menu_tab_content_menu_tab_title_two' => esc_html__('Starter', 'restho-core'),
+                        'list_content' => esc_html__('Item content. Click the edit button to change this text.', 'restho-core'),
+                    ],
+                    [
+                        'restho_menu_tab_content_menu_tab_title_two' => esc_html__('Berverage', 'restho-core'),
                         'list_content' => esc_html__('Item content. Click the edit button to change this text.', 'restho-core'),
                     ],
                 ],
@@ -307,8 +331,10 @@ class restho_menu_tab_Widget extends Widget_Base
                                                         <?php endif ?>
                                                     </div>
                                                     <ul>
-                                                        <?php foreach ($data2 as $item2) : ?>
-                                                            <?php if ($item['restho_menu_tab_content_menu_tab_title'] == $item2['restho_menu_tab_content_menu_tab_title_two']) { ?>
+                                                        <?php foreach ($data2 as $item2) { 
+                                                            $str2 = $item2['restho_menu_tab_content_menu_tab_title_two'];
+                                                            $new_str2 = str_replace(' ', '', $str2);
+                                                             if (strtolower($new_str) === strtolower($new_str2) ) { ?>
                                                                 <li>
                                                                     <div class="single-menu">
                                                                         <div class="menu-name">
@@ -327,7 +353,7 @@ class restho_menu_tab_Widget extends Widget_Base
                                                                     </div>
                                                                 </li>
                                                                 <?php } ?>
-                                                            <?php endforeach ?>
+                                                            <?php } ?>
                                                     </ul>
                                                 </div>
                                             </div>
