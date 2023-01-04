@@ -86,6 +86,9 @@ if ( ! class_exists( 'Egens_Elementor_Widget_Init' ) ) {
 				'food-item-carousel',
 				'food-item-offer',
 				'foods-intro',
+				'gallery',
+				'menu',
+				'menu-tab',
 
 
 
