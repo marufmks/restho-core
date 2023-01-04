@@ -1,12 +1,12 @@
 <?php
 /*
-Plugin Name: Egens Core
+Plugin Name: Restho Core
 Plugin URI: https://themeforest.net/user/egenstheme/portfolio
-Description: Egens Core Plugin is a main plugin for this theme.  
+Description: Restho Core Plugin is a main plugin for Restho-WP theme.  
 Author: Egens Lab
 Author URI: https://themeforest.net/user/egenstheme/
 Version: 1.0.0
-Text Domain: egens-core
+Text Domain: restho-core
 */
 
 //If this file is called directly, abort.

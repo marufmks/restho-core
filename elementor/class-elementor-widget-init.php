@@ -1,7 +1,7 @@
 <?php
 /**
  * All Elementor widget init
- * @package restholab
+ * @package Egens lab
  * @since 1.0.0
  */
 
@@ -89,6 +89,7 @@ if ( ! class_exists( 'Egens_Elementor_Widget_Init' ) ) {
 				'gallery',
 				'menu',
 				'menu-tab',
+				'food-item-grid',
 
 
 
