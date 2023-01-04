@@ -68,20 +68,11 @@ class restho_menu_tab_Widget extends Widget_Base
                 'label_block' => true,
             ]
         );
-        $repeater->add_control(
-            'restho_menu_tab_content_menu_tab_offer_menu_name',
-            [
-                'label' => esc_html__('Offer Menu Name', 'restho-core'),
-                'type' => Controls_Manager::TEXT,
-                'default' => esc_html__('Our Breakfast Menu', 'restho-core'),
-                'label_block' => true,
-            ]
-        );
 
         $repeater->add_control(
             'restho_menu_tab_content_menu_tab_offer_menu_image',
             [
-                'label' => esc_html__('Offer Image', 'textdomain'),
+                'label' => esc_html__('Offer Image', 'restho-core'),
                 'type' => \Elementor\Controls_Manager::MEDIA,
                 'default' => [
                     'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -207,55 +198,317 @@ class restho_menu_tab_Widget extends Widget_Base
 
         $this->end_controls_section();
 
-        //Subtitle Style
+        //Mneu Name Style
         $this->start_controls_section(
-            'restho_menu_tab_style_sub_title_section',
+            'restho_menu_tab_style_menu_name_section',
             [
-                'label' => esc_html__('Sub Title', 'restho-core'),
+                'label' => esc_html__('Menu Name', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
-
+                
             ]
         );
+
         $this->add_control(
-            'restho_menu_tab_style_sub_title_color',
+            'restho_menu_tab_style_menu_name_color',
             [
                 'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .section-title span' => 'color: {{VALUE}};',
-                    '{{WRAPPER}} .section-title3 span' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .food-orgin h2' => 'color: {{VALUE}};',
                 ],
-            ]
-        );
-        $this->add_control(
-            'restho_menu_tab_style_sub_title_icon_color',
-            [
-                'label'     => esc_html__('Icon Color', 'restho-core'),
-                'type'      => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .section-title span svg' => 'fill: {{VALUE}};',
-                    '{{WRAPPER}} .section-title3 span svg path' => 'fill: {{VALUE}};',
-                ],
-            ]
-        );
 
+            ]
+        );
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
                 'label'    => esc_html__('Typography', 'restho-core'),
-                'name'     => 'restho_menu_tab_style_sub_title_typography',
-                'selector' => '{{WRAPPER}} .section-title span, .section-title3 span',
+                'name'     => 'restho_menu_tab_style_menu_name_typography',
+                'selector' => '{{WRAPPER}} .food-orgin h2',
+
             ]
         );
         $this->add_responsive_control(
-            'restho_menu_tab_style_sub_title_padding',
+            'restho_menu_tab_style_menu_name_padding',
             [
                 'label'      => __('Padding', 'restho-core'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors'  => [
-                    '{{WRAPPER}} .section-title span' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                    '{{WRAPPER}} .section-title3 span' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+                    '{{WRAPPER}} .food-orgin h2' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+
+                ]
+            ]
+        );
+
+        $this->end_controls_section();
+
+         //Food Title Style
+         $this->start_controls_section(
+            'restho_menu_style_food_title_section',
+            [
+                'label' => esc_html__('Food Title', 'restho-core'),
+                'tab'   => Controls_Manager::TAB_STYLE,
+                
+            ]
+        );
+
+        $this->add_control(
+            'restho_menu_style_food_title_color',
+            [
+                'label'     => esc_html__('Color', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .menu-wrapper1 .menu-list ul li .menu-title h4' => 'color: {{VALUE}};',
+                    
+                ],
+
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_menu_style_food_title_typography',
+                'selector' => '{{WRAPPER}} .menu-wrapper1 .menu-list ul li .menu-title h4',
+
+            ]
+        );
+        $this->add_responsive_control(
+            'restho_menu_style_food_title_padding',
+            [
+                'label'      => __('Padding', 'restho-core'),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', '%'],
+                'selectors'  => [
+                    '{{WRAPPER}} .menu-wrapper1 .menu-list ul li .menu-title h4' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+
+                ]
+            ]
+        );
+
+        $this->end_controls_section();
+
+         //Food Description Style
+         $this->start_controls_section(
+            'restho_menu_style_food_description_section',
+            [
+                'label' => esc_html__('Food Description', 'restho-core'),
+                'tab'   => Controls_Manager::TAB_STYLE,
+                
+            ]
+        );
+
+        $this->add_control(
+            'restho_menu_style_food_description_color',
+            [
+                'label'     => esc_html__('Color', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .menu2-area .menu2-wrap ul li .single-menu .menu-name p' => 'color: {{VALUE}};',
+                ],
+
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_menu_style_food_description_typography',
+                'selector' => '{{WRAPPER}} .menu2-area .menu2-wrap ul li .single-menu .menu-name p',
+
+            ]
+        );
+        $this->add_responsive_control(
+            'restho_menu_style_food_description_padding',
+            [
+                'label'      => __('Padding', 'restho-core'),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', '%'],
+                'selectors'  => [
+                    '{{WRAPPER}} .menu2-area .menu2-wrap ul li .single-menu .menu-name p' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+
+                ]
+            ]
+        );
+
+        $this->end_controls_section();
+
+        //Food Price Style
+        $this->start_controls_section(
+            'restho_menu_style_food_price_section',
+            [
+                'label' => esc_html__('Food Price', 'restho-core'),
+                'tab'   => Controls_Manager::TAB_STYLE,
+                
+            ]
+        );
+
+        $this->add_control(
+            'restho_menu_style_food_price_color',
+            [
+                'label'     => esc_html__('Color', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .menu2-area .menu2-wrap ul li .single-menu .price span' => 'color: {{VALUE}};',
+                ],
+
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_menu_style_food_price_typography',
+                'selector' => '{{WRAPPER}} .menu2-area .menu2-wrap ul li .single-menu .price span',
+
+            ]
+        );
+        $this->add_responsive_control(
+            'restho_menu_style_food_price_padding',
+            [
+                'label'      => __('Padding', 'restho-core'),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', '%'],
+                'selectors'  => [
+                    '{{WRAPPER}} .menu2-area .menu2-wrap ul li .single-menu .price span' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+
+                ]
+            ]
+        );
+
+        $this->end_controls_section();
+
+        //offer Name Style
+        $this->start_controls_section(
+            'restho_menu_style_offer_name_section',
+            [
+                'label' => esc_html__('Offer Name', 'restho-core'),
+                'tab'   => Controls_Manager::TAB_STYLE,
+                
+            ]
+        );
+
+        $this->add_control(
+            'restho_menu_style_offer_name_color',
+            [
+                'label'     => esc_html__('Color', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .menu2-area .menu2-left-img .overlay > span' => 'color: {{VALUE}};',
+                ],
+
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_menu_style_offer_name_typography',
+                'selector' => '{{WRAPPER}} .menu2-area .menu2-left-img .overlay > span',
+
+            ]
+        );
+        $this->add_responsive_control(
+            'restho_menu_style_offer_name_padding',
+            [
+                'label'      => __('Padding', 'restho-core'),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', '%'],
+                'selectors'  => [
+                    '{{WRAPPER}} .menu2-area .menu2-left-img .overlay > span' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+
+                ]
+            ]
+        );
+
+        $this->end_controls_section();
+        //offer Discount Style
+        $this->start_controls_section(
+            'restho_menu_style_offer_discount_section',
+            [
+                'label' => esc_html__('Offer Discount', 'restho-core'),
+                'tab'   => Controls_Manager::TAB_STYLE,
+                
+            ]
+        );
+
+        $this->add_control(
+            'restho_menu_style_offer_discount_color',
+            [
+                'label'     => esc_html__('Color', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .menu2-area .menu2-left-img .overlay h2' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .menu2-area .menu2-left-img .overlay h2 span' => 'color: {{VALUE}};',
+                ],
+
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_menu_style_offer_discount_typography',
+                'selector' => '{{WRAPPER}} .menu2-area .menu2-left-img .overlay h2,.menu2-area .menu2-left-img .overlay h2 span',
+
+            ]
+        );
+        $this->add_responsive_control(
+            'restho_menu_style_offer_discount_padding',
+            [
+                'label'      => __('Padding', 'restho-core'),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', '%'],
+                'selectors'  => [
+                    '{{WRAPPER}} .menu2-area .menu2-left-img .overlay h2' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .menu2-area .menu2-left-img .overlay h2 span' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+
+                ]
+            ]
+        );
+
+        $this->end_controls_section();
+
+        //Mneu Name Style
+        $this->start_controls_section(
+            'restho_menu_style_offer_menu_name_section',
+            [
+                'label' => esc_html__('Offer Menu Name', 'restho-core'),
+                'tab'   => Controls_Manager::TAB_STYLE,
+                
+            ]
+        );
+
+        $this->add_control(
+            'restho_menu_style_offer_menu_name_color',
+            [
+                'label'     => esc_html__('Color', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .menu2-area .menu2-left-img .overlay h3' => 'color: {{VALUE}};',
+                ],
+
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_menu_style_offer_menu_name_typography',
+                'selector' => '{{WRAPPER}} .menu2-area .menu2-left-img .overlay h3',
+
+            ]
+        );
+        $this->add_responsive_control(
+            'restho_menu_style_offer_menu_name_padding',
+            [
+                'label'      => __('Padding', 'restho-core'),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', '%'],
+                'selectors'  => [
+                    '{{WRAPPER}} .menu2-area .menu2-left-img .overlay h3' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+
                 ]
             ]
         );
@@ -317,8 +570,8 @@ class restho_menu_tab_Widget extends Widget_Base
                                                         <?php if (!empty($item['restho_menu_tab_content_menu_tab_offer_discount'])) : ?>
                                                             <h2><?php echo wp_kses($item['restho_menu_tab_content_menu_tab_offer_discount'], wp_kses_allowed_html('post')) ?></h2>
                                                         <?php endif ?>
-                                                        <?php if (!empty($item['restho_menu_tab_content_menu_tab_offer_menu_name'])) : ?>
-                                                            <h3><?php echo esc_html__($item['restho_menu_tab_content_menu_tab_offer_menu_name'], 'reshto') ?></h3>
+                                                        <?php if (!empty($item['restho_menu_tab_content_menu_tab_title'])) : ?>
+                                                            <h3><?php echo esc_html__('Our '.$item['restho_menu_tab_content_menu_tab_title'].' Menu', 'reshto') ?></h3>
                                                         <?php endif ?>
                                                     </div>
                                                 </div>
