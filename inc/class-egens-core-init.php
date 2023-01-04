@@ -1,6 +1,6 @@
 <?php
 /**
- * @package Egens Core
+ * @package Restho Core
  * @author Egens Lab
  */
 if (!defined("ABSPATH")) {
@@ -46,7 +46,7 @@ if (!class_exists('EgensCoreInit')) {
 		 * @since 1.0.0
 		 * */
 		public function load_textdomain(){
-			load_plugin_textdomain('egens-core',false,EGNS_CORE_ROOT_PATH .'/languages');
+			load_plugin_textdomain('restho-core',false,EGNS_CORE_ROOT_PATH .'/languages');
 		}
 
 		/**

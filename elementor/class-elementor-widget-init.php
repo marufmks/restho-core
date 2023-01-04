@@ -1,7 +1,7 @@
 <?php
 /**
  * All Elementor widget init
- * @package restholab
+ * @package Egens lab
  * @since 1.0.0
  */
 
