@@ -304,6 +304,98 @@ class restho_gallery_Widget extends Widget_Base
         );
 
         $this->end_controls_section();
+
+        //Category Tab Button Style
+        $this->start_controls_section(
+            'restho_gallery_style_category_button_section',
+            [
+                'label' => esc_html__('Category Button', 'restho-core'),
+                'tab'   => Controls_Manager::TAB_STYLE,
+                'condition' => [
+                    'restho_gallery_content_style_selection' => ['style_three',],
+                ],
+                
+            ]
+        );
+
+        $this->add_control(
+            'restho_gallery_style_category_button_text_color',
+            [
+                'label'     => esc_html__('Text Color', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .filter-button-group ul li' => 'color: {{VALUE}};',
+                ],
+
+            ]
+        );
+        $this->add_control(
+            'restho_gallery_style_category_button_text_hover_color',
+            [
+                'label'     => esc_html__('Text Hover Color', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .filter-button-group ul li:hover' => 'color: {{VALUE}};',
+                ],
+
+            ]
+        );
+        $this->add_control(
+            'restho_gallery_style_category_button_background_color',
+            [
+                'label'     => esc_html__('Background Color', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .filter-button-group ul li' => 'background-color: {{VALUE}};',
+                ],
+
+            ]
+        );
+        $this->add_control(
+            'restho_gallery_style_category_button_background_hover_color',
+            [
+                'label'     => esc_html__('Background Hover Color', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .filter-button-group ul li:hover' => 'background-color: {{VALUE}};',
+                ],
+
+            ]
+        );
+        $this->add_control(
+            'restho_gallery_style_category_button_border_color',
+            [
+                'label'     => esc_html__('Border Color', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .filter-button-group ul li' => 'border:1px solid {{VALUE}};',
+                ],
+
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_gallery_style_category_button_typography',
+                'selector' => '{{WRAPPER}} .filter-button-group ul li',
+
+            ]
+        );
+        $this->add_responsive_control(
+            'restho_gallery_style_category_button_padding',
+            [
+                'label'      => __('Padding', 'restho-core'),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', '%'],
+                'selectors'  => [
+                    '{{WRAPPER}} .filter-button-group ul li' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+
+                ]
+            ]
+        );
+
+        $this->end_controls_section();
     }
     protected function render()
     {

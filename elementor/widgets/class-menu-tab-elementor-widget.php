@@ -198,7 +198,95 @@ class restho_menu_tab_Widget extends Widget_Base
 
         $this->end_controls_section();
 
-        //Mneu Name Style
+        //Category Tab Button Style
+        $this->start_controls_section(
+            'restho_menu_tab_style_category_button_section',
+            [
+                'label' => esc_html__('Category Button', 'restho-core'),
+                'tab'   => Controls_Manager::TAB_STYLE,
+                
+            ]
+        );
+
+        $this->add_control(
+            'restho_menu_tab_style_category_button_text_color',
+            [
+                'label'     => esc_html__('Text Color', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .menu2-area .menu2-tab .nav .nav-item .nav-link' => 'color: {{VALUE}};',
+                ],
+
+            ]
+        );
+        $this->add_control(
+            'restho_menu_tab_style_category_button_text_hover_color',
+            [
+                'label'     => esc_html__('Text Hover Color', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .menu2-area .menu2-tab .nav .nav-item .nav-link:hover' => 'color: {{VALUE}};',
+                ],
+
+            ]
+        );
+        $this->add_control(
+            'restho_menu_tab_style_category_button_background_color',
+            [
+                'label'     => esc_html__('Background Color', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .menu2-area .menu2-tab .nav .nav-item .nav-link' => 'background-color: {{VALUE}};',
+                ],
+
+            ]
+        );
+        $this->add_control(
+            'restho_menu_tab_style_category_button_background_hover_color',
+            [
+                'label'     => esc_html__('Background Hover Color', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .menu2-area .menu2-tab .nav .nav-item .nav-link:hover' => 'background-color: {{VALUE}};',
+                ],
+
+            ]
+        );
+        $this->add_control(
+            'restho_menu_tab_style_category_button_border_color',
+            [
+                'label'     => esc_html__('Border Color', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .menu2-area .menu2-tab .nav .nav-item .nav-link' => 'border:1px solid {{VALUE}};',
+                ],
+
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_menu_tab_style_category_button_typography',
+                'selector' => '{{WRAPPER}} .menu2-area .menu2-tab .nav .nav-item .nav-link',
+
+            ]
+        );
+        $this->add_responsive_control(
+            'restho_menu_tab_style_category_button_padding',
+            [
+                'label'      => __('Padding', 'restho-core'),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', '%'],
+                'selectors'  => [
+                    '{{WRAPPER}} .menu2-area .menu2-tab .nav .nav-item .nav-link' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+
+                ]
+            ]
+        );
+
+        $this->end_controls_section();
+        //Menu Name Style
         $this->start_controls_section(
             'restho_menu_tab_style_menu_name_section',
             [
