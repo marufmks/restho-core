@@ -302,7 +302,7 @@ class restho_menu_tab_Widget extends Widget_Base
                 'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .food-orgin h2' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .menu2-area .menu2-wrap .menu-title h2' => 'color: {{VALUE}};',
                 ],
 
             ]
@@ -312,7 +312,7 @@ class restho_menu_tab_Widget extends Widget_Base
             [
                 'label'    => esc_html__('Typography', 'restho-core'),
                 'name'     => 'restho_menu_tab_style_menu_name_typography',
-                'selector' => '{{WRAPPER}} .food-orgin h2',
+                'selector' => '{{WRAPPER}} .menu2-area .menu2-wrap .menu-title h2',
 
             ]
         );
@@ -323,7 +323,7 @@ class restho_menu_tab_Widget extends Widget_Base
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors'  => [
-                    '{{WRAPPER}} .food-orgin h2' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .menu2-area .menu2-wrap .menu-title h2' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 
                 ]
             ]
@@ -347,7 +347,7 @@ class restho_menu_tab_Widget extends Widget_Base
                 'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .menu-wrapper1 .menu-list ul li .menu-title h4' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .menu2-area .menu2-wrap ul li .single-menu .menu-name h4' => 'color: {{VALUE}};',
                     
                 ],
 
@@ -358,7 +358,7 @@ class restho_menu_tab_Widget extends Widget_Base
             [
                 'label'    => esc_html__('Typography', 'restho-core'),
                 'name'     => 'restho_menu_style_food_title_typography',
-                'selector' => '{{WRAPPER}} .menu-wrapper1 .menu-list ul li .menu-title h4',
+                'selector' => '{{WRAPPER}} .menu2-area .menu2-wrap ul li .single-menu .menu-name h4',
 
             ]
         );
@@ -369,7 +369,7 @@ class restho_menu_tab_Widget extends Widget_Base
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors'  => [
-                    '{{WRAPPER}} .menu-wrapper1 .menu-list ul li .menu-title h4' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .menu2-area .menu2-wrap ul li .single-menu .menu-name h4' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 
                 ]
             ]
