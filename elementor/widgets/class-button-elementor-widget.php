@@ -69,7 +69,7 @@ class Restho_Button_Widget extends Widget_Base
         $this->add_responsive_control(
 			'restho_button_content_button_align',
 			[
-				'label' 		=> esc_html__( 'Button Align', 'restho-core' ),
+				'label' 		=> esc_html__( 'Button Alignment', 'restho-core' ),
 				'type' 			=> \Elementor\Controls_Manager::CHOOSE,
 				'options' 		=> [
 					'left' 		=> [
@@ -172,22 +172,9 @@ class Restho_Button_Widget extends Widget_Base
             ]
         );
         $this->add_control(
-            'restho_button_style_icon_color',
-            [
-                'label'     => esc_html__('Icon Color', 'restho-core'),
-                'type'      => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .primary-btn5 i' => 'color: {{VALUE}};',
-                ],
-                'condition' => [
-                    'restho_button_content_style_selection' => 'style_one' ,
-                ],
-            ]
-        );
-        $this->add_control(
             'restho_button_style_text_color',
             [
-                'label'     => esc_html__('Text Color', 'restho-core'),
+                'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .primary-btn5' => 'color: {{VALUE}};',

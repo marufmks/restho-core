@@ -126,7 +126,7 @@ class Restho_Faq_Widget extends Widget_Base
         $this->add_control(
             'restho_faq_style_title_color',
             [
-                'label'     => esc_html__('Text Color', 'restho-core'),
+                'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .faq-area .accordion .accordion-item .accordion-header .accordion-button' => 'color: {{VALUE}};',
@@ -155,7 +155,7 @@ class Restho_Faq_Widget extends Widget_Base
         $this->add_control(
             'restho_faq_style_description_color',
             [
-                'label'     => esc_html__('Text Color', 'restho-core'),
+                'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .faq-area .accordion .accordion-item .accordion-collapse .accordion-body' => 'color: {{VALUE}};',

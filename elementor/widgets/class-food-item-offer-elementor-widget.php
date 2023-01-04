@@ -752,7 +752,7 @@ class Restho_Food_Item_Offer_Widget extends Widget_Base
             ]
         );
         $this->add_control(
-            'restho_food_itm_sty_one_fd_card_bkg_btn_bg_color',
+            'restho_food_itm_sty_one_fd_card_bkg_btn_hvr_color',
             [
                 'label'     => esc_html__('Button Hover', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
@@ -772,7 +772,7 @@ class Restho_Food_Item_Offer_Widget extends Widget_Base
             ]
         );
         $this->add_control(
-            'restho_food_itm_sty_one_fd_card_bkg_btn_bg_color',
+            'restho_food_itm_sty_one_fd_card_bkg_btn_hvr_bg_color',
             [
                 'label'     => esc_html__('Button Hover (Background)', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,

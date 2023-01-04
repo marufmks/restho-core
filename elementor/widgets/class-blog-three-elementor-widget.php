@@ -97,7 +97,7 @@ class Restho_Blog_Three_Widget extends Widget_Base
             ]
         );
         $this->add_responsive_control(
-            'restho_blog_three_date_border_radius',
+            'restho_blog_three_thumb_border_radius',
             [
                 'label'      		=> __('Thumbnail Border Radius', 'restho-core'),
                 'type'       		=> Controls_Manager::DIMENSIONS,

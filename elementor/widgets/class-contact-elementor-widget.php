@@ -31,11 +31,11 @@ class Restho_Contact_Widget extends Widget_Base
 
     protected function register_controls()
     {
-        //Contact Image Section
+        //Contact General Section
         $this->start_controls_section(
-            'restho_contact_image_section',
+            'restho_contact_general_section',
             [
-                'label' => esc_html__('Contact Image', 'restho-core'),
+                'label' => esc_html__('General', 'restho-core'),
             ]
         );
         $this->add_control(
@@ -46,15 +46,6 @@ class Restho_Contact_Widget extends Widget_Base
                 'default' => [
                     'url' => \Elementor\Utils::get_placeholder_image_src(),
                 ],
-            ]
-        );
-        $this->end_controls_section();
-        
-        //Content Section
-        $this->start_controls_section(
-            'restho_contact_general_content',
-            [
-                'label' => esc_html__('Content', 'restho-core')
             ]
         );
 
@@ -110,13 +101,20 @@ class Restho_Contact_Widget extends Widget_Base
 			]
 		);
         $this->add_control(
-            'restho_contact_repeater_list',
-            [
-                'label' => esc_html__('Add Contact List', 'restho-core'),
-                'type' => \Elementor\Controls_Manager::REPEATER,
-                'fields' => $repeater->get_controls(),
-            ]
-        );
+			'restho_contact_repeater_list',
+			[
+				'label' => esc_html__( 'Contact List', 'restho-core' ),
+				'type' => \Elementor\Controls_Manager::REPEATER,
+				'fields' => $repeater->get_controls(),
+				'default' => [
+					[
+						'restho_contact_description_text' => esc_html__( '168/170, Ave 01,Old York Drive Rich Mirpur, Dhaka', 'restho-core' ),
+					],
+
+				],
+				'title_field' => '{{{ restho_contact_description_text }}}',
+			]
+		);
         $this->end_controls_section();
 
         //General Style
@@ -142,12 +140,12 @@ class Restho_Contact_Widget extends Widget_Base
 
         );
         $this->add_control(
-            'restho_card_border_color',
+            'restho_contact_card_border_color',
             [
                 'label'     => esc_html__('Card Border Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .contact-page .contact-wrap .contact-content' => 'border:1px solid : {{VALUE}};',
+                    '{{WRAPPER}} .contact-page .contact-wrap .contact-content' => 'border:1px solid {{VALUE}};',
                 ],
             ]
         );
@@ -343,7 +341,7 @@ class Restho_Contact_Widget extends Widget_Base
                                             <?php \Elementor\Icons_Manager::render_icon( $Item['restho_contact_icon'], [ 'aria-hidden' => 'true' ] ); ?>
                                         </div>
                                     <?php endif ?>
-                                    <?php if (!empty($Item['website_link']['url'])): ?>
+                                    <?php if (!empty($Item['restho_contact_description_text'])): ?>
                                         <div class="content">
                                             <a href="<?php echo esc_url($Item['website_link']['url']) ?>"><?php echo wp_kses($Item['restho_contact_description_text'], wp_kses_allowed_html('post')) ?></a>
                                         </div>
