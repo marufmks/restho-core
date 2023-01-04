@@ -157,7 +157,7 @@ class Restho_Blog_Three_Widget extends Widget_Base
                 'type'       		=> Controls_Manager::DIMENSIONS,
                 'size_units' 		=> ['px', '%'],
                 'selectors'  		=> [
-                    '{{WRAPPER}} .home3-blog-area .h3-blog-wrap-1 .blog-img .batch' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .home3-blog-area .h3-blog-wrap-1 .blog-img .batch a' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
 

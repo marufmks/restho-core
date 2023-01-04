@@ -379,6 +379,7 @@ class Restho_Facilities_Widget extends Widget_Base
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .h3-facilities .h3-facilities-card .overlay .overlay-content ul li' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .h3-facilities .h3-facilities-card .overlay .overlay-content ul li::after' => 'border:1px solid {{VALUE}};',
                 ],
             ]
         );

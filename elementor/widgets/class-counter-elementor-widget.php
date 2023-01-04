@@ -83,6 +83,7 @@ class Restho_Counter_Widget extends Widget_Base
             [
                 'label' => esc_html__( 'Number', 'restho-core' ),
                 'type' => \Elementor\Controls_Manager::TEXT,
+                'default' => esc_html__( '300', 'restho-core' ),
             ]
         );
         $repeater->add_control(
@@ -433,7 +434,6 @@ class Restho_Counter_Widget extends Widget_Base
         ?>
         <?php if( is_admin() ) : ?>
             <script>
-                // Odometer Counter
                 jQuery(".counter-single").each(function () {
                     jQuery(this).isInViewport(function (status) {
                     if (status === "entered") {
@@ -472,11 +472,9 @@ class Restho_Counter_Widget extends Widget_Base
                                             </div>
                                         <?php endif ?>
                                         <div class="coundown">
-                                            <?php if( !empty( $Item['restho_counter_odometer_number'] ) ) : ?>
                                                 <div class="d-flex align-items-center gap-2">
-                                                    <h3 class="odometer" data-odometer-final="<?php echo wp_kses($Item['restho_counter_odometer_number'], wp_kses_allowed_html('post')) ?>">&nbsp;</h3>
+                                                    <h3 class="odometer" data-odometer-final="200">&nbsp;</h3>
                                                 </div>
-                                            <?php endif ?>
                                             <?php if( !empty( $Item['restho_counter_odometer_title'] ) ) : ?>
                                                 <p><?php echo esc_html($Item['restho_counter_odometer_title']) ?></p>
                                             <?php endif ?>
