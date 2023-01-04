@@ -139,7 +139,7 @@ class Restho_Button_Widget extends Widget_Base
                 'label' => esc_html__('Button', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
-            );
+        );
         $this->add_responsive_control(
             'restho_button_style_padding',
             [

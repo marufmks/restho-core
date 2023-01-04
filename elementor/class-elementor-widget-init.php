@@ -76,7 +76,6 @@ if ( ! class_exists( 'Egens_Elementor_Widget_Init' ) ) {
 				'contact',
 				'counter',
 				'banner',
-				'offer',
 				'facilities',
 				'about',
 				'chef',
@@ -85,6 +84,7 @@ if ( ! class_exists( 'Egens_Elementor_Widget_Init' ) ) {
 				'blog-two',
 				'blog-three',
 				'food-item-carousel',
+				'food-item-offer',
 				'foods-intro',
 
 
