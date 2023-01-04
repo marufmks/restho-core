@@ -1572,7 +1572,7 @@ class Restho_Food_Item_Carousel_Widget extends Widget_Base
                 jQuery('#slick1').slick({
                     rows: 2,
                     dots: false,
-                    arrows: true,
+                    arrows: false,
                     infinite: true,
                     speed: 300,
                     slidesToShow: 2,
