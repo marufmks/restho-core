@@ -90,6 +90,7 @@ if ( ! class_exists( 'Egens_Elementor_Widget_Init' ) ) {
 				'menu',
 				'menu-tab',
 				'food-item-grid',
+				'food-category-tab',
 
 
 
