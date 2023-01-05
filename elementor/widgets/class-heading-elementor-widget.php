@@ -153,7 +153,7 @@ class restho_Heading_Widget extends Widget_Base
                 'label'     => esc_html__('Icon Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .section-title span svg' => 'fill: {{VALUE}};',
+                    '{{WRAPPER}} .section-title span svg rect' => 'stroke: {{VALUE}};',
                     '{{WRAPPER}} .section-title3 span svg path' => 'fill: {{VALUE}};',
                 ],
             ]
@@ -163,8 +163,23 @@ class restho_Heading_Widget extends Widget_Base
             Group_Control_Typography::get_type(),
             [
                 'label'    => esc_html__('Typography', 'restho-core'),
-                'name'     => 'restho_heading_style_sub_title_typography',
-                'selector' => '{{WRAPPER}} .section-title span, .section-title3 span',
+                'name'     => 'restho_heading_style_sub_title_one_typography',
+                'selector' => '{{WRAPPER}} .section-title span',
+                'condition' => [
+                    'restho_heading_content_title_style_selection' => ['style_one'],
+                ],
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_heading_style_sub_title_two_typography',
+                'selector' => '{{WRAPPER}} .section-title3 span',
+                'condition' => [
+                    'restho_heading_content_title_style_selection' => ['style_two'],
+                ],
+                
             ]
         );
         $this->add_responsive_control(
@@ -207,8 +222,23 @@ class restho_Heading_Widget extends Widget_Base
             Group_Control_Typography::get_type(),
             [
                 'label'    => esc_html__('Typography', 'restho-core'),
-                'name'     => 'restho_heading_style_main_title_typography',
-                'selector' => '{{WRAPPER}} .section-title h2, .section-title3 h2',
+                'name'     => 'restho_heading_style_main_title_one_typography',
+                'selector' => '{{WRAPPER}} .section-title h2',
+                'condition' => [
+                    'restho_heading_content_title_style_selection' => ['style_one'],
+                ],
+
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_heading_style_main_title_two_typography',
+                'selector' => '{{WRAPPER}} .section-title3 h2',
+                'condition' => [
+                    'restho_heading_content_title_style_selection' => ['style_two'],
+                ],
 
             ]
         );
@@ -251,8 +281,23 @@ class restho_Heading_Widget extends Widget_Base
             Group_Control_Typography::get_type(),
             [
                 'label'    => esc_html__('Typography', 'restho-core'),
-                'name'     => 'restho_heading_style_description_typography',
-                'selector' => '{{WRAPPER}} .section-title p, .section-title3 p',
+                'name'     => 'restho_heading_style_description_one_typography',
+                'selector' => '{{WRAPPER}} .section-title p',
+                'condition' => [
+                    'restho_heading_content_title_style_selection' => ['style_one'],
+                ],
+
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_heading_style_description_two_typography',
+                'selector' => '{{WRAPPER}} .section-title3 p',
+                'condition' => [
+                    'restho_heading_content_title_style_selection' => ['style_two'],
+                ],
 
             ]
         );
