@@ -65,7 +65,7 @@ class Restho_Facilities_Widget extends Widget_Base
             [
                 'label' => esc_html__('Title', 'restho-core'),
                 'type' => \Elementor\Controls_Manager::TEXT,
-                'default' => esc_html__('Curious about how to build your?', 'restho-core'),
+                'default' => esc_html__('Our Capacity', 'restho-core'),
                 'label_block' => true,
             ]
         );

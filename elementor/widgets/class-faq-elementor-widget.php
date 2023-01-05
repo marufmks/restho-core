@@ -39,6 +39,36 @@ class Restho_Faq_Widget extends Widget_Base
                 'label' => esc_html__('FAQ', 'restho-core')
             ]
         );
+        $this->add_responsive_control(
+			'restho_section_content_faq_align',
+			[
+				'label' 		=> esc_html__( 'Text Alignment', 'restho-core' ),
+				'type' 			=> \Elementor\Controls_Manager::CHOOSE,
+				'options' 		=> [
+					'left' 		=> [
+						'title' => esc_html__( 'Left', 'restho-core' ),
+						'icon' 	=> 'eicon-text-align-left',
+					],
+					'center' 	=> [
+						'title' => esc_html__( 'Center', 'restho-core' ),
+						'icon' 	=> 'eicon-text-align-center',
+					],
+					'right' 	=> [
+						'title' => esc_html__( 'Right', 'restho-core' ),
+						'icon' 	=> 'eicon-text-align-right',
+					],
+					'justify' 	=> [
+						'title' => esc_html__( 'Justified', 'restho-core' ),
+						'icon' 	=> 'eicon-text-align-justify',
+					],
+				],
+				'default' 		=> 'left',
+				'selectors' 	=> [
+					'{{WRAPPER}} .faq-area .accordion .accordion-item .accordion-header .accordion-button ' => 'text-align: {{VALUE}};',     
+					'{{WRAPPER}} .faq-area .accordion .accordion-item ' => 'text-align: {{VALUE}};',     
+				],
+			]
+		);
 
         $repeater = new \Elementor\Repeater();
 
@@ -47,7 +77,7 @@ class Restho_Faq_Widget extends Widget_Base
             [
                 'label' => esc_html__('Title', 'restho-core'),
                 'type' => \Elementor\Controls_Manager::TEXT,
-                'default' => esc_html__('Curious about how to build your?', 'restho-core'),
+                'default' => esc_html__('If you are going to use a passage of need ?', 'restho-core'),
                 'label_block' => true,
             ]
         );
@@ -70,8 +100,17 @@ class Restho_Faq_Widget extends Widget_Base
                 'fields' => $repeater->get_controls(),
                 'default' => [
                     [
-                        'restho_section_content_faq_title' => esc_html__('If you are going to use a passage of need ?', 'restho-core'),
-                    ],
+						'restho_section_content_faq_title' => esc_html__( 'If you are going to use a passage of need ?', 'restho-core' ),
+						'list_content' => esc_html__( "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightl ", 'restho-core' ),
+					],
+					[
+						'restho_section_content_faq_title' => esc_html__( 'Are there availabe food item in restaurant ?', 'restho-core' ),
+						'list_content' => esc_html__( "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightl", 'restho-core' ),
+					],
+                    [
+						'restho_section_content_faq_title' => esc_html__( "Contrary to popular belief, Lorem Ipsum isn’t ?", 'restho-core' ),
+						'list_content' => esc_html__( "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightl", 'restho-core' ),
+					],
 
                 ],
                 'title_field' => '{{{ restho_section_content_faq_title }}}',

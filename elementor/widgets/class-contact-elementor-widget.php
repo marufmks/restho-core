@@ -16,7 +16,7 @@ class Restho_Contact_Widget extends Widget_Base
 
     public function get_title()
     {
-        return esc_html__('EG contact', 'restho-core');
+        return esc_html__('EG Contact', 'restho-core');
     }
 
     public function get_icon()
