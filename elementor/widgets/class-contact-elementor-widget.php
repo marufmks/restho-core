@@ -16,7 +16,7 @@ class Restho_Contact_Widget extends Widget_Base
 
     public function get_title()
     {
-        return esc_html__('EG contact', 'restho-core');
+        return esc_html__('EG Contact', 'restho-core');
     }
 
     public function get_icon()
@@ -60,13 +60,10 @@ class Restho_Contact_Widget extends Widget_Base
             ]
         );
 
-        // Repeater
-        $repeater = new \Elementor\Repeater();
-
-        $repeater->add_control(
-			'restho_contact_icon',
+        $this->add_control(
+			'restho_contact_location_icon',
 			[
-				'label' => esc_html__( 'Icon', 'restho-core' ),
+				'label' => esc_html__( 'Location Icon', 'restho-core' ),
 				'type' => \Elementor\Controls_Manager::ICONS,
 				'default' => [
 					'value' => 'fas fa-circle',
@@ -74,47 +71,78 @@ class Restho_Contact_Widget extends Widget_Base
 				],
 			]
 		);
-        $repeater->add_control(
-            'restho_contact_description_text',
+        $this->add_control(
+            'restho_contact_content_location_text',
             [
-                'label' => esc_html__('Description', 'restho-core'),
+                'label' => esc_html__('Location', 'restho-core'),
                 'type' => Controls_Manager::TEXTAREA,
                 'default' => esc_html__('168/170, Ave 01,Old York Drive Rich Mirpur, Dhaka', 'restho-core'),
                 'label_block' => true,
-          
+
             ]
         );
-        $repeater->add_control(
-			'website_link',
+        $this->add_control(
+			'restho_contact_phone_icon',
 			[
-				'label' => esc_html__( 'Link', 'restho-core' ),
-				'type' => \Elementor\Controls_Manager::URL,
-				'placeholder' => esc_html__( 'https://your-link.com', 'restho-core' ),
-				'options' => [ 'url', 'is_external', 'nofollow' ],
+				'label' => esc_html__( 'Phone Icon', 'restho-core' ),
+				'type' => \Elementor\Controls_Manager::ICONS,
 				'default' => [
-					'url' => '',
-					'is_external' => true,
-					'nofollow' => true,
-					// 'custom_attributes' => '',
+					'value' => 'fas fa-circle',
+					'library' => 'fa-solid',
 				],
-				'label_block' => true,
 			]
 		);
         $this->add_control(
-			'restho_contact_repeater_list',
-			[
-				'label' => esc_html__( 'Contact List', 'restho-core' ),
-				'type' => \Elementor\Controls_Manager::REPEATER,
-				'fields' => $repeater->get_controls(),
-				'default' => [
-					[
-						'restho_contact_description_text' => esc_html__( '168/170, Ave 01,Old York Drive Rich Mirpur, Dhaka', 'restho-core' ),
-					],
+            'restho_contact_content_number_one_text',
+            [
+                'label' => esc_html__('Phone One', 'restho-core'),
+                'type' => Controls_Manager::TEXT,
+                'default' => esc_html__('+880 170 1111 000', 'restho-core'),
+                'label_block' => true,
 
+            ]
+        );
+        $this->add_control(
+            'restho_contact_content_number_two_text',
+            [
+                'label' => esc_html__('Phone Two', 'restho-core'),
+                'type' => Controls_Manager::TEXT,
+                'default' => esc_html__('', 'restho-core'),
+                'label_block' => true,
+
+            ]
+        );
+        $this->add_control(
+			'restho_contact_email_icon',
+			[
+				'label' => esc_html__( 'Email Icon', 'restho-core' ),
+				'type' => \Elementor\Controls_Manager::ICONS,
+				'default' => [
+					'value' => 'fas fa-circle',
+					'library' => 'fa-solid',
 				],
-				'title_field' => '{{{ restho_contact_description_text }}}',
 			]
 		);
+        $this->add_control(
+            'restho_contact_content_email_one_text',
+            [
+                'label' => esc_html__('Email One', 'restho-core'),
+                'type' => Controls_Manager::TEXT,
+                'default' => esc_html__('info@example.com', 'restho-core'),
+                'label_block' => true,
+
+            ]
+        );
+        $this->add_control(
+            'restho_contact_content_email_two_text',
+            [
+                'label' => esc_html__('Email Two', 'restho-core'),
+                'type' => Controls_Manager::TEXT,
+                'default' => esc_html__('', 'restho-core'),
+                'label_block' => true,
+
+            ]
+        );
         $this->end_controls_section();
 
         //General Style
@@ -334,20 +362,50 @@ class Restho_Contact_Widget extends Widget_Base
                             <h3><?php echo wp_kses($settings['restho_contact_content_title'], wp_kses_allowed_html('post')) ?></h3>
                         <?php endif ?>
                         <ul>
-                            <?php foreach($Items as $Item): ?>
-                                <li>
-                                    <?php if (!empty($Item['restho_contact_icon'])): ?>
-                                        <div class="icon">
-                                            <?php \Elementor\Icons_Manager::render_icon( $Item['restho_contact_icon'], [ 'aria-hidden' => 'true' ] ); ?>
-                                        </div>
+                            <li>
+                                <?php if (!empty($settings['restho_contact_location_icon'])): ?>
+                                    <div class="icon">
+                                        <?php \Elementor\Icons_Manager::render_icon( $settings['restho_contact_location_icon'], [ 'aria-hidden' => 'true' ] ); ?>
+                                    </div>
+                                <?php endif ?> 
+                                <?php if (!empty($settings['restho_contact_content_location_text'])): ?>
+                                    <div class="content">
+                                        <a><?php echo wp_kses($settings['restho_contact_content_location_text'], wp_kses_allowed_html('post')) ?></a>
+                                    </div>
+                                <?php endif ?>
+                            </li>
+                            <li>
+                                <?php if (!empty($settings['restho_contact_phone_icon'])): ?>
+                                    <div class="icon">
+                                        <?php \Elementor\Icons_Manager::render_icon( $settings['restho_contact_phone_icon'], [ 'aria-hidden' => 'true' ] ); ?>
+                                    </div>
+                                <?php endif ?>
+                                <div class="content">
+                                    <?php if (!empty($settings['restho_contact_content_number_one_text'])): ?>
+                                        <a href="tel:<?php echo esc_attr__($settings['restho_contact_content_number_one_text'], 'restho') ?>"><?php echo wp_kses($settings['restho_contact_content_number_one_text'], wp_kses_allowed_html('post')) ?></a>
                                     <?php endif ?>
-                                    <?php if (!empty($Item['restho_contact_description_text'])): ?>
-                                        <div class="content">
-                                            <a href="<?php echo esc_url($Item['website_link']['url']) ?>"><?php echo wp_kses($Item['restho_contact_description_text'], wp_kses_allowed_html('post')) ?></a>
-                                        </div>
+                                    <br>
+                                    <?php if (!empty($settings['restho_contact_content_number_two_text'])): ?>
+                                        <a href="tel:<?php echo esc_attr__($settings['restho_contact_content_number_two_text'], 'restho') ?>"><?php echo wp_kses($settings['restho_contact_content_number_two_text'], wp_kses_allowed_html('post')) ?></a>
                                     <?php endif ?>
-                                </li>
-                            <?php endforeach ?>
+                                </div>
+                            </li>
+                            <li>
+                                <?php if (!empty($settings['restho_contact_email_icon'])): ?>
+                                    <div class="icon">
+                                        <?php \Elementor\Icons_Manager::render_icon( $settings['restho_contact_email_icon'], [ 'aria-hidden' => 'true' ] ); ?>
+                                    </div>
+                                <?php endif ?>
+                                <div class="content">
+                                    <?php if (!empty($settings['restho_contact_content_email_one_text'])): ?>
+                                        <a href="mailto:<?php echo esc_attr__($settings['restho_contact_content_email_one_text'], 'restho') ?>"><?php echo wp_kses($settings['restho_contact_content_email_one_text'], wp_kses_allowed_html('post')) ?></a>
+                                    <?php endif ?>
+                                    <br>
+                                    <?php if (!empty($settings['restho_contact_content_email_two_text'])): ?>
+                                        <a href="mailto:<?php echo esc_attr__($settings['restho_contact_content_email_two_text'], 'restho') ?>"><?php echo wp_kses($settings['restho_contact_content_email_two_text'], wp_kses_allowed_html('post')) ?></a>
+                                    <?php endif ?>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 </div>

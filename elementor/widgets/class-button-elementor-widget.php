@@ -286,6 +286,28 @@ class Restho_Button_Widget extends Widget_Base
                 ],
             ]
         );
+        $this->add_group_control(
+            \Elementor\Group_Control_Border::get_type(),
+            [
+                'name' => 'restho_button_style_one_hvr_border',
+                'label' => esc_html__( 'Border', 'restho-core' ),
+                'selector' => '{{WRAPPER}} .primary-btn5:hover',
+                'condition' => [
+                    'restho_button_content_style_selection' => 'style_one' ,
+                ],
+            ]
+        );
+        $this->add_group_control(
+            \Elementor\Group_Control_Border::get_type(),
+            [
+                'name' => 'restho_button_style_two_hvr_border',
+                'label' => esc_html__( 'Border', 'restho-core' ),
+                'selector' => '{{WRAPPER}} .primary-btn3:hover',
+                'condition' => [
+                    'restho_button_content_style_selection' => 'style_two' ,
+                ],
+            ]
+        );
         $this->end_controls_tab();
         $this->end_controls_tab();
         $this->end_controls_section();
