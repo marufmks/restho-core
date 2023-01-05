@@ -329,16 +329,7 @@ class restho_menu_Widget extends Widget_Base
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .section-title span' => 'color: {{VALUE}};',
-                ],
-            ]
-        );
-        $this->add_control(
-            'restho_menu_style_heading_sub_title_icon_color',
-            [
-                'label'     => esc_html__('Icon Color', 'restho-core'),
-                'type'      => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .section-title span svg' => 'fill: {{VALUE}};',
+                    '{{WRAPPER}} .section-title span svg rect' => 'stroke: {{VALUE}};',
                 ],
             ]
         );

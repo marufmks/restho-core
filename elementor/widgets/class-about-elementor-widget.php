@@ -572,20 +572,12 @@ class restho_about_Widget extends Widget_Base
                 'selectors' => [
                     '{{WRAPPER}} .section-title span' => 'color: {{VALUE}};',
                     '{{WRAPPER}} .section-title3 span' => 'color: {{VALUE}};',
-                ],
-            ]
-        );
-        $this->add_control(
-            'restho_about_style_sub_title_icon_color',
-            [
-                'label'     => esc_html__('Icon Color', 'restho-core'),
-                'type'      => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .section-title span svg' => 'fill: {{VALUE}};',
+                    '{{WRAPPER}} .section-title span svg rect' => 'stroke: {{VALUE}};',
                     '{{WRAPPER}} .section-title3 span svg path' => 'fill: {{VALUE}};',
                 ],
             ]
         );
+       
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [

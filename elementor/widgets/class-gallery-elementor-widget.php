@@ -231,7 +231,7 @@ class restho_gallery_Widget extends Widget_Base
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .gallery-slider1 .gallery-wrap .overlay .items-content > span' => 'color: {{VALUE}};',
-                    '{{WRAPPER}} .gallery-slider1 .gallery-wrap .overlay .items-content > span svg' => 'fill: {{VALUE}};',
+                    '{{WRAPPER}} .gallery-slider1 .gallery-wrap .overlay .items-content > span svg rect' => 'stroke: {{VALUE}};',
                 ],
             ]
         );

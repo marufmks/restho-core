@@ -636,6 +636,9 @@ class Restho_Banner_Widget extends Widget_Base
                     '{{WRAPPER}} .banner-section1 .banner-wrapper .banner-content span' => 'color: {{VALUE}};',
                     '{{WRAPPER}} .banner-section2 .banner-wrapper .banner-content span' => 'color: {{VALUE}};',
                     '{{WRAPPER}} .home3-banner .banner-content span' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .banner-section1 .banner-wrapper .banner-content span svg rect' => 'stroke: {{VALUE}};',
+                    '{{WRAPPER}} .banner-section2 .banner-wrapper .banner-content span svg rect' => 'stroke: {{VALUE}};',
+                    '{{WRAPPER}} .home3-banner .banner-content span svg path' => 'fill: {{VALUE}};',
                 ],
             ]
         );
