@@ -725,7 +725,7 @@ class Restho_Banner_Widget extends Widget_Base
             Group_Control_Typography::get_type(),
             [
                 'label'    => esc_html__('Typography', 'restho-core'),
-                'name'     => 'restho_banner_style_main_title_typography',
+                'name'     => 'restho_banner_style_main_title_one_typography',
                 'selector' => '{{WRAPPER}} .banner-section1 .banner-wrapper .banner-content h1',
                 'condition' => [
                     'restho_banner_content_style_selection' => ['style_one',],
@@ -737,7 +737,7 @@ class Restho_Banner_Widget extends Widget_Base
             Group_Control_Typography::get_type(),
             [
                 'label'    => esc_html__('Typography', 'restho-core'),
-                'name'     => 'restho_banner_style_main_title_typography',
+                'name'     => 'restho_banner_style_main_title_two_typography',
                 'selector' => '{{WRAPPER}} .banner-section2 .banner-wrapper .banner-content h1',
                 'condition' => [
                     'restho_banner_content_style_selection' => ['style_two',],
@@ -749,7 +749,7 @@ class Restho_Banner_Widget extends Widget_Base
             Group_Control_Typography::get_type(),
             [
                 'label'    => esc_html__('Typography', 'restho-core'),
-                'name'     => 'restho_banner_style_main_title_typography',
+                'name'     => 'restho_banner_style_main_title_three_typography',
                 'selector' => '{{WRAPPER}} .home3-banner .banner-content h1',
                 'condition' => [
                     'restho_banner_content_style_selection' => ['style_three',],

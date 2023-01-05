@@ -121,7 +121,7 @@ class restho_menu_tab_Widget extends Widget_Base
             ]
         );
 
-        
+
         $repeater2 = new \Elementor\Repeater();
 
         $repeater2->add_control(
@@ -204,7 +204,7 @@ class restho_menu_tab_Widget extends Widget_Base
             [
                 'label' => esc_html__('Category Button', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
-                
+
             ]
         );
 
@@ -292,7 +292,7 @@ class restho_menu_tab_Widget extends Widget_Base
             [
                 'label' => esc_html__('Menu Name', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
-                
+
             ]
         );
 
@@ -331,13 +331,13 @@ class restho_menu_tab_Widget extends Widget_Base
 
         $this->end_controls_section();
 
-         //Food Title Style
-         $this->start_controls_section(
+        //Food Title Style
+        $this->start_controls_section(
             'restho_menu_style_food_title_section',
             [
                 'label' => esc_html__('Food Title', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
-                
+
             ]
         );
 
@@ -348,7 +348,7 @@ class restho_menu_tab_Widget extends Widget_Base
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .menu2-area .menu2-wrap ul li .single-menu .menu-name h4' => 'color: {{VALUE}};',
-                    
+
                 ],
 
             ]
@@ -377,13 +377,13 @@ class restho_menu_tab_Widget extends Widget_Base
 
         $this->end_controls_section();
 
-         //Food Description Style
-         $this->start_controls_section(
+        //Food Description Style
+        $this->start_controls_section(
             'restho_menu_style_food_description_section',
             [
                 'label' => esc_html__('Food Description', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
-                
+
             ]
         );
 
@@ -428,7 +428,7 @@ class restho_menu_tab_Widget extends Widget_Base
             [
                 'label' => esc_html__('Food Price', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
-                
+
             ]
         );
 
@@ -473,7 +473,7 @@ class restho_menu_tab_Widget extends Widget_Base
             [
                 'label' => esc_html__('Offer Name', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
-                
+
             ]
         );
 
@@ -517,7 +517,7 @@ class restho_menu_tab_Widget extends Widget_Base
             [
                 'label' => esc_html__('Offer Discount', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
-                
+
             ]
         );
 
@@ -564,7 +564,7 @@ class restho_menu_tab_Widget extends Widget_Base
             [
                 'label' => esc_html__('Offer Menu Name', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
-                
+
             ]
         );
 
@@ -659,7 +659,7 @@ class restho_menu_tab_Widget extends Widget_Base
                                                             <h2><?php echo wp_kses($item['restho_menu_tab_content_menu_tab_offer_discount'], wp_kses_allowed_html('post')) ?></h2>
                                                         <?php endif ?>
                                                         <?php if (!empty($item['restho_menu_tab_content_menu_tab_title'])) : ?>
-                                                            <h3><?php echo esc_html__('Our '.$item['restho_menu_tab_content_menu_tab_title'].' Menu', 'reshto') ?></h3>
+                                                            <h3><?php echo esc_html__('Our ' . $item['restho_menu_tab_content_menu_tab_title'] . ' Menu', 'reshto') ?></h3>
                                                         <?php endif ?>
                                                     </div>
                                                 </div>
@@ -672,10 +672,10 @@ class restho_menu_tab_Widget extends Widget_Base
                                                         <?php endif ?>
                                                     </div>
                                                     <ul>
-                                                        <?php foreach ($data2 as $item2) { 
+                                                        <?php foreach ($data2 as $item2) {
                                                             $str2 = $item2['restho_menu_tab_content_menu_tab_title_two'];
                                                             $new_str2 = str_replace(' ', '', $str2);
-                                                             if (strtolower($new_str) === strtolower($new_str2) ) { ?>
+                                                            if (strtolower($new_str) === strtolower($new_str2)) { ?>
                                                                 <li>
                                                                     <div class="single-menu">
                                                                         <div class="menu-name">
@@ -693,8 +693,8 @@ class restho_menu_tab_Widget extends Widget_Base
                                                                         </div>
                                                                     </div>
                                                                 </li>
-                                                                <?php } ?>
-                                                            <?php } ?>
+                                                        <?php }
+                                                        } ?>
                                                     </ul>
                                                 </div>
                                             </div>

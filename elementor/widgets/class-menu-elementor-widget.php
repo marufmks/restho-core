@@ -716,6 +716,39 @@ class restho_menu_Widget extends Widget_Base
 
             ]
         );
+        $this->add_control(
+            'restho_menu_style_food_price_style_two_hover_color',
+            [
+                'label'     => esc_html__('Hover Color', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .h3-menu-area .home3-menu-wrap ul li:hover .price span' => 'color: {{VALUE}};',
+                ],
+
+            ]
+        );
+        $this->add_control(
+            'restho_menu_style_food_price_style_two_hover_background_color',
+            [
+                'label'     => esc_html__('Hover Background Color', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .h3-menu-area .home3-menu-wrap ul li:hover .price' => 'background: {{VALUE}};',
+                ],
+
+            ]
+        );
+        $this->add_control(
+            'restho_menu_style_food_price_style_two_broder_color',
+            [
+                'label'     => esc_html__('Border Color', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .h3-menu-area .home3-menu-wrap ul li .price::after' => 'border:1px dashed {{VALUE}};',
+                ],
+
+            ]
+        );
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
