@@ -588,8 +588,22 @@ class restho_about_Widget extends Widget_Base
             Group_Control_Typography::get_type(),
             [
                 'label'    => esc_html__('Typography', 'restho-core'),
-                'name'     => 'restho_about_style_sub_title_typography',
-                'selector' => '{{WRAPPER}} .section-title span, .section-title3 span',
+                'name'     => 'restho_about_style_sub_title_style_one_typography',
+                'selector' => '{{WRAPPER}} .section-title span',
+                'condition' => [
+                    'restho_about_content_style_selection' => ['style_one','style_two', 'style_four'],
+                ],
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_about_style_sub_title_style_two_typography',
+                'selector' => '{{WRAPPER}} .section-title3 span',
+                'condition' => [
+                    'restho_about_content_style_selection' => [ 'style_three'],
+                ],
             ]
         );
         $this->add_responsive_control(
@@ -632,8 +646,23 @@ class restho_about_Widget extends Widget_Base
             Group_Control_Typography::get_type(),
             [
                 'label'    => esc_html__('Typography', 'restho-core'),
-                'name'     => 'restho_about_style_main_title_typography',
-                'selector' => '{{WRAPPER}} .section-title h2, .section-title3 h2',
+                'name'     => 'restho_about_style_main_title_style_one_typography',
+                'selector' => '{{WRAPPER}} .section-title h2',
+                'condition' => [
+                    'restho_about_content_style_selection' => ['style_one','style_two', 'style_four'],
+                ],
+
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_about_style_main_title_style_two_typography',
+                'selector' => '{{WRAPPER}} .section-title3 h2',
+                'condition' => [
+                    'restho_about_content_style_selection' => [ 'style_three'],
+                ],
 
             ]
         );
@@ -678,11 +707,47 @@ class restho_about_Widget extends Widget_Base
             Group_Control_Typography::get_type(),
             [
                 'label'    => esc_html__('Typography', 'restho-core'),
-                'name'     => 'restho_about_style_description_typography',
-                'selector' => '{{WRAPPER}} .home1-introduction-area .our-mission .description p, 
-                .h2-about-area .about-right .section-title p,
-                .introduction-area .introduction-content p,
-                .about-introduction-area .our-mission .description p',
+                'name'     => 'restho_about_style_description_one_typography',
+                'selector' => '{{WRAPPER}} .home1-introduction-area .our-mission .description p',
+                'condition' => [
+                    'restho_about_content_style_selection' => [ 'style_one'],
+                ],
+
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_about_style_description_two_typography',
+                'selector' => '{{WRAPPER}} .h2-about-area .about-right .section-title p',
+                'condition' => [
+                    'restho_about_content_style_selection' => [ 'style_two'],
+                ],
+
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_about_style_description_three_typography',
+                'selector' => '{{WRAPPER}} .introduction-area .introduction-content p',
+                'condition' => [
+                    'restho_about_content_style_selection' => [ 'style_three'],
+                ],
+
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_about_style_description_four_typography',
+                'selector' => '{{WRAPPER}} .about-introduction-area .our-mission .description p',
+                'condition' => [
+                    'restho_about_content_style_selection' => [ 'style_four'],
+                ],
 
             ]
         );
@@ -706,34 +771,85 @@ class restho_about_Widget extends Widget_Base
 
         //mission Style
         $this->start_controls_section(
-            'restho_about_style_mission_section',
+            'restho_about_style_style_one_section',
             [
                 'label' => esc_html__('Mission', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'condition' => [
-                    'restho_about_content_style_selection' => ['style_one', 'style_four'],
+                    'restho_about_content_style_selection' => ['style_one'],
                 ],
 
             ]
         );
         $this->add_control(
-            'restho_about_style_mission_color',
+            'restho_about_style_style_one_color',
             [
                 'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .home1-introduction-area .our-mission .icon h4' => 'color: {{VALUE}};',
-                    '{{WRAPPER}} .about-introduction-area .our-mission .icon h4' => 'color: {{VALUE}};',
                 ],
             ]
         );
         $this->add_control(
-            'restho_about_style_mission_icon_color',
+            'restho_about_style_style_one_icon_color',
             [
                 'label'     => esc_html__('Icon Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .home1-introduction-area .our-mission .icon svg path' => 'fill: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_about_style_style_one_typography',
+                'selector' => '{{WRAPPER}} .home1-introduction-area .our-mission .icon h4',
+            ]
+        );
+        $this->add_responsive_control(
+            'restho_about_style_style_one_padding',
+            [
+                'label'      => __('Padding', 'restho-core'),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', '%'],
+                'selectors'  => [
+                    '{{WRAPPER}} .home1-introduction-area .our-mission .icon h4' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ]
+            ]
+        );
+
+        $this->end_controls_section();
+        //mission Style
+        $this->start_controls_section(
+            'restho_about_style_style_four_section',
+            [
+                'label' => esc_html__('Mission', 'restho-core'),
+                'tab'   => Controls_Manager::TAB_STYLE,
+                'condition' => [
+                    'restho_about_content_style_selection' => [ 'style_four'],
+                ],
+
+            ]
+        );
+        $this->add_control(
+            'restho_about_style_mission_style_four_color',
+            [
+                'label'     => esc_html__('Color', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .about-introduction-area .our-mission .icon h4' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_control(
+            'restho_about_style_mission_style_four_icon_color',
+            [
+                'label'     => esc_html__('Icon Color', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
                     '{{WRAPPER}} .about-introduction-area .our-mission .icon svg path' => 'fill: {{VALUE}};',
                 ],
             ]
@@ -742,19 +858,17 @@ class restho_about_Widget extends Widget_Base
             Group_Control_Typography::get_type(),
             [
                 'label'    => esc_html__('Typography', 'restho-core'),
-                'name'     => 'restho_about_style_mission_typography',
-                'selector' => '{{WRAPPER}} .home1-introduction-area .our-mission .icon h4, 
-                .about-introduction-area .our-mission .icon h4,',
+                'name'     => 'restho_about_style_mission_style_four_typography',
+                'selector' => '{{WRAPPER}} .about-introduction-area .our-mission .icon h4,',
             ]
         );
         $this->add_responsive_control(
-            'restho_about_style_mission_padding',
+            'restho_about_style_mission_style_four_padding',
             [
                 'label'      => __('Padding', 'restho-core'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors'  => [
-                    '{{WRAPPER}} .home1-introduction-area .our-mission .icon h4' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                     '{{WRAPPER}} .about-introduction-area .our-mission .icon h4' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ]
             ]
@@ -804,10 +918,43 @@ class restho_about_Widget extends Widget_Base
             [
                 'label'    => esc_html__('Typography', 'restho-core'),
                 'name'     => 'restho_about_style_feature_title_typography',
-                'selector' => '{{WRAPPER}} .home1-introduction-area .intro-right .features-author .intro-features ul li, 
-                .h2-about-area .about-right .about-featurs ul li .features-content h4,
-                .introduction-area .introduction-content .about-features ul li,
-                .about-introduction-area .intro-right .features-author .intro-features ul li',
+                'selector' => '{{WRAPPER}} .home1-introduction-area .intro-right .features-author .intro-features ul li',
+                'condition' => [
+                    'restho_about_content_style_selection' => [ 'style_one'],
+                ],
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_about_style_feature_title_typography',
+                'selector' => '{{WRAPPER}} .h2-about-area .about-right .about-featurs ul li .features-content h4',
+                'condition' => [
+                    'restho_about_content_style_selection' => [ 'style_two'],
+                ],
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_about_style_feature_title_typography',
+                'selector' => '{{WRAPPER}} .introduction-area .introduction-content .about-features ul li',
+                'condition' => [
+                    'restho_about_content_style_selection' => [ 'style_three'],
+                ],
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_about_style_feature_title_typography',
+                'selector' => '{{WRAPPER}} .about-introduction-area .intro-right .features-author .intro-features ul li',
+                'condition' => [
+                    'restho_about_content_style_selection' => [ 'style_four'],
+                ],
             ]
         );
         $this->add_responsive_control(
@@ -874,23 +1021,66 @@ class restho_about_Widget extends Widget_Base
 
          //author Description Style
          $this->start_controls_section(
-            'restho_about_style_author_description_section',
+            'restho_about_style_author_description_style_one_section',
             [
                 'label' => esc_html__('Author Description', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'condition' => [
-                    'restho_about_content_style_selection' => ['style_one','style_four'],
+                    'restho_about_content_style_selection' => ['style_one'],
                 ],
 
             ]
         );
         $this->add_control(
-            'restho_about_style_author_description_color',
+            'restho_about_style_author_description_style_one_color',
             [
                 'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .h2-about-area .about-right .about-featurs ul li .authors-content p' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+        
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_about_style_author_description_style_one_typography',
+                'selector' => '{{WRAPPER}} .h2-about-area .about-right .about-featurs ul li .authors-content p',
+            ]
+        );
+        $this->add_responsive_control(
+            'restho_about_style_author_description_style_one_padding',
+            [
+                'label'      => __('Padding', 'restho-core'),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', '%'],
+                'selectors'  => [
+                    '{{WRAPPER}} .h2-about-area .about-right .about-featurs ul li .authors-content p' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ]
+            ]
+        );
+
+        $this->end_controls_section();
+         //author Description Style
+         $this->start_controls_section(
+            'restho_about_style_author_description_style_two_section',
+            [
+                'label' => esc_html__('Author Description', 'restho-core'),
+                'tab'   => Controls_Manager::TAB_STYLE,
+                'condition' => [
+                    'restho_about_content_style_selection' => ['style_four'],
+                ],
+
+            ]
+        );
+        $this->add_control(
+            'restho_about_style_author_description_style_two_color',
+            [
+                'label'     => esc_html__('Color', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
                     '{{WRAPPER}} .about-introduction-area .intro-right .features-author .author-area .author-content P' => 'color: {{VALUE}};',
                 ],
             ]
@@ -900,19 +1090,17 @@ class restho_about_Widget extends Widget_Base
             Group_Control_Typography::get_type(),
             [
                 'label'    => esc_html__('Typography', 'restho-core'),
-                'name'     => 'restho_about_style_author_description_typography',
-                'selector' => '{{WRAPPER}} .h2-about-area .about-right .about-featurs ul li .authors-content p,
-                .about-introduction-area .intro-right .features-author .author-area .author-content P',
+                'name'     => 'restho_about_style_author_description_style_two_typography',
+                'selector' => '{{WRAPPER}} .about-introduction-area .intro-right .features-author .author-area .author-content P',
             ]
         );
         $this->add_responsive_control(
-            'restho_about_style_author_description_padding',
+            'restho_about_style_author_description_style_two_padding',
             [
                 'label'      => __('Padding', 'restho-core'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors'  => [
-                    '{{WRAPPER}} .h2-about-area .about-right .about-featurs ul li .authors-content p' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                     '{{WRAPPER}} .about-introduction-area .intro-right .features-author .author-area .author-content P' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ]
             ]
@@ -921,23 +1109,66 @@ class restho_about_Widget extends Widget_Base
         $this->end_controls_section();
          //author name Style
          $this->start_controls_section(
-            'restho_about_style_author_name_section',
+            'restho_about_style_author_name_style_one_section',
             [
                 'label' => esc_html__('Author Name', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'condition' => [
-                    'restho_about_content_style_selection' => ['style_one','style_four'],
+                    'restho_about_content_style_selection' => ['style_one'],
                 ],
 
             ]
         );
         $this->add_control(
-            'restho_about_style_author_name_color',
+            'restho_about_style_author_name_style_one_color',
             [
                 'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .home1-introduction-area .intro-right .features-author .author-area .author-img-name .author-name h4' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+        
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_about_style_author_name_style_one_typography',
+                'selector' => '{{WRAPPER}} .home1-introduction-area .intro-right .features-author .author-area .author-img-name .author-name h4',
+            ]
+        );
+        $this->add_responsive_control(
+            'restho_about_style_author_name_style_one_padding',
+            [
+                'label'      => __('Padding', 'restho-core'),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', '%'],
+                'selectors'  => [
+                    '{{WRAPPER}} .home1-introduction-area .intro-right .features-author .author-area .author-img-name .author-name h4' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ]
+            ]
+        );
+
+        $this->end_controls_section();
+         //author name Style
+         $this->start_controls_section(
+            'restho_about_style_author_name_style_four_section',
+            [
+                'label' => esc_html__('Author Name', 'restho-core'),
+                'tab'   => Controls_Manager::TAB_STYLE,
+                'condition' => [
+                    'restho_about_content_style_selection' => ['style_four'],
+                ],
+
+            ]
+        );
+        $this->add_control(
+            'restho_about_style_author_name_style_four_color',
+            [
+                'label'     => esc_html__('Color', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
                     '{{WRAPPER}} .about-introduction-area .intro-right .features-author .author-area .author-img-name .author-name h4' => 'color: {{VALUE}};',
                 ],
             ]
@@ -947,19 +1178,17 @@ class restho_about_Widget extends Widget_Base
             Group_Control_Typography::get_type(),
             [
                 'label'    => esc_html__('Typography', 'restho-core'),
-                'name'     => 'restho_about_style_author_name_typography',
-                'selector' => '{{WRAPPER}} .home1-introduction-area .intro-right .features-author .author-area .author-img-name .author-name h4,
-                .about-introduction-area .intro-right .features-author .author-area .author-img-name .author-name h4',
+                'name'     => 'restho_about_style_author_name_style_four_typography',
+                'selector' => '{{WRAPPER}} .about-introduction-area .intro-right .features-author .author-area .author-img-name .author-name h4',
             ]
         );
         $this->add_responsive_control(
-            'restho_about_style_author_name_padding',
+            'restho_about_style_author_name_style_four_padding',
             [
                 'label'      => __('Padding', 'restho-core'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors'  => [
-                    '{{WRAPPER}} .home1-introduction-area .intro-right .features-author .author-area .author-img-name .author-name h4' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                     '{{WRAPPER}} .about-introduction-area .intro-right .features-author .author-area .author-img-name .author-name h4' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ]
             ]
@@ -968,23 +1197,67 @@ class restho_about_Widget extends Widget_Base
         $this->end_controls_section();
          //author designation Style
          $this->start_controls_section(
-            'restho_about_style_author_designation_section',
+            'restho_about_style_author_designation_style_one_section',
             [
                 'label' => esc_html__('Author Designation', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'condition' => [
-                    'restho_about_content_style_selection' => ['style_one','style_four'],
+                    'restho_about_content_style_selection' => ['style_one'],
                 ],
 
             ]
         );
         $this->add_control(
-            'restho_about_style_author_designation_color',
+            'restho_about_style_author_designation_style_one_color',
             [
                 'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .home1-introduction-area .intro-right .features-author .author-area .author-img-name .author-name span' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_about_style_author_designation_style_one_typography',
+                'selector' => '{{WRAPPER}} .home1-introduction-area .intro-right .features-author .author-area .author-img-name .author-name span',
+            ]
+        );
+        
+       
+        $this->add_responsive_control(
+            'restho_about_style_author_designation_style_one_padding',
+            [
+                'label'      => __('Padding', 'restho-core'),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', '%'],
+                'selectors'  => [
+                    '{{WRAPPER}} .home1-introduction-area .intro-right .features-author .author-area .author-img-name .author-name span' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ]
+            ]
+        );
+
+        $this->end_controls_section();
+         //author designation Style
+         $this->start_controls_section(
+            'restho_about_style_author_designation_four_section',
+            [
+                'label' => esc_html__('Author Designation', 'restho-core'),
+                'tab'   => Controls_Manager::TAB_STYLE,
+                'condition' => [
+                    'restho_about_content_style_selection' => ['style_four'],
+                ],
+
+            ]
+        );
+        $this->add_control(
+            'restho_about_style_author_designation_four_color',
+            [
+                'label'     => esc_html__('Color', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
                     '{{WRAPPER}} .about-introduction-area .intro-right .features-author .author-area .author-img-name .author-name span' => 'color: {{VALUE}};',
                 ],
             ]
@@ -993,21 +1266,19 @@ class restho_about_Widget extends Widget_Base
             Group_Control_Typography::get_type(),
             [
                 'label'    => esc_html__('Typography', 'restho-core'),
-                'name'     => 'restho_about_style_author_designation_typography',
-                'selector' => '{{WRAPPER}} .home1-introduction-area .intro-right .features-author .author-area .author-img-name .author-name span,
-                        .about-introduction-area .intro-right .features-author .author-area .author-img-name .author-name span',
+                'name'     => 'restho_about_style_author_designation_four_typography',
+                'selector' => '{{WRAPPER}} .about-introduction-area .intro-right .features-author .author-area .author-img-name .author-name span',
             ]
         );
         
        
         $this->add_responsive_control(
-            'restho_about_style_author_designation_padding',
+            'restho_about_style_author_designation_four_padding',
             [
                 'label'      => __('Padding', 'restho-core'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors'  => [
-                    '{{WRAPPER}} .home1-introduction-area .intro-right .features-author .author-area .author-img-name .author-name span' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                     '{{WRAPPER}} .about-introduction-area .intro-right .features-author .author-area .author-img-name .author-name span' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ]
             ]
@@ -1112,7 +1383,7 @@ class restho_about_Widget extends Widget_Base
                 'label' => esc_html__('Button', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'condition' => [
-                    'restho_about_content_style_selection' => ['style_two','style_three'],
+                    'restho_about_content_style_selection' => ['style_two'],
                 ],
             ]
         );
@@ -1133,7 +1404,6 @@ class restho_about_Widget extends Widget_Base
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .primary-btn5' => 'color: {{VALUE}};',
-                    '{{WRAPPER}} .primary-btn7' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -1144,7 +1414,6 @@ class restho_about_Widget extends Widget_Base
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .primary-btn5' => 'border-color: {{VALUE}};',
-                    '{{WRAPPER}} .primary-btn7' => 'border-color: {{VALUE}};',
                 ],
             ]
         );
@@ -1153,7 +1422,7 @@ class restho_about_Widget extends Widget_Base
             [
                 'label'    => esc_html__('Typography', 'restho-core'),
                 'name'     => 'restho_about_button_style_typography',
-                'selector' => '{{WRAPPER}} .primary-btn5,.primary-btn7',
+                'selector' => '{{WRAPPER}} .primary-btn5',
 
             ]
         );
@@ -1164,7 +1433,6 @@ class restho_about_Widget extends Widget_Base
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .primary-btn5' => 'background-color: {{VALUE}};',
-                    '{{WRAPPER}} .primary-btn7' => 'background-color: {{VALUE}};',
                 ],
             ]
         );
@@ -1177,7 +1445,6 @@ class restho_about_Widget extends Widget_Base
                 'size_units'         => ['px', '%'],
                 'selectors'          => [
                     '{{WRAPPER}} .primary-btn5' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                    '{{WRAPPER}} .primary-btn7' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
 
@@ -1191,7 +1458,6 @@ class restho_about_Widget extends Widget_Base
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
                     '{{WRAPPER}} .primary-btn5' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                    '{{WRAPPER}} .primary-btn7' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -1211,7 +1477,6 @@ class restho_about_Widget extends Widget_Base
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .primary-btn5:hover' => 'color: {{VALUE}}',
-                    '{{WRAPPER}} .primary-btn7:hover' => 'color: {{VALUE}}',
                 ],
 
             ]
@@ -1223,6 +1488,129 @@ class restho_about_Widget extends Widget_Base
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .primary-btn5:before' => 'background: {{VALUE}}',
+                ],
+
+            ]
+        );
+
+        $this->end_controls_tab();
+        $this->end_controls_tabs();
+        $this->end_controls_section();
+
+        //end button style two
+
+        //start button style three
+        //about Button Style
+        $this->start_controls_section(
+            'restho_about_button_three_style_section',
+            [
+                'label' => esc_html__('Button', 'restho-core'),
+                'tab'   => Controls_Manager::TAB_STYLE,
+                'condition' => [
+                    'restho_about_content_style_selection' => ['style_three'],
+                ],
+            ]
+        );
+        $this->start_controls_tabs(
+            'style_tabs_two'
+        );
+
+        $this->start_controls_tab(
+            'style_normal_tab_two',
+            [
+                'label' => esc_html__('Normal', 'restho-core'),
+            ]
+        );
+        $this->add_control(
+            'restho_about_button_three_style_text_color',
+            [
+                'label'     => esc_html__('Text Color', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .primary-btn7' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_control(
+            'restho_about_button_three_style_border_color',
+            [
+                'label'     => esc_html__('Border Color', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .primary-btn7' => 'border-color: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_about_button_three_style_typography',
+                'selector' => '{{WRAPPER}} .primary-btn7',
+
+            ]
+        );
+        $this->add_control(
+            'restho_about_button_three_style_text_background',
+            [
+                'label'     => esc_html__('Background', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .primary-btn7' => 'background-color: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_responsive_control(
+            'restho_about_button_three_style_border_radius',
+            [
+                'restho_about_button_three_style_border_radius',
+                'label'              => __('Border Radius', 'restho-core'),
+                'type'               => Controls_Manager::DIMENSIONS,
+                'size_units'         => ['px', '%'],
+                'selectors'          => [
+                    '{{WRAPPER}} .primary-btn7' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+
+        );
+
+        $this->add_control(
+            'restho_about_button_three_style_padding',
+            [
+                'label' => esc_html__('Padding', 'restho-core'),
+                'type' => \Elementor\Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', '%', 'em'],
+                'selectors' => [
+                    '{{WRAPPER}} .primary-btn7' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+        $this->end_controls_tab();
+        //Hover start
+
+        $this->start_controls_tab(
+            'style_hover_tab_two',
+            [
+                'label' => esc_html__('Hover', 'restho-core'),
+            ]
+        );
+        $this->add_control(
+            'restho_about_button_three_style_hover_color',
+            [
+                'label' => esc_html__('Color', 'restho-core'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .primary-btn7:hover' => 'color: {{VALUE}}',
+                ],
+
+            ]
+        );
+        $this->add_control(
+            'restho_about_button_three_style_hover_background',
+            [
+                'label' => esc_html__('Background', 'restho-core'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'selectors' => [
                     '{{WRAPPER}} .primary-btn7:before' => 'background: {{VALUE}}',
                 ],
 
@@ -1230,7 +1618,7 @@ class restho_about_Widget extends Widget_Base
         );
 
         $this->end_controls_tab();
-        $this->end_controls_tab();
+        $this->end_controls_tabs();
         $this->end_controls_section();
     }
     protected function render()
