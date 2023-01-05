@@ -72,8 +72,10 @@ class Restho_Banner_Widget extends Widget_Base
 
         $this->end_controls_section();
 
-        //Banner Contents
-        $this->start_controls_section(
+        
+
+         //Banner Contents
+         $this->start_controls_section(
             'restho_banner_style_one_section',
             [
                 'label' => esc_html__('Banner Contents', 'restho-core'),
@@ -174,124 +176,7 @@ class Restho_Banner_Widget extends Widget_Base
                 'label_block' => true,
             ]
         );
-        //facebook Link
-        $repeater->add_control(
-            'restho_banner_one_social_link_facebook',
-            [
-                'label' => esc_html__('Facebook Link', 'restho-core'),
-                'type' => \Elementor\Controls_Manager::URL,
-                'placeholder' => esc_html__('https://your-link.com', 'restho-core'),
-                'default' => [
-                    'url' => '#',
-                    'is_external' => true,
-                    'nofollow' => true,
-                    'custom_attributes' => '',
-                ],
-                'label_block' => true,
-            ]
-        );
-
-        //twitter Link
-        $repeater->add_control(
-            'restho_banner_one_social_link_twitter',
-            [
-                'label' => esc_html__('Twitter Link', 'restho-core'),
-                'type' => \Elementor\Controls_Manager::URL,
-                'placeholder' => esc_html__('https://your-link.com', 'restho-core'),
-                'default' => [
-                    'url' => '#',
-                    'is_external' => true,
-                    'nofollow' => true,
-                    'custom_attributes' => '',
-                ],
-                'label_block' => true,
-            ]
-        );
-
-        //instagram Link
-        $repeater->add_control(
-            'restho_banner_one_social_link_instagram',
-            [
-                'label' => esc_html__('Instagram Link', 'restho-core'),
-                'type' => \Elementor\Controls_Manager::URL,
-                'placeholder' => esc_html__('https://your-link.com', 'restho-core'),
-                'default' => [
-                    'url' => '#',
-                    'is_external' => true,
-                    'nofollow' => true,
-                    'custom_attributes' => '',
-                ],
-                'label_block' => true,
-            ]
-        );
-
-        //skype link
-        $repeater->add_control(
-            'restho_banner_one_social_link_skype',
-            [
-                'label' => esc_html__('Skype Link', 'restho-core'),
-                'type' => \Elementor\Controls_Manager::URL,
-                'placeholder' => esc_html__('https://your-link.com', 'restho-core'),
-                'default' => [
-                    'url' => '#',
-                    'is_external' => true,
-                    'nofollow' => true,
-                    'custom_attributes' => '',
-                ],
-                'label_block' => true,
-            ]
-        );
-
-        //linkedin Link
-        $repeater->add_control(
-            'restho_banner_one_social_link_linkedin',
-            [
-                'label' => esc_html__('Linkedin Link', 'restho-core'),
-                'type' => \Elementor\Controls_Manager::URL,
-                'placeholder' => esc_html__('https://your-link.com', 'restho-core'),
-                'default' => [
-                    'url' => '',
-                    'is_external' => true,
-                    'nofollow' => true,
-                    'custom_attributes' => '',
-                ],
-                'label_block' => true,
-            ]
-        );
-
-
-        //pinterest Link
-        $repeater->add_control(
-            'restho_banner_one_social_link_pinterest',
-            [
-                'label' => esc_html__('Pinterest Link', 'restho-core'),
-                'type' => \Elementor\Controls_Manager::URL,
-                'placeholder' => esc_html__('https://your-link.com', 'restho-core'),
-                'default' => [
-                    'url' => '',
-                    'is_external' => true,
-                    'nofollow' => true,
-                    'custom_attributes' => '',
-                ],
-                'label_block' => true,
-            ]
-        );
-        //Youtube Link
-        $repeater->add_control(
-            'restho_banner_one_social_link_youtube',
-            [
-                'label' => esc_html__('Youtube Link', 'restho-core'),
-                'type' => \Elementor\Controls_Manager::URL,
-                'placeholder' => esc_html__('https://your-link.com', 'restho-core'),
-                'default' => [
-                    'url' => '',
-                    'is_external' => true,
-                    'nofollow' => true,
-                    'custom_attributes' => '',
-                ],
-                'label_block' => true,
-            ]
-        );
+      
 
         $this->add_control(
             'restho_banner_one_content_list',
@@ -313,6 +198,138 @@ class Restho_Banner_Widget extends Widget_Base
             ]
         );
 
+
+        $this->end_controls_section();
+
+        //Banner Contents
+        $this->start_controls_section(
+            'restho_banner_style_social_section',
+            [
+                'label' => esc_html__('Social Links', 'restho-core'),
+                'condition' => [
+                    'restho_banner_content_style_selection' => ['style_one','style_three'],
+                ],
+
+            ]
+        );
+          //facebook Link
+          $this->add_control(
+            'restho_banner_social_link_facebook',
+            [
+                'label' => esc_html__('Facebook Link', 'restho-core'),
+                'type' => \Elementor\Controls_Manager::URL,
+                'placeholder' => esc_html__('https://your-link.com', 'restho-core'),
+                'default' => [
+                    'url' => '#',
+                    'is_external' => true,
+                    'nofollow' => true,
+                    'custom_attributes' => '',
+                ],
+                'label_block' => true,
+            ]
+        );
+
+        //twitter Link
+        $this->add_control(
+            'restho_banner_social_link_twitter',
+            [
+                'label' => esc_html__('Twitter Link', 'restho-core'),
+                'type' => \Elementor\Controls_Manager::URL,
+                'placeholder' => esc_html__('https://your-link.com', 'restho-core'),
+                'default' => [
+                    'url' => '#',
+                    'is_external' => true,
+                    'nofollow' => true,
+                    'custom_attributes' => '',
+                ],
+                'label_block' => true,
+            ]
+        );
+
+        //instagram Link
+        $this->add_control(
+            'restho_banner_social_link_instagram',
+            [
+                'label' => esc_html__('Instagram Link', 'restho-core'),
+                'type' => \Elementor\Controls_Manager::URL,
+                'placeholder' => esc_html__('https://your-link.com', 'restho-core'),
+                'default' => [
+                    'url' => '#',
+                    'is_external' => true,
+                    'nofollow' => true,
+                    'custom_attributes' => '',
+                ],
+                'label_block' => true,
+            ]
+        );
+
+        //skype link
+        $this->add_control(
+            'restho_banner_social_link_skype',
+            [
+                'label' => esc_html__('Skype Link', 'restho-core'),
+                'type' => \Elementor\Controls_Manager::URL,
+                'placeholder' => esc_html__('https://your-link.com', 'restho-core'),
+                'default' => [
+                    'url' => '#',
+                    'is_external' => true,
+                    'nofollow' => true,
+                    'custom_attributes' => '',
+                ],
+                'label_block' => true,
+            ]
+        );
+
+        //linkedin Link
+        $this->add_control(
+            'restho_banner_social_link_linkedin',
+            [
+                'label' => esc_html__('Linkedin Link', 'restho-core'),
+                'type' => \Elementor\Controls_Manager::URL,
+                'placeholder' => esc_html__('https://your-link.com', 'restho-core'),
+                'default' => [
+                    'url' => '',
+                    'is_external' => true,
+                    'nofollow' => true,
+                    'custom_attributes' => '',
+                ],
+                'label_block' => true,
+            ]
+        );
+
+
+        //pinterest Link
+        $this->add_control(
+            'restho_banner_social_link_pinterest',
+            [
+                'label' => esc_html__('Pinterest Link', 'restho-core'),
+                'type' => \Elementor\Controls_Manager::URL,
+                'placeholder' => esc_html__('https://your-link.com', 'restho-core'),
+                'default' => [
+                    'url' => '',
+                    'is_external' => true,
+                    'nofollow' => true,
+                    'custom_attributes' => '',
+                ],
+                'label_block' => true,
+            ]
+        );
+        //Youtube Link
+        $this->add_control(
+            'restho_banner_social_link_youtube',
+            [
+                'label' => esc_html__('Youtube Link', 'restho-core'),
+                'type' => \Elementor\Controls_Manager::URL,
+                'placeholder' => esc_html__('https://your-link.com', 'restho-core'),
+                'default' => [
+                    'url' => '',
+                    'is_external' => true,
+                    'nofollow' => true,
+                    'custom_attributes' => '',
+                ],
+                'label_block' => true,
+            ]
+        );
 
         $this->end_controls_section();
 
@@ -570,130 +587,37 @@ class Restho_Banner_Widget extends Widget_Base
             ]
         );
 
-        //facebook Link
-        $this->add_control(
-            'restho_banner_three_social_link_facebook',
-            [
-                'label' => esc_html__('Facebook Link', 'restho-core'),
-                'type' => \Elementor\Controls_Manager::URL,
-                'placeholder' => esc_html__('https://your-link.com', 'restho-core'),
-                'default' => [
-                    'url' => '#',
-                    'is_external' => true,
-                    'nofollow' => true,
-                    'custom_attributes' => '',
-                ],
-                'label_block' => true,
-            ]
-        );
-
-        //instagram Link
-        $this->add_control(
-            'restho_banner_three_social_link_instagram',
-            [
-                'label' => esc_html__('Instagram Link', 'restho-core'),
-                'type' => \Elementor\Controls_Manager::URL,
-                'placeholder' => esc_html__('https://your-link.com', 'restho-core'),
-                'default' => [
-                    'url' => '#',
-                    'is_external' => true,
-                    'nofollow' => true,
-                    'custom_attributes' => '',
-                ],
-                'label_block' => true,
-            ]
-        );
-
-        //linkedin Link
-        $this->add_control(
-            'restho_banner_three_social_link_linkedin',
-            [
-                'label' => esc_html__('Linkedin Link', 'restho-core'),
-                'type' => \Elementor\Controls_Manager::URL,
-                'placeholder' => esc_html__('https://your-link.com', 'restho-core'),
-                'default' => [
-                    'url' => '#',
-                    'is_external' => true,
-                    'nofollow' => true,
-                    'custom_attributes' => '',
-                ],
-                'label_block' => true,
-            ]
-        );
-
-        //twitter Link
-        $this->add_control(
-            'restho_banner_three_social_link_twitter',
-            [
-                'label' => esc_html__('Twitter Link', 'restho-core'),
-                'type' => \Elementor\Controls_Manager::URL,
-                'placeholder' => esc_html__('https://your-link.com', 'restho-core'),
-                'default' => [
-                    'url' => '#',
-                    'is_external' => true,
-                    'nofollow' => true,
-                    'custom_attributes' => '',
-                ],
-                'label_block' => true,
-            ]
-        );
-
-
-
-        //skype link
-        $this->add_control(
-            'restho_banner_three_social_link_skype',
-            [
-                'label' => esc_html__('Skype Link', 'restho-core'),
-                'type' => \Elementor\Controls_Manager::URL,
-                'placeholder' => esc_html__('https://your-link.com', 'restho-core'),
-                'default' => [
-                    'url' => '',
-                    'is_external' => true,
-                    'nofollow' => true,
-                    'custom_attributes' => '',
-                ],
-                'label_block' => true,
-            ]
-        );
-
-        //pinterest Link
-        $this->add_control(
-            'restho_banner_three_social_link_pinterest',
-            [
-                'label' => esc_html__('Pinterest Link', 'restho-core'),
-                'type' => \Elementor\Controls_Manager::URL,
-                'placeholder' => esc_html__('https://your-link.com', 'restho-core'),
-                'default' => [
-                    'url' => '',
-                    'is_external' => true,
-                    'nofollow' => true,
-                    'custom_attributes' => '',
-                ],
-                'label_block' => true,
-            ]
-        );
-        //Youtube Link
-        $this->add_control(
-            'restho_banner_three_social_link_youtube',
-            [
-                'label' => esc_html__('Youtube Link', 'restho-core'),
-                'type' => \Elementor\Controls_Manager::URL,
-                'placeholder' => esc_html__('https://your-link.com', 'restho-core'),
-                'default' => [
-                    'url' => '',
-                    'is_external' => true,
-                    'nofollow' => true,
-                    'custom_attributes' => '',
-                ],
-                'label_block' => true,
-            ]
-        );
 
         $this->end_controls_section();
 
         //styling starts here
         //Subtitle Style
+        $this->start_controls_section(
+            'restho_banner_style_general_section',
+            [
+                'label' => esc_html__('General', 'restho-core'),
+                'tab'   => Controls_Manager::TAB_STYLE,
+                'condition' => [
+                    'restho_banner_content_style_selection' => ['style_one','style_two'],
+                ],
+            ]
+        );
+
+        $this->add_responsive_control(
+            'restho_banner_style_slider_padding',
+            [
+                'label'      => __('Banner Slider Padding', 'restho-core'),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', '%'],
+                'selectors'  => [
+                    '{{WRAPPER}} .banner-section1 .banner-wrapper' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .banner-section2 .banner-wrapper' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ]
+            ]
+        );
+
+        $this->end_controls_section();
+
         $this->start_controls_section(
             'restho_banner_style_sub_title_section',
             [
@@ -721,7 +645,7 @@ class Restho_Banner_Widget extends Widget_Base
                 'label'     => esc_html__('Icon Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .banner-content span svg' => 'fill: {{VALUE}};',
+                    '{{WRAPPER}} .banner-content span svg rect' => 'stroke: {{VALUE}};',
                     '{{WRAPPER}} .banner-content span svg path' => 'fill: {{VALUE}};',
                 ],
             ]
@@ -730,9 +654,33 @@ class Restho_Banner_Widget extends Widget_Base
             Group_Control_Typography::get_type(),
             [
                 'label'    => esc_html__('Typography', 'restho-core'),
-                'name'     => 'restho_banner_style_sub_title_typography',
-                'selector' => '{{WRAPPER}} .banner-section1 .banner-wrapper .banner-content span,
-                .banner-section2 .banner-wrapper .banner-content span,.home3-banner .banner-content span',
+                'name'     => 'restho_banner_style_sub_title_style_one_typography',
+                'selector' => '{{WRAPPER}} .banner-section1 .banner-wrapper .banner-content span',
+                'condition' => [
+                    'restho_banner_content_style_selection' => ['style_one',],
+                ],
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_banner_style_sub_title_style_two_typography',
+                'selector' => '{{WRAPPER}} .banner-section2 .banner-wrapper .banner-content span',
+                'condition' => [
+                    'restho_banner_content_style_selection' => ['style_two',],
+                ],
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_banner_style_sub_title_style_three_typography',
+                'selector' => '{{WRAPPER}} .home3-banner .banner-content span',
+                'condition' => [
+                    'restho_banner_content_style_selection' => ['style_three',],
+                ],
             ]
         );
         $this->add_responsive_control(
@@ -778,8 +726,34 @@ class Restho_Banner_Widget extends Widget_Base
             [
                 'label'    => esc_html__('Typography', 'restho-core'),
                 'name'     => 'restho_banner_style_main_title_typography',
-                'selector' => '{{WRAPPER}} .banner-section1 .banner-wrapper .banner-content h1,
-                .banner-section2 .banner-wrapper .banner-content h1,.home3-banner .banner-content h1',
+                'selector' => '{{WRAPPER}} .banner-section1 .banner-wrapper .banner-content h1',
+                'condition' => [
+                    'restho_banner_content_style_selection' => ['style_one',],
+                ],
+
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_banner_style_main_title_typography',
+                'selector' => '{{WRAPPER}} .banner-section2 .banner-wrapper .banner-content h1',
+                'condition' => [
+                    'restho_banner_content_style_selection' => ['style_two',],
+                ],
+
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_banner_style_main_title_typography',
+                'selector' => '{{WRAPPER}} .home3-banner .banner-content h1',
+                'condition' => [
+                    'restho_banner_content_style_selection' => ['style_three',],
+                ],
 
             ]
         );
@@ -802,23 +776,67 @@ class Restho_Banner_Widget extends Widget_Base
 
         //Description Style
         $this->start_controls_section(
-            'restho_banner_style_description_section',
+            'restho_banner_style_description_style_one_section',
             [
                 'label' => esc_html__('Description', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'condition' => [
-                    'restho_banner_content_style_selection' => ['style_one', 'style_two'],
+                    'restho_banner_content_style_selection' => ['style_one', ],
                 ],
 
             ]
         );
         $this->add_control(
-            'restho_banner_style_description_color',
+            'restho_banner_style_description_style_one_color',
             [
                 'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .banner-section1 .banner-wrapper .banner-content p' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_banner_style_description_style_one_typography',
+                'selector' => '{{WRAPPER}} .banner-section1 .banner-wrapper .banner-content p',
+
+            ]
+        );
+        $this->add_responsive_control(
+            'restho_banner_style_description_style_one_padding',
+            [
+                'label'      => __('Padding', 'restho-core'),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', '%'],
+                'selectors'  => [
+                    '{{WRAPPER}} .banner-section1 .banner-wrapper .banner-content p' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+
+                ]
+            ]
+        );
+
+        $this->end_controls_section();
+        //Description Style
+        $this->start_controls_section(
+            'restho_banner_style_description_style_two_section',
+            [
+                'label' => esc_html__('Description', 'restho-core'),
+                'tab'   => Controls_Manager::TAB_STYLE,
+                'condition' => [
+                    'restho_banner_content_style_selection' => [ 'style_two'],
+                ],
+
+            ]
+        );
+        $this->add_control(
+            'restho_banner_style_description_style_two_color',
+            [
+                'label'     => esc_html__('Color', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
                     '{{WRAPPER}} .banner-section2 .banner-wrapper .banner-content p' => 'color: {{VALUE}};',
                 ],
             ]
@@ -827,20 +845,18 @@ class Restho_Banner_Widget extends Widget_Base
             Group_Control_Typography::get_type(),
             [
                 'label'    => esc_html__('Typography', 'restho-core'),
-                'name'     => 'restho_banner_style_description_typography',
-                'selector' => '{{WRAPPER}} .banner-section1 .banner-wrapper .banner-content p,
-                .banner-section2 .banner-wrapper .banner-content p',
+                'name'     => 'restho_banner_style_description_style_two_typography',
+                'selector' => '{{WRAPPER}} .banner-section2 .banner-wrapper .banner-content p',
 
             ]
         );
         $this->add_responsive_control(
-            'restho_banner_style_description_padding',
+            'restho_banner_style_description_style_two_padding',
             [
                 'label'      => __('Padding', 'restho-core'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors'  => [
-                    '{{WRAPPER}} .banner-section1 .banner-wrapper .banner-content p' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                     '{{WRAPPER}} .banner-section2 .banner-wrapper .banner-content p' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 
                 ]
@@ -1031,8 +1047,35 @@ class Restho_Banner_Widget extends Widget_Base
             Group_Control_Typography::get_type(),
             [
                 'label'    => esc_html__('Typography', 'restho-core'),
-                'name'     => 'restho_banner_button_style_typography',
-                'selector' => '{{WRAPPER}} .primary-btn2,.primary-btn5,.primary-btn7',
+                'name'     => 'restho_banner_button_style_one_typography',
+                'selector' => '{{WRAPPER}} .primary-btn2',
+                'condition' => [
+                    'restho_banner_content_style_selection' => ['style_one'],
+                ],
+
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_banner_button_style_two_typography',
+                'selector' => '{{WRAPPER}} .primary-btn5',
+                'condition' => [
+                    'restho_banner_content_style_selection' => ['style_two'],
+                ],
+
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_banner_button_style_three_typography',
+                'selector' => '{{WRAPPER}} .primary-btn7',
+                'condition' => [
+                    'restho_banner_content_style_selection' => ['style_three'],
+                ],
 
             ]
         );
@@ -1172,37 +1215,38 @@ class Restho_Banner_Widget extends Widget_Base
                         <img class="vector-btm" src="<?php echo get_template_directory_uri() ?>/assets/images/icon/shape1.svg" alt="<?php echo esc_attr__('vector-img', 'restho') ?>">
                     <?php endif ?>
                 </div>
+                <div class="social-area">
+                    <ul class="m-0 p-0 d-flex align-items-center">
+                        <?php if (!empty($settings['restho_banner_social_link_facebook']['url'])) : ?>
+                            <li><a href="<?php echo esc_url($settings['restho_banner_social_link_facebook']['url']) ?>"><?php echo esc_html('Facebook', 'restho') ?></a></li>
+                        <?php endif ?>
+                        <?php if (!empty($settings['restho_banner_social_link_twitter']['url'])) : ?>
+                            <li><a href="<?php echo esc_url($settings['restho_banner_social_link_twitter']['url']) ?>"><?php echo esc_html__('Twitter', 'restho') ?></a></li>
+                        <?php endif ?>
+                        <?php if (!empty($settings['restho_banner_social_link_instagram']['url'])) : ?>
+                            <li><a href="<?php echo esc_url($settings['restho_banner_social_link_instagram']['url']) ?>"><?php echo esc_html__('Instagram', 'restho') ?></a></li>
+                        <?php endif ?>
+                        <?php if (!empty($settings['restho_banner_social_link_skype']['url'])) : ?>
+                            <li><a href="<?php echo esc_url($settings['restho_banner_social_link_skype']['url']) ?>"><?php echo esc_html__('Skype', 'restho') ?></a></li>
+                        <?php endif ?>
+                        <?php if (!empty($settings['restho_banner_social_link_linkedin']['url'])) : ?>
+                            <li><a href="<?php echo esc_url($settings['restho_banner_social_link_linkedin']['url']) ?>"><?php echo esc_html__('Linked In', 'restho') ?></a></li>
+                        <?php endif ?>
+
+                        <?php if (!empty($settings['restho_banner_social_link_pinterest']['url'])) : ?>
+                            <li><a href="<?php echo esc_url($settings['restho_banner_social_link_pinterest']['url']) ?>"><?php echo esc_html__('Pinterest', 'restho') ?></a></li>
+                        <?php endif ?>
+                        <?php if (!empty($settings['restho_banner_social_link_youtube']['url'])) : ?>
+                            <li><a href="<?php echo esc_url($settings['restho_banner_social_link_youtube']['url']) ?>"><?php echo esc_html__('Youtube', 'restho') ?></a></li>
+                        <?php endif ?>
+                    </ul>
+                </div>
                 <div class="swiper banner1-slider">
                     <div class="swiper-wrapper">
                         <?php foreach ($data as $items) : ?>
                             <div class="swiper-slide">
                                 <div class="banner-wrapper d-flex align-items-center justify-content-between">
-                                    <div class="social-area">
-                                        <ul class="m-0 p-0 d-flex align-items-center">
-                                            <?php if (!empty($items['restho_banner_one_social_link_facebook']['url'])) : ?>
-                                                <li><a href="<?php echo esc_url($items['restho_banner_one_social_link_facebook']['url']) ?>"><?php echo esc_html('Facebook', 'restho') ?></a></li>
-                                            <?php endif ?>
-                                            <?php if (!empty($items['restho_banner_one_social_link_twitter']['url'])) : ?>
-                                                <li><a href="<?php echo esc_url($items['restho_banner_one_social_link_twitter']['url']) ?>"><?php echo esc_html__('Twitter', 'restho') ?></a></li>
-                                            <?php endif ?>
-                                            <?php if (!empty($items['restho_banner_one_social_link_instagram']['url'])) : ?>
-                                                <li><a href="<?php echo esc_url($items['restho_banner_one_social_link_instagram']['url']) ?>"><?php echo esc_html__('Instagram', 'restho') ?></a></li>
-                                            <?php endif ?>
-                                            <?php if (!empty($items['restho_banner_one_social_link_skype']['url'])) : ?>
-                                                <li><a href="<?php echo esc_url($items['restho_banner_one_social_link_skype']['url']) ?>"><?php echo esc_html__('Skype', 'restho') ?></a></li>
-                                            <?php endif ?>
-                                            <?php if (!empty($items['restho_banner_one_social_link_linkedin']['url'])) : ?>
-                                                <li><a href="<?php echo esc_url($items['restho_banner_one_social_link_linkedin']['url']) ?>"><?php echo esc_html__('Linked In', 'restho') ?></a></li>
-                                            <?php endif ?>
 
-                                            <?php if (!empty($items['restho_banner_one_social_link_pinterest']['url'])) : ?>
-                                                <li><a href="<?php echo esc_url($items['restho_banner_one_social_link_pinterest']['url']) ?>"><?php echo esc_html__('Pinterest', 'restho') ?></a></li>
-                                            <?php endif ?>
-                                            <?php if (!empty($items['restho_banner_one_social_link_youtube']['url'])) : ?>
-                                                <li><a href="<?php echo esc_url($items['restho_banner_one_social_link_youtube']['url']) ?>"><?php echo esc_html__('Youtube', 'restho') ?></a></li>
-                                            <?php endif ?>
-                                        </ul>
-                                    </div>
                                     <div class="banner-left-img">
                                         <img src="<?php echo get_template_directory_uri() ?>/assets/images/icon/union-left.svg" alt="<?php echo esc_attr__('union-left', 'restho') ?>">
                                         <div class="food-img">
@@ -1329,26 +1373,26 @@ class Restho_Banner_Widget extends Widget_Base
             <div class="home3-banner">
                 <div class="social-area">
                     <ul>
-                        <?php if (!empty($settings['restho_banner_three_social_link_facebook']['url'])) : ?>
-                            <li><a href="<?php echo esc_url($settings['restho_banner_three_social_link_facebook']['url']) ?>"><i class="bx bxl-facebook"></i></a></li>
+                        <?php if (!empty($settings['restho_banner_social_link_facebook']['url'])) : ?>
+                            <li><a href="<?php echo esc_url($settings['restho_banner_social_link_facebook']['url']) ?>"><i class="bx bxl-facebook"></i></a></li>
                         <?php endif ?>
-                        <?php if (!empty($settings['restho_banner_three_social_link_instagram']['url'])) : ?>
-                            <li><a href="<?php echo esc_url($settings['restho_banner_three_social_link_instagram']['url']) ?>"><i class='bx bxl-instagram-alt'></i></a></li>
+                        <?php if (!empty($settings['restho_banner_social_link_instagram']['url'])) : ?>
+                            <li><a href="<?php echo esc_url($settings['restho_banner_social_link_instagram']['url']) ?>"><i class='bx bxl-instagram-alt'></i></a></li>
                         <?php endif ?>
-                        <?php if (!empty($settings['restho_banner_three_social_link_linkedin']['url'])) : ?>
-                            <li><a href="<?php echo esc_url($settings['restho_banner_three_social_link_linkedin']['url']) ?>"><i class='bx bxl-linkedin'></i></a></li>
+                        <?php if (!empty($settings['restho_banner_social_link_linkedin']['url'])) : ?>
+                            <li><a href="<?php echo esc_url($settings['restho_banner_social_link_linkedin']['url']) ?>"><i class='bx bxl-linkedin'></i></a></li>
                         <?php endif ?>
-                        <?php if (!empty($settings['restho_banner_three_social_link_twitter']['url'])) : ?>
-                            <li><a href="<?php echo esc_url($settings['restho_banner_three_social_link_twitter']['url']) ?>"><i class="bx bxl-twitter"></i></a></li>
+                        <?php if (!empty($settings['restho_banner_social_link_twitter']['url'])) : ?>
+                            <li><a href="<?php echo esc_url($settings['restho_banner_social_link_twitter']['url']) ?>"><i class="bx bxl-twitter"></i></a></li>
                         <?php endif ?>
-                        <?php if (!empty($settings['restho_banner_three_social_link_skype']['url'])) : ?>
-                            <li><a href="<?php echo esc_url($settings['restho_banner_three_social_link_skype']['url']) ?>"><i class="bx bxl-skype"></i></a></li>
+                        <?php if (!empty($settings['restho_banner_social_link_skype']['url'])) : ?>
+                            <li><a href="<?php echo esc_url($settings['restho_banner_social_link_skype']['url']) ?>"><i class="bx bxl-skype"></i></a></li>
                         <?php endif ?>
-                        <?php if (!empty($settings['restho_banner_three_social_link_pinterest']['url'])) : ?>
-                            <li><a href="<?php echo esc_url($settings['restho_banner_three_social_link_pinterest']['url']) ?>"><i class="bx bxl-pinterest"></i></a></li>
+                        <?php if (!empty($settings['restho_banner_social_link_pinterest']['url'])) : ?>
+                            <li><a href="<?php echo esc_url($settings['restho_banner_social_link_pinterest']['url']) ?>"><i class="bx bxl-pinterest"></i></a></li>
                         <?php endif ?>
-                        <?php if (!empty($settings['restho_banner_three_social_link_youtube']['url'])) : ?>
-                            <li><a href="<?php echo esc_url($settings['restho_banner_three_social_link_youtube']['url']) ?>"><i class="bx bxl-youtube"></i></a></li>
+                        <?php if (!empty($settings['restho_banner_social_link_youtube']['url'])) : ?>
+                            <li><a href="<?php echo esc_url($settings['restho_banner_social_link_youtube']['url']) ?>"><i class="bx bxl-youtube"></i></a></li>
                         <?php endif ?>
                     </ul>
                 </div>
