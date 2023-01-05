@@ -593,6 +593,32 @@ class Restho_Banner_Widget extends Widget_Base
         //styling starts here
         //Subtitle Style
         $this->start_controls_section(
+            'restho_banner_style_general_section',
+            [
+                'label' => esc_html__('General', 'restho-core'),
+                'tab'   => Controls_Manager::TAB_STYLE,
+                'condition' => [
+                    'restho_banner_content_style_selection' => ['style_one','style_two'],
+                ],
+            ]
+        );
+
+        $this->add_responsive_control(
+            'restho_banner_style_slider_padding',
+            [
+                'label'      => __('Banner Slider Padding', 'restho-core'),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', '%'],
+                'selectors'  => [
+                    '{{WRAPPER}} .banner-section1 .banner-wrapper' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .banner-section2 .banner-wrapper' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ]
+            ]
+        );
+
+        $this->end_controls_section();
+
+        $this->start_controls_section(
             'restho_banner_style_sub_title_section',
             [
                 'label' => esc_html__('Sub Title', 'restho-core'),
