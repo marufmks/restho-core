@@ -919,7 +919,7 @@ class restho_about_Widget extends Widget_Base
             Group_Control_Typography::get_type(),
             [
                 'label'    => esc_html__('Typography', 'restho-core'),
-                'name'     => 'restho_about_style_feature_title_typography',
+                'name'     => 'restho_about_style_feature_title_one_typography',
                 'selector' => '{{WRAPPER}} .home1-introduction-area .intro-right .features-author .intro-features ul li',
                 'condition' => [
                     'restho_about_content_style_selection' => [ 'style_one'],
@@ -930,7 +930,7 @@ class restho_about_Widget extends Widget_Base
             Group_Control_Typography::get_type(),
             [
                 'label'    => esc_html__('Typography', 'restho-core'),
-                'name'     => 'restho_about_style_feature_title_typography',
+                'name'     => 'restho_about_style_feature_title_two_typography',
                 'selector' => '{{WRAPPER}} .h2-about-area .about-right .about-featurs ul li .features-content h4',
                 'condition' => [
                     'restho_about_content_style_selection' => [ 'style_two'],
@@ -941,7 +941,7 @@ class restho_about_Widget extends Widget_Base
             Group_Control_Typography::get_type(),
             [
                 'label'    => esc_html__('Typography', 'restho-core'),
-                'name'     => 'restho_about_style_feature_title_typography',
+                'name'     => 'restho_about_style_feature_title_three_typography',
                 'selector' => '{{WRAPPER}} .introduction-area .introduction-content .about-features ul li',
                 'condition' => [
                     'restho_about_content_style_selection' => [ 'style_three'],
@@ -952,7 +952,7 @@ class restho_about_Widget extends Widget_Base
             Group_Control_Typography::get_type(),
             [
                 'label'    => esc_html__('Typography', 'restho-core'),
-                'name'     => 'restho_about_style_feature_title_typography',
+                'name'     => 'restho_about_style_feature_title_four_typography',
                 'selector' => '{{WRAPPER}} .about-introduction-area .intro-right .features-author .intro-features ul li',
                 'condition' => [
                     'restho_about_content_style_selection' => [ 'style_four'],
