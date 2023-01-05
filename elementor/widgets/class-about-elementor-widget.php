@@ -54,6 +54,60 @@ class restho_about_Widget extends Widget_Base
             ]
         );
         $this->end_controls_section();
+
+        //Content Section
+        $this->start_controls_section(
+            'restho_about_content_heading_section',
+            [
+                'label' => esc_html__('Heading Contents', 'restho-core'),
+            ]
+        );
+
+        $this->add_control(
+            'restho_about_content_subtitle_icon_switcher',
+            [
+                'label' => esc_html__('Icon (Show/Hide)', 'restho-core'),
+                'type' => \Elementor\Controls_Manager::SWITCHER,
+                'label_on' => esc_html__('Show', 'restho-core'),
+                'label_off' => esc_html__('Hide', 'restho-core'),
+                'return_value' => 'yes',
+                'default' => 'yes',
+            ]
+        );
+        $this->add_control(
+            'restho_about_two_content_sub_title',
+            [
+                'label' => esc_html__('Subtitle', 'restho-core'),
+                'type' => Controls_Manager::TEXT,
+                'default' => esc_html__('About to Restho', 'restho-core'),
+                'label_block' => true,
+
+            ]
+        );
+        $this->add_control(
+            'restho_about_two_content_main_title',
+            [
+                'label' => esc_html__('Main Title', 'restho-core'),
+                'type' => Controls_Manager::TEXT,
+                'default' => esc_html__('Come to Our Restaurant, Ready Your Food.', 'restho-core'),
+                'label_block' => true,
+            ]
+        );
+
+        $this->add_control(
+            'restho_about_two_content_description',
+            [
+                'label' => esc_html__('Description', 'restho-core'),
+                'type' => Controls_Manager::TEXTAREA,
+                'default' => esc_html__('It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
+                It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing 
+                software like Aldus PageMaker including versions of Lorem Ipsum.', 'restho-core'),
+                'label_block' => true,
+
+            ]
+        );
+
+        $this->end_controls_section();
         //Content Section
         $this->start_controls_section(
             'restho_about_one_content_image_section',
@@ -307,59 +361,7 @@ class restho_about_Widget extends Widget_Base
         );
 
         $this->end_controls_section();
-        //Content Section
-        $this->start_controls_section(
-            'restho_about_content_heading_section',
-            [
-                'label' => esc_html__('Heading Contents', 'restho-core'),
-            ]
-        );
-
-        $this->add_control(
-            'restho_about_content_subtitle_icon_switcher',
-            [
-                'label' => esc_html__('Icon (Show/Hide)', 'restho-core'),
-                'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => esc_html__('Show', 'restho-core'),
-                'label_off' => esc_html__('Hide', 'restho-core'),
-                'return_value' => 'yes',
-                'default' => 'yes',
-            ]
-        );
-        $this->add_control(
-            'restho_about_two_content_sub_title',
-            [
-                'label' => esc_html__('Subtitle', 'restho-core'),
-                'type' => Controls_Manager::TEXT,
-                'default' => esc_html__('About to Restho', 'restho-core'),
-                'label_block' => true,
-
-            ]
-        );
-        $this->add_control(
-            'restho_about_two_content_main_title',
-            [
-                'label' => esc_html__('Main Title', 'restho-core'),
-                'type' => Controls_Manager::TEXT,
-                'default' => esc_html__('Come to Our Restaurant, Ready Your Food.', 'restho-core'),
-                'label_block' => true,
-            ]
-        );
-
-        $this->add_control(
-            'restho_about_two_content_description',
-            [
-                'label' => esc_html__('Description', 'restho-core'),
-                'type' => Controls_Manager::TEXTAREA,
-                'default' => esc_html__('It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
-                It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing 
-                software like Aldus PageMaker including versions of Lorem Ipsum.', 'restho-core'),
-                'label_block' => true,
-
-            ]
-        );
-
-        $this->end_controls_section();
+        
 
         $this->start_controls_section(
             'restho_about_two_content_feature_section',
@@ -1019,11 +1021,11 @@ class restho_about_Widget extends Widget_Base
 
         $this->end_controls_section();
 
-         //author Description Style
+         //Author Testimony Style
          $this->start_controls_section(
             'restho_about_style_author_description_style_one_section',
             [
-                'label' => esc_html__('Author Description', 'restho-core'),
+                'label' => esc_html__('Author Testimony', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'restho_about_content_style_selection' => ['style_one'],
@@ -1037,7 +1039,7 @@ class restho_about_Widget extends Widget_Base
                 'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .h2-about-area .about-right .about-featurs ul li .authors-content p' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .home1-introduction-area .intro-right .features-author .author-area .author-content P' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -1047,7 +1049,7 @@ class restho_about_Widget extends Widget_Base
             [
                 'label'    => esc_html__('Typography', 'restho-core'),
                 'name'     => 'restho_about_style_author_description_style_one_typography',
-                'selector' => '{{WRAPPER}} .h2-about-area .about-right .about-featurs ul li .authors-content p',
+                'selector' => '{{WRAPPER}} .home1-introduction-area .intro-right .features-author .author-area .author-content P',
             ]
         );
         $this->add_responsive_control(
@@ -1057,17 +1059,17 @@ class restho_about_Widget extends Widget_Base
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors'  => [
-                    '{{WRAPPER}} .h2-about-area .about-right .about-featurs ul li .authors-content p' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .home1-introduction-area .intro-right .features-author .author-area .author-content P' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ]
             ]
         );
 
         $this->end_controls_section();
-         //author Description Style
+         //Author Testimony Style
          $this->start_controls_section(
             'restho_about_style_author_description_style_two_section',
             [
-                'label' => esc_html__('Author Description', 'restho-core'),
+                'label' => esc_html__('Author Testimony', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'restho_about_content_style_selection' => ['style_four'],
