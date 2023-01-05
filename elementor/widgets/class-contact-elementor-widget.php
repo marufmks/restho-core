@@ -348,7 +348,6 @@ class Restho_Contact_Widget extends Widget_Base
     {
 
         $settings = $this->get_settings_for_display();
-        $Items = $settings['restho_contact_repeater_list'];
         ?>
             <div class="contact-page">
                 <div class="contact-wrap">
