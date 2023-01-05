@@ -52,12 +52,12 @@ class Restho_Testimonial_Widget extends Widget_Base
             ]
         );
         $this->add_control(
-            'restho_testimonial_one_quote_switcher',
+            'restho_testimonial_one_rating_switcher',
             [
-                'label' => esc_html__('Quote Icon (Show/Hide)', 'restho-core'),
+                'label' => esc_html__('Rating (Show/Hide)', 'restho-core'),
                 'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => esc_html__('Show', 'restho-core'),
-                'label_off' => esc_html__('Hide', 'restho-core'),
+                'label_on' => esc_html__('Enable', 'restho-core'),
+                'label_off' => esc_html__('Disable', 'restho-core'),
                 'return_value' => 'yes',
                 'default' => 'yes',
                 'condition' => [
@@ -66,12 +66,26 @@ class Restho_Testimonial_Widget extends Widget_Base
             ]
         );
         $this->add_control(
-            'restho_testimonial_one_rating_switcher',
+            'restho_testimonial_one_quote_switcher',
             [
-                'label' => esc_html__('Rating (Show/Hide)', 'restho-core'),
+                'label' => esc_html__('Quote Icon (Show/Hide)', 'restho-core'),
                 'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => esc_html__('Show', 'restho-core'),
-                'label_off' => esc_html__('Hide', 'restho-core'),
+                'label_on' => esc_html__('Enable', 'restho-core'),
+                'label_off' => esc_html__('Disable', 'restho-core'),
+                'return_value' => 'yes',
+                'default' => 'yes',
+                'condition' => [
+                    'restho_testimonial_content_style_selection' => 'style_one' ,
+                ],
+            ]
+        );
+        $this->add_control(
+            'restho_testimonial_one_video_sec_switcher',
+            [
+                'label' => esc_html__('Video Section (Show/Hide)', 'restho-core'),
+                'type' => \Elementor\Controls_Manager::SWITCHER,
+                'label_on' => esc_html__('Enable', 'restho-core'),
+                'label_off' => esc_html__('Disable', 'restho-core'),
                 'return_value' => 'yes',
                 'default' => 'yes',
                 'condition' => [
@@ -84,8 +98,8 @@ class Restho_Testimonial_Widget extends Widget_Base
             [
                 'label' => esc_html__('Quote Icon (Show/Hide)', 'restho-core'),
                 'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => esc_html__('Show', 'restho-core'),
-                'label_off' => esc_html__('Hide', 'restho-core'),
+                'label_on' => esc_html__('Enable', 'restho-core'),
+                'label_off' => esc_html__('Disable', 'restho-core'),
                 'return_value' => 'yes',
                 'default' => 'yes',
                 'condition' => [
@@ -98,8 +112,8 @@ class Restho_Testimonial_Widget extends Widget_Base
             [
                 'label' => esc_html__('Rating (Show/Hide)', 'restho-core'),
                 'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => esc_html__('Show', 'restho-core'),
-                'label_off' => esc_html__('Hide', 'restho-core'),
+                'label_on' => esc_html__('Enable', 'restho-core'),
+                'label_off' => esc_html__('Disable', 'restho-core'),
                 'return_value' => 'yes',
                 'default' => 'yes',
                 'condition' => [
@@ -202,6 +216,97 @@ class Restho_Testimonial_Widget extends Widget_Base
             ]
         );
         $this->end_controls_section();
+
+        //Heading Section
+        $this->start_controls_section(
+            'restho_heading_content_section',
+            [
+                'label' => esc_html__('Heading Section', 'restho-core'),
+                'condition' => [
+                    'restho_testimonial_content_style_selection' => 'style_one' ,
+                ],
+                
+            ]
+        );
+        $this->add_control(
+            'restho_heading_content_icon_switcher',
+            [
+                'label' => esc_html__(' Subtitle Icon (Show/Hide)', 'restho-core'),
+                'type' => \Elementor\Controls_Manager::SWITCHER,
+                'label_on' => esc_html__('Show', 'restho-core'),
+                'label_off' => esc_html__('Hide', 'restho-core'),
+                'return_value' => 'yes',
+                'default' => 'yes',
+            ]
+        );
+        $this->add_control(
+            'restho_heading_content_sub_title',
+            [
+                'label' => esc_html__('Subtitle', 'restho-core'),
+                'type' => Controls_Manager::TEXT,
+                'default' => esc_html__('Testimonials', 'restho-core'),
+                'label_block' => true,
+
+            ]
+        );
+        $this->add_control(
+            'restho_heading_content_main_title',
+            [
+                'label' => esc_html__('Main Title', 'restho-core'),
+                'type' => Controls_Manager::TEXT,
+                'default' => esc_html__('Customer Feedback', 'restho-core'),
+                'label_block' => true,
+            ]
+        );
+
+        $this->add_control(
+            'restho_heading_content_description',
+            [
+                'label' => esc_html__('Description', 'restho-core'),
+                'type' => Controls_Manager::TEXTAREA,
+                'default' => esc_html__('It is a long established fact that a reader will be distracted.Various versions have evolved over.', 'restho-core'),
+                'label_block' => true,
+
+            ]
+        );
+        $this->end_controls_section();
+        //Video Section
+        $this->start_controls_section(
+            'restho_video_content_section',
+            [
+                'label' => esc_html__('Video Section', 'restho-core'),
+                'condition' => [
+                    'restho_testimonial_content_style_selection' => 'style_one' ,
+                ],
+            ]
+        );
+        $this->add_control(
+            'restho_testi_video_thumbnail',
+            [
+                'label' => esc_html__('Thumbnail', 'restho-core'),
+                'type' => \Elementor\Controls_Manager::MEDIA,
+                'default' => [
+                    'url' => \Elementor\Utils::get_placeholder_image_src(),
+                ],
+            ]
+        );
+        $this->add_control(
+			'restho_testi_video_link',
+			[
+				'label' => esc_html__( 'Link', 'restho-core' ),
+				'type' => \Elementor\Controls_Manager::URL,
+				'placeholder' => esc_html__( 'https://your-link.com', 'restho-core' ),
+				'options' => [ 'url', 'is_external', 'nofollow' ],
+				'default' => [
+					'url' => '',
+					'is_external' => true,
+					'nofollow' => true,
+				],
+				'label_block' => true,
+			]
+		);
+        
+        $this->end_controls_section();
         //Style Two
         $this->start_controls_section(
             'restho_testimonial_two_content_repeater',
@@ -283,6 +388,14 @@ class Restho_Testimonial_Widget extends Widget_Base
             ]
 
         );
+        $this->add_group_control(
+			\Elementor\Group_Control_Background::get_type(),
+			[
+				'name' => 'restho_testi_background',
+				'types' => ['gradient' ],
+				'selector' => '{{WRAPPER}} .testimonial-area1',
+			]
+		);
         $this->add_control(
             'restho_testi_one_rating_icon_color',
             [
@@ -501,7 +614,109 @@ class Restho_Testimonial_Widget extends Widget_Base
             ]
 
         );
-        $this->end_controls_section();  
+        $this->end_controls_section(); 
+        //Heading Section Style One
+        $this->start_controls_section(
+            'restho_testi_one_style_section_heading',
+            [
+                'label' => esc_html__('Heading Section', 'restho-core'),
+                'tab'   => Controls_Manager::TAB_STYLE,
+                'condition' => [
+                    'restho_testimonial_content_style_selection' => 'style_one' ,
+                ],
+            ]
+
+        );
+        $this->add_control(
+            'restho_heading_style_sub_title_color',
+            [
+                'label'     => esc_html__('Subtitle Color', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .section-title span' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .section-title span svg rect' => 'stroke: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'label'    => esc_html__('Subtitle Typography', 'restho-core'),
+                'name'     => 'restho_heading_style_sub_title_one_typography',
+                'selector' => '{{WRAPPER}} .section-title span',
+            ]
+        );
+        $this->add_control(
+            'restho_heading_style_main_title_color',
+            [
+                'label'     => esc_html__('Color', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .section-title h2' => 'color: {{VALUE}};',
+                ],
+
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_heading_style_main_title_one_typography',
+                'selector' => '{{WRAPPER}} .section-title h2',
+            ]
+        );
+        $this->add_control(
+            'restho_heading_style_description_color',
+            [
+                'label'     => esc_html__('Color', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .section-title p' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_heading_style_description_one_typography',
+                'selector' => '{{WRAPPER}} .section-title p',
+            ]
+        );
+        $this->end_controls_section(); 
+        //Video Section Style One
+        $this->start_controls_section(
+            'restho_testi_one_style_section_video',
+            [
+                'label' => esc_html__('Video Section', 'restho-core'),
+                'tab'   => Controls_Manager::TAB_STYLE,
+                'condition' => [
+                    'restho_testimonial_content_style_selection' => 'style_one' ,
+                ],
+            ]
+
+        );
+        $this->add_control(
+            'restho_testi_one_style_video_section_btn_color',
+            [
+                'label'     => esc_html__('Button Color', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .testimonial-video-area .testi-video-wrap .video-icon a i' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_control(
+            'restho_testi_one_style_video_section_btn_hvr_color',
+            [
+                'label'     => esc_html__('Button Hover', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .testimonial-video-area .testi-video-wrap .video-icon a i:hover' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->end_controls_section(); 
 
         //Style Two
         //General Style Two
@@ -883,10 +1098,10 @@ class Restho_Testimonial_Widget extends Widget_Base
                 </script>
             <?php endif ?>
             <?php if( !empty( $settings['restho_testimonial_content_style_selection'] ) && ($settings['restho_testimonial_content_style_selection'] == 'style_one') )  : ?>
-                <div class="testimonial-area1">
+                <div class="testimonial-area1 <?php echo ($settings['restho_testimonial_one_video_sec_switcher'] == 'yes') ? 'testimonial-with-video' : 'testimonial-without-video'  ?>">
                     <div class="container">
                         <div class="row align-items-center">
-                            <div class="col-lg-12 position-relative order-lg-1 order-2">
+                            <div class="col-lg-7 position-relative order-lg-1 order-2">
                                 <div class="swiper testimonial-img-slider">
                                     <div class="swiper-wrapper">
                                     <?php foreach($items as $item):?>
@@ -910,31 +1125,86 @@ class Restho_Testimonial_Widget extends Widget_Base
                                                     <?php endif ?>
                                                     <div class="author-name-review">
                                                         <div class="author-name">
-                                                            <h4><?php echo esc_html($item['restho_testimonial_one_name']) ?></h4>
-                                                            <span><?php echo esc_html($item['restho_testimonial_one_designation']) ?></span>
+                                                            <?php if (!empty($item['restho_testimonial_one_name'])) : ?>
+                                                                <h4><?php echo esc_html($item['restho_testimonial_one_name']) ?></h4>
+                                                            <?php endif ?>
+                                                            <?php if (!empty($item['restho_testimonial_one_designation'])) : ?>
+                                                                <span><?php echo esc_html($item['restho_testimonial_one_designation']) ?></span>
+                                                            <?php endif ?>
                                                         </div>
                                                         <?php if ($settings['restho_testimonial_one_rating_switcher'] == 'yes') : ?>
-                                                            <div class="review">
-                                                                <ul>
-                                                                    <?php
-                                                                        for ($i=0; $i <$item['restho_testimonial_one_rating'] ; $i++) {  ?>
-                                                                        <li><i class="bi bi-star-fill"></i></li>	
-                                                                    <?php	}
-                                                                    ?>
-                                                                </ul>
-                                                            </div>
+                                                            <?php if (!empty($item['restho_testimonial_one_rating'])) : ?>
+                                                                <div class="review">
+                                                                    <ul>
+                                                                        <?php
+                                                                            for ($i=0; $i <$item['restho_testimonial_one_rating'] ; $i++) {  ?>
+                                                                            <li><i class="bi bi-star-fill"></i></li>	
+                                                                        <?php	}
+                                                                        ?>
+                                                                    </ul>
+                                                                </div>
+                                                            <?php endif ?>
                                                         <?php endif ?>
                                                     </div>
-                                                    <p><?php echo wp_kses($item['restho_testimonial_one_description'], wp_kses_allowed_html('post')) ?></p>
+                                                    <?php if (!empty($item['restho_testimonial_one_description'])) : ?>
+                                                        <p><?php echo wp_kses($item['restho_testimonial_one_description'], wp_kses_allowed_html('post')) ?></p>
+                                                    <?php endif ?>
                                                 </div>
                                             </div>
                                         <?php endforeach ?>
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-lg-5 order-lg-2 order-1">
+                                <div class="section-title">
+                                    <span>
+                                        <?php if ($settings['restho_heading_content_icon_switcher'] == 'yes') : ?>
+                                            <svg width="17" height="13" viewBox="0 0 17 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect y="0.725405" width="7.45" height="7.45" transform="matrix(0.688322 0.725405 -0.688322 0.725405 6.3156 0.199193)" stroke="#BF9444" />
+                                                <rect y="0.725405" width="7.45" height="7.45" transform="matrix(0.688322 0.725405 -0.688322 0.725405 11.146 0.199193)" stroke="#BF9444" />
+                                            </svg>
+                                        <?php endif ?>
+                                            <?php if (!empty($settings['restho_heading_content_sub_title'])) : ?>
+                                                <?php echo esc_html__($settings['restho_heading_content_sub_title'], 'restho') ?>
+                                            <?php endif ?>
+                                        <?php if ($settings['restho_heading_content_icon_switcher'] == 'yes') : ?>
+                                            <svg width="17" height="13" viewBox="0 0 17 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect y="0.725405" width="7.45" height="7.45" transform="matrix(0.688322 0.725405 -0.688322 0.725405 6.3156 0.199193)" stroke="#BF9444" />
+                                                <rect y="0.725405" width="7.45" height="7.45" transform="matrix(0.688322 0.725405 -0.688322 0.725405 11.146 0.199193)" stroke="#BF9444" />
+                                            </svg>
+                                        <?php endif ?>
+                                    </span>
+                                    <?php if (!empty($settings['restho_heading_content_main_title'])) : ?>
+                                        <h2><?php echo esc_html__($settings['restho_heading_content_main_title'], 'restho') ?></h2>
+                                    <?php endif ?>
+                                    <?php if (!empty($settings['restho_heading_content_description'])) : ?>
+                                        <p><?php echo wp_kses($settings['restho_heading_content_description'], wp_kses_allowed_html('post')) ?></p>
+                                    <?php endif ?>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <?php if ($settings['restho_testimonial_one_video_sec_switcher'] == 'yes') : ?>
+                    <div class="testimonial-video-area mb-120">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="testi-video-wrap">
+                                        <?php if (!empty($settings['restho_testi_video_thumbnail']['url'])) : ?>
+                                            <img class="img-fluid" src="<?php echo esc_url($settings['restho_testi_video_thumbnail']['url']) ?>" alt="">
+                                        <?php endif ?>
+                                        <?php if (!empty($settings['restho_testi_video_link']['url'])) : ?>
+                                            <div class="video-icon">
+                                                <a class="gallery2-img" data-fancybox="gallery" href="<?php echo esc_url($settings['restho_testi_video_link']['url']) ?>"><i class="bi bi-play-circle"></i></a>
+                                            </div>
+                                        <?php endif ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endif ?>
             <?php endif ?>
             <?php if( !empty( $settings['restho_testimonial_content_style_selection'] ) && ($settings['restho_testimonial_content_style_selection'] == 'style_two') )  : ?> 
                 <div class="home3-testimonial">
@@ -950,22 +1220,30 @@ class Restho_Testimonial_Widget extends Widget_Base
                                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon/Comma.svg" alt="<?php echo esc_attr__('quate-icon', 'restho') ?>">
                                                 </div>
                                             <?php endif ?>
-                                            <p><?php echo wp_kses($item2['restho_testimonial_two_description'], wp_kses_allowed_html('post')) ?></p>
+                                            <?php if (!empty($item2['restho_testimonial_two_description'])) : ?>
+                                                <p><?php echo wp_kses($item2['restho_testimonial_two_description'], wp_kses_allowed_html('post')) ?></p>
+                                            <?php endif ?>
                                         </div>
                                         <div class="testi-author-area">
-                                            <div class="author-img">
-                                                <img src="<?php echo esc_url($item2['restho_testimonial_two_author_img']['url']) ?>" alt="<?php echo esc_attr__('testi-author-img', 'restho') ?>">
-                                            </div>
+                                            <?php if (!empty($item2['restho_testimonial_two_author_img']['url'])) : ?>
+                                                <div class="author-img">
+                                                    <img src="<?php echo esc_url($item2['restho_testimonial_two_author_img']['url']) ?>" alt="<?php echo esc_attr__('testi-author-img', 'restho') ?>">
+                                                </div>
+                                            <?php endif ?>
                                             <div class="name-review">
-                                                <h5><?php echo esc_html($item2['restho_testimonial_two_name']) ?></h5>
+                                                <?php if (!empty($item2['restho_testimonial_two_name'])) : ?>
+                                                    <h5><?php echo esc_html($item2['restho_testimonial_two_name']) ?></h5>
+                                                <?php endif ?>
                                                 <?php if ($settings['restho_testimonial_two_rating_switcher'] == 'yes') : ?>
-                                                    <ul>
-                                                        <?php
-                                                            for ($i=0; $i <$item2['restho_testimonial_two_rating'] ; $i++) {  ?>
-                                                            <li><i class="bi bi-star-fill"></i></li>	
-                                                        <?php	}
-                                                        ?>
-                                                    </ul>
+                                                    <?php if (!empty($item2['restho_testimonial_two_rating'])) : ?>
+                                                        <ul>
+                                                            <?php
+                                                                for ($i=0; $i <$item2['restho_testimonial_two_rating'] ; $i++) {  ?>
+                                                                <li><i class="bi bi-star-fill"></i></li>	
+                                                            <?php	}
+                                                            ?>
+                                                        </ul>
+                                                    <?php endif ?>
                                                 <?php endif ?>
                                             </div>
                                         </div>
@@ -978,15 +1256,14 @@ class Restho_Testimonial_Widget extends Widget_Base
                     <?php if ($settings['restho_testimonial_two_pagination_switcher'] == 'yes') : ?>
                         <div class="row">
                             <div class="col-lg-12">                         
-                                    <div class="slider-btn">
-                                        <div class="prev-btn-4">
-                                            <i class="bi bi-arrow-left-short"></i>
-                                        </div>
-                                        <div class="next-btn-4">
-                                            <i class="bi bi-arrow-right-short"></i>
-                                        </div>
+                                <div class="slider-btn">
+                                    <div class="prev-btn-4">
+                                        <i class="bi bi-arrow-left-short"></i>
                                     </div>
-                                
+                                    <div class="next-btn-4">
+                                        <i class="bi bi-arrow-right-short"></i>
+                                    </div>
+                                </div>                               
                             </div>
                         </div>
                     <?php endif ?>
