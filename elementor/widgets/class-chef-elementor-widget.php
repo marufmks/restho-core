@@ -141,9 +141,35 @@ class restho_chef_Widget extends Widget_Base
             Group_Control_Typography::get_type(),
             [
                 'label'    => esc_html__('Typography', 'restho-core'),
-                'name'     => 'restho_chef_style_title_typography',
-                'selector' => '{{WRAPPER}} .cooking-expert-area .cooking-expart-wrap .exparts-content h3 a,
-                .best-chef-wrap .Chef-content h3 a,.home3-chef .cooking-expart-wrap .exparts-content h3 a',
+                'name'     => 'restho_chef_style_title_style_one_typography',
+                'selector' => '{{WRAPPER}} .cooking-expert-area .cooking-expart-wrap .exparts-content h3 a',
+                'condition' => [
+                    'restho_chef_style_selection' => ['style_one',]
+                ],
+
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_chef_style_title_style_two_typography',
+                'selector' => '{{WRAPPER}} .best-chef-wrap .Chef-content h3 a',
+                'condition' => [
+                    'restho_chef_style_selection' => ['style_two',]
+                ],
+
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_chef_style_title_style_three_typography',
+                'selector' => '{{WRAPPER}} .best-chef-wrap .Chef-content h3 a,.home3-chef .cooking-expart-wrap .exparts-content h3 a',
+                'condition' => [
+                    'restho_chef_style_selection' => ['style_three',]
+                ],
 
             ]
         );
@@ -187,9 +213,35 @@ class restho_chef_Widget extends Widget_Base
             Group_Control_Typography::get_type(),
             [
                 'label'    => esc_html__('Typography', 'restho-core'),
-                'name'     => 'restho_chef_style_designation_typography',
-                'selector' => '{{WRAPPER}} .cooking-expert-area .cooking-expart-wrap .exparts-content p,
-                .best-chef-wrap .Chef-content p,.home3-chef .cooking-expart-wrap .exparts-content p',
+                'name'     => 'restho_chef_style_designation_style_one_typography',
+                'selector' => '{{WRAPPER}} .cooking-expert-area .cooking-expart-wrap .exparts-content p',
+                'condition' => [
+                    'restho_chef_style_selection' => ['style_one',]
+                ],
+
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_chef_style_designation_style_two_typography',
+                'selector' => '{{WRAPPER}} .best-chef-wrap .Chef-content p',
+                'condition' => [
+                    'restho_chef_style_selection' => ['style_two',]
+                ],
+
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'label'    => esc_html__('Typography', 'restho-core'),
+                'name'     => 'restho_chef_style_designation_style_three_typography',
+                'selector' => '{{WRAPPER}} .home3-chef .cooking-expart-wrap .exparts-content p',
+                'condition' => [
+                    'restho_chef_style_selection' => ['style_three',]
+                ],
 
             ]
         );
