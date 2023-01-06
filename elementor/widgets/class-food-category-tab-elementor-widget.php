@@ -315,12 +315,24 @@ class restho_food_category_tab_Widget extends Widget_Base
             ]
         );
         $this->add_control(
-            'restho_food_category_tab_style_category_button_border_color',
+            'restho_food_category_tab_style_category_button_active_text_color',
             [
-                'label'     => esc_html__('Border Color', 'restho-core'),
+                'label'     => esc_html__('Active Text Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .food-category-area .food-category-list .nav .nav-item .nav-link' => 'border:1px solid {{VALUE}};',
+                    '{{WRAPPER}} .food-category-area .food-category-list .nav .nav-item .nav-link.active' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .food-category-area .food-category-list .nav .nav-item .nav-link.active i' => 'color: {{VALUE}};',
+                ],
+
+            ]
+        );
+        $this->add_control(
+            'restho_food_category_tab_style_category_button_active_bg_color',
+            [
+                'label'     => esc_html__('Active Background Color', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .food-category-area .food-category-list .nav .nav-item .nav-link.active::after' => 'background-color: {{VALUE}};',
                 ],
 
             ]
@@ -330,7 +342,7 @@ class restho_food_category_tab_Widget extends Widget_Base
             [
                 'label'    => esc_html__('Typography', 'restho-core'),
                 'name'     => 'restho_food_category_tab_style_category_button_typography',
-                'selector' => '{{WRAPPER}} .menu2-area .menu2-tab .nav .nav-item .nav-link',
+                'selector' => '{{WRAPPER}} .food-category-area .food-category-list .nav .nav-item .nav-link span',
 
             ]
         );
@@ -341,7 +353,7 @@ class restho_food_category_tab_Widget extends Widget_Base
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors'  => [
-                    '{{WRAPPER}} .menu2-area .menu2-tab .nav .nav-item .nav-link' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .food-category-area .food-category-list .nav .nav-item .nav-link' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 
                 ]
             ]
