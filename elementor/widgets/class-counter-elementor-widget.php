@@ -105,8 +105,21 @@ class Restho_Counter_Widget extends Widget_Base
 				'type' => \Elementor\Controls_Manager::REPEATER,
 				'fields' => $repeater->get_controls(),
 				'default' => [
-					[
+                    [
 						'restho_counter_odometer_title' => esc_html__( 'Professional Chef', 'restho-core' ),
+						'restho_counter_odometer_number' => esc_html__( "300 ", 'restho-core' ),
+					],
+					[
+						'restho_counter_odometer_title' => esc_html__( 'Food Category', 'restho-core' ),
+						'restho_counter_odometer_number' => esc_html__( "300", 'restho-core' ),
+					],
+                    [
+						'restho_counter_odometer_title' => esc_html__( "Customer Satisfy", 'restho-core' ),
+						'restho_counter_odometer_number' => esc_html__( "300", 'restho-core' ),
+					],
+                    [
+						'restho_counter_odometer_title' => esc_html__( "Award Wining", 'restho-core' ),
+						'restho_counter_odometer_number' => esc_html__( "300", 'restho-core' ),
 					],
 
 				],
