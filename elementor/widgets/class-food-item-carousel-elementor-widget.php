@@ -1030,6 +1030,17 @@ class Restho_Food_Item_Carousel_Widget extends Widget_Base
                 ],
             ]
         );
+        $this->add_control(
+            'restho_food_itm_sty_three_border_hvr_color',
+            [
+                'label'     => esc_html__('Border Hover', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .populer-food-area .slider-btn .prev-btn-3:hover' => 'border:1px solid {{VALUE}};',
+                    '{{WRAPPER}} .populer-food-area .slider-btn .next-btn-3:hover' => 'border:1px solid {{VALUE}};',
+                ],
+            ]
+        );
         $this->end_controls_section();
  
     }
