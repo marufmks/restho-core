@@ -252,6 +252,29 @@ class restho_menu_tab_Widget extends Widget_Base
 
             ]
         );
+        
+        $this->add_control(
+            'restho_menu_tab_style_category_button_active_text_color',
+            [
+                'label'     => esc_html__('Active Text Color', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .menu2-area .menu2-tab .nav-tabs .nav-link.active' => 'color: {{VALUE}};',
+                ],
+
+            ]
+        );
+        $this->add_control(
+            'restho_menu_tab_style_category_button_active_bg_color',
+            [
+                'label'     => esc_html__('Active Background Color', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .menu2-area .menu2-tab .nav-tabs .nav-link.active' => 'background-color: {{VALUE}};',
+                ],
+
+            ]
+        );
         $this->add_control(
             'restho_menu_tab_style_category_button_border_color',
             [
