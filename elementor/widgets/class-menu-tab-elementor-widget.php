@@ -471,7 +471,7 @@ class restho_menu_tab_Widget extends Widget_Base
         $this->start_controls_section(
             'restho_menu_style_offer_name_section',
             [
-                'label' => esc_html__('Offer Name', 'restho-core'),
+                'label' => esc_html__('Offer Button', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
 
             ]
@@ -484,6 +484,18 @@ class restho_menu_tab_Widget extends Widget_Base
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .menu2-area .menu2-left-img .overlay > span' => 'color: {{VALUE}};',
+                ],
+
+            ]
+        );
+
+        $this->add_control(
+            'restho_menu_style_offer_name_bg_color',
+            [
+                'label'     => esc_html__('Background Color', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .menu2-area .menu2-left-img .overlay > span' => 'background: {{VALUE}};',
                 ],
 
             ]
@@ -579,6 +591,7 @@ class restho_menu_tab_Widget extends Widget_Base
 
             ]
         );
+        
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
