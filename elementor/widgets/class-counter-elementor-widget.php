@@ -234,8 +234,8 @@ class Restho_Counter_Widget extends Widget_Base
                 'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .popular-food-area-counter .counter-area .counter-single .coundown div h3' => 'color: {{VALUE}};',
-                    '{{WRAPPER}} .about-counter .counter-single .coundown div h3' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .popular-food-area-counter .counter-area .counter-single .coundown div span' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .about-counter .counter-single .coundown div span' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -245,7 +245,7 @@ class Restho_Counter_Widget extends Widget_Base
                 'label'     => esc_html__('Hover Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .about-counter .counter-single:hover .coundown div h3' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .about-counter .counter-single:hover .coundown div span' => 'color: {{VALUE}};',
                 ],
                 'condition' => [
                     'restho_counter_content_style_selection' => 'style_two'
@@ -257,7 +257,7 @@ class Restho_Counter_Widget extends Widget_Base
             [
                 'label'    => esc_html__('Typography', 'restho-core'),
                 'name'     => 'restho_counter_style_one_number_typography',
-                'selector' => '{{WRAPPER}} .popular-food-area-counter .counter-area .counter-single .coundown div h3',
+                'selector' => '{{WRAPPER}} .popular-food-area-counter .counter-area .counter-single .coundown div span',
                 'condition' => [
                     'restho_counter_content_style_selection' => 'style_one'
                 ],
@@ -269,7 +269,7 @@ class Restho_Counter_Widget extends Widget_Base
             [
                 'label'    => esc_html__('Typography', 'restho-core'),
                 'name'     => 'restho_counter_style_two_number_typography',
-                'selector' => '{{WRAPPER}} .about-counter .counter-single .coundown div h3',
+                'selector' => '{{WRAPPER}} .about-counter .counter-single .coundown div span',
                 'condition' => [
                     'restho_counter_content_style_selection' => 'style_two'
                 ],
@@ -284,8 +284,8 @@ class Restho_Counter_Widget extends Widget_Base
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors'  => [
-                    '{{WRAPPER}} .popular-food-area-counter .counter-area .counter-single .coundown div h3' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',   
-                    '{{WRAPPER}} .about-counter .counter-single .coundown div h3' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',   
+                    '{{WRAPPER}} .popular-food-area-counter .counter-area .counter-single .coundown div span' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',   
+                    '{{WRAPPER}} .about-counter .counter-single .coundown div span' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',   
                 ]
             ]
         );
@@ -449,7 +449,7 @@ class Restho_Counter_Widget extends Widget_Base
                     });
                 });
             </script>
-        <?php endif ?>
+        <?php endif; ?>
 
             <?php if( !empty( $settings['restho_counter_content_style_selection'] ) && ($settings['restho_counter_content_style_selection'] == 'style_one') )  : ?>
                 <div class="popular-food-area-counter">
@@ -473,7 +473,7 @@ class Restho_Counter_Widget extends Widget_Base
                                         <?php endif ?>
                                         <div class="coundown">
                                                 <div class="d-flex align-items-center gap-2">
-                                                    <h3 class="odometer" data-odometer-final="200">&nbsp;</h3>
+                                                    <h3 class="odometer" data-odometer-final="<?php echo esc_html($Item['restho_counter_odometer_number']) ?>">&nbsp;</h3>
                                                 </div>
                                             <?php if( !empty( $Item['restho_counter_odometer_title'] ) ) : ?>
                                                 <p><?php echo esc_html($Item['restho_counter_odometer_title']) ?></p>
@@ -508,7 +508,7 @@ class Restho_Counter_Widget extends Widget_Base
                                     <div class="coundown">
                                         <?php if( !empty( $Item['restho_counter_odometer_number'] ) ) : ?>
                                             <div class="d-flex align-items-center gap-2">
-                                                <h3 class="odometer" data-odometer-final="<?php echo wp_kses($Item['restho_counter_odometer_number'], wp_kses_allowed_html('post')) ?>">&nbsp;</h3>
+                                                <h3 class="odometer" data-odometer-final="<?php echo esc_html($Item['restho_counter_odometer_number']) ?>">&nbsp;</h3>
                                             </div>
                                         <?php endif ?>
                                         <?php if( !empty( $Item['restho_counter_odometer_title'] ) ) : ?>
