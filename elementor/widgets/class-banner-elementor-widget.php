@@ -72,10 +72,10 @@ class Restho_Banner_Widget extends Widget_Base
 
         $this->end_controls_section();
 
-        
 
-         //Banner Contents
-         $this->start_controls_section(
+
+        //Banner Contents
+        $this->start_controls_section(
             'restho_banner_style_one_section',
             [
                 'label' => esc_html__('Banner Contents', 'restho-core'),
@@ -176,7 +176,7 @@ class Restho_Banner_Widget extends Widget_Base
                 'label_block' => true,
             ]
         );
-      
+
 
         $this->add_control(
             'restho_banner_one_content_list',
@@ -207,13 +207,13 @@ class Restho_Banner_Widget extends Widget_Base
             [
                 'label' => esc_html__('Social Links', 'restho-core'),
                 'condition' => [
-                    'restho_banner_content_style_selection' => ['style_one','style_three'],
+                    'restho_banner_content_style_selection' => ['style_one', 'style_three'],
                 ],
 
             ]
         );
-          //facebook Link
-          $this->add_control(
+        //facebook Link
+        $this->add_control(
             'restho_banner_social_link_facebook',
             [
                 'label' => esc_html__('Facebook Link', 'restho-core'),
@@ -598,7 +598,7 @@ class Restho_Banner_Widget extends Widget_Base
                 'label' => esc_html__('General', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'condition' => [
-                    'restho_banner_content_style_selection' => ['style_one','style_two'],
+                    'restho_banner_content_style_selection' => ['style_one', 'style_two'],
                 ],
             ]
         );
@@ -784,7 +784,7 @@ class Restho_Banner_Widget extends Widget_Base
                 'label' => esc_html__('Description', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'condition' => [
-                    'restho_banner_content_style_selection' => ['style_one', ],
+                    'restho_banner_content_style_selection' => ['style_one',],
                 ],
 
             ]
@@ -829,7 +829,7 @@ class Restho_Banner_Widget extends Widget_Base
                 'label' => esc_html__('Description', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'condition' => [
-                    'restho_banner_content_style_selection' => [ 'style_two'],
+                    'restho_banner_content_style_selection' => ['style_two'],
                 ],
 
             ]
@@ -1171,6 +1171,10 @@ class Restho_Banner_Widget extends Widget_Base
         $data = $settings['restho_banner_one_content_list'];
         $data2 = $settings['restho_banner_two_content_list'];
 
+        if (!empty($settings['restho_banner_content_button_url']['url'])) {
+            $this->add_link_attributes('restho_banner_content_button_url', $settings['restho_banner_content_button_url']);
+        }
+
 ?>
         <?php if (is_admin()) : ?>
             <script>
@@ -1246,29 +1250,29 @@ class Restho_Banner_Widget extends Widget_Base
                 </div>
                 <div class="swiper banner1-slider">
                     <div class="swiper-wrapper">
-                        <?php foreach ($data as $items) : ?>
+                        <?php foreach ($data as $item) : ?>
                             <div class="swiper-slide">
                                 <div class="banner-wrapper d-flex align-items-center justify-content-between">
 
                                     <div class="banner-left-img">
                                         <img src="<?php echo get_template_directory_uri() ?>/assets/images/icon/union-left.svg" alt="<?php echo esc_attr__('union-left', 'restho') ?>">
                                         <div class="food-img">
-                                            <?php if (!empty($items['restho_banner_content_left_image']['url'])) : ?>
-                                                <img class="img-fluid" src="<?php echo esc_url($items['restho_banner_content_left_image']['url']) ?>" alt="<?php echo esc_attr__('banner-img-1', 'restho') ?>">
+                                            <?php if (!empty($item['restho_banner_content_left_image']['url'])) : ?>
+                                                <img class="img-fluid" src="<?php echo esc_url($item['restho_banner_content_left_image']['url']) ?>" alt="<?php echo esc_attr__('banner-img-1', 'restho') ?>">
                                             <?php endif ?>
                                         </div>
                                     </div>
                                     <div class="banner-content">
-                                        <?php if (!empty($items['restho_banner_content_sub_title'])) : ?>
+                                        <?php if (!empty($item['restho_banner_content_sub_title'])) : ?>
                                             <span>
-                                                <?php if ($items['restho_banner_subtitle_icon_switcher'] == 'yes') : ?>
+                                                <?php if ($item['restho_banner_subtitle_icon_switcher'] == 'yes') : ?>
                                                     <svg width="17" height="13" viewBox="0 0 17 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <rect y="0.725405" width="7.45" height="7.45" transform="matrix(0.688322 0.725405 -0.688322 0.725405 6.3156 0.199193)" stroke="#BF9444" />
                                                         <rect y="0.725405" width="7.45" height="7.45" transform="matrix(0.688322 0.725405 -0.688322 0.725405 11.146 0.199193)" stroke="#BF9444" />
                                                     </svg>
                                                 <?php endif; ?>
-                                                <?php echo esc_html__($items['restho_banner_content_sub_title'], 'restho') ?>
-                                                <?php if ($items['restho_banner_subtitle_icon_switcher'] == 'yes') : ?>
+                                                <?php echo esc_html__($item['restho_banner_content_sub_title'], 'restho') ?>
+                                                <?php if ($item['restho_banner_subtitle_icon_switcher'] == 'yes') : ?>
                                                     <svg width="17" height="13" viewBox="0 0 17 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <rect y="0.725405" width="7.45" height="7.45" transform="matrix(0.688322 0.725405 -0.688322 0.725405 6.3156 0.199193)" stroke="#BF9444" />
                                                         <rect y="0.725405" width="7.45" height="7.45" transform="matrix(0.688322 0.725405 -0.688322 0.725405 11.146 0.199193)" stroke="#BF9444" />
@@ -1276,21 +1280,21 @@ class Restho_Banner_Widget extends Widget_Base
                                                 <?php endif ?>
                                             </span>
                                         <?php endif; ?>
-                                        <?php if (!empty($items['restho_banner_content_main_title'])) : ?>
-                                            <h1><?php echo esc_html__($items['restho_banner_content_main_title'], 'restho') ?></h1>
+                                        <?php if (!empty($item['restho_banner_content_main_title'])) : ?>
+                                            <h1><?php echo esc_html__($item['restho_banner_content_main_title'], 'restho') ?></h1>
                                         <?php endif; ?>
-                                        <?php if (!empty($items['restho_banner_content_description'])) : ?>
-                                            <p><?php echo wp_kses($items['restho_banner_content_description'], wp_kses_allowed_html('post')) ?></p>
+                                        <?php if (!empty($item['restho_banner_content_description'])) : ?>
+                                            <p><?php echo wp_kses($item['restho_banner_content_description'], wp_kses_allowed_html('post')) ?></p>
                                         <?php endif ?>
-                                        <?php if (!empty($items['restho_banner_content_button_text'])) : ?>
-                                            <a class="primary-btn2" href="<?php echo esc_url($items['restho_banner_content_button_url']['url']) ?>"><i class="bi bi-arrow-up-right-circle"></i><?php echo esc_html__($items['restho_banner_content_button_text'], 'restho') ?></a>
+                                        <?php if (!empty($item['restho_banner_content_button_text'])) : ?>
+                                            <a class="primary-btn2" href="<?php echo esc_url($item['restho_banner_content_button_url']['url']) ?>"><i class="bi bi-arrow-up-right-circle"></i><?php echo esc_html__($item['restho_banner_content_button_text'], 'restho') ?></a>
                                         <?php endif ?>
                                     </div>
                                     <div class="banner-right-img">
                                         <img src="<?php echo get_template_directory_uri() ?>/assets/images/icon/union-right.svg" alt="<?php echo esc_attr__('union-right', 'restho') ?>">
                                         <div class="food-img">
-                                            <?php if (!empty($items['restho_banner_content_right_image']['url'])) : ?>
-                                                <img class="img-fluid" src="<?php echo esc_url($items['restho_banner_content_right_image']['url']) ?>" alt="<?php echo esc_attr__('banner-img-2', 'restho') ?>">
+                                            <?php if (!empty($item['restho_banner_content_right_image']['url'])) : ?>
+                                                <img class="img-fluid" src="<?php echo esc_url($item['restho_banner_content_right_image']['url']) ?>" alt="<?php echo esc_attr__('banner-img-2', 'restho') ?>">
                                             <?php endif ?>
                                         </div>
                                     </div>
@@ -1451,8 +1455,11 @@ class Restho_Banner_Widget extends Widget_Base
                         <?php if (!empty($settings['restho_banner_three_content_main_title'])) : ?>
                             <h1><?php echo esc_html__($settings['restho_banner_three_content_main_title'], 'restho') ?></h1>
                         <?php endif; ?>
+                        <?php if (!empty($settings['restho_banner_three_content_button_url']['url'])) {
+                            $this->add_link_attributes('restho_banner_three_content_button_url', $settings['restho_banner_three_content_button_url']);
+                        } ?>
                         <?php if (!empty($settings['restho_banner_three_content_button_text'])) : ?>
-                            <a class="primary-btn7 btn-md2" href="<?php echo esc_url($settings['restho_banner_three_content_button_url']['url']) ?>"><i class="bi bi-arrow-up-right-circle"></i><?php echo esc_html__($settings['restho_banner_three_content_button_text'], 'restho') ?></a>
+                            <a class="primary-btn7 btn-md2" <?php echo $this->get_render_attribute_string( 'restho_banner_three_content_button_url' ); ?>><i class="bi bi-arrow-up-right-circle"></i><?php echo esc_html__($settings['restho_banner_three_content_button_text'], 'restho') ?></a>
                         <?php endif ?>
                     </div>
                 </div>
