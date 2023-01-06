@@ -408,8 +408,21 @@ class Restho_Food_Item_Offer_Widget extends Widget_Base
                 'fields' => $repeater3->get_controls(),
                 'default' => [
                     [
-                        'restho_section_content_food_it_offer_st_three_title' => esc_html__('Chicken with Drinks.', 'restho-core'),
-                    ],
+						'restho_section_content_food_it_offer_st_three_title' => esc_html__( 'Chicken with Drinks.', 'restho-core' ),
+						'list_content' => esc_html__( "It’s so tasty and delicious for creating our customer. So visit our restaurant. ", 'restho-core' ),
+					],
+					[
+						'restho_section_content_food_it_offer_st_three_title' => esc_html__( 'Beef with Drinks.', 'restho-core' ),
+						'list_content' => esc_html__( "It’s so tasty and delicious for creating our customer. So visit our restaurant.", 'restho-core' ),
+					],
+                    [
+						'restho_section_content_food_it_offer_st_three_title' => esc_html__( "Mutton with Drinks.", 'restho-core' ),
+						'list_content' => esc_html__( "It’s so tasty and delicious for creating our customer. So visit our restaurant.", 'restho-core' ),
+					],
+                    [
+						'restho_section_content_food_it_offer_st_three_title' => esc_html__( "Fish with Drinks.", 'restho-core' ),
+						'list_content' => esc_html__( "It’s so tasty and delicious for creating our customer. So visit our restaurant.", 'restho-core' ),
+					],
 
                 ],
                 'title_field' => '{{{ restho_section_content_food_it_offer_st_three_title }}}',
@@ -868,6 +881,17 @@ class Restho_Food_Item_Offer_Widget extends Widget_Base
                 ],
             ]
         );
+        $this->add_control(
+            'restho_food_itm_sty_one_border_hvr_color',
+            [
+                'label'     => esc_html__('Border Hover', 'restho-core'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .new-items1 .swiper-btn .prev-btn-2:hover' => 'border:1px solid {{VALUE}};',
+                    '{{WRAPPER}} .new-items1 .swiper-btn .next-btn-2:hover' => 'border:1px solid {{VALUE}};',
+                ],
+            ]
+        );
         $this->end_controls_section();
 
         //Style Two
@@ -1240,7 +1264,7 @@ class Restho_Food_Item_Offer_Widget extends Widget_Base
                 'label'     => esc_html__('Food Image Border', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .h3-spacial-offer-area .single-offer-card .offer-img::after' => 'border:2x dashed {{VALUE}};',
+                    '{{WRAPPER}} .h3-spacial-offer-area .single-offer-card .offer-img::after' => 'border:2px dashed {{VALUE}};',
                 ],
             ]
         );
@@ -1712,7 +1736,7 @@ class Restho_Food_Item_Offer_Widget extends Widget_Base
             </div>
         <?php endif ?>
         <?php if( !empty( $settings['restho_food_it_offer_style_selection'] ) && ($settings['restho_food_it_offer_style_selection'] == 'style_three') )  : ?>
-            <div class="h3-spacial-offer-area mb-120 ">
+            <div class="h3-spacial-offer-area ">
                 <div id="slick1">
                     <?php foreach($fooditems3 as $key=> $item3): ?>
                         <div class="slide-item">
