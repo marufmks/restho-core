@@ -170,9 +170,9 @@ class restho_gallery_Widget extends Widget_Base
         $repeater2->add_control(
             'restho_gallery_content_gallery_images_title',
             [
-                'label' => esc_html__('Title', 'xoon-core'),
+                'label' => esc_html__('Title', 'restho-core'),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__('Food', 'xoon-core'),
+                'default' => esc_html__('Food', 'restho-core'),
                 'label_block' => true,
 
             ]

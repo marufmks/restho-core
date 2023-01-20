@@ -42,9 +42,9 @@ class restho_food_category_tab_Widget extends Widget_Base
         $this->add_control(
             'restho_food_category_tab_content_food_category_tab_heading_title',
             [
-                'label' => esc_html__('Heading Title', 'xoon-core'),
+                'label' => esc_html__('Heading Title', 'restho-core'),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__('Category: ', 'xoon-core'),
+                'default' => esc_html__('Category: ', 'restho-core'),
                 'label_block' => true,
 
             ]

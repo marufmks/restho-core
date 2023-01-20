@@ -550,7 +550,7 @@ class Restho_Banner_Widget extends Widget_Base
         $this->add_control(
             'restho_banner_three_video_controller',
             [
-                'label' => esc_html__('Video', 'xoon-core'),
+                'label' => esc_html__('Video', 'restho-core'),
                 'type' => \Elementor\Controls_Manager::MEDIA,
                 'media_types' => array('video'),
                 'default' => [
