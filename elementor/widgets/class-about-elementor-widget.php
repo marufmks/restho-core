@@ -1842,7 +1842,9 @@ class restho_about_Widget extends Widget_Base
                                     <ul>
                                         <?php foreach ($data3 as $item) : ?>
                                             <li>
-                                                <?php \Elementor\Icons_Manager::render_icon($item['restho_about_three_achivement_award_icon'], ['aria-hidden' => 'true']); ?>
+                                                <?php if (!empty($item['restho_about_three_achivement_award_icon'])) : ?>
+                                                    <?php \Elementor\Icons_Manager::render_icon($item['restho_about_three_achivement_award_icon'], ['aria-hidden' => 'true']); ?>
+                                                <?php endif ?>
                                                 <div class="award-name">
                                                     <?php if (!empty($item['restho_about_three_achivement_award_title'])) : ?>
                                                         <a href="<?php echo esc_url($item['restho_about_three_achivement_award_link']['url']) ?>"><?php echo esc_html__($item['restho_about_three_achivement_award_title'], 'restho') ?></a>
@@ -1966,10 +1968,8 @@ class restho_about_Widget extends Widget_Base
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
-            </div>
             </div>
         <?php endif ?>
 
