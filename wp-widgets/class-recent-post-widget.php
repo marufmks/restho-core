@@ -27,7 +27,7 @@ class Egns_Recent_Post_Widget extends WP_Widget
         $query = new \WP_Query(
             array(
                 'post_type'      => 'post',
-                'posts_per_page' => 1,
+                'posts_per_page' => 3,
                 'post_status'    => 'publish'
             )
         );
