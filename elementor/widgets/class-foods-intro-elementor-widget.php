@@ -205,7 +205,6 @@ class restho_foods_intro_Widget extends Widget_Base
                 var swiper = new Swiper(".h2-product-slider", {
                     slidesPerView: 4,
                     spaceBetween: 25,
-                    // centeredSlides: true,
                     loop: true,
                     speed: 1500,
                     autoplay: {

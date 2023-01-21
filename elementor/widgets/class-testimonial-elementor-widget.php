@@ -1192,7 +1192,7 @@ class Restho_Testimonial_Widget extends Widget_Base
                                 <div class="col-lg-12">
                                     <div class="testi-video-wrap">
                                         <?php if (!empty($settings['restho_testi_video_thumbnail']['url'])) : ?>
-                                            <img class="img-fluid" src="<?php echo esc_url($settings['restho_testi_video_thumbnail']['url']) ?>" alt="">
+                                            <img class="img-fluid" src="<?php echo esc_url($settings['restho_testi_video_thumbnail']['url']) ?>" alt="<?php echo esc_attr__('video-thumb-img', 'restho') ?>">
                                         <?php endif ?>
                                         <?php if (!empty($settings['restho_testi_video_link']['url'])) : ?>
                                             <div class="video-icon">

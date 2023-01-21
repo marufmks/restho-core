@@ -205,9 +205,9 @@ class restho_menu_Widget extends Widget_Base
         $this->add_control(
             'restho_menu_content_food_list_heading_two',
             [
-                'label' => esc_html__('Heading Main Title', 'xoon-core'),
+                'label' => esc_html__('Heading Main Title', 'restho-core'),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__('Dinner', 'xoon-core'),
+                'default' => esc_html__('Dinner', 'restho-core'),
                 'label_block' => true,
 
             ]
@@ -918,10 +918,10 @@ class restho_menu_Widget extends Widget_Base
                 <div class="row g-4">
                     <div class="col-lg-12">
                         <div class="menu-wrapper1">
-                            <img class="menu-top-left" src="<?php echo get_template_directory_uri() ?>/assets/images/icon/menu-top-left.svg" alt="menu-top-left">
-                            <img class="menu-top-right" src="<?php echo get_template_directory_uri() ?>/assets/images/icon/menu-top-right.svg" alt="menu-top-right">
-                            <img class="menu-btm-right" src="<?php echo get_template_directory_uri() ?>/assets/images/icon/menu-btm-right.svg" alt="menu-btm-right">
-                            <img class="menu-btm-left" src="<?php echo get_template_directory_uri() ?>/assets/images/icon/menu-btm-left.svg" alt="menu-btm-left">
+                            <img class="menu-top-left" src="<?php echo get_template_directory_uri() ?>/assets/images/icon/menu-top-left.svg" alt="<?php echo esc_attr__('top-icon-left', 'restho') ?>">
+                            <img class="menu-top-right" src="<?php echo get_template_directory_uri() ?>/assets/images/icon/menu-top-right.svg" alt="<?php echo esc_attr__('top-icon-right', 'restho') ?>">
+                            <img class="menu-btm-right" src="<?php echo get_template_directory_uri() ?>/assets/images/icon/menu-btm-right.svg" alt="<?php echo esc_attr__('btm-icon-right', 'restho') ?>">
+                            <img class="menu-btm-left" src="<?php echo get_template_directory_uri() ?>/assets/images/icon/menu-btm-left.svg" alt="<?php echo esc_attr__('btm-icon-left', 'restho') ?>">
                             <div class="section-title text-center pt-40">
                                 <?php if (!empty($settings['restho_menu_content_sub_title'])) : ?>
                                     <span>

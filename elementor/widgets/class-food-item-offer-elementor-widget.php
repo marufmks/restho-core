@@ -219,7 +219,6 @@ class Restho_Food_Item_Offer_Widget extends Widget_Base
 					'url' => '',
 					'is_external' => true,
 					'nofollow' => true,
-					// 'custom_attributes' => '',
 				],
 				'label_block' => true,
 			]
@@ -1567,7 +1566,6 @@ class Restho_Food_Item_Offer_Widget extends Widget_Base
                 spaceBetween: 22,
                 slidesPerView: 6,
                 freeMode: true,
-                // centeredSlides: true,
                 watchSlidesProgress: true,
                 navigation: {
                     nextEl: ".next-btn-2",

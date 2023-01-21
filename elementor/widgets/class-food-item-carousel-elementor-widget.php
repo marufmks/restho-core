@@ -1054,11 +1054,9 @@ class Restho_Food_Item_Carousel_Widget extends Widget_Base
 ?>
         <?php if( is_admin() ) : ?>
             <script>
-                // Popular Items slider
                 var swiper = new Swiper(".popular-item-slider", {
                 slidesPerView: 3,
                 spaceBetween: 30,
-                // centeredSlides: true,
                 loop: true,
                 speed:1500,
                 autoplay: {

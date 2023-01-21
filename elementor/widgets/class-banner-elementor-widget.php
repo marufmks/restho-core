@@ -171,7 +171,6 @@ class Restho_Banner_Widget extends Widget_Base
                     'url' => '',
                     'is_external' => true,
                     'nofollow' => true,
-                    // 'custom_attributes' => '',
                 ],
                 'label_block' => true,
             ]
@@ -296,8 +295,6 @@ class Restho_Banner_Widget extends Widget_Base
                 'label_block' => true,
             ]
         );
-
-
         //pinterest Link
         $this->add_control(
             'restho_banner_social_link_pinterest',
@@ -453,7 +450,6 @@ class Restho_Banner_Widget extends Widget_Base
                     'url' => '',
                     'is_external' => true,
                     'nofollow' => true,
-                    // 'custom_attributes' => '',
                 ],
                 'label_block' => true,
             ]
@@ -550,7 +546,7 @@ class Restho_Banner_Widget extends Widget_Base
         $this->add_control(
             'restho_banner_three_video_controller',
             [
-                'label' => esc_html__('Video', 'xoon-core'),
+                'label' => esc_html__('Video', 'restho-core'),
                 'type' => \Elementor\Controls_Manager::MEDIA,
                 'media_types' => array('video'),
                 'default' => [
@@ -581,7 +577,6 @@ class Restho_Banner_Widget extends Widget_Base
                     'url' => '',
                     'is_external' => true,
                     'nofollow' => true,
-                    // 'custom_attributes' => '',
                 ],
                 'label_block' => true,
             ]
@@ -1182,7 +1177,6 @@ class Restho_Banner_Widget extends Widget_Base
                 var swiper = new Swiper(".banner1-slider", {
                     slidesPerView: 1,
                     speed: 1200,
-                    // spaceBetween: 15,
                     effect: 'fade',
                     fadeEffect: {
                         crossFade: true
@@ -1200,7 +1194,6 @@ class Restho_Banner_Widget extends Widget_Base
                 var swiper = new Swiper(".banner2-slider", {
                     slidesPerView: 1,
                     speed: 1200,
-                    // spaceBetween: 15,
                     effect: 'fade',
                     fadeEffect: {
                         crossFade: true
