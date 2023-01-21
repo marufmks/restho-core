@@ -432,7 +432,6 @@ class restho_gallery_Widget extends Widget_Base
                 var swiper = new Swiper(".gallery-slider1", {
                     slidesPerView: 5,
                     spaceBetween: 37,
-                    // centeredSlides: true,
                     loop: true,
                     speed: 1500,
                     autoplay: {
@@ -481,7 +480,6 @@ class restho_gallery_Widget extends Widget_Base
                 var swiper = new Swiper(".h2-gallery", {
                     slidesPerView: 5,
                     spaceBetween: 37,
-                    // centeredSlides: true,
                     loop: true,
                     speed: 1500,
                     autoplay: {

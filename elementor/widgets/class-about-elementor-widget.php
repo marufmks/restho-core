@@ -463,7 +463,6 @@ class restho_about_Widget extends Widget_Base
                     'url' => '',
                     'is_external' => true,
                     'nofollow' => true,
-                    // 'custom_attributes' => '',
                 ],
                 'label_block' => true,
             ]
@@ -513,7 +512,6 @@ class restho_about_Widget extends Widget_Base
                     'url' => '',
                     'is_external' => true,
                     'nofollow' => true,
-                    // 'custom_attributes' => '',
                 ],
                 'label_block' => true,
             ]

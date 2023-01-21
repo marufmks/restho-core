@@ -442,7 +442,6 @@ class restho_chef_Widget extends Widget_Base
                 var swiper = new Swiper(".expart-slider", {
                     slidesPerView: 3,
                     spaceBetween: 37,
-                    // centeredSlides: true,
                     loop: true,
                     speed: 1500,
                     autoplay: {

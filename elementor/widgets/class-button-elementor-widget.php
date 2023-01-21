@@ -124,7 +124,6 @@ class Restho_Button_Widget extends Widget_Base
 					'url' => '',
 					'is_external' => true,
 					'nofollow' => true,
-					// 'custom_attributes' => '',
 				],
 				'label_block' => true,
 			]
