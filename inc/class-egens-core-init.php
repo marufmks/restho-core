@@ -92,6 +92,11 @@ if (!class_exists('EgensCoreInit')) {
 					'file-name' => 'class-contacts-widget',
 					'folder-name' => EGNS_CORE_WP_WIDGETS
 				),
+				//footer address widget
+				array(
+					'file-name' => 'class-address-widget',
+					'folder-name' => EGNS_CORE_WP_WIDGETS
+				),
 				//Footer logo widget
 				array(
 					'file-name' => 'class-footer-logo-widget',
