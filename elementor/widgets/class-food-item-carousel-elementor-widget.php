@@ -885,8 +885,7 @@ class Restho_Food_Item_Carousel_Widget extends Widget_Base
                 'label'     => esc_html__('Text & Border Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .populer-food-area .h3-popular-food-card .food-content .food-cetagory a' => 'color: {{VALUE}};',
-                    '{{WRAPPER}} .populer-food-area .h3-popular-food-card .food-content .food-cetagory a' => 'border:1px solid {{VALUE}};',
+                    '{{WRAPPER}} .populer-food-area .h3-popular-food-card .food-content .food-cetagory a' => 'color: {{VALUE}}; border:1px solid {{VALUE}};',
                 ],
             ]
         );
@@ -1294,7 +1293,6 @@ class Restho_Food_Item_Carousel_Widget extends Widget_Base
                                     </div>
                                 </div>
                             <?php endforeach ?>
-
                         </div>
                     </div>
 
@@ -1325,7 +1323,6 @@ class Restho_Food_Item_Carousel_Widget extends Widget_Base
                                                     <h5><?php echo wp_kses($item2['restho_section_content_food_it_caro_st_two_price_tag'], wp_kses_allowed_html('post')) ?></h5>
                                                 </div>
                                             <?php endif ?>
-
                                         </div>
                                         <div class="reguler-items-content">
                                             <?php if (!empty($item2['restho_section_content_food_it_caro_st_two_title'])) : ?>
@@ -1354,7 +1351,7 @@ class Restho_Food_Item_Carousel_Widget extends Widget_Base
             </div>
         <?php endif ?>
         <?php if (!empty($settings['restho_food_it_caro_style_selection']) && ($settings['restho_food_it_caro_style_selection'] == 'style_three')) : ?>
-            <div class="populer-food-area mb-120">
+            <div class="populer-food-area">
                 <div class="container">
                     <div class="row justify-content-center position-relative">
                         <div class="swiper h3-popular-food-slider">
