@@ -543,6 +543,7 @@ class Restho_Blog_Three_Widget extends Widget_Base
         </div>
 
         <?php
+        wp_reset_postdata();
     }
 }
 

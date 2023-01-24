@@ -1946,22 +1946,25 @@ class restho_about_Widget extends Widget_Base
                                         </div>
                                         <div class="author-area">
                                             <?php if (!empty($settings['restho_about_content_author_testimony'])) : ?>
-                                                <p><?php echo wp_kses($settings['restho_about_content_author_testimony'], wp_kses_allowed_html('post')) ?></p>
+                                                <div class="author-content">
+                                                    <p><?php echo wp_kses($settings['restho_about_content_author_testimony'], wp_kses_allowed_html('post')) ?></p>
+                                                </div>
                                             <?php endif ?>
-                                        </div>
-                                        <div class="author-img-name">
-                                            <div class="author-img">
-                                                <?php if (!empty($settings['restho_about_content_author_avatar']['url'])) : ?>
-                                                    <img src="<?php echo esc_url($settings['restho_about_content_author_avatar']['url']) ?>" alt="<?php echo esc_attr__('author-img', 'restho') ?>">
-                                                <?php endif ?>
-                                            </div>
-                                            <div class="author-name">
-                                                <?php if (!empty($settings['restho_about_content_author_name'])) : ?>
-                                                    <h4><?php echo esc_html__($settings['restho_about_content_author_name'], 'restho') ?></h4>
-                                                <?php endif ?>
-                                                <?php if (!empty($settings['restho_about_content_author_designation'])) : ?>
-                                                    <span><?php echo esc_html__($settings['restho_about_content_author_designation'], 'restho') ?></span>
-                                                <?php endif ?>
+
+                                            <div class="author-img-name">
+                                                <div class="author-img">
+                                                    <?php if (!empty($settings['restho_about_content_author_avatar']['url'])) : ?>
+                                                        <img src="<?php echo esc_url($settings['restho_about_content_author_avatar']['url']) ?>" alt="<?php echo esc_attr__('author-img', 'restho') ?>">
+                                                    <?php endif ?>
+                                                </div>
+                                                <div class="author-name">
+                                                    <?php if (!empty($settings['restho_about_content_author_name'])) : ?>
+                                                        <h4><?php echo esc_html__($settings['restho_about_content_author_name'], 'restho') ?></h4>
+                                                    <?php endif ?>
+                                                    <?php if (!empty($settings['restho_about_content_author_designation'])) : ?>
+                                                        <span><?php echo esc_html__($settings['restho_about_content_author_designation'], 'restho') ?></span>
+                                                    <?php endif ?>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
