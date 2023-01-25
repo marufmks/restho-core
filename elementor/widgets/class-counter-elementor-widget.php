@@ -467,15 +467,15 @@ class Restho_Counter_Widget extends Widget_Base
                     <div class="row justify-content-center g-md-4 gy-5">
                         <?php foreach ($Items as $Item) : ?>
                             <?php if ($settings['restho_counter_column_selection'] == 'column_one') : ?>
-                                <div class="col-xl-12 col-lg-12 col-md-6 col-sm-6 col-6">
+                                <div class="col-xl-12 col-lg-12 col-md-6 col-sm-6">
                                 <?php elseif ($settings['restho_counter_column_selection'] == 'column_two') : ?>
-                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
                                     <?php elseif ($settings['restho_counter_column_selection'] == 'column_three') : ?>
-                                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6">
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
                                         <?php elseif ($settings['restho_counter_column_selection'] == 'column_four') : ?>
-                                            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6">
+                                            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
                                             <?php elseif ($settings['restho_counter_column_selection'] == 'column_six') : ?>
-                                                <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-6">
+                                                <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6">
                                                 <?php endif ?>
                                                 <div class="counter-single">
                                                     <?php if (!empty($Item['restho_counter_icon'])) : ?>
@@ -503,15 +503,15 @@ class Restho_Counter_Widget extends Widget_Base
                                         <div class="row justify-content-center g-md-4 gy-5">
                                             <?php foreach ($Items as $Item) : ?>
                                                 <?php if ($settings['restho_counter_column_selection'] == 'column_one') : ?>
-                                                    <div class="col-xl-12 col-lg-12 col-md-6 col-sm-6 col-6">
+                                                    <div class="col-xl-12 col-lg-12 col-md-6 col-sm-6">
                                                     <?php elseif ($settings['restho_counter_column_selection'] == 'column_two') : ?>
-                                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+                                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
                                                         <?php elseif ($settings['restho_counter_column_selection'] == 'column_three') : ?>
-                                                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6">
+                                                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
                                                             <?php elseif ($settings['restho_counter_column_selection'] == 'column_four') : ?>
-                                                                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6">
+                                                                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
                                                                 <?php elseif ($settings['restho_counter_column_selection'] == 'column_six') : ?>
-                                                                    <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-6">
+                                                                    <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6">
                                                                     <?php endif ?>
                                                                     <div class="counter-single">
                                                                         <?php if (!empty($Item['restho_counter_icon'])) : ?>
