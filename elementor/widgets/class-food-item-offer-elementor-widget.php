@@ -38,7 +38,7 @@ class Restho_Food_Item_Offer_Widget extends Widget_Base
                 'label' => esc_html__('General', 'restho-core')
             ]
         );
-        
+
         $this->add_control(
             'restho_food_it_offer_style_selection',
             [
@@ -116,50 +116,50 @@ class Restho_Food_Item_Offer_Widget extends Widget_Base
         $repeater = new \Elementor\Repeater();
 
         $repeater->add_control(
-			'restho_offer_sty_one_fd_card_item_image',
-			[
-				'label' => esc_html__( 'Food Image', 'restho-core' ),
-				'type' => \Elementor\Controls_Manager::MEDIA,
-				'default' => [
-					'url' => \Elementor\Utils::get_placeholder_image_src(),
-				],
-			]
-		);
+            'restho_offer_sty_one_fd_card_item_image',
+            [
+                'label' => esc_html__('Food Image', 'restho-core'),
+                'type' => \Elementor\Controls_Manager::MEDIA,
+                'default' => [
+                    'url' => \Elementor\Utils::get_placeholder_image_src(),
+                ],
+            ]
+        );
         $repeater->add_control(
             'restho_offer_sty_one_fd_card_item_price',
             [
-                'label' => esc_html__( 'Price', 'restho-core' ),
+                'label' => esc_html__('Price', 'restho-core'),
                 'type' => \Elementor\Controls_Manager::TEXT,
-                'default' => esc_html__( 'Price - $8', 'restho-core' ),
-                'placeholder' => esc_html__( 'Your offer price', 'restho-core' ),
+                'default' => esc_html__('Price - $8', 'restho-core'),
+                'placeholder' => esc_html__('Your offer price', 'restho-core'),
                 'label_block' => true,
             ]
         );
         $repeater->add_control(
             'restho_offer_sty_one_fd_card_item_title',
             [
-                'label' => esc_html__( 'Title', 'restho-core' ),
+                'label' => esc_html__('Title', 'restho-core'),
                 'type' => \Elementor\Controls_Manager::TEXT,
-                'default' => esc_html__( 'Chicken Fried', 'restho-core' ),
-                'placeholder' => esc_html__( 'Your offer title', 'restho-core' ),
+                'default' => esc_html__('Chicken Fried', 'restho-core'),
+                'placeholder' => esc_html__('Your offer title', 'restho-core'),
                 'label_block' => true,
             ]
         );
         $this->add_control(
-			'restho_offer_sty_one_fd_card_item_list',
-			[
-				'label' => esc_html__( 'Food Items', 'restho-core' ),
-				'type' => \Elementor\Controls_Manager::REPEATER,
-				'fields' => $repeater->get_controls(),
-				'default' => [
-					[
-						'restho_offer_sty_one_fd_card_item_title' => esc_html__( 'Chicken Fried', 'restho-core' ),
-					],
+            'restho_offer_sty_one_fd_card_item_list',
+            [
+                'label' => esc_html__('Food Items', 'restho-core'),
+                'type' => \Elementor\Controls_Manager::REPEATER,
+                'fields' => $repeater->get_controls(),
+                'default' => [
+                    [
+                        'restho_offer_sty_one_fd_card_item_title' => esc_html__('Chicken Fried', 'restho-core'),
+                    ],
 
-				],
-				'title_field' => '{{{ restho_offer_sty_one_fd_card_item_title }}}',
-			]
-		);
+                ],
+                'title_field' => '{{{ restho_offer_sty_one_fd_card_item_title }}}',
+            ]
+        );
         $this->end_controls_section();
         $this->start_controls_section(
             'restho_offer_sty_one_fd_card_bkn_content_section',
@@ -171,15 +171,15 @@ class Restho_Food_Item_Offer_Widget extends Widget_Base
             ]
         );
         $this->add_control(
-			'restho_offer_sty_one_fd_card_bkn_bg_img',
-			[
-				'label' => esc_html__( 'Background Image', 'restho-core' ),
-				'type' => \Elementor\Controls_Manager::MEDIA,
-				'default' => [
-					'url' => \Elementor\Utils::get_placeholder_image_src(),
-				],
-			]
-		);
+            'restho_offer_sty_one_fd_card_bkn_bg_img',
+            [
+                'label' => esc_html__('Background Image', 'restho-core'),
+                'type' => \Elementor\Controls_Manager::MEDIA,
+                'default' => [
+                    'url' => \Elementor\Utils::get_placeholder_image_src(),
+                ],
+            ]
+        );
         $this->add_control(
             'restho_offer_sty_one_fd_card_bkn_sub_title',
             [
@@ -205,24 +205,24 @@ class Restho_Food_Item_Offer_Widget extends Widget_Base
                 'type' => Controls_Manager::TEXT,
                 'default' => esc_html__('Book Table', 'restho-core'),
                 'label_block' => true,
-          
+
             ]
         );
         $this->add_control(
-			'restho_offer_sty_one_fd_card_bkn_button_url',
-			[
-				'label' => esc_html__( 'Button URL', 'restho-core' ),
-				'type' => \Elementor\Controls_Manager::URL,
-				'placeholder' => esc_html__( 'https://your-link.com', 'restho-core' ),
-				'options' => [ 'url', 'is_external', 'nofollow' ],
-				'default' => [
-					'url' => '',
-					'is_external' => true,
-					'nofollow' => true,
-				],
-				'label_block' => true,
-			]
-		);
+            'restho_offer_sty_one_fd_card_bkn_button_url',
+            [
+                'label' => esc_html__('Button URL', 'restho-core'),
+                'type' => \Elementor\Controls_Manager::URL,
+                'placeholder' => esc_html__('https://your-link.com', 'restho-core'),
+                'options' => ['url', 'is_external', 'nofollow'],
+                'default' => [
+                    'url' => '',
+                    'is_external' => true,
+                    'nofollow' => true,
+                ],
+                'label_block' => true,
+            ]
+        );
         $this->end_controls_section();
 
         //Style Two
@@ -276,17 +276,17 @@ class Restho_Food_Item_Offer_Widget extends Widget_Base
                 'label_block' => true,
             ]
         );
-        
+
         $this->add_control(
-			'restho_offer_sty_two_thumb',
-			[
-				'label' => esc_html__( 'Product Thumbnail', 'restho-core' ),
-				'type' => \Elementor\Controls_Manager::MEDIA,
-				'default' => [
-					'url' => \Elementor\Utils::get_placeholder_image_src(),
-				],
-			]
-		);
+            'restho_offer_sty_two_thumb',
+            [
+                'label' => esc_html__('Product Thumbnail', 'restho-core'),
+                'type' => \Elementor\Controls_Manager::MEDIA,
+                'default' => [
+                    'url' => \Elementor\Utils::get_placeholder_image_src(),
+                ],
+            ]
+        );
 
         $this->end_controls_section();
 
@@ -301,32 +301,32 @@ class Restho_Food_Item_Offer_Widget extends Widget_Base
             ]
         );
         $repeater2 = new \Elementor\Repeater();
-        
+
         $repeater2->add_control(
             'restho_offer_sty_two_list_title',
             [
-                'label' => esc_html__( 'Offer List', 'restho-core' ),
+                'label' => esc_html__('Offer List', 'restho-core'),
                 'type' => \Elementor\Controls_Manager::TEXT,
-                'default' => esc_html__( 'Prawn with Noodls', 'restho-core' ),
-                'placeholder' => esc_html__( 'Your offer list here', 'restho-core' ),
+                'default' => esc_html__('Prawn with Noodls', 'restho-core'),
+                'placeholder' => esc_html__('Your offer list here', 'restho-core'),
                 'label_block' => true,
             ]
         );
         $this->add_control(
-			'restho_offer_sty_two_list',
-			[
-				'label' => esc_html__( 'Offer List', 'restho-core' ),
-				'type' => \Elementor\Controls_Manager::REPEATER,
-				'fields' => $repeater2->get_controls(),
-				'default' => [
-					[
-						'restho_offer_sty_two_list_title' => esc_html__( 'Prawn with Noodls', 'restho-core' ),
-					],
+            'restho_offer_sty_two_list',
+            [
+                'label' => esc_html__('Offer List', 'restho-core'),
+                'type' => \Elementor\Controls_Manager::REPEATER,
+                'fields' => $repeater2->get_controls(),
+                'default' => [
+                    [
+                        'restho_offer_sty_two_list_title' => esc_html__('Prawn with Noodls', 'restho-core'),
+                    ],
 
-				],
-				'title_field' => '{{{ restho_offer_sty_two_list_title }}}',
-			]
-		);
+                ],
+                'title_field' => '{{{ restho_offer_sty_two_list_title }}}',
+            ]
+        );
         $this->end_controls_section();
         // Repeater three
         $this->start_controls_section(
@@ -360,25 +360,25 @@ class Restho_Food_Item_Offer_Widget extends Widget_Base
             ]
         );
         $repeater3->add_control(
-			'restho_section_content_food_it_offer_st_three_image',
-			[
-				'label' => esc_html__( 'Food Image', 'restho-core' ),
-				'type' => \Elementor\Controls_Manager::MEDIA,
-				'default' => [
-					'url' => \Elementor\Utils::get_placeholder_image_src(),
-				],
-			]
-		);
+            'restho_section_content_food_it_offer_st_three_image',
+            [
+                'label' => esc_html__('Food Image', 'restho-core'),
+                'type' => \Elementor\Controls_Manager::MEDIA,
+                'default' => [
+                    'url' => \Elementor\Utils::get_placeholder_image_src(),
+                ],
+            ]
+        );
         $repeater3->add_control(
-			'restho_section_content_food_it_offer_st_three_sml_image',
-			[
-				'label' => esc_html__( 'Food Image (Small)', 'restho-core' ),
-				'type' => \Elementor\Controls_Manager::MEDIA,
-				'default' => [
-					'url' => \Elementor\Utils::get_placeholder_image_src(),
-				],
-			]
-		);
+            'restho_section_content_food_it_offer_st_three_sml_image',
+            [
+                'label' => esc_html__('Food Image (Small)', 'restho-core'),
+                'type' => \Elementor\Controls_Manager::MEDIA,
+                'default' => [
+                    'url' => \Elementor\Utils::get_placeholder_image_src(),
+                ],
+            ]
+        );
         $repeater3->add_control(
             'restho_section_content_food_it_offer_st_three_title',
             [
@@ -407,21 +407,21 @@ class Restho_Food_Item_Offer_Widget extends Widget_Base
                 'fields' => $repeater3->get_controls(),
                 'default' => [
                     [
-						'restho_section_content_food_it_offer_st_three_title' => esc_html__( 'Chicken with Drinks.', 'restho-core' ),
-						'list_content' => esc_html__( "It’s so tasty and delicious for creating our customer. So visit our restaurant. ", 'restho-core' ),
-					],
-					[
-						'restho_section_content_food_it_offer_st_three_title' => esc_html__( 'Beef with Drinks.', 'restho-core' ),
-						'list_content' => esc_html__( "It’s so tasty and delicious for creating our customer. So visit our restaurant.", 'restho-core' ),
-					],
+                        'restho_section_content_food_it_offer_st_three_title' => esc_html__('Chicken with Drinks.', 'restho-core'),
+                        'list_content' => esc_html__("It’s so tasty and delicious for creating our customer. So visit our restaurant. ", 'restho-core'),
+                    ],
                     [
-						'restho_section_content_food_it_offer_st_three_title' => esc_html__( "Mutton with Drinks.", 'restho-core' ),
-						'list_content' => esc_html__( "It’s so tasty and delicious for creating our customer. So visit our restaurant.", 'restho-core' ),
-					],
+                        'restho_section_content_food_it_offer_st_three_title' => esc_html__('Beef with Drinks.', 'restho-core'),
+                        'list_content' => esc_html__("It’s so tasty and delicious for creating our customer. So visit our restaurant.", 'restho-core'),
+                    ],
                     [
-						'restho_section_content_food_it_offer_st_three_title' => esc_html__( "Fish with Drinks.", 'restho-core' ),
-						'list_content' => esc_html__( "It’s so tasty and delicious for creating our customer. So visit our restaurant.", 'restho-core' ),
-					],
+                        'restho_section_content_food_it_offer_st_three_title' => esc_html__("Mutton with Drinks.", 'restho-core'),
+                        'list_content' => esc_html__("It’s so tasty and delicious for creating our customer. So visit our restaurant.", 'restho-core'),
+                    ],
+                    [
+                        'restho_section_content_food_it_offer_st_three_title' => esc_html__("Fish with Drinks.", 'restho-core'),
+                        'list_content' => esc_html__("It’s so tasty and delicious for creating our customer. So visit our restaurant.", 'restho-core'),
+                    ],
 
                 ],
                 'title_field' => '{{{ restho_section_content_food_it_offer_st_three_title }}}',
@@ -464,10 +464,10 @@ class Restho_Food_Item_Offer_Widget extends Widget_Base
         $this->add_responsive_control(
             'restho_food_itm_sty_one_fd_card_ofr_brd_rad',
             [
-                'label'      		=> __('Food Card Offer (Border Radius)', 'restho-core'),
-                'type'       		=> Controls_Manager::DIMENSIONS,
-                'size_units' 		=> ['px', '%'],
-                'selectors'  		=> [
+                'label'              => __('Food Card Offer (Border Radius)', 'restho-core'),
+                'type'               => Controls_Manager::DIMENSIONS,
+                'size_units'         => ['px', '%'],
+                'selectors'          => [
                     '{{WRAPPER}} .new-items1 .new-items-wrap1' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
@@ -495,10 +495,10 @@ class Restho_Food_Item_Offer_Widget extends Widget_Base
         $this->add_responsive_control(
             'restho_food_itm_sty_one_fd_card_itm_brd_rad',
             [
-                'label'      		=> __('Food Card Item (Border Radius)', 'restho-core'),
-                'type'       		=> Controls_Manager::DIMENSIONS,
-                'size_units' 		=> ['px', '%'],
-                'selectors'  		=> [
+                'label'              => __('Food Card Item (Border Radius)', 'restho-core'),
+                'type'               => Controls_Manager::DIMENSIONS,
+                'size_units'         => ['px', '%'],
+                'selectors'          => [
                     '{{WRAPPER}} .new-items1 .new-items-wrap2' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
@@ -860,10 +860,10 @@ class Restho_Food_Item_Offer_Widget extends Widget_Base
         $this->add_responsive_control(
             'restho_food_itm_sty_one_pagination_border_radius',
             [
-                'label'      		=> __('Border Radius', 'restho-core'),
-                'type'       		=> Controls_Manager::DIMENSIONS,
-                'size_units' 		=> ['px', '%'],
-                'selectors'  		=> [
+                'label'              => __('Border Radius', 'restho-core'),
+                'type'               => Controls_Manager::DIMENSIONS,
+                'size_units'         => ['px', '%'],
+                'selectors'          => [
                     '{{WRAPPER}} .new-items1 .swiper-btn .prev-btn-2' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                     '{{WRAPPER}} .new-items1 .swiper-btn .next-btn-2' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
@@ -929,16 +929,16 @@ class Restho_Food_Item_Offer_Widget extends Widget_Base
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors'  => [
-                    '{{WRAPPER}} .best-offer-area1 .best-offer-wrap .best-offer-content h3' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',   
+                    '{{WRAPPER}} .best-offer-area1 .best-offer-wrap .best-offer-content h3' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ]
             ]
         );
         $this->add_responsive_control(
             'restho_offer_title_margin',
             [
-                'label' => esc_html__( 'Margin', 'restho-core' ),
+                'label' => esc_html__('Margin', 'restho-core'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
-                'size_units' => [ 'px', '%', 'em' ],
+                'size_units' => ['px', '%', 'em'],
                 'selectors' => [
                     '{{WRAPPER}} .best-offer-area1 .best-offer-wrap .best-offer-content h3' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
@@ -982,22 +982,22 @@ class Restho_Food_Item_Offer_Widget extends Widget_Base
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors'  => [
-                    '{{WRAPPER}} .best-offer-area1 .best-offer-wrap .best-offer-content p' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',   
+                    '{{WRAPPER}} .best-offer-area1 .best-offer-wrap .best-offer-content p' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ]
             ]
         );
         $this->add_responsive_control(
             'restho_offer_description_margin',
             [
-                'label' => esc_html__( 'Margin', 'restho-core' ),
+                'label' => esc_html__('Margin', 'restho-core'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
-                'size_units' => [ 'px', '%', 'em' ],
+                'size_units' => ['px', '%', 'em'],
                 'selectors' => [
                     '{{WRAPPER}} .best-offer-area1 .best-offer-wrap .best-offer-content p' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
-        $this->end_controls_section();       
+        $this->end_controls_section();
         // Offer Tag
         $this->start_controls_section(
             'restho_offer_style_tag',
@@ -1031,17 +1031,17 @@ class Restho_Food_Item_Offer_Widget extends Widget_Base
             \Elementor\Group_Control_Border::get_type(),
             [
                 'name' => 'restho_offer_tag_border',
-                'label' => esc_html__( 'Border', 'restho-core' ),
+                'label' => esc_html__('Border', 'restho-core'),
                 'selector' => '{{WRAPPER}} .primary-btn3',
             ]
         );
         $this->add_responsive_control(
             'restho_offer_tag_border_radius',
             [
-                'label'      		=> __('Border Radius', 'restho-core'),
-                'type'       		=> Controls_Manager::DIMENSIONS,
-                'size_units' 		=> ['px', '%'],
-                'selectors'  		=> [
+                'label'              => __('Border Radius', 'restho-core'),
+                'type'               => Controls_Manager::DIMENSIONS,
+                'size_units'         => ['px', '%'],
+                'selectors'          => [
                     '{{WRAPPER}} .primary-btn3' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
@@ -1053,16 +1053,16 @@ class Restho_Food_Item_Offer_Widget extends Widget_Base
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors'  => [
-                    '{{WRAPPER}} .primary-btn3' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',   
+                    '{{WRAPPER}} .primary-btn3' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ]
             ]
         );
         $this->add_responsive_control(
             'restho_offer_tag_margin',
             [
-                'label' => esc_html__( 'Margin', 'restho-core' ),
+                'label' => esc_html__('Margin', 'restho-core'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
-                'size_units' => [ 'px', '%', 'em' ],
+                'size_units' => ['px', '%', 'em'],
                 'selectors' => [
                     '{{WRAPPER}} .primary-btn3' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
@@ -1071,18 +1071,18 @@ class Restho_Food_Item_Offer_Widget extends Widget_Base
         $this->add_control(
             'restho_offer_tag_hover_color',
             [
-                'label' => esc_html__( 'Hover Color', 'restho-core' ),
+                'label' => esc_html__('Hover Color', 'restho-core'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .primary-btn3:hover' => 'color: {{VALUE}}',
                 ],
-        
+
             ]
         );
         $this->add_control(
             'restho_offer_tag_hover_background',
             [
-                'label' => esc_html__( 'Hover Background', 'restho-core' ),
+                'label' => esc_html__('Hover Background', 'restho-core'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .primary-btn3:before' => 'background-color: {{VALUE}}',
@@ -1134,7 +1134,7 @@ class Restho_Food_Item_Offer_Widget extends Widget_Base
             \Elementor\Group_Control_Border::get_type(),
             [
                 'name' => 'restho_offer_price_border',
-                'label' => esc_html__( 'Border', 'restho-core' ),
+                'label' => esc_html__('Border', 'restho-core'),
                 'selector' => '{{WRAPPER}} .best-offer-area1 .best-offer-wrap .best-offer-img .price-tag',
             ]
         );
@@ -1145,7 +1145,7 @@ class Restho_Food_Item_Offer_Widget extends Widget_Base
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors'  => [
-                    '{{WRAPPER}} .best-offer-area1 .best-offer-wrap .best-offer-img .price-tag span' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',   
+                    '{{WRAPPER}} .best-offer-area1 .best-offer-wrap .best-offer-img .price-tag span' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ]
             ]
         );
@@ -1187,16 +1187,16 @@ class Restho_Food_Item_Offer_Widget extends Widget_Base
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors'  => [
-                    '{{WRAPPER}} .best-offer-area1 .best-offer-wrap .best-offer-content .features' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',   
+                    '{{WRAPPER}} .best-offer-area1 .best-offer-wrap .best-offer-content .features' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ]
             ]
         );
         $this->add_responsive_control(
             'restho_offer_list_margin',
             [
-                'label' => esc_html__( 'Margin', 'restho-core' ),
+                'label' => esc_html__('Margin', 'restho-core'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
-                'size_units' => [ 'px', '%', 'em' ],
+                'size_units' => ['px', '%', 'em'],
                 'selectors' => [
                     '{{WRAPPER}} .best-offer-area1 .best-offer-wrap .best-offer-content .features' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
@@ -1228,17 +1228,17 @@ class Restho_Food_Item_Offer_Widget extends Widget_Base
             \Elementor\Group_Control_Border::get_type(),
             [
                 'name' => 'restho_offer_style_card_border',
-                'label' => esc_html__( 'Border', 'restho-core' ),
+                'label' => esc_html__('Border', 'restho-core'),
                 'selector' => '{{WRAPPER}} .best-offer-area1 .best-offer-wrap',
             ]
         );
         $this->add_responsive_control(
             'restho_offer_style_card_border_radius',
             [
-                'label'      		=> __('Border Radius', 'restho-core'),
-                'type'       		=> Controls_Manager::DIMENSIONS,
-                'size_units' 		=> ['px', '%'],
-                'selectors'  		=> [
+                'label'              => __('Border Radius', 'restho-core'),
+                'type'               => Controls_Manager::DIMENSIONS,
+                'size_units'         => ['px', '%'],
+                'selectors'          => [
                     '{{WRAPPER}} .best-offer-area1 .best-offer-wrap' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
@@ -1385,16 +1385,16 @@ class Restho_Food_Item_Offer_Widget extends Widget_Base
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors'  => [
-                    '{{WRAPPER}} .h3-spacial-offer-area .single-offer-card .offer-content h3' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',   
+                    '{{WRAPPER}} .h3-spacial-offer-area .single-offer-card .offer-content h3' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ]
             ]
         );
         $this->add_responsive_control(
             'restho_food_itm_sty_three_title_margin',
             [
-                'label' => esc_html__( 'Margin', 'restho-core' ),
+                'label' => esc_html__('Margin', 'restho-core'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
-                'size_units' => [ 'px', '%', 'em' ],
+                'size_units' => ['px', '%', 'em'],
                 'selectors' => [
                     '{{WRAPPER}} .h3-spacial-offer-area .single-offer-card .offer-content h3' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
@@ -1437,16 +1437,16 @@ class Restho_Food_Item_Offer_Widget extends Widget_Base
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors'  => [
-                    '{{WRAPPER}} .h3-spacial-offer-area .single-offer-card .offer-content p' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',   
+                    '{{WRAPPER}} .h3-spacial-offer-area .single-offer-card .offer-content p' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ]
             ]
         );
         $this->add_responsive_control(
             'restho_food_itm_sty_three_desc_margin',
             [
-                'label' => esc_html__( 'Margin', 'restho-core' ),
+                'label' => esc_html__('Margin', 'restho-core'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
-                'size_units' => [ 'px', '%', 'em' ],
+                'size_units' => ['px', '%', 'em'],
                 'selectors' => [
                     '{{WRAPPER}} .h3-spacial-offer-area .single-offer-card .offer-content p' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
@@ -1511,10 +1511,10 @@ class Restho_Food_Item_Offer_Widget extends Widget_Base
         $this->add_responsive_control(
             'restho_food_itm_sty_three_pagination_border_radius',
             [
-                'label'      		=> __('Border Radius', 'restho-core'),
-                'type'       		=> Controls_Manager::DIMENSIONS,
-                'size_units' 		=> ['px', '%'],
-                'selectors'  		=> [
+                'label'              => __('Border Radius', 'restho-core'),
+                'type'               => Controls_Manager::DIMENSIONS,
+                'size_units'         => ['px', '%'],
+                'selectors'          => [
                     '{{WRAPPER}} .populer-food-area .slider-btn .prev-btn-3' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                     '{{WRAPPER}} .populer-food-area .slider-btn .next-btn-3' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
@@ -1533,69 +1533,68 @@ class Restho_Food_Item_Offer_Widget extends Widget_Base
             ]
         );
         $this->end_controls_section();
- 
     }
     protected function render()
     {
         $settings = $this->get_settings_for_display();
-        if ( ! empty( $settings['restho_offer_sty_one_fd_card_bkn_button_url']['url'] ) ) {
-			$this->add_link_attributes( 'restho_offer_sty_one_fd_card_bkn_button_url', $settings['restho_offer_sty_one_fd_card_bkn_button_url'] );
-		}
+        if (!empty($settings['restho_offer_sty_one_fd_card_bkn_button_url']['url'])) {
+            $this->add_link_attributes('restho_offer_sty_one_fd_card_bkn_button_url', $settings['restho_offer_sty_one_fd_card_bkn_button_url']);
+        }
 
-        $fooditems1=$settings['restho_offer_sty_one_fd_card_item_list'];
-        $fooditems2=$settings['restho_offer_sty_two_list'];
+        $fooditems1 = $settings['restho_offer_sty_one_fd_card_item_list'];
+        $fooditems2 = $settings['restho_offer_sty_two_list'];
         $fooditems3 = $settings['restho_food_it_offer_st_three_section_list'];
-        
+
 ?>
-        <?php if( is_admin() ) : ?>
+        <?php if (is_admin()) : ?>
             <script>
                 var swiper2 = new Swiper(".new-item-big-slider", {
-                loop: true,
-                spaceBetween: 10,
-                effect: 'fade',
-                fadeEffect: {
-                    crossFade: true
-                },
-                thumbs: {
-                    swiper: swiper,
-                },
+                    loop: true,
+                    spaceBetween: 10,
+                    effect: 'fade',
+                    fadeEffect: {
+                        crossFade: true
+                    },
+                    thumbs: {
+                        swiper: swiper,
+                    },
                 });
                 // New Item List Slider
                 var swiper = new Swiper(".new-item-sm-slider", {
-                loop: true,
-                spaceBetween: 22,
-                slidesPerView: 6,
-                freeMode: true,
-                watchSlidesProgress: true,
-                navigation: {
-                    nextEl: ".next-btn-2",
-                    prevEl: ".prev-btn-2",
-                },
+                    loop: true,
+                    spaceBetween: 22,
+                    slidesPerView: 6,
+                    freeMode: true,
+                    watchSlidesProgress: true,
+                    navigation: {
+                        nextEl: ".next-btn-2",
+                        prevEl: ".prev-btn-2",
+                    },
 
-                breakpoints: {
-                    280:{
-                    slidesPerView: 3,
-                    spaceBetween: 15
-                    },
-                    480:{
-                    slidesPerView: 4
-                    },
-                    768:{
-                    slidesPerView: 5
-                    },
-                    992:{
-                    slidesPerView: 6
-                    },
-                    1200:{
-                    slidesPerView: 6
-                    },
-                    1400:{
-                    slidesPerView:6
-                    },
-                    1600:{
-                    slidesPerView: 6
-                    },
-                }
+                    breakpoints: {
+                        280: {
+                            slidesPerView: 3,
+                            spaceBetween: 15
+                        },
+                        480: {
+                            slidesPerView: 4
+                        },
+                        768: {
+                            slidesPerView: 5
+                        },
+                        992: {
+                            slidesPerView: 6
+                        },
+                        1200: {
+                            slidesPerView: 6
+                        },
+                        1400: {
+                            slidesPerView: 6
+                        },
+                        1600: {
+                            slidesPerView: 6
+                        },
+                    }
 
                 });
                 // double row  slider
@@ -1606,12 +1605,27 @@ class Restho_Food_Item_Offer_Widget extends Widget_Base
                     infinite: true,
                     speed: 300,
                     slidesToShow: 2,
-                    slidesToScroll: 2
-                });
+                    slidesToScroll: 2,
+                    responsive: [{
+                            breakpoint: 1024,
+                            settings: {
+                                slidesToShow: 2,
+                                slidesToScroll: 2,
+                            }
+                        },
+                        {
+                            breakpoint: 600,
+                            settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1
+                            }
+                        },
+                    ]
 
+                });
             </script>
         <?php endif ?>
-        <?php if( !empty( $settings['restho_food_it_offer_style_selection'] ) && ($settings['restho_food_it_offer_style_selection'] == 'style_one') )  : ?>
+        <?php if (!empty($settings['restho_food_it_offer_style_selection']) && ($settings['restho_food_it_offer_style_selection'] == 'style_one')) : ?>
             <div class="new-items1 mb-120">
                 <div class="container">
                     <div class="row mb-70 g-4 justify-content-center">
@@ -1619,10 +1633,10 @@ class Restho_Food_Item_Offer_Widget extends Widget_Base
                             <div class="new-items-wrap1 d-flex align-items-center justify-content-center">
                                 <div class="items-content text-center">
                                     <span><?php echo wp_kses($settings['restho_offer_sty_one_ofr_tag'], wp_kses_allowed_html('post')) ?></span>
-                                    <h3 class="ofr-title" ><?php echo wp_kses($settings['restho_offer_sty_one_ofr_title'], wp_kses_allowed_html('post')) ?></h3>
+                                    <h3 class="ofr-title"><?php echo wp_kses($settings['restho_offer_sty_one_ofr_title'], wp_kses_allowed_html('post')) ?></h3>
                                     <div class="descount-area text-center">
-                                        <h3><?php echo wp_kses($settings['restho_offer_sty_one_discount_text'], wp_kses_allowed_html('post')) ?></h3>                                       
-                                        <span><?php echo wp_kses($settings['restho_offer_sty_one_discount_percentage'], wp_kses_allowed_html('post')) ?></span>                                       
+                                        <h3><?php echo wp_kses($settings['restho_offer_sty_one_discount_text'], wp_kses_allowed_html('post')) ?></h3>
+                                        <span><?php echo wp_kses($settings['restho_offer_sty_one_discount_percentage'], wp_kses_allowed_html('post')) ?></span>
                                     </div>
                                 </div>
                             </div>
@@ -1630,7 +1644,7 @@ class Restho_Food_Item_Offer_Widget extends Widget_Base
                         <div class="col-lg-4 col-md-6 col-sm-10 order-lg-2 order-3">
                             <div class="swiper new-item-big-slider">
                                 <div class="swiper-wrapper">
-                                    <?php foreach($fooditems1 as $item1):?>
+                                    <?php foreach ($fooditems1 as $item1) : ?>
                                         <div class="swiper-slide">
                                             <div class="new-items-wrap2">
                                                 <div class="items-img">
@@ -1640,7 +1654,7 @@ class Restho_Food_Item_Offer_Widget extends Widget_Base
                                                     </div>
                                                 </div>
                                                 <div class="content">
-                                                    <h3><?php echo wp_kses($item1['restho_offer_sty_one_fd_card_item_title'], wp_kses_allowed_html('post')) ?></h3>                                                   
+                                                    <h3><?php echo wp_kses($item1['restho_offer_sty_one_fd_card_item_title'], wp_kses_allowed_html('post')) ?></h3>
                                                 </div>
                                             </div>
                                         </div>
@@ -1655,23 +1669,23 @@ class Restho_Food_Item_Offer_Widget extends Widget_Base
                                 </div>
                                 <div class="overlay d-flex align-items-center justify-content-center">
                                     <div class="items-content text-center">
-                                        <span>                                           
+                                        <span>
                                             <svg width="17" height="12" viewBox="0 0 17 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <rect y="0.709001" width="7.46261" height="7.46261" transform="matrix(0.705207 0.709001 -0.705207 0.709001 6.46789 0.206318)" stroke="white"/>
-                                            <rect y="0.709001" width="7.46261" height="7.46261" transform="matrix(0.705207 0.709001 -0.705207 0.709001 11.5312 0.206318)" stroke="white"/>
+                                                <rect y="0.709001" width="7.46261" height="7.46261" transform="matrix(0.705207 0.709001 -0.705207 0.709001 6.46789 0.206318)" stroke="white" />
+                                                <rect y="0.709001" width="7.46261" height="7.46261" transform="matrix(0.705207 0.709001 -0.705207 0.709001 11.5312 0.206318)" stroke="white" />
                                             </svg>
 
-                                                <?php echo wp_kses($settings['restho_offer_sty_one_fd_card_bkn_sub_title'], wp_kses_allowed_html('post')) ?>   
+                                            <?php echo wp_kses($settings['restho_offer_sty_one_fd_card_bkn_sub_title'], wp_kses_allowed_html('post')) ?>
 
                                             <svg width="17" height="12" viewBox="0 0 17 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <rect y="0.709001" width="7.46261" height="7.46261" transform="matrix(0.705207 0.709001 -0.705207 0.709001 6.46789 0.206318)" stroke="white"/>
-                                            <rect y="0.709001" width="7.46261" height="7.46261" transform="matrix(0.705207 0.709001 -0.705207 0.709001 11.5312 0.206318)" stroke="white"/>
+                                                <rect y="0.709001" width="7.46261" height="7.46261" transform="matrix(0.705207 0.709001 -0.705207 0.709001 6.46789 0.206318)" stroke="white" />
+                                                <rect y="0.709001" width="7.46261" height="7.46261" transform="matrix(0.705207 0.709001 -0.705207 0.709001 11.5312 0.206318)" stroke="white" />
                                             </svg>
                                         </span>
                                         <h3><?php echo wp_kses($settings['restho_offer_sty_one_fd_card_bkn_title'], wp_kses_allowed_html('post')) ?></h3>
-                                        
-                                        <a class="primary-btn btn-sm" <?php echo $this->get_render_attribute_string( 'restho_offer_sty_one_fd_card_bkn_button_url' ); ?>>
-                                            <?php echo esc_html($settings['restho_offer_sty_one_fd_card_bkn_button_text'],'restho-core'); ?>
+
+                                        <a class="primary-btn btn-sm" <?php echo $this->get_render_attribute_string('restho_offer_sty_one_fd_card_bkn_button_url'); ?>>
+                                            <?php echo esc_html($settings['restho_offer_sty_one_fd_card_bkn_button_text'], 'restho-core'); ?>
                                         </a>
                                     </div>
                                 </div>
@@ -1681,7 +1695,7 @@ class Restho_Food_Item_Offer_Widget extends Widget_Base
                     <div class="row position-relative">
                         <div class="swiper new-item-sm-slider">
                             <div class="swiper-wrapper">
-                                <?php foreach($fooditems1 as $item1):?>
+                                <?php foreach ($fooditems1 as $item1) : ?>
                                     <div class="swiper-slide">
                                         <div class="new-items-sm-img">
                                             <img src="<?php echo esc_url($item1['restho_offer_sty_one_fd_card_item_image']['url']) ?>" alt="<?php echo esc_attr__('food-itm-img', 'restho') ?>">
@@ -1698,7 +1712,7 @@ class Restho_Food_Item_Offer_Widget extends Widget_Base
                 </div>
             </div>
         <?php endif ?>
-        <?php if( !empty( $settings['restho_food_it_offer_style_selection'] ) && ($settings['restho_food_it_offer_style_selection'] == 'style_two') )  : ?>
+        <?php if (!empty($settings['restho_food_it_offer_style_selection']) && ($settings['restho_food_it_offer_style_selection'] == 'style_two')) : ?>
             <div class="best-offer-area1">
                 <div class="best-offer-wrap clearfix">
                     <div class="best-offer-img">
@@ -1721,9 +1735,9 @@ class Restho_Food_Item_Offer_Widget extends Widget_Base
                         <?php if (!empty($settings['restho_offer_sty_two_tag'])) : ?>
                             <a class="primary-btn3 btn-sm"><?php echo wp_kses($settings['restho_offer_sty_two_tag'], wp_kses_allowed_html('post')) ?></a>
                         <?php endif ?>
-                        
+
                         <ol class="features">
-                            <?php foreach($fooditems2 as $item2):?>
+                            <?php foreach ($fooditems2 as $item2) : ?>
                                 <?php if (!empty($item2['restho_offer_sty_two_list_title'])) : ?>
                                     <li><?php echo wp_kses($item2['restho_offer_sty_two_list_title'], wp_kses_allowed_html('post')) ?></li>
                                 <?php endif ?>
@@ -1733,10 +1747,10 @@ class Restho_Food_Item_Offer_Widget extends Widget_Base
                 </div>
             </div>
         <?php endif ?>
-        <?php if( !empty( $settings['restho_food_it_offer_style_selection'] ) && ($settings['restho_food_it_offer_style_selection'] == 'style_three') )  : ?>
+        <?php if (!empty($settings['restho_food_it_offer_style_selection']) && ($settings['restho_food_it_offer_style_selection'] == 'style_three')) : ?>
             <div class="h3-spacial-offer-area ">
                 <div id="slick1">
-                    <?php foreach($fooditems3 as $key=> $item3): ?>
+                    <?php foreach ($fooditems3 as $key => $item3) : ?>
                         <div class="slide-item">
                             <div class="single-offer-card">
                                 <div class="offer-img">
@@ -1754,7 +1768,7 @@ class Restho_Food_Item_Offer_Widget extends Widget_Base
                                         <div class="price-tag">
                                             <span>
                                                 <?php if (!empty($item3['restho_section_content_food_it_offer_st_three_new_price_tag'])) : ?>
-                                                    <?php echo wp_kses($item3['restho_section_content_food_it_offer_st_three_new_price_tag'], wp_kses_allowed_html('post')) ?> 
+                                                    <?php echo wp_kses($item3['restho_section_content_food_it_offer_st_three_new_price_tag'], wp_kses_allowed_html('post')) ?>
                                                 <?php endif ?>
                                                 <?php if (!empty($item3['restho_section_content_food_it_offer_st_three_old_price_tag'])) : ?>
                                                     <del><?php echo wp_kses($item3['restho_section_content_food_it_offer_st_three_old_price_tag'], wp_kses_allowed_html('post')) ?></del>
@@ -1762,7 +1776,7 @@ class Restho_Food_Item_Offer_Widget extends Widget_Base
                                             </span>
                                         </div>
                                         <div class="sl-no">
-                                            <span><?php echo "0".$key+1 ;?></span>
+                                            <span><?php echo "0" . $key + 1; ?></span>
                                         </div>
                                     </div>
                                     <?php if (!empty($item3['restho_section_content_food_it_offer_st_three_title'])) : ?>
