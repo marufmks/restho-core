@@ -946,7 +946,7 @@ class restho_menu_Widget extends Widget_Base
                             </div>
                             <div class="menu-list">
                                 <ul>
-                                    <?php foreach ($data as $key => $item) { ?>
+                                    <?php foreach ($data as $key => $item) {  $key++; ?>
                                         <li>
                                             <div class="sl">
                                                 <span><?php echo '0' . $key . '.' ?></span>
@@ -966,7 +966,7 @@ class restho_menu_Widget extends Widget_Base
                                                 <?php endif ?>
                                             </div>
                                         </li>
-                                    <?php } ?>
+                                    <?php  } ?>
                                 </ul>
                                 <div class="notice-location">
                                     <?php if (!empty($settings['restho_menu_content_note_title'])) : ?>

@@ -1186,7 +1186,7 @@ class Restho_Testimonial_Widget extends Widget_Base
                     </div>
                 </div>
                 <?php if ($settings['restho_testimonial_one_video_sec_switcher'] == 'yes') : ?>
-                    <div class="testimonial-video-area mb-120">
+                    <div class="testimonial-video-area">
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-12">
