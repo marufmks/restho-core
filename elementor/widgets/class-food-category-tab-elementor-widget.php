@@ -62,6 +62,19 @@ class restho_food_category_tab_Widget extends Widget_Base
             ]
         );
 
+        $repeater->add_control(
+            'restho_food_category_tab_icon',
+            [
+                'label' => esc_html__('Category Icon', 'restho-core'),
+                'type' => \Elementor\Controls_Manager::ICONS,
+                'default' => [
+                    'value' => 'fas fa-circle',
+                    'library' => 'fa-solid',
+                ],
+
+            ]
+        );
+
 
         $this->add_control(
             'restho_food_category_tab_content_category_list_three',
@@ -200,139 +213,52 @@ class restho_food_category_tab_Widget extends Widget_Base
 
         $this->end_controls_section();
 
-        //Food Title Style
+        
+        //Category Title Style
         $this->start_controls_section(
-            'restho_menu_style_category_heading_title_section',
+            'restho_menu_style_category_title_section',
             [
-                'label' => esc_html__('Heading Title', 'restho-core'),
+                'label' => esc_html__('Category Title', 'restho-core'),
                 'tab'   => Controls_Manager::TAB_STYLE,
 
             ]
         );
 
         $this->add_control(
-            'restho_menu_style_category_heading_title_color',
+            'restho_menu_style_category_title_color',
             [
                 'label'     => esc_html__('Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .food-category-area .food-category-list .title' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .food-category-area .food-category-list .nav-tabs li.nav-item .nav-link' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .food-category-area .food-category-list .nav-tabs li.nav-item .nav-link svg path' => 'fill: {{VALUE}};',
 
                 ],
 
             ]
         );
         $this->add_control(
-            'restho_menu_style_category_heading_title_background_color',
-            [
-                'label'     => esc_html__('Background Color', 'restho-core'),
-                'type'      => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .food-category-area .food-category-list .title' => 'background-color: {{VALUE}};border:1px solid {{VALUE}};',
-
-                ],
-
-            ]
-        );
-        $this->add_group_control(
-            Group_Control_Typography::get_type(),
-            [
-                'label'    => esc_html__('Typography', 'restho-core'),
-                'name'     => 'restho_menu_style_category_heading_title_typography',
-                'selector' => '{{WRAPPER}} .food-category-area .food-category-list .title',
-
-            ]
-        );
-        $this->add_responsive_control(
-            'restho_menu_style_category_heading_title_padding',
-            [
-                'label'      => __('Padding', 'restho-core'),
-                'type'       => Controls_Manager::DIMENSIONS,
-                'size_units' => ['px', '%'],
-                'selectors'  => [
-                    '{{WRAPPER}} .food-category-area .food-category-list .title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-
-                ]
-            ]
-        );
-
-        $this->end_controls_section();
-
-        //Category Tab Button Style
-        $this->start_controls_section(
-            'restho_food_category_tab_style_category_button_section',
-            [
-                'label' => esc_html__('Category Button', 'restho-core'),
-                'tab'   => Controls_Manager::TAB_STYLE,
-
-            ]
-        );
-
-        $this->add_control(
-            'restho_food_category_tab_style_category_button_text_color',
-            [
-                'label'     => esc_html__('Color', 'restho-core'),
-                'type'      => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .food-category-area .food-category-list .nav .nav-item .nav-link' => 'color: {{VALUE}};',
-                    '{{WRAPPER}} .food-category-area .food-category-list .nav .nav-item .nav-link i' => 'color: {{VALUE}};',
-                ],
-
-            ]
-        );
-        $this->add_control(
-            'restho_food_category_tab_style_category_button_text_hover_color',
+            'restho_menu_style_category_title_hover_color',
             [
                 'label'     => esc_html__('Hover Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .food-category-area .food-category-list .nav .nav-item .nav-link:hover' => 'color: {{VALUE}};',
-                    '{{WRAPPER}} .food-category-area .food-category-list .nav .nav-item .nav-link:hover i' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .food-category-area .food-category-list .nav-tabs li.nav-item .nav-link:hover' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .food-category-area .food-category-list .nav-tabs li.nav-item .nav-link:hover svg path' => 'fill: {{VALUE}};',
+
                 ],
 
             ]
         );
         $this->add_control(
-            'restho_food_category_tab_style_category_button_background_color',
+            'restho_menu_style_category_title_active_color',
             [
-                'label'     => esc_html__('Background Color', 'restho-core'),
+                'label'     => esc_html__('Active Color', 'restho-core'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .food-category-area .food-category-list .nav .nav-item .nav-link' => 'background-color: {{VALUE}};',
-                ],
+                    '{{WRAPPER}} .food-category-area .food-category-list .nav-tabs li.nav-item .nav-link.active' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .food-category-area .food-category-list .nav-tabs li.nav-item .nav-link.active svg path' => 'fill: {{VALUE}};',
 
-            ]
-        );
-        $this->add_control(
-            'restho_food_category_tab_style_category_button_background_hover_color',
-            [
-                'label'     => esc_html__('Background Hover Color', 'restho-core'),
-                'type'      => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .food-category-area .food-category-list .nav .nav-item .nav-link:hover' => 'background-color: {{VALUE}};',
-                ],
-
-            ]
-        );
-        $this->add_control(
-            'restho_food_category_tab_style_category_button_active_text_color',
-            [
-                'label'     => esc_html__('Active Text Color', 'restho-core'),
-                'type'      => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .food-category-area .food-category-list .nav .nav-item .nav-link.active' => 'color: {{VALUE}};',
-                    '{{WRAPPER}} .food-category-area .food-category-list .nav .nav-item .nav-link.active i' => 'color: {{VALUE}};',
-                ],
-
-            ]
-        );
-        $this->add_control(
-            'restho_food_category_tab_style_category_button_active_bg_color',
-            [
-                'label'     => esc_html__('Active Background Color', 'restho-core'),
-                'type'      => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .food-category-area .food-category-list .nav .nav-item .nav-link.active::after' => 'background-color: {{VALUE}};',
                 ],
 
             ]
@@ -341,26 +267,25 @@ class restho_food_category_tab_Widget extends Widget_Base
             Group_Control_Typography::get_type(),
             [
                 'label'    => esc_html__('Typography', 'restho-core'),
-                'name'     => 'restho_food_category_tab_style_category_button_typography',
-                'selector' => '{{WRAPPER}} .food-category-area .food-category-list .nav .nav-item .nav-link span',
+                'name'     => 'restho_menu_style_category_title_typography',
+                'selector' => '{{WRAPPER}} .food-category-area .food-category-list .nav-tabs li.nav-item .nav-link',
 
             ]
         );
         $this->add_responsive_control(
-            'restho_food_category_tab_style_category_button_padding',
+            'restho_menu_style_category_title_padding',
             [
                 'label'      => __('Padding', 'restho-core'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors'  => [
-                    '{{WRAPPER}} .food-category-area .food-category-list .nav .nav-item .nav-link' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .food-category-area .food-category-list .nav-tabs li.nav-item .nav-link' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 
                 ]
             ]
         );
 
         $this->end_controls_section();
-        
 
         //Food Title Style
         $this->start_controls_section(
@@ -500,8 +425,6 @@ class restho_food_category_tab_Widget extends Widget_Base
         );
 
         $this->end_controls_section();
-
-       
     }
     protected function render()
     {
@@ -514,11 +437,8 @@ class restho_food_category_tab_Widget extends Widget_Base
         <div class="food-category-area">
             <div class="container">
                 <div class="row g-4">
-                    <div class="col-lg-3">
+                    <div class="col-12">
                         <div class="food-category-list">
-                            <?php if (!empty($settings['restho_food_category_tab_content_food_category_tab_heading_title'])) : ?>
-                                <h4 class="title"><?php echo esc_html__($settings['restho_food_category_tab_content_food_category_tab_heading_title'], 'restho') ?></h4>
-                            <?php endif ?>
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <?php foreach ($data as $key => $item) {
                                     if (!empty($item['restho_food_category_tab_content_food_category_tab_title'])) {
@@ -526,14 +446,17 @@ class restho_food_category_tab_Widget extends Widget_Base
                                         $new_str = str_replace(' ', '', $str);
                                 ?>
                                         <li class="nav-item" role="presentation">
-                                            <button class="nav-link <?php echo ($key == 0) ? 'active' : '' ?>" id="<?php echo esc_attr($new_str) ?>-tab" data-bs-toggle="tab" data-bs-target="#<?php echo esc_attr($new_str) ?>" type="button" role="tab" aria-controls="<?php echo esc_attr($new_str) ?>" aria-selected="true"><span><?php echo esc_html__($item['restho_food_category_tab_content_food_category_tab_title'], 'restho') ?></span><span><i class="bi bi-arrow-right"></i></span></button>
+                                            <button class="nav-link <?php echo ($key == 0) ? 'active' : '' ?>" id="<?php echo esc_attr($new_str) ?>-tab" data-bs-toggle="tab" data-bs-target="#<?php echo esc_attr($new_str) ?>" type="button" role="tab" aria-controls="<?php echo esc_attr($new_str) ?>" aria-selected="true">
+                                                <?php if (!empty($item['restho_food_category_tab_icon'])) : ?>
+                                                    <?php \Elementor\Icons_Manager::render_icon($item['restho_food_category_tab_icon'], ['aria-hidden' => 'true']); ?>
+                                                <?php endif ?>
+                                                <?php echo esc_html__($item['restho_food_category_tab_content_food_category_tab_title'], 'restho') ?>
+                                            </button>
                                         </li>
                                 <?php }
                                 } ?>
                             </ul>
                         </div>
-                    </div>
-                    <div class="col-lg-9">
                         <div class="tab-content">
                             <?php foreach ($data as $key => $item) {
                                 if (!empty($item['restho_food_category_tab_content_food_category_tab_title'])) {
@@ -582,8 +505,6 @@ class restho_food_category_tab_Widget extends Widget_Base
                 </div>
             </div>
         </div>
-
-
 
 <?php
     }
