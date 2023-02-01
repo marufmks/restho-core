@@ -436,8 +436,8 @@ class restho_food_category_tab_Widget extends Widget_Base
 
         <div class="food-category-area">
             <div class="container">
-                <div class="row g-4">
-                    <div class="col-12">
+                <div class="row g-4 justify-content-center">
+                    <div class="col-12 col-xl-10">
                         <div class="food-category-list">
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <?php foreach ($data as $key => $item) {
